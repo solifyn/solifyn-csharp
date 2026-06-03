@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **CustomFields** | [**List&lt;ProductCreateCustomFieldsInner&gt;**](ProductCreateCustomFieldsInner.md) | Form field configurations to gather during checkout. | [optional] 
 **Stock** | **int** | Initial stock quantity limit. | [optional] 
 **IsListed** | **bool** | Whether the product is publicly visible. | [optional] [default to true]
+**IsFree** | **bool** | Whether the product is free of charge. | [optional] [default to false]
 **Addons** | [**List&lt;ProductCreateAddonsInner&gt;**](ProductCreateAddonsInner.md) | Product addons configurations. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

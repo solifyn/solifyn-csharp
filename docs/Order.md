@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Customer** | [**OrderCustomer**](OrderCustomer.md) | Customer details. | 
 **TotalAmount** | **int** | Total paid amount in cents. | 
 **Subtotal** | **int** | Subtotal amount in cents. | 
+**UsdTotal** | **decimal** | Total paid amount converted to USD. | [optional] 
 **TaxAmount** | **int** | Tax amount in cents. | 
 **ApplicationFee** | **int** | Application fee in cents. | 
 **AmountAfterFees** | **int** | Net amount after fees in cents. | 

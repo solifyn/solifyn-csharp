@@ -20,7 +20,7 @@ All URIs are relative to *http://localhost:8000*
 
 <a id="disputecreatedpost"></a>
 # **DisputeCreatedPost**
-> void DisputeCreatedPost (UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = null)
+> void DisputeCreatedPost (WebhookDisputePayload webhookDisputePayload = null)
 
 Dispute Created
 
@@ -46,12 +46,12 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new DefaultApi(config);
-            var UNKNOWN_BASE_TYPE = new UNKNOWN_BASE_TYPE(); // UNKNOWN_BASE_TYPE |  (optional) 
+            var webhookDisputePayload = new WebhookDisputePayload(); // WebhookDisputePayload |  (optional) 
 
             try
             {
                 // Dispute Created
-                apiInstance.DisputeCreatedPost(UNKNOWN_BASE_TYPE);
+                apiInstance.DisputeCreatedPost(webhookDisputePayload);
             }
             catch (ApiException  e)
             {
@@ -71,7 +71,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Dispute Created
-    apiInstance.DisputeCreatedPostWithHttpInfo(UNKNOWN_BASE_TYPE);
+    apiInstance.DisputeCreatedPostWithHttpInfo(webhookDisputePayload);
 }
 catch (ApiException e)
 {
@@ -85,7 +85,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **UNKNOWN_BASE_TYPE** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md) |  | [optional]  |
+| **webhookDisputePayload** | [**WebhookDisputePayload**](WebhookDisputePayload.md) |  | [optional]  |
 
 ### Return type
 
@@ -110,7 +110,7 @@ void (empty response body)
 
 <a id="disputelostpost"></a>
 # **DisputeLostPost**
-> void DisputeLostPost (UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = null)
+> void DisputeLostPost (WebhookDisputePayload webhookDisputePayload = null)
 
 Dispute Lost
 
@@ -136,12 +136,12 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new DefaultApi(config);
-            var UNKNOWN_BASE_TYPE = new UNKNOWN_BASE_TYPE(); // UNKNOWN_BASE_TYPE |  (optional) 
+            var webhookDisputePayload = new WebhookDisputePayload(); // WebhookDisputePayload |  (optional) 
 
             try
             {
                 // Dispute Lost
-                apiInstance.DisputeLostPost(UNKNOWN_BASE_TYPE);
+                apiInstance.DisputeLostPost(webhookDisputePayload);
             }
             catch (ApiException  e)
             {
@@ -161,7 +161,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Dispute Lost
-    apiInstance.DisputeLostPostWithHttpInfo(UNKNOWN_BASE_TYPE);
+    apiInstance.DisputeLostPostWithHttpInfo(webhookDisputePayload);
 }
 catch (ApiException e)
 {
@@ -175,7 +175,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **UNKNOWN_BASE_TYPE** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md) |  | [optional]  |
+| **webhookDisputePayload** | [**WebhookDisputePayload**](WebhookDisputePayload.md) |  | [optional]  |
 
 ### Return type
 
@@ -200,7 +200,7 @@ void (empty response body)
 
 <a id="disputewonpost"></a>
 # **DisputeWonPost**
-> void DisputeWonPost (UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = null)
+> void DisputeWonPost (WebhookDisputePayload webhookDisputePayload = null)
 
 Dispute Won
 
@@ -226,12 +226,12 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new DefaultApi(config);
-            var UNKNOWN_BASE_TYPE = new UNKNOWN_BASE_TYPE(); // UNKNOWN_BASE_TYPE |  (optional) 
+            var webhookDisputePayload = new WebhookDisputePayload(); // WebhookDisputePayload |  (optional) 
 
             try
             {
                 // Dispute Won
-                apiInstance.DisputeWonPost(UNKNOWN_BASE_TYPE);
+                apiInstance.DisputeWonPost(webhookDisputePayload);
             }
             catch (ApiException  e)
             {
@@ -251,7 +251,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Dispute Won
-    apiInstance.DisputeWonPostWithHttpInfo(UNKNOWN_BASE_TYPE);
+    apiInstance.DisputeWonPostWithHttpInfo(webhookDisputePayload);
 }
 catch (ApiException e)
 {
@@ -265,7 +265,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **UNKNOWN_BASE_TYPE** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md) |  | [optional]  |
+| **webhookDisputePayload** | [**WebhookDisputePayload**](WebhookDisputePayload.md) |  | [optional]  |
 
 ### Return type
 
@@ -290,7 +290,7 @@ void (empty response body)
 
 <a id="licensecreatedpost"></a>
 # **LicenseCreatedPost**
-> void LicenseCreatedPost (License license = null)
+> void LicenseCreatedPost (WebhookLicensePayload webhookLicensePayload = null)
 
 License Created
 
@@ -316,12 +316,12 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new DefaultApi(config);
-            var license = new License(); // License |  (optional) 
+            var webhookLicensePayload = new WebhookLicensePayload(); // WebhookLicensePayload |  (optional) 
 
             try
             {
                 // License Created
-                apiInstance.LicenseCreatedPost(license);
+                apiInstance.LicenseCreatedPost(webhookLicensePayload);
             }
             catch (ApiException  e)
             {
@@ -341,7 +341,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // License Created
-    apiInstance.LicenseCreatedPostWithHttpInfo(license);
+    apiInstance.LicenseCreatedPostWithHttpInfo(webhookLicensePayload);
 }
 catch (ApiException e)
 {
@@ -355,7 +355,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **license** | [**License**](License.md) |  | [optional]  |
+| **webhookLicensePayload** | [**WebhookLicensePayload**](WebhookLicensePayload.md) |  | [optional]  |
 
 ### Return type
 
@@ -380,7 +380,7 @@ void (empty response body)
 
 <a id="licenserevokedpost"></a>
 # **LicenseRevokedPost**
-> void LicenseRevokedPost (License license = null)
+> void LicenseRevokedPost (WebhookLicensePayload webhookLicensePayload = null)
 
 License Revoked
 
@@ -406,12 +406,12 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new DefaultApi(config);
-            var license = new License(); // License |  (optional) 
+            var webhookLicensePayload = new WebhookLicensePayload(); // WebhookLicensePayload |  (optional) 
 
             try
             {
                 // License Revoked
-                apiInstance.LicenseRevokedPost(license);
+                apiInstance.LicenseRevokedPost(webhookLicensePayload);
             }
             catch (ApiException  e)
             {
@@ -431,7 +431,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // License Revoked
-    apiInstance.LicenseRevokedPostWithHttpInfo(license);
+    apiInstance.LicenseRevokedPostWithHttpInfo(webhookLicensePayload);
 }
 catch (ApiException e)
 {
@@ -445,7 +445,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **license** | [**License**](License.md) |  | [optional]  |
+| **webhookLicensePayload** | [**WebhookLicensePayload**](WebhookLicensePayload.md) |  | [optional]  |
 
 ### Return type
 
@@ -470,7 +470,7 @@ void (empty response body)
 
 <a id="paymentcreatedpost"></a>
 # **PaymentCreatedPost**
-> void PaymentCreatedPost (UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = null)
+> void PaymentCreatedPost (WebhookPaymentPayload webhookPaymentPayload = null)
 
 Payment Created
 
@@ -496,12 +496,12 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new DefaultApi(config);
-            var UNKNOWN_BASE_TYPE = new UNKNOWN_BASE_TYPE(); // UNKNOWN_BASE_TYPE |  (optional) 
+            var webhookPaymentPayload = new WebhookPaymentPayload(); // WebhookPaymentPayload |  (optional) 
 
             try
             {
                 // Payment Created
-                apiInstance.PaymentCreatedPost(UNKNOWN_BASE_TYPE);
+                apiInstance.PaymentCreatedPost(webhookPaymentPayload);
             }
             catch (ApiException  e)
             {
@@ -521,7 +521,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Payment Created
-    apiInstance.PaymentCreatedPostWithHttpInfo(UNKNOWN_BASE_TYPE);
+    apiInstance.PaymentCreatedPostWithHttpInfo(webhookPaymentPayload);
 }
 catch (ApiException e)
 {
@@ -535,7 +535,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **UNKNOWN_BASE_TYPE** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md) |  | [optional]  |
+| **webhookPaymentPayload** | [**WebhookPaymentPayload**](WebhookPaymentPayload.md) |  | [optional]  |
 
 ### Return type
 
@@ -740,7 +740,7 @@ void (empty response body)
 
 <a id="refundfailedpost"></a>
 # **RefundFailedPost**
-> void RefundFailedPost (UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = null)
+> void RefundFailedPost (WebhookRefundPayload webhookRefundPayload = null)
 
 Refund Failed
 
@@ -766,12 +766,12 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new DefaultApi(config);
-            var UNKNOWN_BASE_TYPE = new UNKNOWN_BASE_TYPE(); // UNKNOWN_BASE_TYPE |  (optional) 
+            var webhookRefundPayload = new WebhookRefundPayload(); // WebhookRefundPayload |  (optional) 
 
             try
             {
                 // Refund Failed
-                apiInstance.RefundFailedPost(UNKNOWN_BASE_TYPE);
+                apiInstance.RefundFailedPost(webhookRefundPayload);
             }
             catch (ApiException  e)
             {
@@ -791,7 +791,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Refund Failed
-    apiInstance.RefundFailedPostWithHttpInfo(UNKNOWN_BASE_TYPE);
+    apiInstance.RefundFailedPostWithHttpInfo(webhookRefundPayload);
 }
 catch (ApiException e)
 {
@@ -805,7 +805,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **UNKNOWN_BASE_TYPE** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md) |  | [optional]  |
+| **webhookRefundPayload** | [**WebhookRefundPayload**](WebhookRefundPayload.md) |  | [optional]  |
 
 ### Return type
 
@@ -830,7 +830,7 @@ void (empty response body)
 
 <a id="refundsucceededpost"></a>
 # **RefundSucceededPost**
-> void RefundSucceededPost (UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = null)
+> void RefundSucceededPost (WebhookRefundPayload webhookRefundPayload = null)
 
 Refund Succeeded
 
@@ -856,12 +856,12 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new DefaultApi(config);
-            var UNKNOWN_BASE_TYPE = new UNKNOWN_BASE_TYPE(); // UNKNOWN_BASE_TYPE |  (optional) 
+            var webhookRefundPayload = new WebhookRefundPayload(); // WebhookRefundPayload |  (optional) 
 
             try
             {
                 // Refund Succeeded
-                apiInstance.RefundSucceededPost(UNKNOWN_BASE_TYPE);
+                apiInstance.RefundSucceededPost(webhookRefundPayload);
             }
             catch (ApiException  e)
             {
@@ -881,7 +881,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Refund Succeeded
-    apiInstance.RefundSucceededPostWithHttpInfo(UNKNOWN_BASE_TYPE);
+    apiInstance.RefundSucceededPostWithHttpInfo(webhookRefundPayload);
 }
 catch (ApiException e)
 {
@@ -895,7 +895,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **UNKNOWN_BASE_TYPE** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md) |  | [optional]  |
+| **webhookRefundPayload** | [**WebhookRefundPayload**](WebhookRefundPayload.md) |  | [optional]  |
 
 ### Return type
 
@@ -920,7 +920,7 @@ void (empty response body)
 
 <a id="subscriptioncreatedpost"></a>
 # **SubscriptionCreatedPost**
-> void SubscriptionCreatedPost (UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = null)
+> void SubscriptionCreatedPost (WebhookSubscriptionPayload webhookSubscriptionPayload = null)
 
 Subscription Created
 
@@ -946,12 +946,12 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new DefaultApi(config);
-            var UNKNOWN_BASE_TYPE = new UNKNOWN_BASE_TYPE(); // UNKNOWN_BASE_TYPE |  (optional) 
+            var webhookSubscriptionPayload = new WebhookSubscriptionPayload(); // WebhookSubscriptionPayload |  (optional) 
 
             try
             {
                 // Subscription Created
-                apiInstance.SubscriptionCreatedPost(UNKNOWN_BASE_TYPE);
+                apiInstance.SubscriptionCreatedPost(webhookSubscriptionPayload);
             }
             catch (ApiException  e)
             {
@@ -971,7 +971,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Subscription Created
-    apiInstance.SubscriptionCreatedPostWithHttpInfo(UNKNOWN_BASE_TYPE);
+    apiInstance.SubscriptionCreatedPostWithHttpInfo(webhookSubscriptionPayload);
 }
 catch (ApiException e)
 {
@@ -985,7 +985,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **UNKNOWN_BASE_TYPE** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md) |  | [optional]  |
+| **webhookSubscriptionPayload** | [**WebhookSubscriptionPayload**](WebhookSubscriptionPayload.md) |  | [optional]  |
 
 ### Return type
 
@@ -1010,7 +1010,7 @@ void (empty response body)
 
 <a id="subscriptiondeactivatedpost"></a>
 # **SubscriptionDeactivatedPost**
-> void SubscriptionDeactivatedPost (UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = null)
+> void SubscriptionDeactivatedPost (WebhookSubscriptionPayload webhookSubscriptionPayload = null)
 
 Subscription Deactivated
 
@@ -1036,12 +1036,12 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new DefaultApi(config);
-            var UNKNOWN_BASE_TYPE = new UNKNOWN_BASE_TYPE(); // UNKNOWN_BASE_TYPE |  (optional) 
+            var webhookSubscriptionPayload = new WebhookSubscriptionPayload(); // WebhookSubscriptionPayload |  (optional) 
 
             try
             {
                 // Subscription Deactivated
-                apiInstance.SubscriptionDeactivatedPost(UNKNOWN_BASE_TYPE);
+                apiInstance.SubscriptionDeactivatedPost(webhookSubscriptionPayload);
             }
             catch (ApiException  e)
             {
@@ -1061,7 +1061,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Subscription Deactivated
-    apiInstance.SubscriptionDeactivatedPostWithHttpInfo(UNKNOWN_BASE_TYPE);
+    apiInstance.SubscriptionDeactivatedPostWithHttpInfo(webhookSubscriptionPayload);
 }
 catch (ApiException e)
 {
@@ -1075,7 +1075,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **UNKNOWN_BASE_TYPE** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md) |  | [optional]  |
+| **webhookSubscriptionPayload** | [**WebhookSubscriptionPayload**](WebhookSubscriptionPayload.md) |  | [optional]  |
 
 ### Return type
 
@@ -1100,7 +1100,7 @@ void (empty response body)
 
 <a id="subscriptionupdatedpost"></a>
 # **SubscriptionUpdatedPost**
-> void SubscriptionUpdatedPost (UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = null)
+> void SubscriptionUpdatedPost (WebhookSubscriptionPayload webhookSubscriptionPayload = null)
 
 Subscription Updated
 
@@ -1126,12 +1126,12 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new DefaultApi(config);
-            var UNKNOWN_BASE_TYPE = new UNKNOWN_BASE_TYPE(); // UNKNOWN_BASE_TYPE |  (optional) 
+            var webhookSubscriptionPayload = new WebhookSubscriptionPayload(); // WebhookSubscriptionPayload |  (optional) 
 
             try
             {
                 // Subscription Updated
-                apiInstance.SubscriptionUpdatedPost(UNKNOWN_BASE_TYPE);
+                apiInstance.SubscriptionUpdatedPost(webhookSubscriptionPayload);
             }
             catch (ApiException  e)
             {
@@ -1151,7 +1151,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Subscription Updated
-    apiInstance.SubscriptionUpdatedPostWithHttpInfo(UNKNOWN_BASE_TYPE);
+    apiInstance.SubscriptionUpdatedPostWithHttpInfo(webhookSubscriptionPayload);
 }
 catch (ApiException e)
 {
@@ -1165,7 +1165,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **UNKNOWN_BASE_TYPE** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md) |  | [optional]  |
+| **webhookSubscriptionPayload** | [**WebhookSubscriptionPayload**](WebhookSubscriptionPayload.md) |  | [optional]  |
 
 ### Return type
 

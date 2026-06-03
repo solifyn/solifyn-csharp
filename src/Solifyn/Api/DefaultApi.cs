@@ -33,10 +33,10 @@ namespace Solifyn.Api
         /// Occurs when a payment charge is disputed by the customer (chargeback initiated).
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookDisputePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void DisputeCreatedPost(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0);
+        void DisputeCreatedPost(WebhookDisputePayload webhookDisputePayload = default(WebhookDisputePayload), int operationIndex = 0);
 
         /// <summary>
         /// Dispute Created
@@ -45,10 +45,10 @@ namespace Solifyn.Api
         /// Occurs when a payment charge is disputed by the customer (chargeback initiated).
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookDisputePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DisputeCreatedPostWithHttpInfo(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0);
+        ApiResponse<Object> DisputeCreatedPostWithHttpInfo(WebhookDisputePayload webhookDisputePayload = default(WebhookDisputePayload), int operationIndex = 0);
         /// <summary>
         /// Dispute Lost
         /// </summary>
@@ -56,10 +56,10 @@ namespace Solifyn.Api
         /// Occurs when a dispute challenge is lost and the funds are returned to the cardholder.
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookDisputePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void DisputeLostPost(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0);
+        void DisputeLostPost(WebhookDisputePayload webhookDisputePayload = default(WebhookDisputePayload), int operationIndex = 0);
 
         /// <summary>
         /// Dispute Lost
@@ -68,10 +68,10 @@ namespace Solifyn.Api
         /// Occurs when a dispute challenge is lost and the funds are returned to the cardholder.
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookDisputePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DisputeLostPostWithHttpInfo(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0);
+        ApiResponse<Object> DisputeLostPostWithHttpInfo(WebhookDisputePayload webhookDisputePayload = default(WebhookDisputePayload), int operationIndex = 0);
         /// <summary>
         /// Dispute Won
         /// </summary>
@@ -79,10 +79,10 @@ namespace Solifyn.Api
         /// Occurs when a dispute challenge is won by the merchant.
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookDisputePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void DisputeWonPost(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0);
+        void DisputeWonPost(WebhookDisputePayload webhookDisputePayload = default(WebhookDisputePayload), int operationIndex = 0);
 
         /// <summary>
         /// Dispute Won
@@ -91,10 +91,10 @@ namespace Solifyn.Api
         /// Occurs when a dispute challenge is won by the merchant.
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookDisputePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DisputeWonPostWithHttpInfo(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0);
+        ApiResponse<Object> DisputeWonPostWithHttpInfo(WebhookDisputePayload webhookDisputePayload = default(WebhookDisputePayload), int operationIndex = 0);
         /// <summary>
         /// License Created
         /// </summary>
@@ -102,10 +102,10 @@ namespace Solifyn.Api
         /// Occurs when a new software license key is created or assigned to a customer purchase.
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license"> (optional)</param>
+        /// <param name="webhookLicensePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void LicenseCreatedPost(License license = default(License), int operationIndex = 0);
+        void LicenseCreatedPost(WebhookLicensePayload webhookLicensePayload = default(WebhookLicensePayload), int operationIndex = 0);
 
         /// <summary>
         /// License Created
@@ -114,10 +114,10 @@ namespace Solifyn.Api
         /// Occurs when a new software license key is created or assigned to a customer purchase.
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license"> (optional)</param>
+        /// <param name="webhookLicensePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> LicenseCreatedPostWithHttpInfo(License license = default(License), int operationIndex = 0);
+        ApiResponse<Object> LicenseCreatedPostWithHttpInfo(WebhookLicensePayload webhookLicensePayload = default(WebhookLicensePayload), int operationIndex = 0);
         /// <summary>
         /// License Revoked
         /// </summary>
@@ -125,10 +125,10 @@ namespace Solifyn.Api
         /// Occurs when a software license key is revoked (e.g., due to subscription cancellation, refund, or dispute).
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license"> (optional)</param>
+        /// <param name="webhookLicensePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void LicenseRevokedPost(License license = default(License), int operationIndex = 0);
+        void LicenseRevokedPost(WebhookLicensePayload webhookLicensePayload = default(WebhookLicensePayload), int operationIndex = 0);
 
         /// <summary>
         /// License Revoked
@@ -137,10 +137,10 @@ namespace Solifyn.Api
         /// Occurs when a software license key is revoked (e.g., due to subscription cancellation, refund, or dispute).
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license"> (optional)</param>
+        /// <param name="webhookLicensePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> LicenseRevokedPostWithHttpInfo(License license = default(License), int operationIndex = 0);
+        ApiResponse<Object> LicenseRevokedPostWithHttpInfo(WebhookLicensePayload webhookLicensePayload = default(WebhookLicensePayload), int operationIndex = 0);
         /// <summary>
         /// Payment Created
         /// </summary>
@@ -148,10 +148,10 @@ namespace Solifyn.Api
         /// Occurs when a new payment is initiated (e.g., at checkout start or subscription creation). The payment may still be in an incomplete or pending state.
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookPaymentPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void PaymentCreatedPost(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0);
+        void PaymentCreatedPost(WebhookPaymentPayload webhookPaymentPayload = default(WebhookPaymentPayload), int operationIndex = 0);
 
         /// <summary>
         /// Payment Created
@@ -160,10 +160,10 @@ namespace Solifyn.Api
         /// Occurs when a new payment is initiated (e.g., at checkout start or subscription creation). The payment may still be in an incomplete or pending state.
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookPaymentPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> PaymentCreatedPostWithHttpInfo(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0);
+        ApiResponse<Object> PaymentCreatedPostWithHttpInfo(WebhookPaymentPayload webhookPaymentPayload = default(WebhookPaymentPayload), int operationIndex = 0);
         /// <summary>
         /// Payment Failed
         /// </summary>
@@ -217,10 +217,10 @@ namespace Solifyn.Api
         /// Occurs when a payment refund fails.
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookRefundPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void RefundFailedPost(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0);
+        void RefundFailedPost(WebhookRefundPayload webhookRefundPayload = default(WebhookRefundPayload), int operationIndex = 0);
 
         /// <summary>
         /// Refund Failed
@@ -229,10 +229,10 @@ namespace Solifyn.Api
         /// Occurs when a payment refund fails.
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookRefundPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> RefundFailedPostWithHttpInfo(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0);
+        ApiResponse<Object> RefundFailedPostWithHttpInfo(WebhookRefundPayload webhookRefundPayload = default(WebhookRefundPayload), int operationIndex = 0);
         /// <summary>
         /// Refund Succeeded
         /// </summary>
@@ -240,10 +240,10 @@ namespace Solifyn.Api
         /// Occurs when a payment refund is confirmed as succeeded.
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookRefundPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void RefundSucceededPost(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0);
+        void RefundSucceededPost(WebhookRefundPayload webhookRefundPayload = default(WebhookRefundPayload), int operationIndex = 0);
 
         /// <summary>
         /// Refund Succeeded
@@ -252,10 +252,10 @@ namespace Solifyn.Api
         /// Occurs when a payment refund is confirmed as succeeded.
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookRefundPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> RefundSucceededPostWithHttpInfo(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0);
+        ApiResponse<Object> RefundSucceededPostWithHttpInfo(WebhookRefundPayload webhookRefundPayload = default(WebhookRefundPayload), int operationIndex = 0);
         /// <summary>
         /// Subscription Created
         /// </summary>
@@ -263,10 +263,10 @@ namespace Solifyn.Api
         /// Occurs when a customer subscription is successfully started.
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookSubscriptionPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void SubscriptionCreatedPost(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0);
+        void SubscriptionCreatedPost(WebhookSubscriptionPayload webhookSubscriptionPayload = default(WebhookSubscriptionPayload), int operationIndex = 0);
 
         /// <summary>
         /// Subscription Created
@@ -275,10 +275,10 @@ namespace Solifyn.Api
         /// Occurs when a customer subscription is successfully started.
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookSubscriptionPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> SubscriptionCreatedPostWithHttpInfo(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0);
+        ApiResponse<Object> SubscriptionCreatedPostWithHttpInfo(WebhookSubscriptionPayload webhookSubscriptionPayload = default(WebhookSubscriptionPayload), int operationIndex = 0);
         /// <summary>
         /// Subscription Deactivated
         /// </summary>
@@ -286,10 +286,10 @@ namespace Solifyn.Api
         /// Occurs when a customer subscription is deactivated or expired.
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookSubscriptionPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void SubscriptionDeactivatedPost(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0);
+        void SubscriptionDeactivatedPost(WebhookSubscriptionPayload webhookSubscriptionPayload = default(WebhookSubscriptionPayload), int operationIndex = 0);
 
         /// <summary>
         /// Subscription Deactivated
@@ -298,10 +298,10 @@ namespace Solifyn.Api
         /// Occurs when a customer subscription is deactivated or expired.
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookSubscriptionPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> SubscriptionDeactivatedPostWithHttpInfo(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0);
+        ApiResponse<Object> SubscriptionDeactivatedPostWithHttpInfo(WebhookSubscriptionPayload webhookSubscriptionPayload = default(WebhookSubscriptionPayload), int operationIndex = 0);
         /// <summary>
         /// Subscription Updated
         /// </summary>
@@ -309,10 +309,10 @@ namespace Solifyn.Api
         /// Occurs when a customer subscription is updated (e.g., cancel at period end changes).
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookSubscriptionPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void SubscriptionUpdatedPost(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0);
+        void SubscriptionUpdatedPost(WebhookSubscriptionPayload webhookSubscriptionPayload = default(WebhookSubscriptionPayload), int operationIndex = 0);
 
         /// <summary>
         /// Subscription Updated
@@ -321,10 +321,10 @@ namespace Solifyn.Api
         /// Occurs when a customer subscription is updated (e.g., cancel at period end changes).
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookSubscriptionPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> SubscriptionUpdatedPostWithHttpInfo(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0);
+        ApiResponse<Object> SubscriptionUpdatedPostWithHttpInfo(WebhookSubscriptionPayload webhookSubscriptionPayload = default(WebhookSubscriptionPayload), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -341,11 +341,11 @@ namespace Solifyn.Api
         /// Occurs when a payment charge is disputed by the customer (chargeback initiated).
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookDisputePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DisputeCreatedPostAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DisputeCreatedPostAsync(WebhookDisputePayload webhookDisputePayload = default(WebhookDisputePayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Dispute Created
@@ -354,11 +354,11 @@ namespace Solifyn.Api
         /// Occurs when a payment charge is disputed by the customer (chargeback initiated).
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookDisputePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DisputeCreatedPostWithHttpInfoAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DisputeCreatedPostWithHttpInfoAsync(WebhookDisputePayload webhookDisputePayload = default(WebhookDisputePayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Dispute Lost
         /// </summary>
@@ -366,11 +366,11 @@ namespace Solifyn.Api
         /// Occurs when a dispute challenge is lost and the funds are returned to the cardholder.
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookDisputePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DisputeLostPostAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DisputeLostPostAsync(WebhookDisputePayload webhookDisputePayload = default(WebhookDisputePayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Dispute Lost
@@ -379,11 +379,11 @@ namespace Solifyn.Api
         /// Occurs when a dispute challenge is lost and the funds are returned to the cardholder.
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookDisputePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DisputeLostPostWithHttpInfoAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DisputeLostPostWithHttpInfoAsync(WebhookDisputePayload webhookDisputePayload = default(WebhookDisputePayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Dispute Won
         /// </summary>
@@ -391,11 +391,11 @@ namespace Solifyn.Api
         /// Occurs when a dispute challenge is won by the merchant.
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookDisputePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DisputeWonPostAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DisputeWonPostAsync(WebhookDisputePayload webhookDisputePayload = default(WebhookDisputePayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Dispute Won
@@ -404,11 +404,11 @@ namespace Solifyn.Api
         /// Occurs when a dispute challenge is won by the merchant.
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookDisputePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DisputeWonPostWithHttpInfoAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DisputeWonPostWithHttpInfoAsync(WebhookDisputePayload webhookDisputePayload = default(WebhookDisputePayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// License Created
         /// </summary>
@@ -416,11 +416,11 @@ namespace Solifyn.Api
         /// Occurs when a new software license key is created or assigned to a customer purchase.
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license"> (optional)</param>
+        /// <param name="webhookLicensePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task LicenseCreatedPostAsync(License license = default(License), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task LicenseCreatedPostAsync(WebhookLicensePayload webhookLicensePayload = default(WebhookLicensePayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// License Created
@@ -429,11 +429,11 @@ namespace Solifyn.Api
         /// Occurs when a new software license key is created or assigned to a customer purchase.
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license"> (optional)</param>
+        /// <param name="webhookLicensePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> LicenseCreatedPostWithHttpInfoAsync(License license = default(License), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> LicenseCreatedPostWithHttpInfoAsync(WebhookLicensePayload webhookLicensePayload = default(WebhookLicensePayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// License Revoked
         /// </summary>
@@ -441,11 +441,11 @@ namespace Solifyn.Api
         /// Occurs when a software license key is revoked (e.g., due to subscription cancellation, refund, or dispute).
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license"> (optional)</param>
+        /// <param name="webhookLicensePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task LicenseRevokedPostAsync(License license = default(License), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task LicenseRevokedPostAsync(WebhookLicensePayload webhookLicensePayload = default(WebhookLicensePayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// License Revoked
@@ -454,11 +454,11 @@ namespace Solifyn.Api
         /// Occurs when a software license key is revoked (e.g., due to subscription cancellation, refund, or dispute).
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license"> (optional)</param>
+        /// <param name="webhookLicensePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> LicenseRevokedPostWithHttpInfoAsync(License license = default(License), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> LicenseRevokedPostWithHttpInfoAsync(WebhookLicensePayload webhookLicensePayload = default(WebhookLicensePayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Payment Created
         /// </summary>
@@ -466,11 +466,11 @@ namespace Solifyn.Api
         /// Occurs when a new payment is initiated (e.g., at checkout start or subscription creation). The payment may still be in an incomplete or pending state.
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookPaymentPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task PaymentCreatedPostAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task PaymentCreatedPostAsync(WebhookPaymentPayload webhookPaymentPayload = default(WebhookPaymentPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Payment Created
@@ -479,11 +479,11 @@ namespace Solifyn.Api
         /// Occurs when a new payment is initiated (e.g., at checkout start or subscription creation). The payment may still be in an incomplete or pending state.
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookPaymentPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> PaymentCreatedPostWithHttpInfoAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> PaymentCreatedPostWithHttpInfoAsync(WebhookPaymentPayload webhookPaymentPayload = default(WebhookPaymentPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Payment Failed
         /// </summary>
@@ -541,11 +541,11 @@ namespace Solifyn.Api
         /// Occurs when a payment refund fails.
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookRefundPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task RefundFailedPostAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task RefundFailedPostAsync(WebhookRefundPayload webhookRefundPayload = default(WebhookRefundPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Refund Failed
@@ -554,11 +554,11 @@ namespace Solifyn.Api
         /// Occurs when a payment refund fails.
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookRefundPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> RefundFailedPostWithHttpInfoAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> RefundFailedPostWithHttpInfoAsync(WebhookRefundPayload webhookRefundPayload = default(WebhookRefundPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Refund Succeeded
         /// </summary>
@@ -566,11 +566,11 @@ namespace Solifyn.Api
         /// Occurs when a payment refund is confirmed as succeeded.
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookRefundPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task RefundSucceededPostAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task RefundSucceededPostAsync(WebhookRefundPayload webhookRefundPayload = default(WebhookRefundPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Refund Succeeded
@@ -579,11 +579,11 @@ namespace Solifyn.Api
         /// Occurs when a payment refund is confirmed as succeeded.
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookRefundPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> RefundSucceededPostWithHttpInfoAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> RefundSucceededPostWithHttpInfoAsync(WebhookRefundPayload webhookRefundPayload = default(WebhookRefundPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Subscription Created
         /// </summary>
@@ -591,11 +591,11 @@ namespace Solifyn.Api
         /// Occurs when a customer subscription is successfully started.
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookSubscriptionPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task SubscriptionCreatedPostAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task SubscriptionCreatedPostAsync(WebhookSubscriptionPayload webhookSubscriptionPayload = default(WebhookSubscriptionPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Subscription Created
@@ -604,11 +604,11 @@ namespace Solifyn.Api
         /// Occurs when a customer subscription is successfully started.
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookSubscriptionPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> SubscriptionCreatedPostWithHttpInfoAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> SubscriptionCreatedPostWithHttpInfoAsync(WebhookSubscriptionPayload webhookSubscriptionPayload = default(WebhookSubscriptionPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Subscription Deactivated
         /// </summary>
@@ -616,11 +616,11 @@ namespace Solifyn.Api
         /// Occurs when a customer subscription is deactivated or expired.
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookSubscriptionPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task SubscriptionDeactivatedPostAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task SubscriptionDeactivatedPostAsync(WebhookSubscriptionPayload webhookSubscriptionPayload = default(WebhookSubscriptionPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Subscription Deactivated
@@ -629,11 +629,11 @@ namespace Solifyn.Api
         /// Occurs when a customer subscription is deactivated or expired.
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookSubscriptionPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> SubscriptionDeactivatedPostWithHttpInfoAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> SubscriptionDeactivatedPostWithHttpInfoAsync(WebhookSubscriptionPayload webhookSubscriptionPayload = default(WebhookSubscriptionPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Subscription Updated
         /// </summary>
@@ -641,11 +641,11 @@ namespace Solifyn.Api
         /// Occurs when a customer subscription is updated (e.g., cancel at period end changes).
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookSubscriptionPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task SubscriptionUpdatedPostAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task SubscriptionUpdatedPostAsync(WebhookSubscriptionPayload webhookSubscriptionPayload = default(WebhookSubscriptionPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Subscription Updated
@@ -654,11 +654,11 @@ namespace Solifyn.Api
         /// Occurs when a customer subscription is updated (e.g., cancel at period end changes).
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookSubscriptionPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> SubscriptionUpdatedPostWithHttpInfoAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> SubscriptionUpdatedPostWithHttpInfoAsync(WebhookSubscriptionPayload webhookSubscriptionPayload = default(WebhookSubscriptionPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -783,22 +783,22 @@ namespace Solifyn.Api
         /// Dispute Created Occurs when a payment charge is disputed by the customer (chargeback initiated).
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookDisputePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void DisputeCreatedPost(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0)
+        public void DisputeCreatedPost(WebhookDisputePayload webhookDisputePayload = default(WebhookDisputePayload), int operationIndex = 0)
         {
-            DisputeCreatedPostWithHttpInfo(UNKNOWN_BASE_TYPE);
+            DisputeCreatedPostWithHttpInfo(webhookDisputePayload);
         }
 
         /// <summary>
         /// Dispute Created Occurs when a payment charge is disputed by the customer (chargeback initiated).
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookDisputePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Solifyn.Client.ApiResponse<Object> DisputeCreatedPostWithHttpInfo(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0)
+        public Solifyn.Client.ApiResponse<Object> DisputeCreatedPostWithHttpInfo(WebhookDisputePayload webhookDisputePayload = default(WebhookDisputePayload), int operationIndex = 0)
         {
             Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
 
@@ -822,7 +822,7 @@ namespace Solifyn.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = UNKNOWN_BASE_TYPE;
+            localVarRequestOptions.Data = webhookDisputePayload;
 
             localVarRequestOptions.Operation = "DefaultApi.DisputeCreatedPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -852,24 +852,24 @@ namespace Solifyn.Api
         /// Dispute Created Occurs when a payment charge is disputed by the customer (chargeback initiated).
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookDisputePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DisputeCreatedPostAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DisputeCreatedPostAsync(WebhookDisputePayload webhookDisputePayload = default(WebhookDisputePayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await DisputeCreatedPostWithHttpInfoAsync(UNKNOWN_BASE_TYPE, operationIndex, cancellationToken).ConfigureAwait(false);
+            await DisputeCreatedPostWithHttpInfoAsync(webhookDisputePayload, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         /// Dispute Created Occurs when a payment charge is disputed by the customer (chargeback initiated).
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookDisputePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> DisputeCreatedPostWithHttpInfoAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> DisputeCreatedPostWithHttpInfoAsync(WebhookDisputePayload webhookDisputePayload = default(WebhookDisputePayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
@@ -894,7 +894,7 @@ namespace Solifyn.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = UNKNOWN_BASE_TYPE;
+            localVarRequestOptions.Data = webhookDisputePayload;
 
             localVarRequestOptions.Operation = "DefaultApi.DisputeCreatedPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -925,22 +925,22 @@ namespace Solifyn.Api
         /// Dispute Lost Occurs when a dispute challenge is lost and the funds are returned to the cardholder.
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookDisputePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void DisputeLostPost(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0)
+        public void DisputeLostPost(WebhookDisputePayload webhookDisputePayload = default(WebhookDisputePayload), int operationIndex = 0)
         {
-            DisputeLostPostWithHttpInfo(UNKNOWN_BASE_TYPE);
+            DisputeLostPostWithHttpInfo(webhookDisputePayload);
         }
 
         /// <summary>
         /// Dispute Lost Occurs when a dispute challenge is lost and the funds are returned to the cardholder.
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookDisputePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Solifyn.Client.ApiResponse<Object> DisputeLostPostWithHttpInfo(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0)
+        public Solifyn.Client.ApiResponse<Object> DisputeLostPostWithHttpInfo(WebhookDisputePayload webhookDisputePayload = default(WebhookDisputePayload), int operationIndex = 0)
         {
             Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
 
@@ -964,7 +964,7 @@ namespace Solifyn.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = UNKNOWN_BASE_TYPE;
+            localVarRequestOptions.Data = webhookDisputePayload;
 
             localVarRequestOptions.Operation = "DefaultApi.DisputeLostPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -994,24 +994,24 @@ namespace Solifyn.Api
         /// Dispute Lost Occurs when a dispute challenge is lost and the funds are returned to the cardholder.
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookDisputePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DisputeLostPostAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DisputeLostPostAsync(WebhookDisputePayload webhookDisputePayload = default(WebhookDisputePayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await DisputeLostPostWithHttpInfoAsync(UNKNOWN_BASE_TYPE, operationIndex, cancellationToken).ConfigureAwait(false);
+            await DisputeLostPostWithHttpInfoAsync(webhookDisputePayload, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         /// Dispute Lost Occurs when a dispute challenge is lost and the funds are returned to the cardholder.
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookDisputePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> DisputeLostPostWithHttpInfoAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> DisputeLostPostWithHttpInfoAsync(WebhookDisputePayload webhookDisputePayload = default(WebhookDisputePayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
@@ -1036,7 +1036,7 @@ namespace Solifyn.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = UNKNOWN_BASE_TYPE;
+            localVarRequestOptions.Data = webhookDisputePayload;
 
             localVarRequestOptions.Operation = "DefaultApi.DisputeLostPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1067,22 +1067,22 @@ namespace Solifyn.Api
         /// Dispute Won Occurs when a dispute challenge is won by the merchant.
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookDisputePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void DisputeWonPost(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0)
+        public void DisputeWonPost(WebhookDisputePayload webhookDisputePayload = default(WebhookDisputePayload), int operationIndex = 0)
         {
-            DisputeWonPostWithHttpInfo(UNKNOWN_BASE_TYPE);
+            DisputeWonPostWithHttpInfo(webhookDisputePayload);
         }
 
         /// <summary>
         /// Dispute Won Occurs when a dispute challenge is won by the merchant.
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookDisputePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Solifyn.Client.ApiResponse<Object> DisputeWonPostWithHttpInfo(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0)
+        public Solifyn.Client.ApiResponse<Object> DisputeWonPostWithHttpInfo(WebhookDisputePayload webhookDisputePayload = default(WebhookDisputePayload), int operationIndex = 0)
         {
             Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
 
@@ -1106,7 +1106,7 @@ namespace Solifyn.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = UNKNOWN_BASE_TYPE;
+            localVarRequestOptions.Data = webhookDisputePayload;
 
             localVarRequestOptions.Operation = "DefaultApi.DisputeWonPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1136,24 +1136,24 @@ namespace Solifyn.Api
         /// Dispute Won Occurs when a dispute challenge is won by the merchant.
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookDisputePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DisputeWonPostAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DisputeWonPostAsync(WebhookDisputePayload webhookDisputePayload = default(WebhookDisputePayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await DisputeWonPostWithHttpInfoAsync(UNKNOWN_BASE_TYPE, operationIndex, cancellationToken).ConfigureAwait(false);
+            await DisputeWonPostWithHttpInfoAsync(webhookDisputePayload, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         /// Dispute Won Occurs when a dispute challenge is won by the merchant.
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookDisputePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> DisputeWonPostWithHttpInfoAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> DisputeWonPostWithHttpInfoAsync(WebhookDisputePayload webhookDisputePayload = default(WebhookDisputePayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
@@ -1178,7 +1178,7 @@ namespace Solifyn.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = UNKNOWN_BASE_TYPE;
+            localVarRequestOptions.Data = webhookDisputePayload;
 
             localVarRequestOptions.Operation = "DefaultApi.DisputeWonPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1209,22 +1209,22 @@ namespace Solifyn.Api
         /// License Created Occurs when a new software license key is created or assigned to a customer purchase.
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license"> (optional)</param>
+        /// <param name="webhookLicensePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void LicenseCreatedPost(License license = default(License), int operationIndex = 0)
+        public void LicenseCreatedPost(WebhookLicensePayload webhookLicensePayload = default(WebhookLicensePayload), int operationIndex = 0)
         {
-            LicenseCreatedPostWithHttpInfo(license);
+            LicenseCreatedPostWithHttpInfo(webhookLicensePayload);
         }
 
         /// <summary>
         /// License Created Occurs when a new software license key is created or assigned to a customer purchase.
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license"> (optional)</param>
+        /// <param name="webhookLicensePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Solifyn.Client.ApiResponse<Object> LicenseCreatedPostWithHttpInfo(License license = default(License), int operationIndex = 0)
+        public Solifyn.Client.ApiResponse<Object> LicenseCreatedPostWithHttpInfo(WebhookLicensePayload webhookLicensePayload = default(WebhookLicensePayload), int operationIndex = 0)
         {
             Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
 
@@ -1248,7 +1248,7 @@ namespace Solifyn.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = license;
+            localVarRequestOptions.Data = webhookLicensePayload;
 
             localVarRequestOptions.Operation = "DefaultApi.LicenseCreatedPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1278,24 +1278,24 @@ namespace Solifyn.Api
         /// License Created Occurs when a new software license key is created or assigned to a customer purchase.
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license"> (optional)</param>
+        /// <param name="webhookLicensePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task LicenseCreatedPostAsync(License license = default(License), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task LicenseCreatedPostAsync(WebhookLicensePayload webhookLicensePayload = default(WebhookLicensePayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await LicenseCreatedPostWithHttpInfoAsync(license, operationIndex, cancellationToken).ConfigureAwait(false);
+            await LicenseCreatedPostWithHttpInfoAsync(webhookLicensePayload, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         /// License Created Occurs when a new software license key is created or assigned to a customer purchase.
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license"> (optional)</param>
+        /// <param name="webhookLicensePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> LicenseCreatedPostWithHttpInfoAsync(License license = default(License), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> LicenseCreatedPostWithHttpInfoAsync(WebhookLicensePayload webhookLicensePayload = default(WebhookLicensePayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
@@ -1320,7 +1320,7 @@ namespace Solifyn.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = license;
+            localVarRequestOptions.Data = webhookLicensePayload;
 
             localVarRequestOptions.Operation = "DefaultApi.LicenseCreatedPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1351,22 +1351,22 @@ namespace Solifyn.Api
         /// License Revoked Occurs when a software license key is revoked (e.g., due to subscription cancellation, refund, or dispute).
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license"> (optional)</param>
+        /// <param name="webhookLicensePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void LicenseRevokedPost(License license = default(License), int operationIndex = 0)
+        public void LicenseRevokedPost(WebhookLicensePayload webhookLicensePayload = default(WebhookLicensePayload), int operationIndex = 0)
         {
-            LicenseRevokedPostWithHttpInfo(license);
+            LicenseRevokedPostWithHttpInfo(webhookLicensePayload);
         }
 
         /// <summary>
         /// License Revoked Occurs when a software license key is revoked (e.g., due to subscription cancellation, refund, or dispute).
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license"> (optional)</param>
+        /// <param name="webhookLicensePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Solifyn.Client.ApiResponse<Object> LicenseRevokedPostWithHttpInfo(License license = default(License), int operationIndex = 0)
+        public Solifyn.Client.ApiResponse<Object> LicenseRevokedPostWithHttpInfo(WebhookLicensePayload webhookLicensePayload = default(WebhookLicensePayload), int operationIndex = 0)
         {
             Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
 
@@ -1390,7 +1390,7 @@ namespace Solifyn.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = license;
+            localVarRequestOptions.Data = webhookLicensePayload;
 
             localVarRequestOptions.Operation = "DefaultApi.LicenseRevokedPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1420,24 +1420,24 @@ namespace Solifyn.Api
         /// License Revoked Occurs when a software license key is revoked (e.g., due to subscription cancellation, refund, or dispute).
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license"> (optional)</param>
+        /// <param name="webhookLicensePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task LicenseRevokedPostAsync(License license = default(License), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task LicenseRevokedPostAsync(WebhookLicensePayload webhookLicensePayload = default(WebhookLicensePayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await LicenseRevokedPostWithHttpInfoAsync(license, operationIndex, cancellationToken).ConfigureAwait(false);
+            await LicenseRevokedPostWithHttpInfoAsync(webhookLicensePayload, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         /// License Revoked Occurs when a software license key is revoked (e.g., due to subscription cancellation, refund, or dispute).
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license"> (optional)</param>
+        /// <param name="webhookLicensePayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> LicenseRevokedPostWithHttpInfoAsync(License license = default(License), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> LicenseRevokedPostWithHttpInfoAsync(WebhookLicensePayload webhookLicensePayload = default(WebhookLicensePayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
@@ -1462,7 +1462,7 @@ namespace Solifyn.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = license;
+            localVarRequestOptions.Data = webhookLicensePayload;
 
             localVarRequestOptions.Operation = "DefaultApi.LicenseRevokedPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1493,22 +1493,22 @@ namespace Solifyn.Api
         /// Payment Created Occurs when a new payment is initiated (e.g., at checkout start or subscription creation). The payment may still be in an incomplete or pending state.
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookPaymentPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void PaymentCreatedPost(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0)
+        public void PaymentCreatedPost(WebhookPaymentPayload webhookPaymentPayload = default(WebhookPaymentPayload), int operationIndex = 0)
         {
-            PaymentCreatedPostWithHttpInfo(UNKNOWN_BASE_TYPE);
+            PaymentCreatedPostWithHttpInfo(webhookPaymentPayload);
         }
 
         /// <summary>
         /// Payment Created Occurs when a new payment is initiated (e.g., at checkout start or subscription creation). The payment may still be in an incomplete or pending state.
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookPaymentPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Solifyn.Client.ApiResponse<Object> PaymentCreatedPostWithHttpInfo(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0)
+        public Solifyn.Client.ApiResponse<Object> PaymentCreatedPostWithHttpInfo(WebhookPaymentPayload webhookPaymentPayload = default(WebhookPaymentPayload), int operationIndex = 0)
         {
             Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
 
@@ -1532,7 +1532,7 @@ namespace Solifyn.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = UNKNOWN_BASE_TYPE;
+            localVarRequestOptions.Data = webhookPaymentPayload;
 
             localVarRequestOptions.Operation = "DefaultApi.PaymentCreatedPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1562,24 +1562,24 @@ namespace Solifyn.Api
         /// Payment Created Occurs when a new payment is initiated (e.g., at checkout start or subscription creation). The payment may still be in an incomplete or pending state.
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookPaymentPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task PaymentCreatedPostAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task PaymentCreatedPostAsync(WebhookPaymentPayload webhookPaymentPayload = default(WebhookPaymentPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await PaymentCreatedPostWithHttpInfoAsync(UNKNOWN_BASE_TYPE, operationIndex, cancellationToken).ConfigureAwait(false);
+            await PaymentCreatedPostWithHttpInfoAsync(webhookPaymentPayload, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         /// Payment Created Occurs when a new payment is initiated (e.g., at checkout start or subscription creation). The payment may still be in an incomplete or pending state.
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookPaymentPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> PaymentCreatedPostWithHttpInfoAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> PaymentCreatedPostWithHttpInfoAsync(WebhookPaymentPayload webhookPaymentPayload = default(WebhookPaymentPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
@@ -1604,7 +1604,7 @@ namespace Solifyn.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = UNKNOWN_BASE_TYPE;
+            localVarRequestOptions.Data = webhookPaymentPayload;
 
             localVarRequestOptions.Operation = "DefaultApi.PaymentCreatedPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1919,22 +1919,22 @@ namespace Solifyn.Api
         /// Refund Failed Occurs when a payment refund fails.
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookRefundPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void RefundFailedPost(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0)
+        public void RefundFailedPost(WebhookRefundPayload webhookRefundPayload = default(WebhookRefundPayload), int operationIndex = 0)
         {
-            RefundFailedPostWithHttpInfo(UNKNOWN_BASE_TYPE);
+            RefundFailedPostWithHttpInfo(webhookRefundPayload);
         }
 
         /// <summary>
         /// Refund Failed Occurs when a payment refund fails.
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookRefundPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Solifyn.Client.ApiResponse<Object> RefundFailedPostWithHttpInfo(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0)
+        public Solifyn.Client.ApiResponse<Object> RefundFailedPostWithHttpInfo(WebhookRefundPayload webhookRefundPayload = default(WebhookRefundPayload), int operationIndex = 0)
         {
             Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
 
@@ -1958,7 +1958,7 @@ namespace Solifyn.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = UNKNOWN_BASE_TYPE;
+            localVarRequestOptions.Data = webhookRefundPayload;
 
             localVarRequestOptions.Operation = "DefaultApi.RefundFailedPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1988,24 +1988,24 @@ namespace Solifyn.Api
         /// Refund Failed Occurs when a payment refund fails.
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookRefundPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task RefundFailedPostAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task RefundFailedPostAsync(WebhookRefundPayload webhookRefundPayload = default(WebhookRefundPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await RefundFailedPostWithHttpInfoAsync(UNKNOWN_BASE_TYPE, operationIndex, cancellationToken).ConfigureAwait(false);
+            await RefundFailedPostWithHttpInfoAsync(webhookRefundPayload, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         /// Refund Failed Occurs when a payment refund fails.
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookRefundPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> RefundFailedPostWithHttpInfoAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> RefundFailedPostWithHttpInfoAsync(WebhookRefundPayload webhookRefundPayload = default(WebhookRefundPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
@@ -2030,7 +2030,7 @@ namespace Solifyn.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = UNKNOWN_BASE_TYPE;
+            localVarRequestOptions.Data = webhookRefundPayload;
 
             localVarRequestOptions.Operation = "DefaultApi.RefundFailedPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -2061,22 +2061,22 @@ namespace Solifyn.Api
         /// Refund Succeeded Occurs when a payment refund is confirmed as succeeded.
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookRefundPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void RefundSucceededPost(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0)
+        public void RefundSucceededPost(WebhookRefundPayload webhookRefundPayload = default(WebhookRefundPayload), int operationIndex = 0)
         {
-            RefundSucceededPostWithHttpInfo(UNKNOWN_BASE_TYPE);
+            RefundSucceededPostWithHttpInfo(webhookRefundPayload);
         }
 
         /// <summary>
         /// Refund Succeeded Occurs when a payment refund is confirmed as succeeded.
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookRefundPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Solifyn.Client.ApiResponse<Object> RefundSucceededPostWithHttpInfo(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0)
+        public Solifyn.Client.ApiResponse<Object> RefundSucceededPostWithHttpInfo(WebhookRefundPayload webhookRefundPayload = default(WebhookRefundPayload), int operationIndex = 0)
         {
             Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
 
@@ -2100,7 +2100,7 @@ namespace Solifyn.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = UNKNOWN_BASE_TYPE;
+            localVarRequestOptions.Data = webhookRefundPayload;
 
             localVarRequestOptions.Operation = "DefaultApi.RefundSucceededPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -2130,24 +2130,24 @@ namespace Solifyn.Api
         /// Refund Succeeded Occurs when a payment refund is confirmed as succeeded.
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookRefundPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task RefundSucceededPostAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task RefundSucceededPostAsync(WebhookRefundPayload webhookRefundPayload = default(WebhookRefundPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await RefundSucceededPostWithHttpInfoAsync(UNKNOWN_BASE_TYPE, operationIndex, cancellationToken).ConfigureAwait(false);
+            await RefundSucceededPostWithHttpInfoAsync(webhookRefundPayload, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         /// Refund Succeeded Occurs when a payment refund is confirmed as succeeded.
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookRefundPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> RefundSucceededPostWithHttpInfoAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> RefundSucceededPostWithHttpInfoAsync(WebhookRefundPayload webhookRefundPayload = default(WebhookRefundPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
@@ -2172,7 +2172,7 @@ namespace Solifyn.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = UNKNOWN_BASE_TYPE;
+            localVarRequestOptions.Data = webhookRefundPayload;
 
             localVarRequestOptions.Operation = "DefaultApi.RefundSucceededPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -2203,22 +2203,22 @@ namespace Solifyn.Api
         /// Subscription Created Occurs when a customer subscription is successfully started.
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookSubscriptionPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void SubscriptionCreatedPost(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0)
+        public void SubscriptionCreatedPost(WebhookSubscriptionPayload webhookSubscriptionPayload = default(WebhookSubscriptionPayload), int operationIndex = 0)
         {
-            SubscriptionCreatedPostWithHttpInfo(UNKNOWN_BASE_TYPE);
+            SubscriptionCreatedPostWithHttpInfo(webhookSubscriptionPayload);
         }
 
         /// <summary>
         /// Subscription Created Occurs when a customer subscription is successfully started.
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookSubscriptionPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Solifyn.Client.ApiResponse<Object> SubscriptionCreatedPostWithHttpInfo(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0)
+        public Solifyn.Client.ApiResponse<Object> SubscriptionCreatedPostWithHttpInfo(WebhookSubscriptionPayload webhookSubscriptionPayload = default(WebhookSubscriptionPayload), int operationIndex = 0)
         {
             Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
 
@@ -2242,7 +2242,7 @@ namespace Solifyn.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = UNKNOWN_BASE_TYPE;
+            localVarRequestOptions.Data = webhookSubscriptionPayload;
 
             localVarRequestOptions.Operation = "DefaultApi.SubscriptionCreatedPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -2272,24 +2272,24 @@ namespace Solifyn.Api
         /// Subscription Created Occurs when a customer subscription is successfully started.
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookSubscriptionPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task SubscriptionCreatedPostAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task SubscriptionCreatedPostAsync(WebhookSubscriptionPayload webhookSubscriptionPayload = default(WebhookSubscriptionPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await SubscriptionCreatedPostWithHttpInfoAsync(UNKNOWN_BASE_TYPE, operationIndex, cancellationToken).ConfigureAwait(false);
+            await SubscriptionCreatedPostWithHttpInfoAsync(webhookSubscriptionPayload, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         /// Subscription Created Occurs when a customer subscription is successfully started.
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookSubscriptionPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> SubscriptionCreatedPostWithHttpInfoAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> SubscriptionCreatedPostWithHttpInfoAsync(WebhookSubscriptionPayload webhookSubscriptionPayload = default(WebhookSubscriptionPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
@@ -2314,7 +2314,7 @@ namespace Solifyn.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = UNKNOWN_BASE_TYPE;
+            localVarRequestOptions.Data = webhookSubscriptionPayload;
 
             localVarRequestOptions.Operation = "DefaultApi.SubscriptionCreatedPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -2345,22 +2345,22 @@ namespace Solifyn.Api
         /// Subscription Deactivated Occurs when a customer subscription is deactivated or expired.
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookSubscriptionPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void SubscriptionDeactivatedPost(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0)
+        public void SubscriptionDeactivatedPost(WebhookSubscriptionPayload webhookSubscriptionPayload = default(WebhookSubscriptionPayload), int operationIndex = 0)
         {
-            SubscriptionDeactivatedPostWithHttpInfo(UNKNOWN_BASE_TYPE);
+            SubscriptionDeactivatedPostWithHttpInfo(webhookSubscriptionPayload);
         }
 
         /// <summary>
         /// Subscription Deactivated Occurs when a customer subscription is deactivated or expired.
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookSubscriptionPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Solifyn.Client.ApiResponse<Object> SubscriptionDeactivatedPostWithHttpInfo(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0)
+        public Solifyn.Client.ApiResponse<Object> SubscriptionDeactivatedPostWithHttpInfo(WebhookSubscriptionPayload webhookSubscriptionPayload = default(WebhookSubscriptionPayload), int operationIndex = 0)
         {
             Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
 
@@ -2384,7 +2384,7 @@ namespace Solifyn.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = UNKNOWN_BASE_TYPE;
+            localVarRequestOptions.Data = webhookSubscriptionPayload;
 
             localVarRequestOptions.Operation = "DefaultApi.SubscriptionDeactivatedPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -2414,24 +2414,24 @@ namespace Solifyn.Api
         /// Subscription Deactivated Occurs when a customer subscription is deactivated or expired.
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookSubscriptionPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task SubscriptionDeactivatedPostAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task SubscriptionDeactivatedPostAsync(WebhookSubscriptionPayload webhookSubscriptionPayload = default(WebhookSubscriptionPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await SubscriptionDeactivatedPostWithHttpInfoAsync(UNKNOWN_BASE_TYPE, operationIndex, cancellationToken).ConfigureAwait(false);
+            await SubscriptionDeactivatedPostWithHttpInfoAsync(webhookSubscriptionPayload, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         /// Subscription Deactivated Occurs when a customer subscription is deactivated or expired.
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookSubscriptionPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> SubscriptionDeactivatedPostWithHttpInfoAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> SubscriptionDeactivatedPostWithHttpInfoAsync(WebhookSubscriptionPayload webhookSubscriptionPayload = default(WebhookSubscriptionPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
@@ -2456,7 +2456,7 @@ namespace Solifyn.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = UNKNOWN_BASE_TYPE;
+            localVarRequestOptions.Data = webhookSubscriptionPayload;
 
             localVarRequestOptions.Operation = "DefaultApi.SubscriptionDeactivatedPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -2487,22 +2487,22 @@ namespace Solifyn.Api
         /// Subscription Updated Occurs when a customer subscription is updated (e.g., cancel at period end changes).
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookSubscriptionPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void SubscriptionUpdatedPost(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0)
+        public void SubscriptionUpdatedPost(WebhookSubscriptionPayload webhookSubscriptionPayload = default(WebhookSubscriptionPayload), int operationIndex = 0)
         {
-            SubscriptionUpdatedPostWithHttpInfo(UNKNOWN_BASE_TYPE);
+            SubscriptionUpdatedPostWithHttpInfo(webhookSubscriptionPayload);
         }
 
         /// <summary>
         /// Subscription Updated Occurs when a customer subscription is updated (e.g., cancel at period end changes).
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookSubscriptionPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Solifyn.Client.ApiResponse<Object> SubscriptionUpdatedPostWithHttpInfo(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0)
+        public Solifyn.Client.ApiResponse<Object> SubscriptionUpdatedPostWithHttpInfo(WebhookSubscriptionPayload webhookSubscriptionPayload = default(WebhookSubscriptionPayload), int operationIndex = 0)
         {
             Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
 
@@ -2526,7 +2526,7 @@ namespace Solifyn.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = UNKNOWN_BASE_TYPE;
+            localVarRequestOptions.Data = webhookSubscriptionPayload;
 
             localVarRequestOptions.Operation = "DefaultApi.SubscriptionUpdatedPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -2556,24 +2556,24 @@ namespace Solifyn.Api
         /// Subscription Updated Occurs when a customer subscription is updated (e.g., cancel at period end changes).
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookSubscriptionPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task SubscriptionUpdatedPostAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task SubscriptionUpdatedPostAsync(WebhookSubscriptionPayload webhookSubscriptionPayload = default(WebhookSubscriptionPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await SubscriptionUpdatedPostWithHttpInfoAsync(UNKNOWN_BASE_TYPE, operationIndex, cancellationToken).ConfigureAwait(false);
+            await SubscriptionUpdatedPostWithHttpInfoAsync(webhookSubscriptionPayload, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
         /// Subscription Updated Occurs when a customer subscription is updated (e.g., cancel at period end changes).
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="UNKNOWN_BASE_TYPE"> (optional)</param>
+        /// <param name="webhookSubscriptionPayload"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> SubscriptionUpdatedPostWithHttpInfoAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = default(UNKNOWN_BASE_TYPE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> SubscriptionUpdatedPostWithHttpInfoAsync(WebhookSubscriptionPayload webhookSubscriptionPayload = default(WebhookSubscriptionPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
@@ -2598,7 +2598,7 @@ namespace Solifyn.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = UNKNOWN_BASE_TYPE;
+            localVarRequestOptions.Data = webhookSubscriptionPayload;
 
             localVarRequestOptions.Operation = "DefaultApi.SubscriptionUpdatedPost";
             localVarRequestOptions.OperationIndex = operationIndex;

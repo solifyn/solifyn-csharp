@@ -44,6 +44,7 @@ namespace Solifyn.Model
         /// <param name="customer">Customer details. (required).</param>
         /// <param name="totalAmount">Total paid amount in cents. (required).</param>
         /// <param name="subtotal">Subtotal amount in cents. (required).</param>
+        /// <param name="usdTotal">Total paid amount converted to USD..</param>
         /// <param name="taxAmount">Tax amount in cents. (required).</param>
         /// <param name="applicationFee">Application fee in cents. (required).</param>
         /// <param name="amountAfterFees">Net amount after fees in cents. (required).</param>
@@ -64,7 +65,7 @@ namespace Solifyn.Model
         /// <param name="businessId">Business unique ID identifier. (required).</param>
         /// <param name="businessName">Business display title/name. (required).</param>
         /// <param name="billingReason">Billing reason detail..</param>
-        public Order(string id = default(string), string invoiceUrl = default(string), OrderCustomer customer = default(OrderCustomer), int totalAmount = default(int), int subtotal = default(int), int taxAmount = default(int), int applicationFee = default(int), int amountAfterFees = default(int), string currency = default(string), string status = default(string), DateTime createdAt = default(DateTime), DateTime paidAt = default(DateTime), string paymentMethod = default(string), string cardLastFour = default(string), string cardNetwork = default(string), string cardType = default(string), OrderBilling billing = default(OrderBilling), List<OrderProductCart> productCart = default(List<OrderProductCart>), Object metadata = default(Object), OrderDetail varOrder = default(OrderDetail), bool refundable = default(bool), List<OrderRefund> refunds = default(List<OrderRefund>), string businessId = default(string), string businessName = default(string), string billingReason = default(string))
+        public Order(string id = default(string), string invoiceUrl = default(string), OrderCustomer customer = default(OrderCustomer), int totalAmount = default(int), int subtotal = default(int), decimal usdTotal = default(decimal), int taxAmount = default(int), int applicationFee = default(int), int amountAfterFees = default(int), string currency = default(string), string status = default(string), DateTime createdAt = default(DateTime), DateTime paidAt = default(DateTime), string paymentMethod = default(string), string cardLastFour = default(string), string cardNetwork = default(string), string cardType = default(string), OrderBilling billing = default(OrderBilling), List<OrderProductCart> productCart = default(List<OrderProductCart>), Object metadata = default(Object), OrderDetail varOrder = default(OrderDetail), bool refundable = default(bool), List<OrderRefund> refunds = default(List<OrderRefund>), string businessId = default(string), string businessName = default(string), string billingReason = default(string))
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -127,6 +128,7 @@ namespace Solifyn.Model
                 throw new ArgumentNullException("businessName is a required property for Order and cannot be null");
             }
             this.BusinessName = businessName;
+            this.UsdTotal = usdTotal;
             this.PaidAt = paidAt;
             this.CardLastFour = cardLastFour;
             this.CardNetwork = cardNetwork;
@@ -184,6 +186,16 @@ namespace Solifyn.Model
         */
         [DataMember(Name = "subtotal", IsRequired = true, EmitDefaultValue = true)]
         public int Subtotal { get; set; }
+
+        /// <summary>
+        /// Total paid amount converted to USD.
+        /// </summary>
+        /// <value>Total paid amount converted to USD.</value>
+        /*
+        <example>30.6</example>
+        */
+        [DataMember(Name = "usdTotal", EmitDefaultValue = false)]
+        public decimal UsdTotal { get; set; }
 
         /// <summary>
         /// Tax amount in cents.
@@ -383,6 +395,7 @@ namespace Solifyn.Model
             sb.Append("  Customer: ").Append(Customer).Append("\n");
             sb.Append("  TotalAmount: ").Append(TotalAmount).Append("\n");
             sb.Append("  Subtotal: ").Append(Subtotal).Append("\n");
+            sb.Append("  UsdTotal: ").Append(UsdTotal).Append("\n");
             sb.Append("  TaxAmount: ").Append(TaxAmount).Append("\n");
             sb.Append("  ApplicationFee: ").Append(ApplicationFee).Append("\n");
             sb.Append("  AmountAfterFees: ").Append(AmountAfterFees).Append("\n");

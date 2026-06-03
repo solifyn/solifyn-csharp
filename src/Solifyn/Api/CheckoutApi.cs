@@ -73,6 +73,29 @@ namespace Solifyn.Api
         /// <returns>ApiResponse of CheckoutResponseDto</returns>
         ApiResponse<CheckoutResponseDto> CheckoutCreateCollectionWithHttpInfo(CreateCollectionCheckoutDto createCollectionCheckoutDto, int operationIndex = 0);
         /// <summary>
+        /// Create Setup Checkout Configuration
+        /// </summary>
+        /// <remarks>
+        /// Create a new checkout session in setup mode for collecting cards without immediate charge.
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createSetupCheckoutDto"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        void CheckoutCreateSetup(CreateSetupCheckoutDto createSetupCheckoutDto, int operationIndex = 0);
+
+        /// <summary>
+        /// Create Setup Checkout Configuration
+        /// </summary>
+        /// <remarks>
+        /// Create a new checkout session in setup mode for collecting cards without immediate charge.
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createSetupCheckoutDto"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> CheckoutCreateSetupWithHttpInfo(CreateSetupCheckoutDto createSetupCheckoutDto, int operationIndex = 0);
+        /// <summary>
         /// Get Checkout Session Details
         /// </summary>
         /// <remarks>
@@ -208,6 +231,31 @@ namespace Solifyn.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CheckoutResponseDto)</returns>
         System.Threading.Tasks.Task<ApiResponse<CheckoutResponseDto>> CheckoutCreateCollectionWithHttpInfoAsync(CreateCollectionCheckoutDto createCollectionCheckoutDto, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// Create Setup Checkout Configuration
+        /// </summary>
+        /// <remarks>
+        /// Create a new checkout session in setup mode for collecting cards without immediate charge.
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createSetupCheckoutDto"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task CheckoutCreateSetupAsync(CreateSetupCheckoutDto createSetupCheckoutDto, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Create Setup Checkout Configuration
+        /// </summary>
+        /// <remarks>
+        /// Create a new checkout session in setup mode for collecting cards without immediate charge.
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createSetupCheckoutDto"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> CheckoutCreateSetupWithHttpInfoAsync(CreateSetupCheckoutDto createSetupCheckoutDto, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get Checkout Session Details
         /// </summary>
@@ -694,6 +742,148 @@ namespace Solifyn.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("CheckoutCreateCollection", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Create Setup Checkout Configuration Create a new checkout session in setup mode for collecting cards without immediate charge.
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createSetupCheckoutDto"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public void CheckoutCreateSetup(CreateSetupCheckoutDto createSetupCheckoutDto, int operationIndex = 0)
+        {
+            CheckoutCreateSetupWithHttpInfo(createSetupCheckoutDto);
+        }
+
+        /// <summary>
+        /// Create Setup Checkout Configuration Create a new checkout session in setup mode for collecting cards without immediate charge.
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createSetupCheckoutDto"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Solifyn.Client.ApiResponse<Object> CheckoutCreateSetupWithHttpInfo(CreateSetupCheckoutDto createSetupCheckoutDto, int operationIndex = 0)
+        {
+            // verify the required parameter 'createSetupCheckoutDto' is set
+            if (createSetupCheckoutDto == null)
+            {
+                throw new Solifyn.Client.ApiException(400, "Missing required parameter 'createSetupCheckoutDto' when calling CheckoutApi->CheckoutCreateSetup");
+            }
+
+            Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+            };
+
+            var localVarContentType = Solifyn.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Solifyn.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = createSetupCheckoutDto;
+
+            localVarRequestOptions.Operation = "CheckoutApi.CheckoutCreateSetup";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/v1/checkout/setup-configuration", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CheckoutCreateSetup", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Create Setup Checkout Configuration Create a new checkout session in setup mode for collecting cards without immediate charge.
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createSetupCheckoutDto"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task CheckoutCreateSetupAsync(CreateSetupCheckoutDto createSetupCheckoutDto, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            await CheckoutCreateSetupWithHttpInfoAsync(createSetupCheckoutDto, operationIndex, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Create Setup Checkout Configuration Create a new checkout session in setup mode for collecting cards without immediate charge.
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createSetupCheckoutDto"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> CheckoutCreateSetupWithHttpInfoAsync(CreateSetupCheckoutDto createSetupCheckoutDto, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'createSetupCheckoutDto' is set
+            if (createSetupCheckoutDto == null)
+            {
+                throw new Solifyn.Client.ApiException(400, "Missing required parameter 'createSetupCheckoutDto' when calling CheckoutApi->CheckoutCreateSetup");
+            }
+
+
+            Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+            };
+
+            var localVarContentType = Solifyn.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Solifyn.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = createSetupCheckoutDto;
+
+            localVarRequestOptions.Operation = "CheckoutApi.CheckoutCreateSetup";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/v1/checkout/setup-configuration", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CheckoutCreateSetup", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

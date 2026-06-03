@@ -607,8 +607,9 @@ namespace Solifyn.Model
         /// <param name="customFields">Form field configurations to gather during checkout..</param>
         /// <param name="stock">Initial stock quantity limit..</param>
         /// <param name="isListed">Whether the product is publicly visible. (default to true).</param>
+        /// <param name="isFree">Whether the product is free of charge. (default to false).</param>
         /// <param name="addons">Product addons configurations..</param>
-        public ProductUpdate(string name = default(string), string description = default(string), decimal price = default(decimal), CurrencyEnum? currency = CurrencyEnum.USD, string imageUrl = default(string), TaxCategoryEnum? taxCategory = default(TaxCategoryEnum?), decimal discount = default(decimal), bool hasLicenseKey = false, bool hasDigitalDelivery = false, bool isTaxInclusive = false, int activationLimit = default(int), string brandId = default(string), int billingPeriod = default(int), int trialPeriodDays = default(int), int expirationDays = default(int), string statementDescriptor = default(string), bool payWhatYouWant = false, Dictionary<string, string> metadata = default(Dictionary<string, string>), List<ProductCreateCustomFieldsInner> customFields = default(List<ProductCreateCustomFieldsInner>), int stock = default(int), bool isListed = true, List<ProductCreateAddonsInner> addons = default(List<ProductCreateAddonsInner>))
+        public ProductUpdate(string name = default(string), string description = default(string), decimal price = default(decimal), CurrencyEnum? currency = CurrencyEnum.USD, string imageUrl = default(string), TaxCategoryEnum? taxCategory = default(TaxCategoryEnum?), decimal discount = default(decimal), bool hasLicenseKey = false, bool hasDigitalDelivery = false, bool isTaxInclusive = false, int activationLimit = default(int), string brandId = default(string), int billingPeriod = default(int), int trialPeriodDays = default(int), int expirationDays = default(int), string statementDescriptor = default(string), bool payWhatYouWant = false, Dictionary<string, string> metadata = default(Dictionary<string, string>), List<ProductCreateCustomFieldsInner> customFields = default(List<ProductCreateCustomFieldsInner>), int stock = default(int), bool isListed = true, bool isFree = false, List<ProductCreateAddonsInner> addons = default(List<ProductCreateAddonsInner>))
         {
             this.Name = name;
             this.Description = description;
@@ -631,6 +632,7 @@ namespace Solifyn.Model
             this.CustomFields = customFields;
             this.Stock = stock;
             this.IsListed = isListed;
+            this.IsFree = isFree;
             this.Addons = addons;
         }
 
@@ -819,6 +821,16 @@ namespace Solifyn.Model
         public bool IsListed { get; set; }
 
         /// <summary>
+        /// Whether the product is free of charge.
+        /// </summary>
+        /// <value>Whether the product is free of charge.</value>
+        /*
+        <example>false</example>
+        */
+        [DataMember(Name = "isFree", EmitDefaultValue = true)]
+        public bool IsFree { get; set; }
+
+        /// <summary>
         /// Product addons configurations.
         /// </summary>
         /// <value>Product addons configurations.</value>
@@ -854,6 +866,7 @@ namespace Solifyn.Model
             sb.Append("  CustomFields: ").Append(CustomFields).Append("\n");
             sb.Append("  Stock: ").Append(Stock).Append("\n");
             sb.Append("  IsListed: ").Append(IsListed).Append("\n");
+            sb.Append("  IsFree: ").Append(IsFree).Append("\n");
             sb.Append("  Addons: ").Append(Addons).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

@@ -15,6 +15,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Mime;
 using Solifyn.Client;
+using Solifyn.Model;
 
 namespace Solifyn.Api
 {
@@ -26,175 +27,201 @@ namespace Solifyn.Api
     {
         #region Synchronous Operations
         /// <summary>
+        /// Create Developer API Key
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createApiKeyDto"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiKeyResponseDto</returns>
+        ApiKeyResponseDto DeveloperCreateApiKey(CreateApiKeyDto createApiKeyDto, int operationIndex = 0);
+
+        /// <summary>
+        /// Create Developer API Key
+        /// </summary>
+        /// <remarks>
         /// 
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createApiKeyDto"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of ApiKeyResponseDto</returns>
+        ApiResponse<ApiKeyResponseDto> DeveloperCreateApiKeyWithHttpInfo(CreateApiKeyDto createApiKeyDto, int operationIndex = 0);
+        /// <summary>
+        /// Create Webhook Endpoint
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createWebhookEndpointDto"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>WebhookEndpointResponseDto</returns>
+        WebhookEndpointResponseDto DeveloperCreateWebhook(CreateWebhookEndpointDto createWebhookEndpointDto, int operationIndex = 0);
+
+        /// <summary>
+        /// Create Webhook Endpoint
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createWebhookEndpointDto"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of WebhookEndpointResponseDto</returns>
+        ApiResponse<WebhookEndpointResponseDto> DeveloperCreateWebhookWithHttpInfo(CreateWebhookEndpointDto createWebhookEndpointDto, int operationIndex = 0);
+        /// <summary>
+        /// Delete Webhook Endpoint
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The webhook endpoint ID</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        void DeveloperDeleteWebhook(string id, int operationIndex = 0);
+
+        /// <summary>
+        /// Delete Webhook Endpoint
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The webhook endpoint ID</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DeveloperDeleteWebhookWithHttpInfo(string id, int operationIndex = 0);
+        /// <summary>
+        /// Retrieve Hosted Webhooks Portal URL
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        void DeveloperControllerCreateApiKey(int operationIndex = 0);
+        /// <returns>AppPortalUrlResponseDto</returns>
+        AppPortalUrlResponseDto DeveloperGetAppPortal(int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Retrieve Hosted Webhooks Portal URL
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeveloperControllerCreateApiKeyWithHttpInfo(int operationIndex = 0);
+        /// <returns>ApiResponse of AppPortalUrlResponseDto</returns>
+        ApiResponse<AppPortalUrlResponseDto> DeveloperGetAppPortalWithHttpInfo(int operationIndex = 0);
         /// <summary>
+        /// Retrieve Webhook Endpoint Details
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The webhook endpoint ID</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>WebhookEndpointResponseDto</returns>
+        WebhookEndpointResponseDto DeveloperGetWebhook(string id, int operationIndex = 0);
+
+        /// <summary>
+        /// Retrieve Webhook Endpoint Details
+        /// </summary>
+        /// <remarks>
         /// 
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The webhook endpoint ID</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of WebhookEndpointResponseDto</returns>
+        ApiResponse<WebhookEndpointResponseDto> DeveloperGetWebhookWithHttpInfo(string id, int operationIndex = 0);
+        /// <summary>
+        /// List Developer API Keys
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        void DeveloperControllerCreateWebhookEndpoint(int operationIndex = 0);
+        /// <returns>List&lt;ApiKeyResponseDto&gt;</returns>
+        List<ApiKeyResponseDto> DeveloperListApiKeys(int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// List Developer API Keys
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeveloperControllerCreateWebhookEndpointWithHttpInfo(int operationIndex = 0);
+        /// <returns>ApiResponse of List&lt;ApiKeyResponseDto&gt;</returns>
+        ApiResponse<List<ApiKeyResponseDto>> DeveloperListApiKeysWithHttpInfo(int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Retrieve Webhook Delivery Logs
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The webhook endpoint ID</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        void DeveloperControllerDeleteApiKey(string id, int operationIndex = 0);
+        /// <returns>List&lt;WebhookDeliveryResponseDto&gt;</returns>
+        List<WebhookDeliveryResponseDto> DeveloperListWebhookDeliveries(string id, int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Retrieve Webhook Delivery Logs
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The webhook endpoint ID</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeveloperControllerDeleteApiKeyWithHttpInfo(string id, int operationIndex = 0);
+        /// <returns>ApiResponse of List&lt;WebhookDeliveryResponseDto&gt;</returns>
+        ApiResponse<List<WebhookDeliveryResponseDto>> DeveloperListWebhookDeliveriesWithHttpInfo(string id, int operationIndex = 0);
         /// <summary>
-        /// 
+        /// List Webhook Endpoints
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        void DeveloperControllerDeleteWebhookEndpoint(string id, int operationIndex = 0);
+        /// <returns>List&lt;WebhookEndpointResponseDto&gt;</returns>
+        List<WebhookEndpointResponseDto> DeveloperListWebhooks(int operationIndex = 0);
 
         /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeveloperControllerDeleteWebhookEndpointWithHttpInfo(string id, int operationIndex = 0);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        void DeveloperControllerGetApiKeys(int operationIndex = 0);
-
-        /// <summary>
-        /// 
+        /// List Webhook Endpoints
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeveloperControllerGetApiKeysWithHttpInfo(int operationIndex = 0);
+        /// <returns>ApiResponse of List&lt;WebhookEndpointResponseDto&gt;</returns>
+        ApiResponse<List<WebhookEndpointResponseDto>> DeveloperListWebhooksWithHttpInfo(int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Revoke API Key
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The API key ID</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void DeveloperControllerGetAppPortalUrl(int operationIndex = 0);
+        void DeveloperRevokeApiKey(string id, int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Revoke API Key
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The API key ID</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeveloperControllerGetAppPortalUrlWithHttpInfo(int operationIndex = 0);
+        ApiResponse<Object> DeveloperRevokeApiKeyWithHttpInfo(string id, int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Update Webhook Endpoint
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The webhook endpoint ID</param>
+        /// <param name="updateWebhookEndpointDto"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        void DeveloperControllerGetWebhookDeliveries(string id, int operationIndex = 0);
+        /// <returns>WebhookEndpointResponseDto</returns>
+        WebhookEndpointResponseDto DeveloperUpdateWebhook(string id, UpdateWebhookEndpointDto updateWebhookEndpointDto, int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Update Webhook Endpoint
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The webhook endpoint ID</param>
+        /// <param name="updateWebhookEndpointDto"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeveloperControllerGetWebhookDeliveriesWithHttpInfo(string id, int operationIndex = 0);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        void DeveloperControllerGetWebhookEndpoints(int operationIndex = 0);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeveloperControllerGetWebhookEndpointsWithHttpInfo(int operationIndex = 0);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        void DeveloperControllerUpdateWebhookEndpoint(string id, int operationIndex = 0);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeveloperControllerUpdateWebhookEndpointWithHttpInfo(string id, int operationIndex = 0);
+        /// <returns>ApiResponse of WebhookEndpointResponseDto</returns>
+        ApiResponse<WebhookEndpointResponseDto> DeveloperUpdateWebhookWithHttpInfo(string id, UpdateWebhookEndpointDto updateWebhookEndpointDto, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -205,19 +232,82 @@ namespace Solifyn.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// Create Developer API Key
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createApiKeyDto"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiKeyResponseDto</returns>
+        System.Threading.Tasks.Task<ApiKeyResponseDto> DeveloperCreateApiKeyAsync(CreateApiKeyDto createApiKeyDto, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Create Developer API Key
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createApiKeyDto"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ApiKeyResponseDto)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ApiKeyResponseDto>> DeveloperCreateApiKeyWithHttpInfoAsync(CreateApiKeyDto createApiKeyDto, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// Create Webhook Endpoint
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createWebhookEndpointDto"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of WebhookEndpointResponseDto</returns>
+        System.Threading.Tasks.Task<WebhookEndpointResponseDto> DeveloperCreateWebhookAsync(CreateWebhookEndpointDto createWebhookEndpointDto, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Create Webhook Endpoint
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createWebhookEndpointDto"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (WebhookEndpointResponseDto)</returns>
+        System.Threading.Tasks.Task<ApiResponse<WebhookEndpointResponseDto>> DeveloperCreateWebhookWithHttpInfoAsync(CreateWebhookEndpointDto createWebhookEndpointDto, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// Delete Webhook Endpoint
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The webhook endpoint ID</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeveloperControllerCreateApiKeyAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DeveloperDeleteWebhookAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
+        /// Delete Webhook Endpoint
+        /// </summary>
+        /// <remarks>
         /// 
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The webhook endpoint ID</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeveloperDeleteWebhookWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// Retrieve Hosted Webhooks Portal URL
         /// </summary>
         /// <remarks>
         /// 
@@ -225,200 +315,168 @@ namespace Solifyn.Api
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeveloperControllerCreateApiKeyWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of AppPortalUrlResponseDto</returns>
+        System.Threading.Tasks.Task<AppPortalUrlResponseDto> DeveloperGetAppPortalAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
         /// <summary>
-        /// 
+        /// Retrieve Hosted Webhooks Portal URL
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (AppPortalUrlResponseDto)</returns>
+        System.Threading.Tasks.Task<ApiResponse<AppPortalUrlResponseDto>> DeveloperGetAppPortalWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// Retrieve Webhook Endpoint Details
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The webhook endpoint ID</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of WebhookEndpointResponseDto</returns>
+        System.Threading.Tasks.Task<WebhookEndpointResponseDto> DeveloperGetWebhookAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Retrieve Webhook Endpoint Details
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The webhook endpoint ID</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (WebhookEndpointResponseDto)</returns>
+        System.Threading.Tasks.Task<ApiResponse<WebhookEndpointResponseDto>> DeveloperGetWebhookWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// List Developer API Keys
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;ApiKeyResponseDto&gt;</returns>
+        System.Threading.Tasks.Task<List<ApiKeyResponseDto>> DeveloperListApiKeysAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// List Developer API Keys
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;ApiKeyResponseDto&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<ApiKeyResponseDto>>> DeveloperListApiKeysWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// Retrieve Webhook Delivery Logs
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The webhook endpoint ID</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;WebhookDeliveryResponseDto&gt;</returns>
+        System.Threading.Tasks.Task<List<WebhookDeliveryResponseDto>> DeveloperListWebhookDeliveriesAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Retrieve Webhook Delivery Logs
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The webhook endpoint ID</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;WebhookDeliveryResponseDto&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<WebhookDeliveryResponseDto>>> DeveloperListWebhookDeliveriesWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// List Webhook Endpoints
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;WebhookEndpointResponseDto&gt;</returns>
+        System.Threading.Tasks.Task<List<WebhookEndpointResponseDto>> DeveloperListWebhooksAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// List Webhook Endpoints
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;WebhookEndpointResponseDto&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<WebhookEndpointResponseDto>>> DeveloperListWebhooksWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// Revoke API Key
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The API key ID</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeveloperControllerCreateWebhookEndpointAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DeveloperRevokeApiKeyAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Revoke API Key
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The API key ID</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeveloperControllerCreateWebhookEndpointWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeveloperRevokeApiKeyWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Update Webhook Endpoint
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The webhook endpoint ID</param>
+        /// <param name="updateWebhookEndpointDto"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeveloperControllerDeleteApiKeyAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of WebhookEndpointResponseDto</returns>
+        System.Threading.Tasks.Task<WebhookEndpointResponseDto> DeveloperUpdateWebhookAsync(string id, UpdateWebhookEndpointDto updateWebhookEndpointDto, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Update Webhook Endpoint
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The webhook endpoint ID</param>
+        /// <param name="updateWebhookEndpointDto"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeveloperControllerDeleteApiKeyWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeveloperControllerDeleteWebhookEndpointAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeveloperControllerDeleteWebhookEndpointWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeveloperControllerGetApiKeysAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeveloperControllerGetApiKeysWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeveloperControllerGetAppPortalUrlAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeveloperControllerGetAppPortalUrlWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeveloperControllerGetWebhookDeliveriesAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeveloperControllerGetWebhookDeliveriesWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeveloperControllerGetWebhookEndpointsAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeveloperControllerGetWebhookEndpointsWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeveloperControllerUpdateWebhookEndpointAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeveloperControllerUpdateWebhookEndpointWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (WebhookEndpointResponseDto)</returns>
+        System.Threading.Tasks.Task<ApiResponse<WebhookEndpointResponseDto>> DeveloperUpdateWebhookWithHttpInfoAsync(string id, UpdateWebhookEndpointDto updateWebhookEndpointDto, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -540,274 +598,322 @@ namespace Solifyn.Api
         }
 
         /// <summary>
-        ///  
+        /// Create Developer API Key 
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createApiKeyDto"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiKeyResponseDto</returns>
+        public ApiKeyResponseDto DeveloperCreateApiKey(CreateApiKeyDto createApiKeyDto, int operationIndex = 0)
+        {
+            Solifyn.Client.ApiResponse<ApiKeyResponseDto> localVarResponse = DeveloperCreateApiKeyWithHttpInfo(createApiKeyDto);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create Developer API Key 
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createApiKeyDto"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of ApiKeyResponseDto</returns>
+        public Solifyn.Client.ApiResponse<ApiKeyResponseDto> DeveloperCreateApiKeyWithHttpInfo(CreateApiKeyDto createApiKeyDto, int operationIndex = 0)
+        {
+            // verify the required parameter 'createApiKeyDto' is set
+            if (createApiKeyDto == null)
+            {
+                throw new Solifyn.Client.ApiException(400, "Missing required parameter 'createApiKeyDto' when calling DeveloperApi->DeveloperCreateApiKey");
+            }
+
+            Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Solifyn.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Solifyn.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = createApiKeyDto;
+
+            localVarRequestOptions.Operation = "DeveloperApi.DeveloperCreateApiKey";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<ApiKeyResponseDto>("/v1/developer/api-keys", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DeveloperCreateApiKey", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Create Developer API Key 
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createApiKeyDto"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiKeyResponseDto</returns>
+        public async System.Threading.Tasks.Task<ApiKeyResponseDto> DeveloperCreateApiKeyAsync(CreateApiKeyDto createApiKeyDto, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            Solifyn.Client.ApiResponse<ApiKeyResponseDto> localVarResponse = await DeveloperCreateApiKeyWithHttpInfoAsync(createApiKeyDto, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create Developer API Key 
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createApiKeyDto"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ApiKeyResponseDto)</returns>
+        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<ApiKeyResponseDto>> DeveloperCreateApiKeyWithHttpInfoAsync(CreateApiKeyDto createApiKeyDto, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'createApiKeyDto' is set
+            if (createApiKeyDto == null)
+            {
+                throw new Solifyn.Client.ApiException(400, "Missing required parameter 'createApiKeyDto' when calling DeveloperApi->DeveloperCreateApiKey");
+            }
+
+
+            Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Solifyn.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Solifyn.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = createApiKeyDto;
+
+            localVarRequestOptions.Operation = "DeveloperApi.DeveloperCreateApiKey";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<ApiKeyResponseDto>("/v1/developer/api-keys", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DeveloperCreateApiKey", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Create Webhook Endpoint 
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createWebhookEndpointDto"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>WebhookEndpointResponseDto</returns>
+        public WebhookEndpointResponseDto DeveloperCreateWebhook(CreateWebhookEndpointDto createWebhookEndpointDto, int operationIndex = 0)
+        {
+            Solifyn.Client.ApiResponse<WebhookEndpointResponseDto> localVarResponse = DeveloperCreateWebhookWithHttpInfo(createWebhookEndpointDto);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create Webhook Endpoint 
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createWebhookEndpointDto"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of WebhookEndpointResponseDto</returns>
+        public Solifyn.Client.ApiResponse<WebhookEndpointResponseDto> DeveloperCreateWebhookWithHttpInfo(CreateWebhookEndpointDto createWebhookEndpointDto, int operationIndex = 0)
+        {
+            // verify the required parameter 'createWebhookEndpointDto' is set
+            if (createWebhookEndpointDto == null)
+            {
+                throw new Solifyn.Client.ApiException(400, "Missing required parameter 'createWebhookEndpointDto' when calling DeveloperApi->DeveloperCreateWebhook");
+            }
+
+            Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Solifyn.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Solifyn.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = createWebhookEndpointDto;
+
+            localVarRequestOptions.Operation = "DeveloperApi.DeveloperCreateWebhook";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<WebhookEndpointResponseDto>("/v1/developer/webhooks", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DeveloperCreateWebhook", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Create Webhook Endpoint 
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createWebhookEndpointDto"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of WebhookEndpointResponseDto</returns>
+        public async System.Threading.Tasks.Task<WebhookEndpointResponseDto> DeveloperCreateWebhookAsync(CreateWebhookEndpointDto createWebhookEndpointDto, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            Solifyn.Client.ApiResponse<WebhookEndpointResponseDto> localVarResponse = await DeveloperCreateWebhookWithHttpInfoAsync(createWebhookEndpointDto, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create Webhook Endpoint 
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createWebhookEndpointDto"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (WebhookEndpointResponseDto)</returns>
+        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<WebhookEndpointResponseDto>> DeveloperCreateWebhookWithHttpInfoAsync(CreateWebhookEndpointDto createWebhookEndpointDto, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'createWebhookEndpointDto' is set
+            if (createWebhookEndpointDto == null)
+            {
+                throw new Solifyn.Client.ApiException(400, "Missing required parameter 'createWebhookEndpointDto' when calling DeveloperApi->DeveloperCreateWebhook");
+            }
+
+
+            Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Solifyn.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Solifyn.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = createWebhookEndpointDto;
+
+            localVarRequestOptions.Operation = "DeveloperApi.DeveloperCreateWebhook";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<WebhookEndpointResponseDto>("/v1/developer/webhooks", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DeveloperCreateWebhook", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Delete Webhook Endpoint 
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The webhook endpoint ID</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void DeveloperControllerCreateApiKey(int operationIndex = 0)
+        public void DeveloperDeleteWebhook(string id, int operationIndex = 0)
         {
-            DeveloperControllerCreateApiKeyWithHttpInfo();
+            DeveloperDeleteWebhookWithHttpInfo(id);
         }
 
         /// <summary>
-        ///  
+        /// Delete Webhook Endpoint 
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The webhook endpoint ID</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Solifyn.Client.ApiResponse<Object> DeveloperControllerCreateApiKeyWithHttpInfo(int operationIndex = 0)
-        {
-            Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-            };
-
-            var localVarContentType = Solifyn.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Solifyn.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-
-            localVarRequestOptions.Operation = "DeveloperApi.DeveloperControllerCreateApiKey";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<Object>("/v1/developer/api-keys", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("DeveloperControllerCreateApiKey", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeveloperControllerCreateApiKeyAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-        {
-            await DeveloperControllerCreateApiKeyWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> DeveloperControllerCreateApiKeyWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-        {
-
-            Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-            };
-
-            var localVarContentType = Solifyn.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Solifyn.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-
-            localVarRequestOptions.Operation = "DeveloperApi.DeveloperControllerCreateApiKey";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/v1/developer/api-keys", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("DeveloperControllerCreateApiKey", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        public void DeveloperControllerCreateWebhookEndpoint(int operationIndex = 0)
-        {
-            DeveloperControllerCreateWebhookEndpointWithHttpInfo();
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Solifyn.Client.ApiResponse<Object> DeveloperControllerCreateWebhookEndpointWithHttpInfo(int operationIndex = 0)
-        {
-            Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-            };
-
-            var localVarContentType = Solifyn.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Solifyn.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-
-            localVarRequestOptions.Operation = "DeveloperApi.DeveloperControllerCreateWebhookEndpoint";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<Object>("/v1/developer/webhooks", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("DeveloperControllerCreateWebhookEndpoint", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeveloperControllerCreateWebhookEndpointAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-        {
-            await DeveloperControllerCreateWebhookEndpointWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> DeveloperControllerCreateWebhookEndpointWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-        {
-
-            Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-            };
-
-            var localVarContentType = Solifyn.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Solifyn.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-
-            localVarRequestOptions.Operation = "DeveloperApi.DeveloperControllerCreateWebhookEndpoint";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/v1/developer/webhooks", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("DeveloperControllerCreateWebhookEndpoint", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        public void DeveloperControllerDeleteApiKey(string id, int operationIndex = 0)
-        {
-            DeveloperControllerDeleteApiKeyWithHttpInfo(id);
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Solifyn.Client.ApiResponse<Object> DeveloperControllerDeleteApiKeyWithHttpInfo(string id, int operationIndex = 0)
+        public Solifyn.Client.ApiResponse<Object> DeveloperDeleteWebhookWithHttpInfo(string id, int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
             {
-                throw new Solifyn.Client.ApiException(400, "Missing required parameter 'id' when calling DeveloperApi->DeveloperControllerDeleteApiKey");
+                throw new Solifyn.Client.ApiException(400, "Missing required parameter 'id' when calling DeveloperApi->DeveloperDeleteWebhook");
             }
 
             Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
@@ -833,147 +939,7 @@ namespace Solifyn.Api
 
             localVarRequestOptions.PathParameters.Add("id", Solifyn.Client.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "DeveloperApi.DeveloperControllerDeleteApiKey";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Delete<Object>("/v1/developer/api-keys/{id}", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("DeveloperControllerDeleteApiKey", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeveloperControllerDeleteApiKeyAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-        {
-            await DeveloperControllerDeleteApiKeyWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> DeveloperControllerDeleteApiKeyWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-        {
-            // verify the required parameter 'id' is set
-            if (id == null)
-            {
-                throw new Solifyn.Client.ApiException(400, "Missing required parameter 'id' when calling DeveloperApi->DeveloperControllerDeleteApiKey");
-            }
-
-
-            Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-            };
-
-            var localVarContentType = Solifyn.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Solifyn.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("id", Solifyn.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "DeveloperApi.DeveloperControllerDeleteApiKey";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/v1/developer/api-keys/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("DeveloperControllerDeleteApiKey", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        public void DeveloperControllerDeleteWebhookEndpoint(string id, int operationIndex = 0)
-        {
-            DeveloperControllerDeleteWebhookEndpointWithHttpInfo(id);
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Solifyn.Client.ApiResponse<Object> DeveloperControllerDeleteWebhookEndpointWithHttpInfo(string id, int operationIndex = 0)
-        {
-            // verify the required parameter 'id' is set
-            if (id == null)
-            {
-                throw new Solifyn.Client.ApiException(400, "Missing required parameter 'id' when calling DeveloperApi->DeveloperControllerDeleteWebhookEndpoint");
-            }
-
-            Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-            };
-
-            var localVarContentType = Solifyn.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Solifyn.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("id", Solifyn.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            localVarRequestOptions.Operation = "DeveloperApi.DeveloperControllerDeleteWebhookEndpoint";
+            localVarRequestOptions.Operation = "DeveloperApi.DeveloperDeleteWebhook";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
@@ -981,7 +947,7 @@ namespace Solifyn.Api
             var localVarResponse = this.Client.Delete<Object>("/v1/developer/webhooks/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DeveloperControllerDeleteWebhookEndpoint", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeveloperDeleteWebhook", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -992,32 +958,32 @@ namespace Solifyn.Api
         }
 
         /// <summary>
-        ///  
+        /// Delete Webhook Endpoint 
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The webhook endpoint ID</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeveloperControllerDeleteWebhookEndpointAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DeveloperDeleteWebhookAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await DeveloperControllerDeleteWebhookEndpointWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            await DeveloperDeleteWebhookWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        ///  
+        /// Delete Webhook Endpoint 
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The webhook endpoint ID</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> DeveloperControllerDeleteWebhookEndpointWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> DeveloperDeleteWebhookWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
             {
-                throw new Solifyn.Client.ApiException(400, "Missing required parameter 'id' when calling DeveloperApi->DeveloperControllerDeleteWebhookEndpoint");
+                throw new Solifyn.Client.ApiException(400, "Missing required parameter 'id' when calling DeveloperApi->DeveloperDeleteWebhook");
             }
 
 
@@ -1044,7 +1010,7 @@ namespace Solifyn.Api
 
             localVarRequestOptions.PathParameters.Add("id", Solifyn.Client.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "DeveloperApi.DeveloperControllerDeleteWebhookEndpoint";
+            localVarRequestOptions.Operation = "DeveloperApi.DeveloperDeleteWebhook";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
@@ -1053,7 +1019,7 @@ namespace Solifyn.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DeveloperControllerDeleteWebhookEndpoint", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeveloperDeleteWebhook", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1064,23 +1030,24 @@ namespace Solifyn.Api
         }
 
         /// <summary>
-        ///  
+        /// Retrieve Hosted Webhooks Portal URL 
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        public void DeveloperControllerGetApiKeys(int operationIndex = 0)
+        /// <returns>AppPortalUrlResponseDto</returns>
+        public AppPortalUrlResponseDto DeveloperGetAppPortal(int operationIndex = 0)
         {
-            DeveloperControllerGetApiKeysWithHttpInfo();
+            Solifyn.Client.ApiResponse<AppPortalUrlResponseDto> localVarResponse = DeveloperGetAppPortalWithHttpInfo();
+            return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  
+        /// Retrieve Hosted Webhooks Portal URL 
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Solifyn.Client.ApiResponse<Object> DeveloperControllerGetApiKeysWithHttpInfo(int operationIndex = 0)
+        /// <returns>ApiResponse of AppPortalUrlResponseDto</returns>
+        public Solifyn.Client.ApiResponse<AppPortalUrlResponseDto> DeveloperGetAppPortalWithHttpInfo(int operationIndex = 0)
         {
             Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
 
@@ -1089,6 +1056,7 @@ namespace Solifyn.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "application/json"
             };
 
             var localVarContentType = Solifyn.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -1104,15 +1072,15 @@ namespace Solifyn.Api
             }
 
 
-            localVarRequestOptions.Operation = "DeveloperApi.DeveloperControllerGetApiKeys";
+            localVarRequestOptions.Operation = "DeveloperApi.DeveloperGetAppPortal";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Object>("/v1/developer/api-keys", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<AppPortalUrlResponseDto>("/v1/developer/webhooks/app-portal", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DeveloperControllerGetApiKeys", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeveloperGetAppPortal", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1123,25 +1091,26 @@ namespace Solifyn.Api
         }
 
         /// <summary>
-        ///  
+        /// Retrieve Hosted Webhooks Portal URL 
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeveloperControllerGetApiKeysAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of AppPortalUrlResponseDto</returns>
+        public async System.Threading.Tasks.Task<AppPortalUrlResponseDto> DeveloperGetAppPortalAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await DeveloperControllerGetApiKeysWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            Solifyn.Client.ApiResponse<AppPortalUrlResponseDto> localVarResponse = await DeveloperGetAppPortalWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  
+        /// Retrieve Hosted Webhooks Portal URL 
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> DeveloperControllerGetApiKeysWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (AppPortalUrlResponseDto)</returns>
+        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<AppPortalUrlResponseDto>> DeveloperGetAppPortalWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
@@ -1151,6 +1120,7 @@ namespace Solifyn.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "application/json"
             };
 
             var localVarContentType = Solifyn.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -1166,16 +1136,16 @@ namespace Solifyn.Api
             }
 
 
-            localVarRequestOptions.Operation = "DeveloperApi.DeveloperControllerGetApiKeys";
+            localVarRequestOptions.Operation = "DeveloperApi.DeveloperGetAppPortal";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/v1/developer/api-keys", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<AppPortalUrlResponseDto>("/v1/developer/webhooks/app-portal", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DeveloperControllerGetApiKeys", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeveloperGetAppPortal", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1186,152 +1156,570 @@ namespace Solifyn.Api
         }
 
         /// <summary>
-        ///  
+        /// Retrieve Webhook Endpoint Details 
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The webhook endpoint ID</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        public void DeveloperControllerGetAppPortalUrl(int operationIndex = 0)
+        /// <returns>WebhookEndpointResponseDto</returns>
+        public WebhookEndpointResponseDto DeveloperGetWebhook(string id, int operationIndex = 0)
         {
-            DeveloperControllerGetAppPortalUrlWithHttpInfo();
+            Solifyn.Client.ApiResponse<WebhookEndpointResponseDto> localVarResponse = DeveloperGetWebhookWithHttpInfo(id);
+            return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  
+        /// Retrieve Webhook Endpoint Details 
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The webhook endpoint ID</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Solifyn.Client.ApiResponse<Object> DeveloperControllerGetAppPortalUrlWithHttpInfo(int operationIndex = 0)
-        {
-            Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-            };
-
-            var localVarContentType = Solifyn.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Solifyn.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-
-            localVarRequestOptions.Operation = "DeveloperApi.DeveloperControllerGetAppPortalUrl";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<Object>("/v1/developer/webhooks/app-portal", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("DeveloperControllerGetAppPortalUrl", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeveloperControllerGetAppPortalUrlAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-        {
-            await DeveloperControllerGetAppPortalUrlWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> DeveloperControllerGetAppPortalUrlWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-        {
-
-            Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-            };
-
-            var localVarContentType = Solifyn.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Solifyn.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-
-            localVarRequestOptions.Operation = "DeveloperApi.DeveloperControllerGetAppPortalUrl";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/v1/developer/webhooks/app-portal", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("DeveloperControllerGetAppPortalUrl", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        public void DeveloperControllerGetWebhookDeliveries(string id, int operationIndex = 0)
-        {
-            DeveloperControllerGetWebhookDeliveriesWithHttpInfo(id);
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Solifyn.Client.ApiResponse<Object> DeveloperControllerGetWebhookDeliveriesWithHttpInfo(string id, int operationIndex = 0)
+        /// <returns>ApiResponse of WebhookEndpointResponseDto</returns>
+        public Solifyn.Client.ApiResponse<WebhookEndpointResponseDto> DeveloperGetWebhookWithHttpInfo(string id, int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
             {
-                throw new Solifyn.Client.ApiException(400, "Missing required parameter 'id' when calling DeveloperApi->DeveloperControllerGetWebhookDeliveries");
+                throw new Solifyn.Client.ApiException(400, "Missing required parameter 'id' when calling DeveloperApi->DeveloperGetWebhook");
+            }
+
+            Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Solifyn.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Solifyn.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Solifyn.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            localVarRequestOptions.Operation = "DeveloperApi.DeveloperGetWebhook";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<WebhookEndpointResponseDto>("/v1/developer/webhooks/{id}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DeveloperGetWebhook", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Retrieve Webhook Endpoint Details 
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The webhook endpoint ID</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of WebhookEndpointResponseDto</returns>
+        public async System.Threading.Tasks.Task<WebhookEndpointResponseDto> DeveloperGetWebhookAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            Solifyn.Client.ApiResponse<WebhookEndpointResponseDto> localVarResponse = await DeveloperGetWebhookWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Retrieve Webhook Endpoint Details 
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The webhook endpoint ID</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (WebhookEndpointResponseDto)</returns>
+        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<WebhookEndpointResponseDto>> DeveloperGetWebhookWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Solifyn.Client.ApiException(400, "Missing required parameter 'id' when calling DeveloperApi->DeveloperGetWebhook");
+            }
+
+
+            Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Solifyn.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Solifyn.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Solifyn.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            localVarRequestOptions.Operation = "DeveloperApi.DeveloperGetWebhook";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<WebhookEndpointResponseDto>("/v1/developer/webhooks/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DeveloperGetWebhook", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List Developer API Keys 
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;ApiKeyResponseDto&gt;</returns>
+        public List<ApiKeyResponseDto> DeveloperListApiKeys(int operationIndex = 0)
+        {
+            Solifyn.Client.ApiResponse<List<ApiKeyResponseDto>> localVarResponse = DeveloperListApiKeysWithHttpInfo();
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List Developer API Keys 
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;ApiKeyResponseDto&gt;</returns>
+        public Solifyn.Client.ApiResponse<List<ApiKeyResponseDto>> DeveloperListApiKeysWithHttpInfo(int operationIndex = 0)
+        {
+            Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Solifyn.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Solifyn.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+
+            localVarRequestOptions.Operation = "DeveloperApi.DeveloperListApiKeys";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<ApiKeyResponseDto>>("/v1/developer/api-keys", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DeveloperListApiKeys", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List Developer API Keys 
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;ApiKeyResponseDto&gt;</returns>
+        public async System.Threading.Tasks.Task<List<ApiKeyResponseDto>> DeveloperListApiKeysAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            Solifyn.Client.ApiResponse<List<ApiKeyResponseDto>> localVarResponse = await DeveloperListApiKeysWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List Developer API Keys 
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;ApiKeyResponseDto&gt;)</returns>
+        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<List<ApiKeyResponseDto>>> DeveloperListApiKeysWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+
+            Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Solifyn.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Solifyn.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+
+            localVarRequestOptions.Operation = "DeveloperApi.DeveloperListApiKeys";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<ApiKeyResponseDto>>("/v1/developer/api-keys", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DeveloperListApiKeys", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Retrieve Webhook Delivery Logs 
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The webhook endpoint ID</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;WebhookDeliveryResponseDto&gt;</returns>
+        public List<WebhookDeliveryResponseDto> DeveloperListWebhookDeliveries(string id, int operationIndex = 0)
+        {
+            Solifyn.Client.ApiResponse<List<WebhookDeliveryResponseDto>> localVarResponse = DeveloperListWebhookDeliveriesWithHttpInfo(id);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Retrieve Webhook Delivery Logs 
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The webhook endpoint ID</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;WebhookDeliveryResponseDto&gt;</returns>
+        public Solifyn.Client.ApiResponse<List<WebhookDeliveryResponseDto>> DeveloperListWebhookDeliveriesWithHttpInfo(string id, int operationIndex = 0)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Solifyn.Client.ApiException(400, "Missing required parameter 'id' when calling DeveloperApi->DeveloperListWebhookDeliveries");
+            }
+
+            Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Solifyn.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Solifyn.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Solifyn.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            localVarRequestOptions.Operation = "DeveloperApi.DeveloperListWebhookDeliveries";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<WebhookDeliveryResponseDto>>("/v1/developer/webhooks/{id}/deliveries", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DeveloperListWebhookDeliveries", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Retrieve Webhook Delivery Logs 
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The webhook endpoint ID</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;WebhookDeliveryResponseDto&gt;</returns>
+        public async System.Threading.Tasks.Task<List<WebhookDeliveryResponseDto>> DeveloperListWebhookDeliveriesAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            Solifyn.Client.ApiResponse<List<WebhookDeliveryResponseDto>> localVarResponse = await DeveloperListWebhookDeliveriesWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Retrieve Webhook Delivery Logs 
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The webhook endpoint ID</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;WebhookDeliveryResponseDto&gt;)</returns>
+        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<List<WebhookDeliveryResponseDto>>> DeveloperListWebhookDeliveriesWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Solifyn.Client.ApiException(400, "Missing required parameter 'id' when calling DeveloperApi->DeveloperListWebhookDeliveries");
+            }
+
+
+            Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Solifyn.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Solifyn.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Solifyn.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            localVarRequestOptions.Operation = "DeveloperApi.DeveloperListWebhookDeliveries";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<WebhookDeliveryResponseDto>>("/v1/developer/webhooks/{id}/deliveries", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DeveloperListWebhookDeliveries", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List Webhook Endpoints 
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;WebhookEndpointResponseDto&gt;</returns>
+        public List<WebhookEndpointResponseDto> DeveloperListWebhooks(int operationIndex = 0)
+        {
+            Solifyn.Client.ApiResponse<List<WebhookEndpointResponseDto>> localVarResponse = DeveloperListWebhooksWithHttpInfo();
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List Webhook Endpoints 
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;WebhookEndpointResponseDto&gt;</returns>
+        public Solifyn.Client.ApiResponse<List<WebhookEndpointResponseDto>> DeveloperListWebhooksWithHttpInfo(int operationIndex = 0)
+        {
+            Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Solifyn.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Solifyn.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+
+            localVarRequestOptions.Operation = "DeveloperApi.DeveloperListWebhooks";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<WebhookEndpointResponseDto>>("/v1/developer/webhooks", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DeveloperListWebhooks", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List Webhook Endpoints 
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;WebhookEndpointResponseDto&gt;</returns>
+        public async System.Threading.Tasks.Task<List<WebhookEndpointResponseDto>> DeveloperListWebhooksAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            Solifyn.Client.ApiResponse<List<WebhookEndpointResponseDto>> localVarResponse = await DeveloperListWebhooksWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List Webhook Endpoints 
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;WebhookEndpointResponseDto&gt;)</returns>
+        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<List<WebhookEndpointResponseDto>>> DeveloperListWebhooksWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+
+            Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Solifyn.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Solifyn.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+
+            localVarRequestOptions.Operation = "DeveloperApi.DeveloperListWebhooks";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<WebhookEndpointResponseDto>>("/v1/developer/webhooks", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DeveloperListWebhooks", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Revoke API Key 
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The API key ID</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public void DeveloperRevokeApiKey(string id, int operationIndex = 0)
+        {
+            DeveloperRevokeApiKeyWithHttpInfo(id);
+        }
+
+        /// <summary>
+        /// Revoke API Key 
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The API key ID</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Solifyn.Client.ApiResponse<Object> DeveloperRevokeApiKeyWithHttpInfo(string id, int operationIndex = 0)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Solifyn.Client.ApiException(400, "Missing required parameter 'id' when calling DeveloperApi->DeveloperRevokeApiKey");
             }
 
             Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
@@ -1357,15 +1745,15 @@ namespace Solifyn.Api
 
             localVarRequestOptions.PathParameters.Add("id", Solifyn.Client.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "DeveloperApi.DeveloperControllerGetWebhookDeliveries";
+            localVarRequestOptions.Operation = "DeveloperApi.DeveloperRevokeApiKey";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Object>("/v1/developer/webhooks/{id}/deliveries", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Delete<Object>("/v1/developer/api-keys/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DeveloperControllerGetWebhookDeliveries", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeveloperRevokeApiKey", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1376,32 +1764,32 @@ namespace Solifyn.Api
         }
 
         /// <summary>
-        ///  
+        /// Revoke API Key 
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The API key ID</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeveloperControllerGetWebhookDeliveriesAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DeveloperRevokeApiKeyAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await DeveloperControllerGetWebhookDeliveriesWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            await DeveloperRevokeApiKeyWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        ///  
+        /// Revoke API Key 
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The API key ID</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> DeveloperControllerGetWebhookDeliveriesWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> DeveloperRevokeApiKeyWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
             {
-                throw new Solifyn.Client.ApiException(400, "Missing required parameter 'id' when calling DeveloperApi->DeveloperControllerGetWebhookDeliveries");
+                throw new Solifyn.Client.ApiException(400, "Missing required parameter 'id' when calling DeveloperApi->DeveloperRevokeApiKey");
             }
 
 
@@ -1428,16 +1816,16 @@ namespace Solifyn.Api
 
             localVarRequestOptions.PathParameters.Add("id", Solifyn.Client.ClientUtils.ParameterToString(id)); // path parameter
 
-            localVarRequestOptions.Operation = "DeveloperApi.DeveloperControllerGetWebhookDeliveries";
+            localVarRequestOptions.Operation = "DeveloperApi.DeveloperRevokeApiKey";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/v1/developer/webhooks/{id}/deliveries", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/v1/developer/api-keys/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DeveloperControllerGetWebhookDeliveries", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeveloperRevokeApiKey", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1448,161 +1836,50 @@ namespace Solifyn.Api
         }
 
         /// <summary>
-        ///  
+        /// Update Webhook Endpoint 
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The webhook endpoint ID</param>
+        /// <param name="updateWebhookEndpointDto"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        public void DeveloperControllerGetWebhookEndpoints(int operationIndex = 0)
+        /// <returns>WebhookEndpointResponseDto</returns>
+        public WebhookEndpointResponseDto DeveloperUpdateWebhook(string id, UpdateWebhookEndpointDto updateWebhookEndpointDto, int operationIndex = 0)
         {
-            DeveloperControllerGetWebhookEndpointsWithHttpInfo();
+            Solifyn.Client.ApiResponse<WebhookEndpointResponseDto> localVarResponse = DeveloperUpdateWebhookWithHttpInfo(id, updateWebhookEndpointDto);
+            return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  
+        /// Update Webhook Endpoint 
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The webhook endpoint ID</param>
+        /// <param name="updateWebhookEndpointDto"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Solifyn.Client.ApiResponse<Object> DeveloperControllerGetWebhookEndpointsWithHttpInfo(int operationIndex = 0)
-        {
-            Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-            };
-
-            var localVarContentType = Solifyn.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Solifyn.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-
-            localVarRequestOptions.Operation = "DeveloperApi.DeveloperControllerGetWebhookEndpoints";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<Object>("/v1/developer/webhooks", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("DeveloperControllerGetWebhookEndpoints", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeveloperControllerGetWebhookEndpointsAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-        {
-            await DeveloperControllerGetWebhookEndpointsWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> DeveloperControllerGetWebhookEndpointsWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-        {
-
-            Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-            };
-
-            var localVarContentType = Solifyn.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Solifyn.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-
-            localVarRequestOptions.Operation = "DeveloperApi.DeveloperControllerGetWebhookEndpoints";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/v1/developer/webhooks", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("DeveloperControllerGetWebhookEndpoints", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        public void DeveloperControllerUpdateWebhookEndpoint(string id, int operationIndex = 0)
-        {
-            DeveloperControllerUpdateWebhookEndpointWithHttpInfo(id);
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Solifyn.Client.ApiResponse<Object> DeveloperControllerUpdateWebhookEndpointWithHttpInfo(string id, int operationIndex = 0)
+        /// <returns>ApiResponse of WebhookEndpointResponseDto</returns>
+        public Solifyn.Client.ApiResponse<WebhookEndpointResponseDto> DeveloperUpdateWebhookWithHttpInfo(string id, UpdateWebhookEndpointDto updateWebhookEndpointDto, int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
             {
-                throw new Solifyn.Client.ApiException(400, "Missing required parameter 'id' when calling DeveloperApi->DeveloperControllerUpdateWebhookEndpoint");
+                throw new Solifyn.Client.ApiException(400, "Missing required parameter 'id' when calling DeveloperApi->DeveloperUpdateWebhook");
+            }
+
+            // verify the required parameter 'updateWebhookEndpointDto' is set
+            if (updateWebhookEndpointDto == null)
+            {
+                throw new Solifyn.Client.ApiException(400, "Missing required parameter 'updateWebhookEndpointDto' when calling DeveloperApi->DeveloperUpdateWebhook");
             }
 
             Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "application/json"
             };
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "application/json"
             };
 
             var localVarContentType = Solifyn.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -1618,16 +1895,17 @@ namespace Solifyn.Api
             }
 
             localVarRequestOptions.PathParameters.Add("id", Solifyn.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = updateWebhookEndpointDto;
 
-            localVarRequestOptions.Operation = "DeveloperApi.DeveloperControllerUpdateWebhookEndpoint";
+            localVarRequestOptions.Operation = "DeveloperApi.DeveloperUpdateWebhook";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Patch<Object>("/v1/developer/webhooks/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Patch<WebhookEndpointResponseDto>("/v1/developer/webhooks/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DeveloperControllerUpdateWebhookEndpoint", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeveloperUpdateWebhook", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1638,42 +1916,53 @@ namespace Solifyn.Api
         }
 
         /// <summary>
-        ///  
+        /// Update Webhook Endpoint 
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The webhook endpoint ID</param>
+        /// <param name="updateWebhookEndpointDto"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeveloperControllerUpdateWebhookEndpointAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of WebhookEndpointResponseDto</returns>
+        public async System.Threading.Tasks.Task<WebhookEndpointResponseDto> DeveloperUpdateWebhookAsync(string id, UpdateWebhookEndpointDto updateWebhookEndpointDto, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await DeveloperControllerUpdateWebhookEndpointWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Solifyn.Client.ApiResponse<WebhookEndpointResponseDto> localVarResponse = await DeveloperUpdateWebhookWithHttpInfoAsync(id, updateWebhookEndpointDto, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  
+        /// Update Webhook Endpoint 
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"></param>
+        /// <param name="id">The webhook endpoint ID</param>
+        /// <param name="updateWebhookEndpointDto"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> DeveloperControllerUpdateWebhookEndpointWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (WebhookEndpointResponseDto)</returns>
+        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<WebhookEndpointResponseDto>> DeveloperUpdateWebhookWithHttpInfoAsync(string id, UpdateWebhookEndpointDto updateWebhookEndpointDto, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
             {
-                throw new Solifyn.Client.ApiException(400, "Missing required parameter 'id' when calling DeveloperApi->DeveloperControllerUpdateWebhookEndpoint");
+                throw new Solifyn.Client.ApiException(400, "Missing required parameter 'id' when calling DeveloperApi->DeveloperUpdateWebhook");
+            }
+
+            // verify the required parameter 'updateWebhookEndpointDto' is set
+            if (updateWebhookEndpointDto == null)
+            {
+                throw new Solifyn.Client.ApiException(400, "Missing required parameter 'updateWebhookEndpointDto' when calling DeveloperApi->DeveloperUpdateWebhook");
             }
 
 
             Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "application/json"
             };
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "application/json"
             };
 
             var localVarContentType = Solifyn.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -1689,17 +1978,18 @@ namespace Solifyn.Api
             }
 
             localVarRequestOptions.PathParameters.Add("id", Solifyn.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = updateWebhookEndpointDto;
 
-            localVarRequestOptions.Operation = "DeveloperApi.DeveloperControllerUpdateWebhookEndpoint";
+            localVarRequestOptions.Operation = "DeveloperApi.DeveloperUpdateWebhook";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PatchAsync<Object>("/v1/developer/webhooks/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<WebhookEndpointResponseDto>("/v1/developer/webhooks/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DeveloperControllerUpdateWebhookEndpoint", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeveloperUpdateWebhook", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

@@ -140,6 +140,7 @@ namespace Solifyn.Model
         /// <param name="stock">Available stock quantity, or null for unlimited inventory. (required).</param>
         /// <param name="activationLimit">Maximum number of simultaneous active instances/devices allowed per issued license key (applicable if hasLicenseKey is true). (required).</param>
         /// <param name="isListed">Defines if the product is listed publicly on the merchant&#39;s storefront template. (required).</param>
+        /// <param name="isFree">Whether the product is free. (required).</param>
         /// <param name="createdAt">Timestamp indicating exactly when the product was created. (required).</param>
         /// <param name="updatedAt">Timestamp indicating when the product was last modified. (required).</param>
         /// <param name="isPermanentlyDeleted">Indicates if the product has been permanently deleted. (required).</param>
@@ -150,7 +151,7 @@ namespace Solifyn.Model
         /// <param name="expiryHours">Number of hours until the license key expires. (required).</param>
         /// <param name="businessId">The unique identifier of the business owning this product. (required).</param>
         /// <param name="quantity">Quantity of the product in the collection (required).</param>
-        public CollectionProductDto(Guid id = default(Guid), string name = default(string), decimal price = default(decimal), string currency = default(string), string description = default(string), string status = default(string), string imageUrl = default(string), TaxCategoryEnum taxCategory = default(TaxCategoryEnum), PricingTypeEnum pricingType = default(PricingTypeEnum), decimal discount = default(decimal), bool hasLicenseKey = default(bool), bool hasDigitalDelivery = default(bool), bool isTaxInclusive = default(bool), int billingPeriod = default(int), int trialPeriodDays = default(int), int expirationDays = default(int), string statementDescriptor = default(string), bool payWhatYouWant = default(bool), Dictionary<string, string> metadata = default(Dictionary<string, string>), List<Object> customFields = default(List<Object>), int stock = default(int), int activationLimit = default(int), bool isListed = default(bool), DateTime createdAt = default(DateTime), DateTime updatedAt = default(DateTime), bool isPermanentlyDeleted = default(bool), string brandId = default(string), string digitalLink = default(string), string instructions = default(string), string activationMessage = default(string), int expiryHours = default(int), string businessId = default(string), decimal quantity = default(decimal))
+        public CollectionProductDto(Guid id = default(Guid), string name = default(string), decimal price = default(decimal), string currency = default(string), string description = default(string), string status = default(string), string imageUrl = default(string), TaxCategoryEnum taxCategory = default(TaxCategoryEnum), PricingTypeEnum pricingType = default(PricingTypeEnum), decimal discount = default(decimal), bool hasLicenseKey = default(bool), bool hasDigitalDelivery = default(bool), bool isTaxInclusive = default(bool), int billingPeriod = default(int), int trialPeriodDays = default(int), int expirationDays = default(int), string statementDescriptor = default(string), bool payWhatYouWant = default(bool), Dictionary<string, string> metadata = default(Dictionary<string, string>), List<Object> customFields = default(List<Object>), int stock = default(int), int activationLimit = default(int), bool isListed = default(bool), bool isFree = default(bool), DateTime createdAt = default(DateTime), DateTime updatedAt = default(DateTime), bool isPermanentlyDeleted = default(bool), string brandId = default(string), string digitalLink = default(string), string instructions = default(string), string activationMessage = default(string), int expiryHours = default(int), string businessId = default(string), decimal quantity = default(decimal))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -209,6 +210,7 @@ namespace Solifyn.Model
             this.Stock = stock;
             this.ActivationLimit = activationLimit;
             this.IsListed = isListed;
+            this.IsFree = isFree;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.IsPermanentlyDeleted = isPermanentlyDeleted;
@@ -446,6 +448,16 @@ namespace Solifyn.Model
         public bool IsListed { get; set; }
 
         /// <summary>
+        /// Whether the product is free.
+        /// </summary>
+        /// <value>Whether the product is free.</value>
+        /*
+        <example>false</example>
+        */
+        [DataMember(Name = "isFree", IsRequired = true, EmitDefaultValue = true)]
+        public bool IsFree { get; set; }
+
+        /// <summary>
         /// Timestamp indicating exactly when the product was created.
         /// </summary>
         /// <value>Timestamp indicating exactly when the product was created.</value>
@@ -573,6 +585,7 @@ namespace Solifyn.Model
             sb.Append("  Stock: ").Append(Stock).Append("\n");
             sb.Append("  ActivationLimit: ").Append(ActivationLimit).Append("\n");
             sb.Append("  IsListed: ").Append(IsListed).Append("\n");
+            sb.Append("  IsFree: ").Append(IsFree).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  IsPermanentlyDeleted: ").Append(IsPermanentlyDeleted).Append("\n");

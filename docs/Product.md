@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **Stock** | **int** | Available stock quantity, or null for unlimited inventory. | 
 **ActivationLimit** | **int** | Maximum number of simultaneous active instances/devices allowed per issued license key (applicable if hasLicenseKey is true). | 
 **IsListed** | **bool** | Defines if the product is listed publicly on the merchant&#39;s storefront template. | 
+**IsFree** | **bool** | Whether the product is free. | 
 **CreatedAt** | **DateTime** | Timestamp indicating exactly when the product was created. | 
 **UpdatedAt** | **DateTime** | Timestamp indicating when the product was last modified. | 
 **IsPermanentlyDeleted** | **bool** | Indicates if the product has been permanently deleted. | 

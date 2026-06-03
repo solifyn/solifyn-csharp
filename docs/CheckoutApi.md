@@ -6,6 +6,7 @@ All URIs are relative to *http://localhost:8000*
 |--------|--------------|-------------|
 | [**CheckoutCreate**](CheckoutApi.md#checkoutcreate) | **POST** /v1/checkout/create | Create Checkout Session |
 | [**CheckoutCreateCollection**](CheckoutApi.md#checkoutcreatecollection) | **POST** /v1/checkout/collection/create | Create Collection Checkout Session |
+| [**CheckoutCreateSetup**](CheckoutApi.md#checkoutcreatesetup) | **POST** /v1/checkout/setup-configuration | Create Setup Checkout Configuration |
 | [**CheckoutGetSession**](CheckoutApi.md#checkoutgetsession) | **GET** /v1/checkout/session/{id} | Get Checkout Session Details |
 | [**CheckoutPricePreview**](CheckoutApi.md#checkoutpricepreview) | **GET** /v1/checkout/price-preview | Get Converted Price Preview |
 | [**CheckoutSupportedCurrencies**](CheckoutApi.md#checkoutsupportedcurrencies) | **GET** /v1/checkout/supported-currencies | Get Supported Currencies |
@@ -189,6 +190,93 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Collection checkout session created. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="checkoutcreatesetup"></a>
+# **CheckoutCreateSetup**
+> void CheckoutCreateSetup (CreateSetupCheckoutDto createSetupCheckoutDto)
+
+Create Setup Checkout Configuration
+
+Create a new checkout session in setup mode for collecting cards without immediate charge.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Solifyn.Api;
+using Solifyn.Client;
+using Solifyn.Model;
+
+namespace Example
+{
+    public class CheckoutCreateSetupExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:8000";
+            var apiInstance = new CheckoutApi(config);
+            var createSetupCheckoutDto = new CreateSetupCheckoutDto(); // CreateSetupCheckoutDto | 
+
+            try
+            {
+                // Create Setup Checkout Configuration
+                apiInstance.CheckoutCreateSetup(createSetupCheckoutDto);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling CheckoutApi.CheckoutCreateSetup: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the CheckoutCreateSetupWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Create Setup Checkout Configuration
+    apiInstance.CheckoutCreateSetupWithHttpInfo(createSetupCheckoutDto);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CheckoutApi.CheckoutCreateSetupWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **createSetupCheckoutDto** | [**CreateSetupCheckoutDto**](CreateSetupCheckoutDto.md) |  |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Setup checkout configuration created. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
