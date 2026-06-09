@@ -113,7 +113,7 @@ namespace Solifyn.Client
         {
             Proxy = null;
             UserAgent = WebUtility.UrlEncode("OpenAPI-Generator/1.0.0/csharp");
-            BasePath = "http://localhost:8000";
+            BasePath = "https://api.solifyn.com";
             DefaultHeaders = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
             ApiKeyPrefix = new ConcurrentDictionary<string, string>();
@@ -121,13 +121,13 @@ namespace Solifyn.Client
             {
                 {
                     new Dictionary<string, object> {
-                        {"url", "http://localhost:8000"},
+                        {"url", "https://api.solifyn.com"},
                         {"description", "Live environment"},
                     }
                 },
                 {
                     new Dictionary<string, object> {
-                        {"url", "http://localhost:8001"},
+                        {"url", "https://sandbox-api.solifyn.com"},
                         {"description", "Test environment"},
                     }
                 }
@@ -148,7 +148,7 @@ namespace Solifyn.Client
             IDictionary<string, string> defaultHeaders,
             IDictionary<string, string> apiKey,
             IDictionary<string, string> apiKeyPrefix,
-            string basePath = "http://localhost:8000") : this()
+            string basePath = "https://api.solifyn.com") : this()
         {
             if (string.IsNullOrWhiteSpace(basePath))
                 throw new ArgumentException("The provided basePath is invalid.", "basePath");

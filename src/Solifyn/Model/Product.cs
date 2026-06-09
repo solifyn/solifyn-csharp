@@ -110,6 +110,54 @@ namespace Solifyn.Model
         [DataMember(Name = "pricingType", IsRequired = true, EmitDefaultValue = true)]
         public PricingTypeEnum PricingType { get; set; }
         /// <summary>
+        /// GitHub collaborator permission level.
+        /// </summary>
+        /// <value>GitHub collaborator permission level.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum GithubPermissionEnum
+        {
+            /// <summary>
+            /// Enum Pull for value: pull
+            /// </summary>
+            [EnumMember(Value = "pull")]
+            Pull = 1,
+
+            /// <summary>
+            /// Enum Triage for value: triage
+            /// </summary>
+            [EnumMember(Value = "triage")]
+            Triage = 2,
+
+            /// <summary>
+            /// Enum Push for value: push
+            /// </summary>
+            [EnumMember(Value = "push")]
+            Push = 3,
+
+            /// <summary>
+            /// Enum Maintain for value: maintain
+            /// </summary>
+            [EnumMember(Value = "maintain")]
+            Maintain = 4,
+
+            /// <summary>
+            /// Enum Admin for value: admin
+            /// </summary>
+            [EnumMember(Value = "admin")]
+            Admin = 5
+        }
+
+
+        /// <summary>
+        /// GitHub collaborator permission level.
+        /// </summary>
+        /// <value>GitHub collaborator permission level.</value>
+        /*
+        <example>pull</example>
+        */
+        [DataMember(Name = "githubPermission", IsRequired = true, EmitDefaultValue = true)]
+        public GithubPermissionEnum GithubPermission { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="Product" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -129,6 +177,9 @@ namespace Solifyn.Model
         /// <param name="discount">Discount value as a percentage or fixed amount. (required).</param>
         /// <param name="hasLicenseKey">Indicates if the product issues a cryptographically secure software license key upon checkout completion. (required).</param>
         /// <param name="hasDigitalDelivery">Whether the product includes digital file downloads upon purchase. (required).</param>
+        /// <param name="hasGithubAccess">Whether the product includes GitHub repository access. (required).</param>
+        /// <param name="githubRepo">GitHub repository to grant access to (format: owner/repo). (required).</param>
+        /// <param name="githubPermission">GitHub collaborator permission level. (required).</param>
         /// <param name="isTaxInclusive">Whether the product price already includes applicable sales taxes. (required).</param>
         /// <param name="billingPeriod">The subscription billing cycle interval in days (for subscription products). (required).</param>
         /// <param name="trialPeriodDays">Trial duration in days for subscription products. (required).</param>
@@ -150,7 +201,7 @@ namespace Solifyn.Model
         /// <param name="activationMessage">Custom message displayed when a license key is activated. (required).</param>
         /// <param name="expiryHours">Number of hours until the license key expires. (required).</param>
         /// <param name="businessId">The unique identifier of the business owning this product. (required).</param>
-        public Product(Guid id = default(Guid), string name = default(string), decimal price = default(decimal), string currency = default(string), string description = default(string), string status = default(string), string imageUrl = default(string), TaxCategoryEnum taxCategory = default(TaxCategoryEnum), PricingTypeEnum pricingType = default(PricingTypeEnum), decimal discount = default(decimal), bool hasLicenseKey = default(bool), bool hasDigitalDelivery = default(bool), bool isTaxInclusive = default(bool), int billingPeriod = default(int), int trialPeriodDays = default(int), int expirationDays = default(int), string statementDescriptor = default(string), bool payWhatYouWant = default(bool), Dictionary<string, string> metadata = default(Dictionary<string, string>), List<Object> customFields = default(List<Object>), int stock = default(int), int activationLimit = default(int), bool isListed = default(bool), bool isFree = default(bool), DateTime createdAt = default(DateTime), DateTime updatedAt = default(DateTime), bool isPermanentlyDeleted = default(bool), string brandId = default(string), string digitalLink = default(string), string instructions = default(string), string activationMessage = default(string), int expiryHours = default(int), string businessId = default(string))
+        public Product(Guid id = default(Guid), string name = default(string), decimal price = default(decimal), string currency = default(string), string description = default(string), string status = default(string), string imageUrl = default(string), TaxCategoryEnum taxCategory = default(TaxCategoryEnum), PricingTypeEnum pricingType = default(PricingTypeEnum), decimal discount = default(decimal), bool hasLicenseKey = default(bool), bool hasDigitalDelivery = default(bool), bool hasGithubAccess = default(bool), string githubRepo = default(string), GithubPermissionEnum githubPermission = default(GithubPermissionEnum), bool isTaxInclusive = default(bool), int billingPeriod = default(int), int trialPeriodDays = default(int), int expirationDays = default(int), string statementDescriptor = default(string), bool payWhatYouWant = default(bool), Dictionary<string, string> metadata = default(Dictionary<string, string>), List<Object> customFields = default(List<Object>), int stock = default(int), int activationLimit = default(int), bool isListed = default(bool), bool isFree = default(bool), DateTime createdAt = default(DateTime), DateTime updatedAt = default(DateTime), bool isPermanentlyDeleted = default(bool), string brandId = default(string), string digitalLink = default(string), string instructions = default(string), string activationMessage = default(string), int expiryHours = default(int), string businessId = default(string))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -183,6 +234,14 @@ namespace Solifyn.Model
             this.Discount = discount;
             this.HasLicenseKey = hasLicenseKey;
             this.HasDigitalDelivery = hasDigitalDelivery;
+            this.HasGithubAccess = hasGithubAccess;
+            // to ensure "githubRepo" is required (not null)
+            if (githubRepo == null)
+            {
+                throw new ArgumentNullException("githubRepo is a required property for Product and cannot be null");
+            }
+            this.GithubRepo = githubRepo;
+            this.GithubPermission = githubPermission;
             this.IsTaxInclusive = isTaxInclusive;
             this.BillingPeriod = billingPeriod;
             this.TrialPeriodDays = trialPeriodDays;
@@ -346,6 +405,26 @@ namespace Solifyn.Model
         */
         [DataMember(Name = "hasDigitalDelivery", IsRequired = true, EmitDefaultValue = true)]
         public bool HasDigitalDelivery { get; set; }
+
+        /// <summary>
+        /// Whether the product includes GitHub repository access.
+        /// </summary>
+        /// <value>Whether the product includes GitHub repository access.</value>
+        /*
+        <example>false</example>
+        */
+        [DataMember(Name = "hasGithubAccess", IsRequired = true, EmitDefaultValue = true)]
+        public bool HasGithubAccess { get; set; }
+
+        /// <summary>
+        /// GitHub repository to grant access to (format: owner/repo).
+        /// </summary>
+        /// <value>GitHub repository to grant access to (format: owner/repo).</value>
+        /*
+        <example>solifyn/premium-app</example>
+        */
+        [DataMember(Name = "githubRepo", IsRequired = true, EmitDefaultValue = true)]
+        public string GithubRepo { get; set; }
 
         /// <summary>
         /// Whether the product price already includes applicable sales taxes.
@@ -562,6 +641,9 @@ namespace Solifyn.Model
             sb.Append("  Discount: ").Append(Discount).Append("\n");
             sb.Append("  HasLicenseKey: ").Append(HasLicenseKey).Append("\n");
             sb.Append("  HasDigitalDelivery: ").Append(HasDigitalDelivery).Append("\n");
+            sb.Append("  HasGithubAccess: ").Append(HasGithubAccess).Append("\n");
+            sb.Append("  GithubRepo: ").Append(GithubRepo).Append("\n");
+            sb.Append("  GithubPermission: ").Append(GithubPermission).Append("\n");
             sb.Append("  IsTaxInclusive: ").Append(IsTaxInclusive).Append("\n");
             sb.Append("  BillingPeriod: ").Append(BillingPeriod).Append("\n");
             sb.Append("  TrialPeriodDays: ").Append(TrialPeriodDays).Append("\n");

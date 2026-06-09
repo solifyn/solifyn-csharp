@@ -50,7 +50,8 @@ namespace Solifyn.Model
         /// <param name="paymentId">Database payment transaction ID.</param>
         /// <param name="checkoutUrl">Checkout session redirect URL if loaded in link mode.</param>
         /// <param name="product">The details of the product being purchased.</param>
-        public CheckoutSessionDetailsDto(string id = default(string), decimal price = default(decimal), string currency = default(string), string storeName = default(string), string status = default(string), Object billingAddress = default(Object), Object customFields = default(Object), string sessionId = default(string), string paymentId = default(string), string checkoutUrl = default(string), Product product = default(Product))
+        /// <param name="entitlementGrants">List of entitlement grants (e.g. GitHub repo invites) associated with this checkout..</param>
+        public CheckoutSessionDetailsDto(string id = default(string), decimal price = default(decimal), string currency = default(string), string storeName = default(string), string status = default(string), Object billingAddress = default(Object), Object customFields = default(Object), string sessionId = default(string), string paymentId = default(string), string checkoutUrl = default(string), Product product = default(Product), List<Object> entitlementGrants = default(List<Object>))
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -83,6 +84,7 @@ namespace Solifyn.Model
             this.PaymentId = paymentId;
             this.CheckoutUrl = checkoutUrl;
             this.Product = product;
+            this.EntitlementGrants = entitlementGrants;
         }
 
         /// <summary>
@@ -187,6 +189,13 @@ namespace Solifyn.Model
         public Product Product { get; set; }
 
         /// <summary>
+        /// List of entitlement grants (e.g. GitHub repo invites) associated with this checkout.
+        /// </summary>
+        /// <value>List of entitlement grants (e.g. GitHub repo invites) associated with this checkout.</value>
+        [DataMember(Name = "entitlementGrants", EmitDefaultValue = false)]
+        public List<Object> EntitlementGrants { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -205,6 +214,7 @@ namespace Solifyn.Model
             sb.Append("  PaymentId: ").Append(PaymentId).Append("\n");
             sb.Append("  CheckoutUrl: ").Append(CheckoutUrl).Append("\n");
             sb.Append("  Product: ").Append(Product).Append("\n");
+            sb.Append("  EntitlementGrants: ").Append(EntitlementGrants).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

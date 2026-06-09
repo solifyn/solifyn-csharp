@@ -1,6 +1,6 @@
 # Solifyn.Api.WebhookEndpointApi
 
-All URIs are relative to *http://localhost:8000*
+All URIs are relative to *https://api.solifyn.com*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
@@ -35,7 +35,10 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8000";
+            config.BasePath = "https://api.solifyn.com";
+            // Configure Bearer token for authorization: ApiKeyAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
             var apiInstance = new WebhookEndpointApi(config);
             var operationalWebhookEndpointInDto = new OperationalWebhookEndpointInDto(); // OperationalWebhookEndpointInDto | 
 
@@ -88,7 +91,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -124,7 +127,10 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8000";
+            config.BasePath = "https://api.solifyn.com";
+            // Configure Bearer token for authorization: ApiKeyAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
             var apiInstance = new WebhookEndpointApi(config);
             var id = "id_example";  // string | The endpoint ID or UID
 
@@ -173,7 +179,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -209,7 +215,10 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8000";
+            config.BasePath = "https://api.solifyn.com";
+            // Configure Bearer token for authorization: ApiKeyAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
             var apiInstance = new WebhookEndpointApi(config);
             var id = "id_example";  // string | The endpoint ID or UID
 
@@ -262,7 +271,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -298,7 +307,10 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8000";
+            config.BasePath = "https://api.solifyn.com";
+            // Configure Bearer token for authorization: ApiKeyAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
             var apiInstance = new WebhookEndpointApi(config);
             var id = "id_example";  // string | The endpoint ID or UID
 
@@ -351,7 +363,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -387,7 +399,10 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8000";
+            config.BasePath = "https://api.solifyn.com";
+            // Configure Bearer token for authorization: ApiKeyAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
             var apiInstance = new WebhookEndpointApi(config);
             var id = "id_example";  // string | The endpoint ID or UID
 
@@ -440,7 +455,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -476,7 +491,10 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8000";
+            config.BasePath = "https://api.solifyn.com";
+            // Configure Bearer token for authorization: ApiKeyAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
             var apiInstance = new WebhookEndpointApi(config);
 
             try
@@ -524,7 +542,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -560,7 +578,10 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8000";
+            config.BasePath = "https://api.solifyn.com";
+            // Configure Bearer token for authorization: ApiKeyAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
             var apiInstance = new WebhookEndpointApi(config);
             var id = "id_example";  // string | The endpoint ID or UID
             var operationalWebhookEndpointSecretInDto = new OperationalWebhookEndpointSecretInDto(); // OperationalWebhookEndpointSecretInDto | 
@@ -611,7 +632,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -647,7 +668,10 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8000";
+            config.BasePath = "https://api.solifyn.com";
+            // Configure Bearer token for authorization: ApiKeyAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
             var apiInstance = new WebhookEndpointApi(config);
             var id = "id_example";  // string | The endpoint ID or UID
             var operationalWebhookEndpointUpdateDto = new OperationalWebhookEndpointUpdateDto(); // OperationalWebhookEndpointUpdateDto | 
@@ -702,7 +726,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -738,7 +762,10 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8000";
+            config.BasePath = "https://api.solifyn.com";
+            // Configure Bearer token for authorization: ApiKeyAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
             var apiInstance = new WebhookEndpointApi(config);
             var id = "id_example";  // string | The endpoint ID or UID
             var operationalWebhookEndpointHeadersInDto = new OperationalWebhookEndpointHeadersInDto(); // OperationalWebhookEndpointHeadersInDto | 
@@ -789,7 +816,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 

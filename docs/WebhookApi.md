@@ -1,6 +1,6 @@
 # Solifyn.Api.WebhookApi
 
-All URIs are relative to *http://localhost:8000*
+All URIs are relative to *https://api.solifyn.com*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
@@ -28,7 +28,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8000";
+            config.BasePath = "https://api.solifyn.com";
             var apiInstance = new WebhookApi(config);
 
             try
@@ -106,7 +106,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8000";
+            config.BasePath = "https://api.solifyn.com";
             var apiInstance = new WebhookApi(config);
             var businessId = "businessId_example";  // string | 
 

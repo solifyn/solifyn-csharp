@@ -624,6 +624,12 @@ namespace Solifyn.Api
             localVarRequestOptions.Operation = "WebhookEndpointApi.OperationalWebhookControllerCreate";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKeyAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<OperationalWebhookEndpointResponseDto>("/v1/operational-webhook/endpoint", localVarRequestOptions, this.Configuration);
@@ -698,6 +704,12 @@ namespace Solifyn.Api
             localVarRequestOptions.Operation = "WebhookEndpointApi.OperationalWebhookControllerCreate";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKeyAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<OperationalWebhookEndpointResponseDto>("/v1/operational-webhook/endpoint", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -767,6 +779,12 @@ namespace Solifyn.Api
             localVarRequestOptions.Operation = "WebhookEndpointApi.OperationalWebhookControllerDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKeyAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Delete<Object>("/v1/operational-webhook/endpoint/{id}", localVarRequestOptions, this.Configuration);
@@ -838,6 +856,12 @@ namespace Solifyn.Api
             localVarRequestOptions.Operation = "WebhookEndpointApi.OperationalWebhookControllerDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKeyAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/v1/operational-webhook/endpoint/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -909,6 +933,12 @@ namespace Solifyn.Api
             localVarRequestOptions.Operation = "WebhookEndpointApi.OperationalWebhookControllerGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKeyAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<OperationalWebhookEndpointResponseDto>("/v1/operational-webhook/endpoint/{id}", localVarRequestOptions, this.Configuration);
@@ -982,6 +1012,12 @@ namespace Solifyn.Api
             localVarRequestOptions.Operation = "WebhookEndpointApi.OperationalWebhookControllerGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKeyAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<OperationalWebhookEndpointResponseDto>("/v1/operational-webhook/endpoint/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1053,6 +1089,12 @@ namespace Solifyn.Api
             localVarRequestOptions.Operation = "WebhookEndpointApi.OperationalWebhookControllerGetHeaders";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKeyAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<OperationalWebhookEndpointHeadersResponseDto>("/v1/operational-webhook/endpoint/{id}/headers", localVarRequestOptions, this.Configuration);
@@ -1126,6 +1168,12 @@ namespace Solifyn.Api
             localVarRequestOptions.Operation = "WebhookEndpointApi.OperationalWebhookControllerGetHeaders";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKeyAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<OperationalWebhookEndpointHeadersResponseDto>("/v1/operational-webhook/endpoint/{id}/headers", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1197,6 +1245,12 @@ namespace Solifyn.Api
             localVarRequestOptions.Operation = "WebhookEndpointApi.OperationalWebhookControllerGetSecret";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKeyAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<OperationalWebhookEndpointSecretResponseDto>("/v1/operational-webhook/endpoint/{id}/secret", localVarRequestOptions, this.Configuration);
@@ -1270,6 +1324,12 @@ namespace Solifyn.Api
             localVarRequestOptions.Operation = "WebhookEndpointApi.OperationalWebhookControllerGetSecret";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKeyAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<OperationalWebhookEndpointSecretResponseDto>("/v1/operational-webhook/endpoint/{id}/secret", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1332,6 +1392,12 @@ namespace Solifyn.Api
             localVarRequestOptions.Operation = "WebhookEndpointApi.OperationalWebhookControllerList";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKeyAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<OperationalWebhookEndpointListResponseDto>("/v1/operational-webhook/endpoint", localVarRequestOptions, this.Configuration);
@@ -1396,6 +1462,12 @@ namespace Solifyn.Api
             localVarRequestOptions.Operation = "WebhookEndpointApi.OperationalWebhookControllerList";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKeyAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<OperationalWebhookEndpointListResponseDto>("/v1/operational-webhook/endpoint", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1475,6 +1547,12 @@ namespace Solifyn.Api
             localVarRequestOptions.Operation = "WebhookEndpointApi.OperationalWebhookControllerRotateSecret";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKeyAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/v1/operational-webhook/endpoint/{id}/secret/rotate", localVarRequestOptions, this.Configuration);
@@ -1556,6 +1634,12 @@ namespace Solifyn.Api
             localVarRequestOptions.Operation = "WebhookEndpointApi.OperationalWebhookControllerRotateSecret";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKeyAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/v1/operational-webhook/endpoint/{id}/secret/rotate", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1637,6 +1721,12 @@ namespace Solifyn.Api
             localVarRequestOptions.Operation = "WebhookEndpointApi.OperationalWebhookControllerUpdate";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKeyAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Put<OperationalWebhookEndpointResponseDto>("/v1/operational-webhook/endpoint/{id}", localVarRequestOptions, this.Configuration);
@@ -1720,6 +1810,12 @@ namespace Solifyn.Api
             localVarRequestOptions.Operation = "WebhookEndpointApi.OperationalWebhookControllerUpdate";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKeyAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PutAsync<OperationalWebhookEndpointResponseDto>("/v1/operational-webhook/endpoint/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1799,6 +1895,12 @@ namespace Solifyn.Api
             localVarRequestOptions.Operation = "WebhookEndpointApi.OperationalWebhookControllerUpdateHeaders";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKeyAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Put<Object>("/v1/operational-webhook/endpoint/{id}/headers", localVarRequestOptions, this.Configuration);
@@ -1880,6 +1982,12 @@ namespace Solifyn.Api
             localVarRequestOptions.Operation = "WebhookEndpointApi.OperationalWebhookControllerUpdateHeaders";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (ApiKeyAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PutAsync<Object>("/v1/operational-webhook/endpoint/{id}/headers", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

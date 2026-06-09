@@ -1,6 +1,6 @@
 # Solifyn.Api.MetersApi
 
-All URIs are relative to *http://localhost:8000*
+All URIs are relative to *https://api.solifyn.com*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
@@ -35,7 +35,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8000";
+            config.BasePath = "https://api.solifyn.com";
             // Configure Bearer token for authorization: ApiKeyAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -129,7 +129,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8000";
+            config.BasePath = "https://api.solifyn.com";
             // Configure Bearer token for authorization: ApiKeyAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -223,7 +223,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8000";
+            config.BasePath = "https://api.solifyn.com";
             // Configure Bearer token for authorization: ApiKeyAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -321,7 +321,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8000";
+            config.BasePath = "https://api.solifyn.com";
             // Configure Bearer token for authorization: ApiKeyAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -417,7 +417,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8000";
+            config.BasePath = "https://api.solifyn.com";
             // Configure Bearer token for authorization: ApiKeyAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -515,7 +515,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8000";
+            config.BasePath = "https://api.solifyn.com";
             // Configure Bearer token for authorization: ApiKeyAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -609,7 +609,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8000";
+            config.BasePath = "https://api.solifyn.com";
             // Configure Bearer token for authorization: ApiKeyAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 

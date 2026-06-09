@@ -1,6 +1,6 @@
 # Solifyn.Api.DeveloperApi
 
-All URIs are relative to *http://localhost:8000*
+All URIs are relative to *https://api.solifyn.com*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
@@ -36,7 +36,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8000";
+            config.BasePath = "https://api.solifyn.com";
             var apiInstance = new DeveloperApi(config);
             var createApiKeyDto = new CreateApiKeyDto(); // CreateApiKeyDto | 
 
@@ -125,7 +125,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8000";
+            config.BasePath = "https://api.solifyn.com";
             var apiInstance = new DeveloperApi(config);
             var createWebhookEndpointDto = new CreateWebhookEndpointDto(); // CreateWebhookEndpointDto | 
 
@@ -214,7 +214,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8000";
+            config.BasePath = "https://api.solifyn.com";
             var apiInstance = new DeveloperApi(config);
             var id = "id_example";  // string | The webhook endpoint ID
 
@@ -299,7 +299,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8000";
+            config.BasePath = "https://api.solifyn.com";
             var apiInstance = new DeveloperApi(config);
 
             try
@@ -383,7 +383,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8000";
+            config.BasePath = "https://api.solifyn.com";
             var apiInstance = new DeveloperApi(config);
             var id = "id_example";  // string | The webhook endpoint ID
 
@@ -472,7 +472,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8000";
+            config.BasePath = "https://api.solifyn.com";
             var apiInstance = new DeveloperApi(config);
 
             try
@@ -556,7 +556,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8000";
+            config.BasePath = "https://api.solifyn.com";
             var apiInstance = new DeveloperApi(config);
             var id = "id_example";  // string | The webhook endpoint ID
 
@@ -645,7 +645,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8000";
+            config.BasePath = "https://api.solifyn.com";
             var apiInstance = new DeveloperApi(config);
 
             try
@@ -729,7 +729,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8000";
+            config.BasePath = "https://api.solifyn.com";
             var apiInstance = new DeveloperApi(config);
             var id = "id_example";  // string | The API key ID
 
@@ -814,7 +814,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8000";
+            config.BasePath = "https://api.solifyn.com";
             var apiInstance = new DeveloperApi(config);
             var id = "id_example";  // string | The webhook endpoint ID
             var updateWebhookEndpointDto = new UpdateWebhookEndpointDto(); // UpdateWebhookEndpointDto | 

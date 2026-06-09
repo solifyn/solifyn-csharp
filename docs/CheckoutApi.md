@@ -1,6 +1,6 @@
 # Solifyn.Api.CheckoutApi
 
-All URIs are relative to *http://localhost:8000*
+All URIs are relative to *https://api.solifyn.com*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
@@ -34,7 +34,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8000";
+            config.BasePath = "https://api.solifyn.com";
             var apiInstance = new CheckoutApi(config);
             var createCheckoutDto = new CreateCheckoutDto(); // CreateCheckoutDto | 
 
@@ -125,7 +125,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8000";
+            config.BasePath = "https://api.solifyn.com";
             var apiInstance = new CheckoutApi(config);
             var createCollectionCheckoutDto = new CreateCollectionCheckoutDto(); // CreateCollectionCheckoutDto | 
 
@@ -216,7 +216,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8000";
+            config.BasePath = "https://api.solifyn.com";
             var apiInstance = new CheckoutApi(config);
             var createSetupCheckoutDto = new CreateSetupCheckoutDto(); // CreateSetupCheckoutDto | 
 
@@ -303,7 +303,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8000";
+            config.BasePath = "https://api.solifyn.com";
             var apiInstance = new CheckoutApi(config);
             var id = ch_XXXXXXXXXXX;  // string | Internal database checkout session ID
 
@@ -394,7 +394,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8000";
+            config.BasePath = "https://api.solifyn.com";
             var apiInstance = new CheckoutApi(config);
             var productId = prod_z2o92kEl6cYYX;  // string | Public product ID
             var addons = "addons_example";  // string | 
@@ -495,7 +495,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8000";
+            config.BasePath = "https://api.solifyn.com";
             var apiInstance = new CheckoutApi(config);
 
             try

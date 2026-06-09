@@ -17,6 +17,9 @@ Name | Type | Description | Notes
 **Discount** | **decimal** | Discount value as a percentage or fixed amount. | 
 **HasLicenseKey** | **bool** | Indicates if the product issues a cryptographically secure software license key upon checkout completion. | 
 **HasDigitalDelivery** | **bool** | Whether the product includes digital file downloads upon purchase. | 
+**HasGithubAccess** | **bool** | Whether the product includes GitHub repository access. | 
+**GithubRepo** | **string** | GitHub repository to grant access to (format: owner/repo). | 
+**GithubPermission** | **string** | GitHub collaborator permission level. | 
 **IsTaxInclusive** | **bool** | Whether the product price already includes applicable sales taxes. | 
 **BillingPeriod** | **int** | The subscription billing cycle interval in days (for subscription products). | 
 **TrialPeriodDays** | **int** | Trial duration in days for subscription products. | 

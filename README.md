@@ -73,7 +73,7 @@ namespace Example
         {
 
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8000";
+            config.BasePath = "https://api.solifyn.com";
             var apiInstance = new BalanceApi(config);
 
             try
@@ -95,7 +95,7 @@ namespace Example
 <a id="documentation-for-api-endpoints"></a>
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://localhost:8000*
+All URIs are relative to *https://api.solifyn.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -153,6 +153,12 @@ Class | Method | HTTP request | Description
 *DisputesApi* | [**DisputesSubmitEvidence**](docs/DisputesApi.md#disputessubmitevidence) | **POST** /v1/transactions/disputes/{id}/submit | Submit Dispute Evidence
 *DisputesApi* | [**DisputesUpdateEvidence**](docs/DisputesApi.md#disputesupdateevidence) | **PATCH** /v1/transactions/disputes/{id}/evidence | Update Dispute Evidence
 *DisputesApi* | [**DisputesUploadEvidenceFile**](docs/DisputesApi.md#disputesuploadevidencefile) | **POST** /v1/transactions/disputes/upload | Upload Evidence File
+*EntitlementGrantsApi* | [**EntitlementGrantsGet**](docs/EntitlementGrantsApi.md#entitlementgrantsget) | **GET** /v1/entitlement-grants/{id} | Retrieve Entitlement Grant
+*EntitlementGrantsApi* | [**EntitlementGrantsList**](docs/EntitlementGrantsApi.md#entitlementgrantslist) | **GET** /v1/entitlement-grants | List Entitlement Grants
+*EntitlementGrantsApi* | [**EntitlementGrantsRetry**](docs/EntitlementGrantsApi.md#entitlementgrantsretry) | **POST** /v1/entitlement-grants/{id}/retry | Retry Entitlement Grant Delivery
+*EntitlementGrantsApi* | [**EntitlementGrantsRevoke**](docs/EntitlementGrantsApi.md#entitlementgrantsrevoke) | **POST** /v1/entitlement-grants/{id}/revoke | Manually Revoke Entitlement Grant
+*GitHubIntegrationApi* | [**GithubGetInstallUrl**](docs/GitHubIntegrationApi.md#githubgetinstallurl) | **GET** /v1/github/install | Get GitHub App Installation URL
+*GitHubIntegrationApi* | [**GithubListRepos**](docs/GitHubIntegrationApi.md#githublistrepos) | **GET** /v1/github/repos | List Available GitHub Repositories
 *LicenseApi* | [**LicensesCreate**](docs/LicenseApi.md#licensescreate) | **POST** /v1/licenses | Create License Key
 *LicenseApi* | [**LicensesDeleteInstance**](docs/LicenseApi.md#licensesdeleteinstance) | **DELETE** /v1/licenses/instances/{instanceId} | Force Delete Instance
 *LicenseApi* | [**LicensesGet**](docs/LicenseApi.md#licensesget) | **GET** /v1/licenses/{id} | Get License Key
@@ -277,6 +283,8 @@ Class | Method | HTTP request | Description
  - [Model.DisputeFileUpload](docs/DisputeFileUpload.md)
  - [Model.DisputeList](docs/DisputeList.md)
  - [Model.DisputeListMetaDto](docs/DisputeListMetaDto.md)
+ - [Model.EntitlementGrantResponseDto](docs/EntitlementGrantResponseDto.md)
+ - [Model.GithubReposResponseDto](docs/GithubReposResponseDto.md)
  - [Model.Instance](docs/Instance.md)
  - [Model.Invoice](docs/Invoice.md)
  - [Model.License](docs/License.md)
@@ -344,6 +352,7 @@ Class | Method | HTTP request | Description
  - [Model.SubscriptionUserDto](docs/SubscriptionUserDto.md)
  - [Model.SubscriptionsAction201Response](docs/SubscriptionsAction201Response.md)
  - [Model.SupportedCurrenciesResponseDto](docs/SupportedCurrenciesResponseDto.md)
+ - [Model.SyncLoginDto](docs/SyncLoginDto.md)
  - [Model.UpdateCheckoutLinkDto](docs/UpdateCheckoutLinkDto.md)
  - [Model.UpdateCollectionDto](docs/UpdateCollectionDto.md)
  - [Model.UpdateCollectionProductDto](docs/UpdateCollectionProductDto.md)

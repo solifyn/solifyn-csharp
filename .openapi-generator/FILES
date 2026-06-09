@@ -62,6 +62,10 @@ docs/DisputeFileUpload.md
 docs/DisputeList.md
 docs/DisputeListMetaDto.md
 docs/DisputesApi.md
+docs/EntitlementGrantResponseDto.md
+docs/EntitlementGrantsApi.md
+docs/GitHubIntegrationApi.md
+docs/GithubReposResponseDto.md
 docs/Instance.md
 docs/Invoice.md
 docs/License.md
@@ -139,6 +143,7 @@ docs/SubscriptionUserDto.md
 docs/SubscriptionsAction201Response.md
 docs/SubscriptionsApi.md
 docs/SupportedCurrenciesResponseDto.md
+docs/SyncLoginDto.md
 docs/UpdateCheckoutLinkDto.md
 docs/UpdateCollectionDto.md
 docs/UpdateCollectionProductDto.md
@@ -157,8 +162,6 @@ docs/WebhookPaymentPayloadBillingAddress.md
 docs/WebhookRefundPayload.md
 docs/WebhookSubscriptionPayload.md
 git_push.sh
-src/Solifyn.Test/Api/RefundRequestsApiTests.cs
-src/Solifyn.Test/Model/CreateSetupCheckoutDtoTests.cs
 src/Solifyn.Test/Solifyn.Test.csproj
 src/Solifyn/Api/BalanceApi.cs
 src/Solifyn/Api/CheckoutApi.cs
@@ -170,6 +173,8 @@ src/Solifyn/Api/DeveloperApi.cs
 src/Solifyn/Api/DigitalFileApi.cs
 src/Solifyn/Api/DiscountsApi.cs
 src/Solifyn/Api/DisputesApi.cs
+src/Solifyn/Api/EntitlementGrantsApi.cs
+src/Solifyn/Api/GitHubIntegrationApi.cs
 src/Solifyn/Api/LicenseApi.cs
 src/Solifyn/Api/LicenseKeysApi.cs
 src/Solifyn/Api/LicenseKeysClientApi.cs
@@ -248,6 +253,8 @@ src/Solifyn/Model/DisputeEvidenceUpdate.cs
 src/Solifyn/Model/DisputeFileUpload.cs
 src/Solifyn/Model/DisputeList.cs
 src/Solifyn/Model/DisputeListMetaDto.cs
+src/Solifyn/Model/EntitlementGrantResponseDto.cs
+src/Solifyn/Model/GithubReposResponseDto.cs
 src/Solifyn/Model/Instance.cs
 src/Solifyn/Model/Invoice.cs
 src/Solifyn/Model/License.cs
@@ -315,6 +322,7 @@ src/Solifyn/Model/SubscriptionSeatAdjustment.cs
 src/Solifyn/Model/SubscriptionUserDto.cs
 src/Solifyn/Model/SubscriptionsAction201Response.cs
 src/Solifyn/Model/SupportedCurrenciesResponseDto.cs
+src/Solifyn/Model/SyncLoginDto.cs
 src/Solifyn/Model/UpdateCheckoutLinkDto.cs
 src/Solifyn/Model/UpdateCollectionDto.cs
 src/Solifyn/Model/UpdateCollectionProductDto.cs
