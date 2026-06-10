@@ -55,7 +55,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Custom key-value headers to send with the webhook.</value>
         /*
-        <example>{&quot;X-Example&quot;:&quot;123&quot;,&quot;X-Foobar&quot;:&quot;Bar&quot;}</example>
+        <example>{X-Example&#x3D;123, X-Foobar&#x3D;Bar}</example>
         */
         [DataMember(Name = "headers", IsRequired = true, EmitDefaultValue = true)]
         public Object Headers { get; set; }

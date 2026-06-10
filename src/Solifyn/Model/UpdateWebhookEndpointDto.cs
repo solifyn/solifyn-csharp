@@ -101,7 +101,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>The list of subscribed event types.</value>
         /*
-        <example>[&quot;payment.created&quot;,&quot;payment.succeeded&quot;,&quot;refund.succeeded&quot;]</example>
+        <example>[payment.created, payment.succeeded, refund.succeeded]</example>
         */
         [DataMember(Name = "events", EmitDefaultValue = false)]
         public List<string> Events { get; set; }

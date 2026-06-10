@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Status** | **string** |  | [optional] 
 **Reason** | **string** |  | [optional] 
 **Editable** | **bool** |  | [optional] 
-**NeedsResponseBy** | **DateTime?** |  | [optional] 
+**NeedsResponseBy** | **DateTime** |  | [optional] 
 **CustomerName** | **string** |  | [optional] 
 **CustomerEmail** | **string** |  | [optional] 
 **Notes** | **string** |  | [optional] 

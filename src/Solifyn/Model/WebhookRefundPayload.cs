@@ -45,7 +45,7 @@ namespace Solifyn.Model
         /// <param name="providerCreatedAt">providerCreatedAt.</param>
         /// <param name="createdAt">createdAt.</param>
         /// <param name="updatedAt">updatedAt.</param>
-        public WebhookRefundPayload(string id = default(string), string paymentId = default(string), string amount = default(string), string currency = default(string), string status = default(string), string reason = default(string), string referenceValue = default(string), string provider = default(string), DateTime? providerCreatedAt = default(DateTime?), DateTime createdAt = default(DateTime), DateTime updatedAt = default(DateTime))
+        public WebhookRefundPayload(string id = default(string), string paymentId = default(string), string amount = default(string), string currency = default(string), string status = default(string), string reason = default(string), string referenceValue = default(string), string provider = default(string), DateTime providerCreatedAt = default(DateTime), DateTime createdAt = default(DateTime), DateTime updatedAt = default(DateTime))
         {
             this.Id = id;
             this.PaymentId = paymentId;
@@ -113,13 +113,13 @@ namespace Solifyn.Model
         /*
         <example>requested_by_customer</example>
         */
-        [DataMember(Name = "reason", EmitDefaultValue = true)]
+        [DataMember(Name = "reason", EmitDefaultValue = false)]
         public string Reason { get; set; }
 
         /// <summary>
         /// Gets or Sets ReferenceValue
         /// </summary>
-        [DataMember(Name = "referenceValue", EmitDefaultValue = true)]
+        [DataMember(Name = "referenceValue", EmitDefaultValue = false)]
         public string ReferenceValue { get; set; }
 
         /// <summary>
@@ -128,14 +128,14 @@ namespace Solifyn.Model
         /*
         <example>stripe</example>
         */
-        [DataMember(Name = "provider", EmitDefaultValue = true)]
+        [DataMember(Name = "provider", EmitDefaultValue = false)]
         public string Provider { get; set; }
 
         /// <summary>
         /// Gets or Sets ProviderCreatedAt
         /// </summary>
-        [DataMember(Name = "providerCreatedAt", EmitDefaultValue = true)]
-        public DateTime? ProviderCreatedAt { get; set; }
+        [DataMember(Name = "providerCreatedAt", EmitDefaultValue = false)]
+        public DateTime ProviderCreatedAt { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedAt

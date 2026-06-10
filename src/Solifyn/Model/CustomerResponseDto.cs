@@ -97,7 +97,7 @@ namespace Solifyn.Model
         /*
         <example>mem_123</example>
         */
-        [DataMember(Name = "memberId", EmitDefaultValue = true)]
+        [DataMember(Name = "memberId", EmitDefaultValue = false)]
         public string MemberId { get; set; }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Solifyn.Model
         /*
         <example>John Doe</example>
         */
-        [DataMember(Name = "name", EmitDefaultValue = true)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace Solifyn.Model
         /*
         <example>johndoe</example>
         */
-        [DataMember(Name = "username", EmitDefaultValue = true)]
+        [DataMember(Name = "username", EmitDefaultValue = false)]
         public string Username { get; set; }
 
         /// <summary>
@@ -137,7 +137,7 @@ namespace Solifyn.Model
         /*
         <example>+1234567890</example>
         */
-        [DataMember(Name = "phone", EmitDefaultValue = true)]
+        [DataMember(Name = "phone", EmitDefaultValue = false)]
         public string Phone { get; set; }
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace Solifyn.Model
         /*
         <example>+1234567890</example>
         */
-        [DataMember(Name = "phone_number", EmitDefaultValue = true)]
+        [DataMember(Name = "phone_number", EmitDefaultValue = false)]
         public string PhoneNumber { get; set; }
 
         /// <summary>
@@ -155,9 +155,9 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Additional metadata associated with the customer</value>
         /*
-        <example>{&quot;key&quot;:&quot;value&quot;}</example>
+        <example>{key&#x3D;value}</example>
         */
-        [DataMember(Name = "metadata", EmitDefaultValue = true)]
+        [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public Object Metadata { get; set; }
 
         /// <summary>
@@ -165,7 +165,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Timestamp when the customer was created</value>
         /*
-        <example>2025-01-01T12:00Z</example>
+        <example>2025-01-01T12:00:00Z</example>
         */
         [DataMember(Name = "createdAt", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedAt { get; set; }
@@ -175,7 +175,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Timestamp when the customer was last updated</value>
         /*
-        <example>2025-01-01T12:00Z</example>
+        <example>2025-01-01T12:00:00Z</example>
         */
         [DataMember(Name = "updatedAt", IsRequired = true, EmitDefaultValue = true)]
         public DateTime UpdatedAt { get; set; }

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | **string** |  | 
 **Key** | **string** |  | 
 **Status** | **string** |  | 
-**ActivationLimit** | **decimal?** |  | 
+**ActivationLimit** | **decimal** |  | 
 **ActivationMessage** | **string** |  | 
 **ExpiresAt** | **string** |  | 
 **Product** | [**ProductSubDto**](ProductSubDto.md) |  | [optional] 

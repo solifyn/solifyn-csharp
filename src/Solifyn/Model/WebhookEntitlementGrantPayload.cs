@@ -48,7 +48,7 @@ namespace Solifyn.Model
         /// <param name="errorDetails">Error message if invitation delivery failed..</param>
         /// <param name="createdAt">createdAt.</param>
         /// <param name="updatedAt">updatedAt.</param>
-        public WebhookEntitlementGrantPayload(Guid id = default(Guid), Guid businessId = default(Guid), Guid customerId = default(Guid), Guid? paymentId = default(Guid?), Guid productId = default(Guid), string type = default(string), string githubRepo = default(string), string githubPermission = default(string), string githubUsername = default(string), string status = default(string), string oauthUrl = default(string), string errorDetails = default(string), DateTime createdAt = default(DateTime), DateTime updatedAt = default(DateTime))
+        public WebhookEntitlementGrantPayload(Guid id = default(Guid), Guid businessId = default(Guid), Guid customerId = default(Guid), Guid paymentId = default(Guid), Guid productId = default(Guid), string type = default(string), string githubRepo = default(string), string githubPermission = default(string), string githubUsername = default(string), string status = default(string), string oauthUrl = default(string), string errorDetails = default(string), DateTime createdAt = default(DateTime), DateTime updatedAt = default(DateTime))
         {
             this.Id = id;
             this.BusinessId = businessId;
@@ -70,6 +70,9 @@ namespace Solifyn.Model
         /// The unique entitlement grant ID.
         /// </summary>
         /// <value>The unique entitlement grant ID.</value>
+        /*
+        <example>grant_123456</example>
+        */
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
@@ -77,6 +80,9 @@ namespace Solifyn.Model
         /// The business ID context.
         /// </summary>
         /// <value>The business ID context.</value>
+        /*
+        <example>biz_123456</example>
+        */
         [DataMember(Name = "businessId", EmitDefaultValue = false)]
         public Guid BusinessId { get; set; }
 
@@ -84,6 +90,9 @@ namespace Solifyn.Model
         /// The customer ID.
         /// </summary>
         /// <value>The customer ID.</value>
+        /*
+        <example>cust_123456</example>
+        */
         [DataMember(Name = "customerId", EmitDefaultValue = false)]
         public Guid CustomerId { get; set; }
 
@@ -91,13 +100,19 @@ namespace Solifyn.Model
         /// Associated payment transaction ID.
         /// </summary>
         /// <value>Associated payment transaction ID.</value>
-        [DataMember(Name = "paymentId", EmitDefaultValue = true)]
-        public Guid? PaymentId { get; set; }
+        /*
+        <example>pay_123456</example>
+        */
+        [DataMember(Name = "paymentId", EmitDefaultValue = false)]
+        public Guid PaymentId { get; set; }
 
         /// <summary>
         /// The purchased product ID.
         /// </summary>
         /// <value>The purchased product ID.</value>
+        /*
+        <example>prod_123456</example>
+        */
         [DataMember(Name = "productId", EmitDefaultValue = false)]
         public Guid ProductId { get; set; }
 
@@ -118,7 +133,7 @@ namespace Solifyn.Model
         /*
         <example>solifyn/premium-app</example>
         */
-        [DataMember(Name = "githubRepo", EmitDefaultValue = true)]
+        [DataMember(Name = "githubRepo", EmitDefaultValue = false)]
         public string GithubRepo { get; set; }
 
         /// <summary>
@@ -128,7 +143,7 @@ namespace Solifyn.Model
         /*
         <example>pull</example>
         */
-        [DataMember(Name = "githubPermission", EmitDefaultValue = true)]
+        [DataMember(Name = "githubPermission", EmitDefaultValue = false)]
         public string GithubPermission { get; set; }
 
         /// <summary>
@@ -138,7 +153,7 @@ namespace Solifyn.Model
         /*
         <example>octocat</example>
         */
-        [DataMember(Name = "githubUsername", EmitDefaultValue = true)]
+        [DataMember(Name = "githubUsername", EmitDefaultValue = false)]
         public string GithubUsername { get; set; }
 
         /// <summary>
@@ -158,7 +173,7 @@ namespace Solifyn.Model
         /*
         <example>https://github.com/login/oauth/authorize...</example>
         */
-        [DataMember(Name = "oauthUrl", EmitDefaultValue = true)]
+        [DataMember(Name = "oauthUrl", EmitDefaultValue = false)]
         public string OauthUrl { get; set; }
 
         /// <summary>
@@ -168,7 +183,7 @@ namespace Solifyn.Model
         /*
         <example>Permission denied</example>
         */
-        [DataMember(Name = "errorDetails", EmitDefaultValue = true)]
+        [DataMember(Name = "errorDetails", EmitDefaultValue = false)]
         public string ErrorDetails { get; set; }
 
         /// <summary>

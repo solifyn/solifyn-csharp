@@ -14,21 +14,24 @@ Name | Type | Description | Notes
 **ImageUrl** | **string** | URL of the product cover image. | 
 **TaxCategory** | **string** | The tax classification for the product. | 
 **PricingType** | **string** | Pricing model of the product. | 
-**Discount** | **decimal?** | Discount value as a percentage or fixed amount. | 
+**Discount** | **decimal** | Discount value as a percentage or fixed amount. | 
 **HasLicenseKey** | **bool** | Indicates if the product issues a cryptographically secure software license key upon checkout completion. | 
 **HasDigitalDelivery** | **bool** | Whether the product includes digital file downloads upon purchase. | 
 **HasGithubAccess** | **bool** | Whether the product includes GitHub repository access. | 
 **GithubRepo** | **string** | GitHub repository to grant access to (format: owner/repo). | 
 **GithubPermission** | **string** | GitHub collaborator permission level. | 
+**HasDiscordAccess** | **bool** | Whether the product includes Discord role access. | 
+**DiscordGuildId** | **string** | Discord Guild (Server) ID to grant access to. | 
+**DiscordRoleId** | **string** | Discord Role ID to assign to the user. | 
 **IsTaxInclusive** | **bool** | Whether the product price already includes applicable sales taxes. | 
-**BillingPeriod** | **int?** | The subscription billing cycle interval in days (for subscription products). | 
-**TrialPeriodDays** | **int?** | Trial duration in days for subscription products. | 
-**ExpirationDays** | **int?** | Automatic expiration period in days for the subscription entitlement. | 
+**BillingPeriod** | **int** | The subscription billing cycle interval in days (for subscription products). | 
+**TrialPeriodDays** | **int** | Trial duration in days for subscription products. | 
+**ExpirationDays** | **int** | Automatic expiration period in days for the subscription entitlement. | 
 **StatementDescriptor** | **string** | Custom text displayed on customer credit card statements for purchases of this product. | 
 **PayWhatYouWant** | **bool** | Indicates if customers are allowed to enter a custom pricing amount at checkout. | 
 **Metadata** | **Dictionary&lt;string, string&gt;** | Custom developer metadata key-value pairs associated with the product. | 
 **CustomFields** | **List&lt;Object&gt;** | Custom form field questions to ask the customer during checkout. | 
-**Stock** | **int?** | Available stock quantity, or null for unlimited inventory. | 
+**Stock** | **int** | Available stock quantity, or null for unlimited inventory. | 
 **ActivationLimit** | **int** | Maximum number of simultaneous active instances/devices allowed per issued license key (applicable if hasLicenseKey is true). | 
 **IsListed** | **bool** | Defines if the product is listed publicly on the merchant&#39;s storefront template. | 
 **IsFree** | **bool** | Whether the product is free. | 
@@ -39,7 +42,7 @@ Name | Type | Description | Notes
 **DigitalLink** | **string** | Secure link for digital delivery. | 
 **Instructions** | **string** | Special instructions provided upon purchase. | 
 **ActivationMessage** | **string** | Custom message displayed when a license key is activated. | 
-**ExpiryHours** | **int?** | Number of hours until the license key expires. | 
+**ExpiryHours** | **int** | Number of hours until the license key expires. | 
 **BusinessId** | **string** | The unique identifier of the business owning this product. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

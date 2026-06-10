@@ -106,7 +106,7 @@ namespace Solifyn.Model
         /// <param name="businessId">The unique identifier associated with the business this discount belongs to. (required).</param>
         /// <param name="createdAt">Timestamp indicating exactly when the discount was created. (required).</param>
         /// <param name="updatedAt">Timestamp indicating when the discount was last updated. (required).</param>
-        public Discount(string id = default(string), string discountId = default(string), string code = default(string), string name = default(string), TypeEnum type = default(TypeEnum), int amount = default(int), int? usageLimit = default(int?), int timesUsed = default(int), DateTime? expiresAt = default(DateTime?), StatusEnum status = default(StatusEnum), string businessId = default(string), DateTime createdAt = default(DateTime), DateTime updatedAt = default(DateTime))
+        public Discount(string id = default(string), string discountId = default(string), string code = default(string), string name = default(string), TypeEnum type = default(TypeEnum), int amount = default(int), int usageLimit = default(int), int timesUsed = default(int), DateTime expiresAt = default(DateTime), StatusEnum status = default(StatusEnum), string businessId = default(string), DateTime createdAt = default(DateTime), DateTime updatedAt = default(DateTime))
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -128,18 +128,8 @@ namespace Solifyn.Model
             this.Code = code;
             this.Type = type;
             this.Amount = amount;
-            // to ensure "usageLimit" is required (not null)
-            if (usageLimit == null)
-            {
-                throw new ArgumentNullException("usageLimit is a required property for Discount and cannot be null");
-            }
             this.UsageLimit = usageLimit;
             this.TimesUsed = timesUsed;
-            // to ensure "expiresAt" is required (not null)
-            if (expiresAt == null)
-            {
-                throw new ArgumentNullException("expiresAt is a required property for Discount and cannot be null");
-            }
             this.ExpiresAt = expiresAt;
             this.Status = status;
             // to ensure "businessId" is required (not null)
@@ -199,7 +189,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Maximum number of times this discount code can be redeemed. Null represents unlimited usage.</value>
         [DataMember(Name = "usageLimit", IsRequired = true, EmitDefaultValue = true)]
-        public int? UsageLimit { get; set; }
+        public int UsageLimit { get; set; }
 
         /// <summary>
         /// The number of times this discount code has been successfully redeemed.
@@ -213,7 +203,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>The expiration timestamp after which the discount code is no longer valid.</value>
         [DataMember(Name = "expiresAt", IsRequired = true, EmitDefaultValue = true)]
-        public DateTime? ExpiresAt { get; set; }
+        public DateTime ExpiresAt { get; set; }
 
         /// <summary>
         /// The unique identifier associated with the business this discount belongs to.

@@ -79,7 +79,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>List of errors encountered during ingestion.</value>
         /*
-        <example>[{&quot;event&quot;:&quot;evt_9Y3kP4qR7tU1vW2xZ5aB6c&quot;,&quot;error&quot;:&quot;Meter not found&quot;}]</example>
+        <example>[{event&#x3D;evt_9Y3kP4qR7tU1vW2xZ5aB6c, error&#x3D;Meter not found}]</example>
         */
         [DataMember(Name = "errors", IsRequired = true, EmitDefaultValue = true)]
         public List<Object> Errors { get; set; }

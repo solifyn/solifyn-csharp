@@ -84,7 +84,7 @@ namespace Solifyn.Model
         /// <param name="paymentEventType">paymentEventType.</param>
         /// <param name="lastEventType">lastEventType.</param>
         /// <param name="businessId">businessId.</param>
-        public WebhookPaymentPayload(string id = default(string), string status = default(string), string substatus = default(string), string customerId = default(string), string customerEmail = default(string), string customerName = default(string), string customerUsername = default(string), string productTitle = default(string), string productRoute = default(string), string planId = default(string), string membershipId = default(string), string membershipStatus = default(string), string billingReason = default(string), string amount = default(string), string subtotal = default(string), string usdTotal = default(string), string feeAmount = default(string), string amountAfterFees = default(string), string taxAmount = default(string), string taxBehavior = default(string), string taxRefundedAmount = default(string), string refundedAmount = default(string), string settlementAmount = default(string), string settlementCurrency = default(string), string settlementExchangeRate = default(string), string currency = default(string), bool refundable = default(bool), bool retryable = default(bool), bool autoRefunded = default(bool), string paymentMethod = default(string), string cardBrand = default(string), string cardLast4 = default(string), int? cardExpMonth = default(int?), int? cardExpYear = default(int?), WebhookPaymentPayloadBillingAddress billingAddress = default(WebhookPaymentPayloadBillingAddress), string licenseKey = default(string), List<Object> filesSnapshot = default(List<Object>), string checkoutId = default(string), string discountCode = default(string), string failureMessage = default(string), DateTime? paidAt = default(DateTime?), DateTime? refundedAt = default(DateTime?), DateTime? disputeAlertedAt = default(DateTime?), DateTime? lastPaymentAttempt = default(DateTime?), DateTime? nextPaymentAttempt = default(DateTime?), DateTime createdAt = default(DateTime), DateTime updatedAt = default(DateTime), string paymentEventType = default(string), string lastEventType = default(string), string businessId = default(string))
+        public WebhookPaymentPayload(string id = default(string), string status = default(string), string substatus = default(string), string customerId = default(string), string customerEmail = default(string), string customerName = default(string), string customerUsername = default(string), string productTitle = default(string), string productRoute = default(string), string planId = default(string), string membershipId = default(string), string membershipStatus = default(string), string billingReason = default(string), string amount = default(string), string subtotal = default(string), string usdTotal = default(string), string feeAmount = default(string), string amountAfterFees = default(string), string taxAmount = default(string), string taxBehavior = default(string), string taxRefundedAmount = default(string), string refundedAmount = default(string), string settlementAmount = default(string), string settlementCurrency = default(string), string settlementExchangeRate = default(string), string currency = default(string), bool refundable = default(bool), bool retryable = default(bool), bool autoRefunded = default(bool), string paymentMethod = default(string), string cardBrand = default(string), string cardLast4 = default(string), int cardExpMonth = default(int), int cardExpYear = default(int), WebhookPaymentPayloadBillingAddress billingAddress = default(WebhookPaymentPayloadBillingAddress), string licenseKey = default(string), List<Object> filesSnapshot = default(List<Object>), string checkoutId = default(string), string discountCode = default(string), string failureMessage = default(string), DateTime paidAt = default(DateTime), DateTime refundedAt = default(DateTime), DateTime disputeAlertedAt = default(DateTime), DateTime lastPaymentAttempt = default(DateTime), DateTime nextPaymentAttempt = default(DateTime), DateTime createdAt = default(DateTime), DateTime updatedAt = default(DateTime), string paymentEventType = default(string), string lastEventType = default(string), string businessId = default(string))
         {
             this.Id = id;
             this.Status = status;
@@ -163,61 +163,61 @@ namespace Solifyn.Model
         /*
         <example>incomplete</example>
         */
-        [DataMember(Name = "substatus", EmitDefaultValue = true)]
+        [DataMember(Name = "substatus", EmitDefaultValue = false)]
         public string Substatus { get; set; }
 
         /// <summary>
         /// Gets or Sets CustomerId
         /// </summary>
-        [DataMember(Name = "customerId", EmitDefaultValue = true)]
+        [DataMember(Name = "customerId", EmitDefaultValue = false)]
         public string CustomerId { get; set; }
 
         /// <summary>
         /// Gets or Sets CustomerEmail
         /// </summary>
-        [DataMember(Name = "customerEmail", EmitDefaultValue = true)]
+        [DataMember(Name = "customerEmail", EmitDefaultValue = false)]
         public string CustomerEmail { get; set; }
 
         /// <summary>
         /// Gets or Sets CustomerName
         /// </summary>
-        [DataMember(Name = "customerName", EmitDefaultValue = true)]
+        [DataMember(Name = "customerName", EmitDefaultValue = false)]
         public string CustomerName { get; set; }
 
         /// <summary>
         /// Gets or Sets CustomerUsername
         /// </summary>
-        [DataMember(Name = "customerUsername", EmitDefaultValue = true)]
+        [DataMember(Name = "customerUsername", EmitDefaultValue = false)]
         public string CustomerUsername { get; set; }
 
         /// <summary>
         /// Gets or Sets ProductTitle
         /// </summary>
-        [DataMember(Name = "productTitle", EmitDefaultValue = true)]
+        [DataMember(Name = "productTitle", EmitDefaultValue = false)]
         public string ProductTitle { get; set; }
 
         /// <summary>
         /// Gets or Sets ProductRoute
         /// </summary>
-        [DataMember(Name = "productRoute", EmitDefaultValue = true)]
+        [DataMember(Name = "productRoute", EmitDefaultValue = false)]
         public string ProductRoute { get; set; }
 
         /// <summary>
         /// Gets or Sets PlanId
         /// </summary>
-        [DataMember(Name = "planId", EmitDefaultValue = true)]
+        [DataMember(Name = "planId", EmitDefaultValue = false)]
         public string PlanId { get; set; }
 
         /// <summary>
         /// Gets or Sets MembershipId
         /// </summary>
-        [DataMember(Name = "membershipId", EmitDefaultValue = true)]
+        [DataMember(Name = "membershipId", EmitDefaultValue = false)]
         public string MembershipId { get; set; }
 
         /// <summary>
         /// Gets or Sets MembershipStatus
         /// </summary>
-        [DataMember(Name = "membershipStatus", EmitDefaultValue = true)]
+        [DataMember(Name = "membershipStatus", EmitDefaultValue = false)]
         public string MembershipStatus { get; set; }
 
         /// <summary>
@@ -226,7 +226,7 @@ namespace Solifyn.Model
         /*
         <example>subscription_create</example>
         */
-        [DataMember(Name = "billingReason", EmitDefaultValue = true)]
+        [DataMember(Name = "billingReason", EmitDefaultValue = false)]
         public string BillingReason { get; set; }
 
         /// <summary>
@@ -236,7 +236,7 @@ namespace Solifyn.Model
         /*
         <example>100.00</example>
         */
-        [DataMember(Name = "amount", EmitDefaultValue = true)]
+        [DataMember(Name = "amount", EmitDefaultValue = false)]
         public string Amount { get; set; }
 
         /// <summary>
@@ -245,7 +245,7 @@ namespace Solifyn.Model
         /*
         <example>100.00</example>
         */
-        [DataMember(Name = "subtotal", EmitDefaultValue = true)]
+        [DataMember(Name = "subtotal", EmitDefaultValue = false)]
         public string Subtotal { get; set; }
 
         /// <summary>
@@ -254,7 +254,7 @@ namespace Solifyn.Model
         /*
         <example>100.00</example>
         */
-        [DataMember(Name = "usdTotal", EmitDefaultValue = true)]
+        [DataMember(Name = "usdTotal", EmitDefaultValue = false)]
         public string UsdTotal { get; set; }
 
         /// <summary>
@@ -263,7 +263,7 @@ namespace Solifyn.Model
         /*
         <example>3.25</example>
         */
-        [DataMember(Name = "feeAmount", EmitDefaultValue = true)]
+        [DataMember(Name = "feeAmount", EmitDefaultValue = false)]
         public string FeeAmount { get; set; }
 
         /// <summary>
@@ -272,25 +272,25 @@ namespace Solifyn.Model
         /*
         <example>96.75</example>
         */
-        [DataMember(Name = "amountAfterFees", EmitDefaultValue = true)]
+        [DataMember(Name = "amountAfterFees", EmitDefaultValue = false)]
         public string AmountAfterFees { get; set; }
 
         /// <summary>
         /// Gets or Sets TaxAmount
         /// </summary>
-        [DataMember(Name = "taxAmount", EmitDefaultValue = true)]
+        [DataMember(Name = "taxAmount", EmitDefaultValue = false)]
         public string TaxAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets TaxBehavior
         /// </summary>
-        [DataMember(Name = "taxBehavior", EmitDefaultValue = true)]
+        [DataMember(Name = "taxBehavior", EmitDefaultValue = false)]
         public string TaxBehavior { get; set; }
 
         /// <summary>
         /// Gets or Sets TaxRefundedAmount
         /// </summary>
-        [DataMember(Name = "taxRefundedAmount", EmitDefaultValue = true)]
+        [DataMember(Name = "taxRefundedAmount", EmitDefaultValue = false)]
         public string TaxRefundedAmount { get; set; }
 
         /// <summary>
@@ -305,19 +305,19 @@ namespace Solifyn.Model
         /// <summary>
         /// Gets or Sets SettlementAmount
         /// </summary>
-        [DataMember(Name = "settlementAmount", EmitDefaultValue = true)]
+        [DataMember(Name = "settlementAmount", EmitDefaultValue = false)]
         public string SettlementAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets SettlementCurrency
         /// </summary>
-        [DataMember(Name = "settlementCurrency", EmitDefaultValue = true)]
+        [DataMember(Name = "settlementCurrency", EmitDefaultValue = false)]
         public string SettlementCurrency { get; set; }
 
         /// <summary>
         /// Gets or Sets SettlementExchangeRate
         /// </summary>
-        [DataMember(Name = "settlementExchangeRate", EmitDefaultValue = true)]
+        [DataMember(Name = "settlementExchangeRate", EmitDefaultValue = false)]
         public string SettlementExchangeRate { get; set; }
 
         /// <summary>
@@ -353,7 +353,7 @@ namespace Solifyn.Model
         /*
         <example>card</example>
         */
-        [DataMember(Name = "paymentMethod", EmitDefaultValue = true)]
+        [DataMember(Name = "paymentMethod", EmitDefaultValue = false)]
         public string PaymentMethod { get; set; }
 
         /// <summary>
@@ -362,7 +362,7 @@ namespace Solifyn.Model
         /*
         <example>visa</example>
         */
-        [DataMember(Name = "cardBrand", EmitDefaultValue = true)]
+        [DataMember(Name = "cardBrand", EmitDefaultValue = false)]
         public string CardBrand { get; set; }
 
         /// <summary>
@@ -371,86 +371,86 @@ namespace Solifyn.Model
         /*
         <example>4242</example>
         */
-        [DataMember(Name = "cardLast4", EmitDefaultValue = true)]
+        [DataMember(Name = "cardLast4", EmitDefaultValue = false)]
         public string CardLast4 { get; set; }
 
         /// <summary>
         /// Gets or Sets CardExpMonth
         /// </summary>
-        [DataMember(Name = "cardExpMonth", EmitDefaultValue = true)]
-        public int? CardExpMonth { get; set; }
+        [DataMember(Name = "cardExpMonth", EmitDefaultValue = false)]
+        public int CardExpMonth { get; set; }
 
         /// <summary>
         /// Gets or Sets CardExpYear
         /// </summary>
-        [DataMember(Name = "cardExpYear", EmitDefaultValue = true)]
-        public int? CardExpYear { get; set; }
+        [DataMember(Name = "cardExpYear", EmitDefaultValue = false)]
+        public int CardExpYear { get; set; }
 
         /// <summary>
         /// Gets or Sets BillingAddress
         /// </summary>
-        [DataMember(Name = "billingAddress", EmitDefaultValue = true)]
+        [DataMember(Name = "billingAddress", EmitDefaultValue = false)]
         public WebhookPaymentPayloadBillingAddress BillingAddress { get; set; }
 
         /// <summary>
         /// Gets or Sets LicenseKey
         /// </summary>
-        [DataMember(Name = "licenseKey", EmitDefaultValue = true)]
+        [DataMember(Name = "licenseKey", EmitDefaultValue = false)]
         public string LicenseKey { get; set; }
 
         /// <summary>
         /// Gets or Sets FilesSnapshot
         /// </summary>
-        [DataMember(Name = "filesSnapshot", EmitDefaultValue = true)]
+        [DataMember(Name = "filesSnapshot", EmitDefaultValue = false)]
         public List<Object> FilesSnapshot { get; set; }
 
         /// <summary>
         /// Gets or Sets CheckoutId
         /// </summary>
-        [DataMember(Name = "checkoutId", EmitDefaultValue = true)]
+        [DataMember(Name = "checkoutId", EmitDefaultValue = false)]
         public string CheckoutId { get; set; }
 
         /// <summary>
         /// Gets or Sets DiscountCode
         /// </summary>
-        [DataMember(Name = "discountCode", EmitDefaultValue = true)]
+        [DataMember(Name = "discountCode", EmitDefaultValue = false)]
         public string DiscountCode { get; set; }
 
         /// <summary>
         /// Gets or Sets FailureMessage
         /// </summary>
-        [DataMember(Name = "failureMessage", EmitDefaultValue = true)]
+        [DataMember(Name = "failureMessage", EmitDefaultValue = false)]
         public string FailureMessage { get; set; }
 
         /// <summary>
         /// Gets or Sets PaidAt
         /// </summary>
-        [DataMember(Name = "paidAt", EmitDefaultValue = true)]
-        public DateTime? PaidAt { get; set; }
+        [DataMember(Name = "paidAt", EmitDefaultValue = false)]
+        public DateTime PaidAt { get; set; }
 
         /// <summary>
         /// Gets or Sets RefundedAt
         /// </summary>
-        [DataMember(Name = "refundedAt", EmitDefaultValue = true)]
-        public DateTime? RefundedAt { get; set; }
+        [DataMember(Name = "refundedAt", EmitDefaultValue = false)]
+        public DateTime RefundedAt { get; set; }
 
         /// <summary>
         /// Gets or Sets DisputeAlertedAt
         /// </summary>
-        [DataMember(Name = "disputeAlertedAt", EmitDefaultValue = true)]
-        public DateTime? DisputeAlertedAt { get; set; }
+        [DataMember(Name = "disputeAlertedAt", EmitDefaultValue = false)]
+        public DateTime DisputeAlertedAt { get; set; }
 
         /// <summary>
         /// Gets or Sets LastPaymentAttempt
         /// </summary>
-        [DataMember(Name = "lastPaymentAttempt", EmitDefaultValue = true)]
-        public DateTime? LastPaymentAttempt { get; set; }
+        [DataMember(Name = "lastPaymentAttempt", EmitDefaultValue = false)]
+        public DateTime LastPaymentAttempt { get; set; }
 
         /// <summary>
         /// Gets or Sets NextPaymentAttempt
         /// </summary>
-        [DataMember(Name = "nextPaymentAttempt", EmitDefaultValue = true)]
-        public DateTime? NextPaymentAttempt { get; set; }
+        [DataMember(Name = "nextPaymentAttempt", EmitDefaultValue = false)]
+        public DateTime NextPaymentAttempt { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedAt
@@ -467,13 +467,13 @@ namespace Solifyn.Model
         /// <summary>
         /// Gets or Sets PaymentEventType
         /// </summary>
-        [DataMember(Name = "paymentEventType", EmitDefaultValue = true)]
+        [DataMember(Name = "paymentEventType", EmitDefaultValue = false)]
         public string PaymentEventType { get; set; }
 
         /// <summary>
         /// Gets or Sets LastEventType
         /// </summary>
-        [DataMember(Name = "lastEventType", EmitDefaultValue = true)]
+        [DataMember(Name = "lastEventType", EmitDefaultValue = false)]
         public string LastEventType { get; set; }
 
         /// <summary>

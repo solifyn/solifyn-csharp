@@ -47,7 +47,7 @@ namespace Solifyn.Model
         /// <param name="notes">notes.</param>
         /// <param name="createdAt">createdAt.</param>
         /// <param name="updatedAt">updatedAt.</param>
-        public WebhookDisputePayload(string id = default(string), string paymentId = default(string), string amount = default(string), string currency = default(string), string status = default(string), string reason = default(string), bool editable = default(bool), DateTime? needsResponseBy = default(DateTime?), string customerName = default(string), string customerEmail = default(string), string notes = default(string), DateTime createdAt = default(DateTime), DateTime updatedAt = default(DateTime))
+        public WebhookDisputePayload(string id = default(string), string paymentId = default(string), string amount = default(string), string currency = default(string), string status = default(string), string reason = default(string), bool editable = default(bool), DateTime needsResponseBy = default(DateTime), string customerName = default(string), string customerEmail = default(string), string notes = default(string), DateTime createdAt = default(DateTime), DateTime updatedAt = default(DateTime))
         {
             this.Id = id;
             this.PaymentId = paymentId;
@@ -117,7 +117,7 @@ namespace Solifyn.Model
         /*
         <example>fraudulent</example>
         */
-        [DataMember(Name = "reason", EmitDefaultValue = true)]
+        [DataMember(Name = "reason", EmitDefaultValue = false)]
         public string Reason { get; set; }
 
         /// <summary>
@@ -129,25 +129,25 @@ namespace Solifyn.Model
         /// <summary>
         /// Gets or Sets NeedsResponseBy
         /// </summary>
-        [DataMember(Name = "needsResponseBy", EmitDefaultValue = true)]
-        public DateTime? NeedsResponseBy { get; set; }
+        [DataMember(Name = "needsResponseBy", EmitDefaultValue = false)]
+        public DateTime NeedsResponseBy { get; set; }
 
         /// <summary>
         /// Gets or Sets CustomerName
         /// </summary>
-        [DataMember(Name = "customerName", EmitDefaultValue = true)]
+        [DataMember(Name = "customerName", EmitDefaultValue = false)]
         public string CustomerName { get; set; }
 
         /// <summary>
         /// Gets or Sets CustomerEmail
         /// </summary>
-        [DataMember(Name = "customerEmail", EmitDefaultValue = true)]
+        [DataMember(Name = "customerEmail", EmitDefaultValue = false)]
         public string CustomerEmail { get; set; }
 
         /// <summary>
         /// Gets or Sets Notes
         /// </summary>
-        [DataMember(Name = "notes", EmitDefaultValue = true)]
+        [DataMember(Name = "notes", EmitDefaultValue = false)]
         public string Notes { get; set; }
 
         /// <summary>

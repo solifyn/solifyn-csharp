@@ -46,7 +46,7 @@ namespace Solifyn.Model
         /// <param name="activationMessage">activationMessage (required).</param>
         /// <param name="expiresAt">expiresAt (required).</param>
         /// <param name="product">product.</param>
-        public LicenseSubDto(string id = default(string), string key = default(string), string status = default(string), decimal? activationLimit = default(decimal?), string activationMessage = default(string), string expiresAt = default(string), ProductSubDto product = default(ProductSubDto))
+        public LicenseSubDto(string id = default(string), string key = default(string), string status = default(string), decimal activationLimit = default(decimal), string activationMessage = default(string), string expiresAt = default(string), ProductSubDto product = default(ProductSubDto))
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -66,11 +66,6 @@ namespace Solifyn.Model
                 throw new ArgumentNullException("status is a required property for LicenseSubDto and cannot be null");
             }
             this.Status = status;
-            // to ensure "activationLimit" is required (not null)
-            if (activationLimit == null)
-            {
-                throw new ArgumentNullException("activationLimit is a required property for LicenseSubDto and cannot be null");
-            }
             this.ActivationLimit = activationLimit;
             // to ensure "activationMessage" is required (not null)
             if (activationMessage == null)
@@ -109,7 +104,7 @@ namespace Solifyn.Model
         /// Gets or Sets ActivationLimit
         /// </summary>
         [DataMember(Name = "activationLimit", IsRequired = true, EmitDefaultValue = true)]
-        public decimal? ActivationLimit { get; set; }
+        public decimal ActivationLimit { get; set; }
 
         /// <summary>
         /// Gets or Sets ActivationMessage

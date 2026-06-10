@@ -646,6 +646,9 @@ namespace Solifyn.Model
         /// <param name="hasGithubAccess">Whether the purchase includes GitHub repository access. (default to false).</param>
         /// <param name="githubRepo">GitHub repository to grant access to (format: owner/repo)..</param>
         /// <param name="githubPermission">GitHub collaborator permission level..</param>
+        /// <param name="hasDiscordAccess">Whether the purchase includes Discord server role access. (default to false).</param>
+        /// <param name="discordGuildId">Discord Guild (Server) ID to grant access to..</param>
+        /// <param name="discordRoleId">Discord Role ID to assign to the user..</param>
         /// <param name="isTaxInclusive">Whether tax is included in the base price. (default to false).</param>
         /// <param name="activationLimit">Maximum concurrent activated instances allowed per license key..</param>
         /// <param name="brandId">Brand id for the product, if not provided will default to primary brand..</param>
@@ -660,7 +663,7 @@ namespace Solifyn.Model
         /// <param name="isListed">Whether the product is publicly visible. (default to true).</param>
         /// <param name="isFree">Whether the product is free of charge. (default to false).</param>
         /// <param name="addons">Product addons configurations..</param>
-        public ProductUpdate(string name = default(string), string description = default(string), decimal price = default(decimal), CurrencyEnum? currency = CurrencyEnum.USD, string imageUrl = default(string), TaxCategoryEnum? taxCategory = default(TaxCategoryEnum?), decimal discount = default(decimal), bool hasLicenseKey = false, bool hasDigitalDelivery = false, bool hasGithubAccess = false, string githubRepo = default(string), GithubPermissionEnum? githubPermission = default(GithubPermissionEnum?), bool isTaxInclusive = false, int? activationLimit = default(int?), string brandId = default(string), int billingPeriod = default(int), int trialPeriodDays = default(int), int expirationDays = default(int), string statementDescriptor = default(string), bool payWhatYouWant = false, Dictionary<string, string> metadata = default(Dictionary<string, string>), List<ProductCreateCustomFieldsInner> customFields = default(List<ProductCreateCustomFieldsInner>), int stock = default(int), bool isListed = true, bool isFree = false, List<ProductCreateAddonsInner> addons = default(List<ProductCreateAddonsInner>))
+        public ProductUpdate(string name = default(string), string description = default(string), decimal price = default(decimal), CurrencyEnum? currency = CurrencyEnum.USD, string imageUrl = default(string), TaxCategoryEnum? taxCategory = default(TaxCategoryEnum?), decimal discount = default(decimal), bool hasLicenseKey = false, bool hasDigitalDelivery = false, bool hasGithubAccess = false, string githubRepo = default(string), GithubPermissionEnum? githubPermission = default(GithubPermissionEnum?), bool hasDiscordAccess = false, string discordGuildId = default(string), string discordRoleId = default(string), bool isTaxInclusive = false, int activationLimit = default(int), string brandId = default(string), int billingPeriod = default(int), int trialPeriodDays = default(int), int expirationDays = default(int), string statementDescriptor = default(string), bool payWhatYouWant = false, Dictionary<string, string> metadata = default(Dictionary<string, string>), List<ProductCreateCustomFieldsInner> customFields = default(List<ProductCreateCustomFieldsInner>), int stock = default(int), bool isListed = true, bool isFree = false, List<ProductCreateAddonsInner> addons = default(List<ProductCreateAddonsInner>))
         {
             this.Name = name;
             this.Description = description;
@@ -674,6 +677,9 @@ namespace Solifyn.Model
             this.HasGithubAccess = hasGithubAccess;
             this.GithubRepo = githubRepo;
             this.GithubPermission = githubPermission;
+            this.HasDiscordAccess = hasDiscordAccess;
+            this.DiscordGuildId = discordGuildId;
+            this.DiscordRoleId = discordRoleId;
             this.IsTaxInclusive = isTaxInclusive;
             this.ActivationLimit = activationLimit;
             this.BrandId = brandId;
@@ -781,6 +787,36 @@ namespace Solifyn.Model
         public string GithubRepo { get; set; }
 
         /// <summary>
+        /// Whether the purchase includes Discord server role access.
+        /// </summary>
+        /// <value>Whether the purchase includes Discord server role access.</value>
+        /*
+        <example>false</example>
+        */
+        [DataMember(Name = "hasDiscordAccess", EmitDefaultValue = true)]
+        public bool HasDiscordAccess { get; set; }
+
+        /// <summary>
+        /// Discord Guild (Server) ID to grant access to.
+        /// </summary>
+        /// <value>Discord Guild (Server) ID to grant access to.</value>
+        /*
+        <example>123456789012345678</example>
+        */
+        [DataMember(Name = "discordGuildId", EmitDefaultValue = false)]
+        public string DiscordGuildId { get; set; }
+
+        /// <summary>
+        /// Discord Role ID to assign to the user.
+        /// </summary>
+        /// <value>Discord Role ID to assign to the user.</value>
+        /*
+        <example>876543210987654321</example>
+        */
+        [DataMember(Name = "discordRoleId", EmitDefaultValue = false)]
+        public string DiscordRoleId { get; set; }
+
+        /// <summary>
         /// Whether tax is included in the base price.
         /// </summary>
         /// <value>Whether tax is included in the base price.</value>
@@ -794,8 +830,8 @@ namespace Solifyn.Model
         /// Maximum concurrent activated instances allowed per license key.
         /// </summary>
         /// <value>Maximum concurrent activated instances allowed per license key.</value>
-        [DataMember(Name = "activationLimit", EmitDefaultValue = true)]
-        public int? ActivationLimit { get; set; }
+        [DataMember(Name = "activationLimit", EmitDefaultValue = false)]
+        public int ActivationLimit { get; set; }
 
         /// <summary>
         /// Brand id for the product, if not provided will default to primary brand.
@@ -804,7 +840,7 @@ namespace Solifyn.Model
         /*
         <example>brd_4e29285b8sdf34ff51e07d4</example>
         */
-        [DataMember(Name = "brandId", EmitDefaultValue = true)]
+        [DataMember(Name = "brandId", EmitDefaultValue = false)]
         public string BrandId { get; set; }
 
         /// <summary>
@@ -859,7 +895,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Developer key-value metadata pairs.</value>
         /*
-        <example>{&quot;internal_id&quot;:&quot;12345&quot;,&quot;campaign&quot;:&quot;summer_sale&quot;}</example>
+        <example>{internal_id&#x3D;12345, campaign&#x3D;summer_sale}</example>
         */
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public Dictionary<string, string> Metadata { get; set; }
@@ -869,7 +905,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Form field configurations to gather during checkout.</value>
         /*
-        <example>[{&quot;id&quot;:&quot;57aa2241-eae4-43dc-b9ae-36069b84b2da&quot;,&quot;name&quot;:&quot;Discord Username&quot;,&quot;order&quot;:0,&quot;required&quot;:true,&quot;field_type&quot;:&quot;text&quot;,&quot;placeholder&quot;:&quot;e.g. your_discord#1234&quot;},{&quot;id&quot;:&quot;c86da32a-a967-457c-815b-c3440294d70b&quot;,&quot;name&quot;:&quot;Company Name&quot;,&quot;order&quot;:1,&quot;required&quot;:false,&quot;field_type&quot;:&quot;text&quot;,&quot;placeholder&quot;:&quot;e.g. Acme Corp (Optional)&quot;}]</example>
+        <example>[{id&#x3D;57aa2241-eae4-43dc-b9ae-36069b84b2da, name&#x3D;Discord Username, order&#x3D;0, required&#x3D;true, field_type&#x3D;text, placeholder&#x3D;e.g. your_discord#1234}, {id&#x3D;c86da32a-a967-457c-815b-c3440294d70b, name&#x3D;Company Name, order&#x3D;1, required&#x3D;false, field_type&#x3D;text, placeholder&#x3D;e.g. Acme Corp (Optional)}]</example>
         */
         [DataMember(Name = "customFields", EmitDefaultValue = false)]
         public List<ProductCreateCustomFieldsInner> CustomFields { get; set; }
@@ -931,6 +967,9 @@ namespace Solifyn.Model
             sb.Append("  HasGithubAccess: ").Append(HasGithubAccess).Append("\n");
             sb.Append("  GithubRepo: ").Append(GithubRepo).Append("\n");
             sb.Append("  GithubPermission: ").Append(GithubPermission).Append("\n");
+            sb.Append("  HasDiscordAccess: ").Append(HasDiscordAccess).Append("\n");
+            sb.Append("  DiscordGuildId: ").Append(DiscordGuildId).Append("\n");
+            sb.Append("  DiscordRoleId: ").Append(DiscordRoleId).Append("\n");
             sb.Append("  IsTaxInclusive: ").Append(IsTaxInclusive).Append("\n");
             sb.Append("  ActivationLimit: ").Append(ActivationLimit).Append("\n");
             sb.Append("  BrandId: ").Append(BrandId).Append("\n");

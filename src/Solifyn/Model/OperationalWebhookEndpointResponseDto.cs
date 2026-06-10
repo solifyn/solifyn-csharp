@@ -125,7 +125,7 @@ namespace Solifyn.Model
         /// Gets or Sets FilterTypes
         /// </summary>
         /*
-        <example>[&quot;message.attempt.failing&quot;]</example>
+        <example>[message.attempt.failing]</example>
         */
         [DataMember(Name = "filterTypes", IsRequired = true, EmitDefaultValue = true)]
         public List<string> FilterTypes { get; set; }
@@ -134,7 +134,7 @@ namespace Solifyn.Model
         /// Gets or Sets Metadata
         /// </summary>
         /*
-        <example>{&quot;environment&quot;:&quot;production&quot;}</example>
+        <example>{environment&#x3D;production}</example>
         */
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public Object Metadata { get; set; }

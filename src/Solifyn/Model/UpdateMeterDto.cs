@@ -151,7 +151,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Optional filter definition for advanced matching.</value>
         /*
-        <example>{&quot;event_type&quot;:&quot;premium&quot;,&quot;region&quot;:&quot;asia&quot;}</example>
+        <example>{event_type&#x3D;premium, region&#x3D;asia}</example>
         */
         [DataMember(Name = "filters", EmitDefaultValue = false)]
         public Dictionary<string, Object> Filters { get; set; }

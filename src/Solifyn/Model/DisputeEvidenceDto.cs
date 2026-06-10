@@ -53,7 +53,7 @@ namespace Solifyn.Model
         /*
         <example>file_123</example>
         */
-        [DataMember(Name = "cancellation_policy", EmitDefaultValue = true)]
+        [DataMember(Name = "cancellation_policy", EmitDefaultValue = false)]
         public string CancellationPolicy { get; set; }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Solifyn.Model
         /*
         <example>file_456</example>
         */
-        [DataMember(Name = "customer_communication", EmitDefaultValue = true)]
+        [DataMember(Name = "customer_communication", EmitDefaultValue = false)]
         public string CustomerCommunication { get; set; }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Solifyn.Model
         /*
         <example>file_789</example>
         */
-        [DataMember(Name = "refund_policy", EmitDefaultValue = true)]
+        [DataMember(Name = "refund_policy", EmitDefaultValue = false)]
         public string RefundPolicy { get; set; }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace Solifyn.Model
         /*
         <example>file_000</example>
         */
-        [DataMember(Name = "uncategorized", EmitDefaultValue = true)]
+        [DataMember(Name = "uncategorized", EmitDefaultValue = false)]
         public string Uncategorized { get; set; }
 
         /// <summary>

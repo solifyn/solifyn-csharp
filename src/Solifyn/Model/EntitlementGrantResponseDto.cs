@@ -48,13 +48,17 @@ namespace Solifyn.Model
         /// <param name="githubRepo">Target GitHub repository (owner/repo) if type is GITHUB..</param>
         /// <param name="githubPermission">GitHub access permission level if type is GITHUB..</param>
         /// <param name="githubUsername">The connected customer GitHub username..</param>
+        /// <param name="discordGuildId">Target Discord Guild ID if type is DISCORD..</param>
+        /// <param name="discordRoleId">Target Discord Role ID if type is DISCORD..</param>
+        /// <param name="discordUsername">The connected customer Discord username..</param>
+        /// <param name="discordUserId">The connected customer Discord user ID..</param>
         /// <param name="status">Delivery status of the collaborator invite (PENDING, DELIVERED, FAILED, REVOKED). (required).</param>
         /// <param name="oauthUrl">OAuth URL to redirect the customer to..</param>
         /// <param name="errorDetails">Error message if invitation delivery failed..</param>
         /// <param name="metadata">Platform-specific metadata..</param>
         /// <param name="createdAt">Creation timestamp. (required).</param>
         /// <param name="updatedAt">Modification timestamp. (required).</param>
-        public EntitlementGrantResponseDto(Guid id = default(Guid), Guid businessId = default(Guid), Guid customerId = default(Guid), Guid paymentId = default(Guid), Guid productId = default(Guid), string type = default(string), string githubRepo = default(string), string githubPermission = default(string), string githubUsername = default(string), string status = default(string), string oauthUrl = default(string), string errorDetails = default(string), Object metadata = default(Object), string createdAt = default(string), string updatedAt = default(string))
+        public EntitlementGrantResponseDto(Guid id = default(Guid), Guid businessId = default(Guid), Guid customerId = default(Guid), Guid paymentId = default(Guid), Guid productId = default(Guid), string type = default(string), string githubRepo = default(string), string githubPermission = default(string), string githubUsername = default(string), string discordGuildId = default(string), string discordRoleId = default(string), string discordUsername = default(string), string discordUserId = default(string), string status = default(string), string oauthUrl = default(string), string errorDetails = default(string), Object metadata = default(Object), string createdAt = default(string), string updatedAt = default(string))
         {
             this.Id = id;
             this.BusinessId = businessId;
@@ -88,6 +92,10 @@ namespace Solifyn.Model
             this.GithubRepo = githubRepo;
             this.GithubPermission = githubPermission;
             this.GithubUsername = githubUsername;
+            this.DiscordGuildId = discordGuildId;
+            this.DiscordRoleId = discordRoleId;
+            this.DiscordUsername = discordUsername;
+            this.DiscordUserId = discordUserId;
             this.OauthUrl = oauthUrl;
             this.ErrorDetails = errorDetails;
             this.Metadata = metadata;
@@ -97,6 +105,9 @@ namespace Solifyn.Model
         /// The unique entitlement grant ID.
         /// </summary>
         /// <value>The unique entitlement grant ID.</value>
+        /*
+        <example>grant_123456</example>
+        */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
@@ -104,6 +115,9 @@ namespace Solifyn.Model
         /// The business ID context.
         /// </summary>
         /// <value>The business ID context.</value>
+        /*
+        <example>biz_123456</example>
+        */
         [DataMember(Name = "businessId", IsRequired = true, EmitDefaultValue = true)]
         public Guid BusinessId { get; set; }
 
@@ -111,6 +125,9 @@ namespace Solifyn.Model
         /// The customer ID.
         /// </summary>
         /// <value>The customer ID.</value>
+        /*
+        <example>cust_123456</example>
+        */
         [DataMember(Name = "customerId", IsRequired = true, EmitDefaultValue = true)]
         public Guid CustomerId { get; set; }
 
@@ -118,6 +135,9 @@ namespace Solifyn.Model
         /// Associated payment transaction ID.
         /// </summary>
         /// <value>Associated payment transaction ID.</value>
+        /*
+        <example>pay_123456</example>
+        */
         [DataMember(Name = "paymentId", EmitDefaultValue = false)]
         public Guid PaymentId { get; set; }
 
@@ -125,6 +145,9 @@ namespace Solifyn.Model
         /// The purchased product ID.
         /// </summary>
         /// <value>The purchased product ID.</value>
+        /*
+        <example>prod_123456</example>
+        */
         [DataMember(Name = "productId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProductId { get; set; }
 
@@ -167,6 +190,46 @@ namespace Solifyn.Model
         */
         [DataMember(Name = "githubUsername", EmitDefaultValue = false)]
         public string GithubUsername { get; set; }
+
+        /// <summary>
+        /// Target Discord Guild ID if type is DISCORD.
+        /// </summary>
+        /// <value>Target Discord Guild ID if type is DISCORD.</value>
+        /*
+        <example>123456789012345678</example>
+        */
+        [DataMember(Name = "discordGuildId", EmitDefaultValue = false)]
+        public string DiscordGuildId { get; set; }
+
+        /// <summary>
+        /// Target Discord Role ID if type is DISCORD.
+        /// </summary>
+        /// <value>Target Discord Role ID if type is DISCORD.</value>
+        /*
+        <example>876543210987654321</example>
+        */
+        [DataMember(Name = "discordRoleId", EmitDefaultValue = false)]
+        public string DiscordRoleId { get; set; }
+
+        /// <summary>
+        /// The connected customer Discord username.
+        /// </summary>
+        /// <value>The connected customer Discord username.</value>
+        /*
+        <example>discorduser#1234</example>
+        */
+        [DataMember(Name = "discordUsername", EmitDefaultValue = false)]
+        public string DiscordUsername { get; set; }
+
+        /// <summary>
+        /// The connected customer Discord user ID.
+        /// </summary>
+        /// <value>The connected customer Discord user ID.</value>
+        /*
+        <example>112233445566778899</example>
+        */
+        [DataMember(Name = "discordUserId", EmitDefaultValue = false)]
+        public string DiscordUserId { get; set; }
 
         /// <summary>
         /// Delivery status of the collaborator invite (PENDING, DELIVERED, FAILED, REVOKED).
@@ -236,6 +299,10 @@ namespace Solifyn.Model
             sb.Append("  GithubRepo: ").Append(GithubRepo).Append("\n");
             sb.Append("  GithubPermission: ").Append(GithubPermission).Append("\n");
             sb.Append("  GithubUsername: ").Append(GithubUsername).Append("\n");
+            sb.Append("  DiscordGuildId: ").Append(DiscordGuildId).Append("\n");
+            sb.Append("  DiscordRoleId: ").Append(DiscordRoleId).Append("\n");
+            sb.Append("  DiscordUsername: ").Append(DiscordUsername).Append("\n");
+            sb.Append("  DiscordUserId: ").Append(DiscordUserId).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  OauthUrl: ").Append(OauthUrl).Append("\n");
             sb.Append("  ErrorDetails: ").Append(ErrorDetails).Append("\n");

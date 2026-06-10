@@ -81,6 +81,9 @@ namespace Solifyn.Model
         /// The checkout link ID
         /// </summary>
         /// <value>The checkout link ID</value>
+        /*
+        <example>chk_123</example>
+        */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
@@ -91,7 +94,7 @@ namespace Solifyn.Model
         /*
         <example>Winter Bundle Checkout</example>
         */
-        [DataMember(Name = "title", EmitDefaultValue = true)]
+        [DataMember(Name = "title", EmitDefaultValue = false)]
         public string Title { get; set; }
 
         /// <summary>
@@ -101,7 +104,7 @@ namespace Solifyn.Model
         /*
         <example>prod_123</example>
         */
-        [DataMember(Name = "productId", EmitDefaultValue = true)]
+        [DataMember(Name = "productId", EmitDefaultValue = false)]
         public string ProductId { get; set; }
 
         /// <summary>
@@ -111,7 +114,7 @@ namespace Solifyn.Model
         /*
         <example>col_123</example>
         */
-        [DataMember(Name = "collectionId", EmitDefaultValue = true)]
+        [DataMember(Name = "collectionId", EmitDefaultValue = false)]
         public string CollectionId { get; set; }
 
         /// <summary>
@@ -121,7 +124,7 @@ namespace Solifyn.Model
         /*
         <example>John Doe</example>
         */
-        [DataMember(Name = "customerName", EmitDefaultValue = true)]
+        [DataMember(Name = "customerName", EmitDefaultValue = false)]
         public string CustomerName { get; set; }
 
         /// <summary>
@@ -131,7 +134,7 @@ namespace Solifyn.Model
         /*
         <example>customer@example.com</example>
         */
-        [DataMember(Name = "customerEmail", EmitDefaultValue = true)]
+        [DataMember(Name = "customerEmail", EmitDefaultValue = false)]
         public string CustomerEmail { get; set; }
 
         /// <summary>
@@ -141,7 +144,7 @@ namespace Solifyn.Model
         /*
         <example>123 Main St</example>
         */
-        [DataMember(Name = "addressLine1", EmitDefaultValue = true)]
+        [DataMember(Name = "addressLine1", EmitDefaultValue = false)]
         public string AddressLine1 { get; set; }
 
         /// <summary>
@@ -151,7 +154,7 @@ namespace Solifyn.Model
         /*
         <example>New York</example>
         */
-        [DataMember(Name = "city", EmitDefaultValue = true)]
+        [DataMember(Name = "city", EmitDefaultValue = false)]
         public string City { get; set; }
 
         /// <summary>
@@ -161,7 +164,7 @@ namespace Solifyn.Model
         /*
         <example>NY</example>
         */
-        [DataMember(Name = "state", EmitDefaultValue = true)]
+        [DataMember(Name = "state", EmitDefaultValue = false)]
         public string State { get; set; }
 
         /// <summary>
@@ -171,7 +174,7 @@ namespace Solifyn.Model
         /*
         <example>10001</example>
         */
-        [DataMember(Name = "postalCode", EmitDefaultValue = true)]
+        [DataMember(Name = "postalCode", EmitDefaultValue = false)]
         public string PostalCode { get; set; }
 
         /// <summary>
@@ -181,7 +184,7 @@ namespace Solifyn.Model
         /*
         <example>US</example>
         */
-        [DataMember(Name = "country", EmitDefaultValue = true)]
+        [DataMember(Name = "country", EmitDefaultValue = false)]
         public string Country { get; set; }
 
         /// <summary>
@@ -201,7 +204,7 @@ namespace Solifyn.Model
         /*
         <example>https://example.com/success</example>
         */
-        [DataMember(Name = "redirectUrl", EmitDefaultValue = true)]
+        [DataMember(Name = "redirectUrl", EmitDefaultValue = false)]
         public string RedirectUrl { get; set; }
 
         /// <summary>
@@ -211,7 +214,7 @@ namespace Solifyn.Model
         /*
         <example>https://example.com/cancel</example>
         */
-        [DataMember(Name = "cancelUrl", EmitDefaultValue = true)]
+        [DataMember(Name = "cancelUrl", EmitDefaultValue = false)]
         public string CancelUrl { get; set; }
 
         /// <summary>
@@ -229,7 +232,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Timestamp when the link was created</value>
         /*
-        <example>2025-01-01T12:00Z</example>
+        <example>2025-01-01T12:00:00Z</example>
         */
         [DataMember(Name = "createdAt", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedAt { get; set; }
@@ -239,7 +242,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Timestamp when the link was last updated</value>
         /*
-        <example>2025-01-01T12:00Z</example>
+        <example>2025-01-01T12:00:00Z</example>
         */
         [DataMember(Name = "updatedAt", IsRequired = true, EmitDefaultValue = true)]
         public DateTime UpdatedAt { get; set; }
