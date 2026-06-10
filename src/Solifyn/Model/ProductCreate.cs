@@ -652,7 +652,7 @@ namespace Solifyn.Model
         /// <param name="githubRepo">GitHub repository to grant access to (format: owner/repo)..</param>
         /// <param name="githubPermission">GitHub collaborator permission level..</param>
         /// <param name="isTaxInclusive">Whether tax is included in the base price. (default to false).</param>
-        /// <param name="activationLimit">Maximum concurrent activated instances allowed per license key. (default to null).</param>
+        /// <param name="activationLimit">Maximum concurrent activated instances allowed per license key..</param>
         /// <param name="brandId">Brand id for the product, if not provided will default to primary brand..</param>
         /// <param name="billingPeriod">Billing period in days (for Subscription products)..</param>
         /// <param name="trialPeriodDays">Trial duration in days..</param>
@@ -665,7 +665,7 @@ namespace Solifyn.Model
         /// <param name="isListed">Whether the product is publicly visible. (default to true).</param>
         /// <param name="isFree">Whether the product is free of charge. (default to false).</param>
         /// <param name="addons">Product addons configurations..</param>
-        public ProductCreate(string name = default(string), string description = default(string), decimal price = default(decimal), CurrencyEnum currency = CurrencyEnum.USD, string imageUrl = default(string), TaxCategoryEnum taxCategory = default(TaxCategoryEnum), decimal discount = default(decimal), bool hasLicenseKey = false, bool hasDigitalDelivery = false, bool hasGithubAccess = false, string githubRepo = default(string), GithubPermissionEnum? githubPermission = default(GithubPermissionEnum?), bool isTaxInclusive = false, int activationLimit = null, string brandId = default(string), int billingPeriod = default(int), int trialPeriodDays = default(int), int expirationDays = default(int), string statementDescriptor = default(string), bool payWhatYouWant = false, Dictionary<string, string> metadata = default(Dictionary<string, string>), List<ProductCreateCustomFieldsInner> customFields = default(List<ProductCreateCustomFieldsInner>), int stock = default(int), bool isListed = true, bool isFree = false, List<ProductCreateAddonsInner> addons = default(List<ProductCreateAddonsInner>))
+        public ProductCreate(string name = default(string), string description = default(string), decimal price = default(decimal), CurrencyEnum currency = CurrencyEnum.USD, string imageUrl = default(string), TaxCategoryEnum taxCategory = default(TaxCategoryEnum), decimal discount = default(decimal), bool hasLicenseKey = false, bool hasDigitalDelivery = false, bool hasGithubAccess = false, string githubRepo = default(string), GithubPermissionEnum? githubPermission = default(GithubPermissionEnum?), bool isTaxInclusive = false, int? activationLimit = default(int?), string brandId = default(string), int billingPeriod = default(int), int trialPeriodDays = default(int), int expirationDays = default(int), string statementDescriptor = default(string), bool payWhatYouWant = false, Dictionary<string, string> metadata = default(Dictionary<string, string>), List<ProductCreateCustomFieldsInner> customFields = default(List<ProductCreateCustomFieldsInner>), int stock = default(int), bool isListed = true, bool isFree = false, List<ProductCreateAddonsInner> addons = default(List<ProductCreateAddonsInner>))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -804,8 +804,8 @@ namespace Solifyn.Model
         /// Maximum concurrent activated instances allowed per license key.
         /// </summary>
         /// <value>Maximum concurrent activated instances allowed per license key.</value>
-        [DataMember(Name = "activationLimit", EmitDefaultValue = false)]
-        public int ActivationLimit { get; set; }
+        [DataMember(Name = "activationLimit", EmitDefaultValue = true)]
+        public int? ActivationLimit { get; set; }
 
         /// <summary>
         /// Brand id for the product, if not provided will default to primary brand.
@@ -814,7 +814,7 @@ namespace Solifyn.Model
         /*
         <example>brd_4e29285b8sdf34ff51e07d4</example>
         */
-        [DataMember(Name = "brandId", EmitDefaultValue = false)]
+        [DataMember(Name = "brandId", EmitDefaultValue = true)]
         public string BrandId { get; set; }
 
         /// <summary>

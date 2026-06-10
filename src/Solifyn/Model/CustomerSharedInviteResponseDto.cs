@@ -69,7 +69,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>The expiration timestamp of the token</value>
         /*
-        <example>2025-01-02T12:00:00Z</example>
+        <example>2025-01-02T12:00Z</example>
         */
         [DataMember(Name = "expiresAt", IsRequired = true, EmitDefaultValue = true)]
         public DateTime ExpiresAt { get; set; }

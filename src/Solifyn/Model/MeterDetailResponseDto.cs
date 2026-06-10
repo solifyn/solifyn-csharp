@@ -175,7 +175,7 @@ namespace Solifyn.Model
         /*
         <example>Counts successful API requests for usage-based billing.</example>
         */
-        [DataMember(Name = "description", EmitDefaultValue = false)]
+        [DataMember(Name = "description", EmitDefaultValue = true)]
         public Object Description { get; set; }
 
         /// <summary>
@@ -195,7 +195,7 @@ namespace Solifyn.Model
         /*
         <example>tokens</example>
         */
-        [DataMember(Name = "aggregationKey", EmitDefaultValue = false)]
+        [DataMember(Name = "aggregationKey", EmitDefaultValue = true)]
         public Object AggregationKey { get; set; }
 
         /// <summary>
@@ -205,7 +205,7 @@ namespace Solifyn.Model
         /*
         <example>requests</example>
         */
-        [DataMember(Name = "unit", EmitDefaultValue = false)]
+        [DataMember(Name = "unit", EmitDefaultValue = true)]
         public Object Unit { get; set; }
 
         /// <summary>
@@ -213,9 +213,9 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Optional filter definition for advanced matching.</value>
         /*
-        <example>{event_type&#x3D;premium, region&#x3D;asia}</example>
+        <example>{&quot;event_type&quot;:&quot;premium&quot;,&quot;region&quot;:&quot;asia&quot;}</example>
         */
-        [DataMember(Name = "filters", EmitDefaultValue = false)]
+        [DataMember(Name = "filters", EmitDefaultValue = true)]
         public Dictionary<string, Object> Filters { get; set; }
 
         /// <summary>
@@ -233,7 +233,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Creation timestamp.</value>
         /*
-        <example>2026-05-23T10:00:00.000Z</example>
+        <example>2026-05-23T10:00Z</example>
         */
         [DataMember(Name = "createdAt", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedAt { get; set; }
@@ -243,7 +243,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Last update timestamp.</value>
         /*
-        <example>2026-05-23T10:00:00.000Z</example>
+        <example>2026-05-23T10:00Z</example>
         */
         [DataMember(Name = "updatedAt", IsRequired = true, EmitDefaultValue = true)]
         public DateTime UpdatedAt { get; set; }

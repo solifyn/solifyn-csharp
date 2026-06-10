@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Status** | **string** | The status of the dispute | 
 **Reason** | **string** | The reason for the dispute | [optional] 
 **Editable** | **bool** | Whether the evidence is still editable | 
-**NeedsResponseBy** | **DateTime** | Timestamp by when evidence must be submitted | [optional] 
+**NeedsResponseBy** | **DateTime?** | Timestamp by when evidence must be submitted | [optional] 
 **VisaRdr** | **bool** | Whether Visa RDR was applied | 
 **BillingAddress** | **string** | Customer billing address details | [optional] 
 **CustomerName** | **string** | Customer name | [optional] 

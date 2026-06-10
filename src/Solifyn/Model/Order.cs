@@ -252,7 +252,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Payment creation timestamp.</value>
         /*
-        <example>2026-05-22T08:00:00Z</example>
+        <example>2026-05-22T08:00Z</example>
         */
         [DataMember(Name = "created_at", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedAt { get; set; }
@@ -262,7 +262,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Payment completion/paid timestamp.</value>
         /*
-        <example>2026-05-22T08:05:00Z</example>
+        <example>2026-05-22T08:05Z</example>
         */
         [DataMember(Name = "paidAt", EmitDefaultValue = false)]
         public DateTime PaidAt { get; set; }

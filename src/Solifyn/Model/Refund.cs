@@ -94,7 +94,7 @@ namespace Solifyn.Model
         /// <param name="providerCreatedAt">Timestamp when the refund was processed by the provider.</param>
         /// <param name="createdAt">Timestamp when the refund was created in our system (required).</param>
         /// <param name="updatedAt">Timestamp when the refund was last updated (required).</param>
-        public Refund(Guid id = default(Guid), string whopId = default(string), string idempotencyKey = default(string), decimal amount = default(decimal), string currency = default(string), StatusEnum status = default(StatusEnum), string provider = default(string), string reason = default(string), string referenceValue = default(string), Guid paymentId = default(Guid), DateTime providerCreatedAt = default(DateTime), DateTime createdAt = default(DateTime), DateTime updatedAt = default(DateTime))
+        public Refund(Guid id = default(Guid), string whopId = default(string), string idempotencyKey = default(string), decimal amount = default(decimal), string currency = default(string), StatusEnum status = default(StatusEnum), string provider = default(string), string reason = default(string), string referenceValue = default(string), Guid paymentId = default(Guid), DateTime? providerCreatedAt = default(DateTime?), DateTime createdAt = default(DateTime), DateTime updatedAt = default(DateTime))
         {
             this.Id = id;
             // to ensure "whopId" is required (not null)
@@ -125,9 +125,6 @@ namespace Solifyn.Model
         /// The refund ID
         /// </summary>
         /// <value>The refund ID</value>
-        /*
-        <example>ref_123</example>
-        */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
@@ -148,7 +145,7 @@ namespace Solifyn.Model
         /*
         <example>idemp_abc123</example>
         */
-        [DataMember(Name = "idempotencyKey", EmitDefaultValue = false)]
+        [DataMember(Name = "idempotencyKey", EmitDefaultValue = true)]
         public string IdempotencyKey { get; set; }
 
         /// <summary>
@@ -178,7 +175,7 @@ namespace Solifyn.Model
         /*
         <example>stripe</example>
         */
-        [DataMember(Name = "provider", EmitDefaultValue = false)]
+        [DataMember(Name = "provider", EmitDefaultValue = true)]
         public string Provider { get; set; }
 
         /// <summary>
@@ -188,7 +185,7 @@ namespace Solifyn.Model
         /*
         <example>requested_by_customer</example>
         */
-        [DataMember(Name = "reason", EmitDefaultValue = false)]
+        [DataMember(Name = "reason", EmitDefaultValue = true)]
         public string Reason { get; set; }
 
         /// <summary>
@@ -198,16 +195,13 @@ namespace Solifyn.Model
         /*
         <example>ARN123456789</example>
         */
-        [DataMember(Name = "referenceValue", EmitDefaultValue = false)]
+        [DataMember(Name = "referenceValue", EmitDefaultValue = true)]
         public string ReferenceValue { get; set; }
 
         /// <summary>
         /// The associated Payment ID
         /// </summary>
         /// <value>The associated Payment ID</value>
-        /*
-        <example>pay_123</example>
-        */
         [DataMember(Name = "paymentId", IsRequired = true, EmitDefaultValue = true)]
         public Guid PaymentId { get; set; }
 
@@ -216,17 +210,17 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Timestamp when the refund was processed by the provider</value>
         /*
-        <example>2025-01-01T12:00:00Z</example>
+        <example>2025-01-01T12:00Z</example>
         */
-        [DataMember(Name = "providerCreatedAt", EmitDefaultValue = false)]
-        public DateTime ProviderCreatedAt { get; set; }
+        [DataMember(Name = "providerCreatedAt", EmitDefaultValue = true)]
+        public DateTime? ProviderCreatedAt { get; set; }
 
         /// <summary>
         /// Timestamp when the refund was created in our system
         /// </summary>
         /// <value>Timestamp when the refund was created in our system</value>
         /*
-        <example>2025-01-01T12:00:00Z</example>
+        <example>2025-01-01T12:00Z</example>
         */
         [DataMember(Name = "createdAt", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedAt { get; set; }
@@ -236,7 +230,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Timestamp when the refund was last updated</value>
         /*
-        <example>2025-01-01T12:00:00Z</example>
+        <example>2025-01-01T12:00Z</example>
         */
         [DataMember(Name = "updatedAt", IsRequired = true, EmitDefaultValue = true)]
         public DateTime UpdatedAt { get; set; }

@@ -202,7 +202,7 @@ namespace Solifyn.Model
         /// <param name="expiryHours">Number of hours until the license key expires. (required).</param>
         /// <param name="businessId">The unique identifier of the business owning this product. (required).</param>
         /// <param name="quantity">Quantity of the product in the collection (required).</param>
-        public CollectionProductDto(Guid id = default(Guid), string name = default(string), decimal price = default(decimal), string currency = default(string), string description = default(string), string status = default(string), string imageUrl = default(string), TaxCategoryEnum taxCategory = default(TaxCategoryEnum), PricingTypeEnum pricingType = default(PricingTypeEnum), decimal discount = default(decimal), bool hasLicenseKey = default(bool), bool hasDigitalDelivery = default(bool), bool hasGithubAccess = default(bool), string githubRepo = default(string), GithubPermissionEnum githubPermission = default(GithubPermissionEnum), bool isTaxInclusive = default(bool), int billingPeriod = default(int), int trialPeriodDays = default(int), int expirationDays = default(int), string statementDescriptor = default(string), bool payWhatYouWant = default(bool), Dictionary<string, string> metadata = default(Dictionary<string, string>), List<Object> customFields = default(List<Object>), int stock = default(int), int activationLimit = default(int), bool isListed = default(bool), bool isFree = default(bool), DateTime createdAt = default(DateTime), DateTime updatedAt = default(DateTime), bool isPermanentlyDeleted = default(bool), string brandId = default(string), string digitalLink = default(string), string instructions = default(string), string activationMessage = default(string), int expiryHours = default(int), string businessId = default(string), decimal quantity = default(decimal))
+        public CollectionProductDto(Guid id = default(Guid), string name = default(string), decimal price = default(decimal), string currency = default(string), string description = default(string), string status = default(string), string imageUrl = default(string), TaxCategoryEnum taxCategory = default(TaxCategoryEnum), PricingTypeEnum pricingType = default(PricingTypeEnum), decimal? discount = default(decimal?), bool hasLicenseKey = default(bool), bool hasDigitalDelivery = default(bool), bool hasGithubAccess = default(bool), string githubRepo = default(string), GithubPermissionEnum githubPermission = default(GithubPermissionEnum), bool isTaxInclusive = default(bool), int? billingPeriod = default(int?), int? trialPeriodDays = default(int?), int? expirationDays = default(int?), string statementDescriptor = default(string), bool payWhatYouWant = default(bool), Dictionary<string, string> metadata = default(Dictionary<string, string>), List<Object> customFields = default(List<Object>), int? stock = default(int?), int activationLimit = default(int), bool isListed = default(bool), bool isFree = default(bool), DateTime createdAt = default(DateTime), DateTime updatedAt = default(DateTime), bool isPermanentlyDeleted = default(bool), string brandId = default(string), string digitalLink = default(string), string instructions = default(string), string activationMessage = default(string), int? expiryHours = default(int?), string businessId = default(string), decimal quantity = default(decimal))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -232,6 +232,11 @@ namespace Solifyn.Model
             this.ImageUrl = imageUrl;
             this.TaxCategory = taxCategory;
             this.PricingType = pricingType;
+            // to ensure "discount" is required (not null)
+            if (discount == null)
+            {
+                throw new ArgumentNullException("discount is a required property for CollectionProductDto and cannot be null");
+            }
             this.Discount = discount;
             this.HasLicenseKey = hasLicenseKey;
             this.HasDigitalDelivery = hasDigitalDelivery;
@@ -244,8 +249,23 @@ namespace Solifyn.Model
             this.GithubRepo = githubRepo;
             this.GithubPermission = githubPermission;
             this.IsTaxInclusive = isTaxInclusive;
+            // to ensure "billingPeriod" is required (not null)
+            if (billingPeriod == null)
+            {
+                throw new ArgumentNullException("billingPeriod is a required property for CollectionProductDto and cannot be null");
+            }
             this.BillingPeriod = billingPeriod;
+            // to ensure "trialPeriodDays" is required (not null)
+            if (trialPeriodDays == null)
+            {
+                throw new ArgumentNullException("trialPeriodDays is a required property for CollectionProductDto and cannot be null");
+            }
             this.TrialPeriodDays = trialPeriodDays;
+            // to ensure "expirationDays" is required (not null)
+            if (expirationDays == null)
+            {
+                throw new ArgumentNullException("expirationDays is a required property for CollectionProductDto and cannot be null");
+            }
             this.ExpirationDays = expirationDays;
             // to ensure "statementDescriptor" is required (not null)
             if (statementDescriptor == null)
@@ -266,6 +286,11 @@ namespace Solifyn.Model
                 throw new ArgumentNullException("customFields is a required property for CollectionProductDto and cannot be null");
             }
             this.CustomFields = customFields;
+            // to ensure "stock" is required (not null)
+            if (stock == null)
+            {
+                throw new ArgumentNullException("stock is a required property for CollectionProductDto and cannot be null");
+            }
             this.Stock = stock;
             this.ActivationLimit = activationLimit;
             this.IsListed = isListed;
@@ -297,6 +322,11 @@ namespace Solifyn.Model
                 throw new ArgumentNullException("activationMessage is a required property for CollectionProductDto and cannot be null");
             }
             this.ActivationMessage = activationMessage;
+            // to ensure "expiryHours" is required (not null)
+            if (expiryHours == null)
+            {
+                throw new ArgumentNullException("expiryHours is a required property for CollectionProductDto and cannot be null");
+            }
             this.ExpiryHours = expiryHours;
             // to ensure "businessId" is required (not null)
             if (businessId == null)
@@ -312,9 +342,6 @@ namespace Solifyn.Model
         /// The unique identifier (ID) of the product.
         /// </summary>
         /// <value>The unique identifier (ID) of the product.</value>
-        /*
-        <example>prod_9z8x7c6v5b4n</example>
-        */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
@@ -355,7 +382,7 @@ namespace Solifyn.Model
         /*
         <example>Unlock premium API integration, custom webhooks, dedicated server bandwidth, and priority 24/7 business-critical support tiers.</example>
         */
-        [DataMember(Name = "description", EmitDefaultValue = false)]
+        [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
@@ -386,7 +413,7 @@ namespace Solifyn.Model
         <example>0</example>
         */
         [DataMember(Name = "discount", IsRequired = true, EmitDefaultValue = true)]
-        public decimal Discount { get; set; }
+        public decimal? Discount { get; set; }
 
         /// <summary>
         /// Indicates if the product issues a cryptographically secure software license key upon checkout completion.
@@ -443,21 +470,21 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>The subscription billing cycle interval in days (for subscription products).</value>
         [DataMember(Name = "billingPeriod", IsRequired = true, EmitDefaultValue = true)]
-        public int BillingPeriod { get; set; }
+        public int? BillingPeriod { get; set; }
 
         /// <summary>
         /// Trial duration in days for subscription products.
         /// </summary>
         /// <value>Trial duration in days for subscription products.</value>
         [DataMember(Name = "trialPeriodDays", IsRequired = true, EmitDefaultValue = true)]
-        public int TrialPeriodDays { get; set; }
+        public int? TrialPeriodDays { get; set; }
 
         /// <summary>
         /// Automatic expiration period in days for the subscription entitlement.
         /// </summary>
         /// <value>Automatic expiration period in days for the subscription entitlement.</value>
         [DataMember(Name = "expirationDays", IsRequired = true, EmitDefaultValue = true)]
-        public int ExpirationDays { get; set; }
+        public int? ExpirationDays { get; set; }
 
         /// <summary>
         /// Custom text displayed on customer credit card statements for purchases of this product.
@@ -504,7 +531,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Available stock quantity, or null for unlimited inventory.</value>
         [DataMember(Name = "stock", IsRequired = true, EmitDefaultValue = true)]
-        public int Stock { get; set; }
+        public int? Stock { get; set; }
 
         /// <summary>
         /// Maximum number of simultaneous active instances/devices allowed per issued license key (applicable if hasLicenseKey is true).
@@ -541,7 +568,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Timestamp indicating exactly when the product was created.</value>
         /*
-        <example>2026-05-18T12:00:00.000Z</example>
+        <example>2026-05-18T12:00Z</example>
         */
         [DataMember(Name = "createdAt", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedAt { get; set; }
@@ -551,7 +578,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Timestamp indicating when the product was last modified.</value>
         /*
-        <example>2026-05-18T12:00:00.000Z</example>
+        <example>2026-05-18T12:00Z</example>
         */
         [DataMember(Name = "updatedAt", IsRequired = true, EmitDefaultValue = true)]
         public DateTime UpdatedAt { get; set; }
@@ -611,7 +638,7 @@ namespace Solifyn.Model
         <example>8760</example>
         */
         [DataMember(Name = "expiryHours", IsRequired = true, EmitDefaultValue = true)]
-        public int ExpiryHours { get; set; }
+        public int? ExpiryHours { get; set; }
 
         /// <summary>
         /// The unique identifier of the business owning this product.

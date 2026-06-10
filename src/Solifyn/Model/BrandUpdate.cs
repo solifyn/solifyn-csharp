@@ -67,7 +67,7 @@ namespace Solifyn.Model
         /*
         <example>https://acme.com</example>
         */
-        [DataMember(Name = "websiteUrl", EmitDefaultValue = false)]
+        [DataMember(Name = "websiteUrl", EmitDefaultValue = true)]
         public string WebsiteUrl { get; set; }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace Solifyn.Model
         /*
         <example>support@acme.com</example>
         */
-        [DataMember(Name = "supportEmail", EmitDefaultValue = false)]
+        [DataMember(Name = "supportEmail", EmitDefaultValue = true)]
         public string SupportEmail { get; set; }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace Solifyn.Model
         /*
         <example>A leading provider of ACME tools.</example>
         */
-        [DataMember(Name = "description", EmitDefaultValue = false)]
+        [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace Solifyn.Model
         /*
         <example>https://acme.com/logo.png</example>
         */
-        [DataMember(Name = "logoUrl", EmitDefaultValue = false)]
+        [DataMember(Name = "logoUrl", EmitDefaultValue = true)]
         public string LogoUrl { get; set; }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace Solifyn.Model
         /*
         <example>ACME CORP INC</example>
         */
-        [DataMember(Name = "statementDescriptor", EmitDefaultValue = false)]
+        [DataMember(Name = "statementDescriptor", EmitDefaultValue = true)]
         public string StatementDescriptor { get; set; }
 
         /// <summary>

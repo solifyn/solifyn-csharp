@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.0.3
 info:
   contact: {}
   description: "Welcome to the Solifyn API Reference. Leverage our secure endpoints\
@@ -4698,7 +4698,7 @@ paths:
         name: discount
         required: false
         schema:
-          example: 10
+          example: "10"
           type: string
         style: form
       - description: Number of product units
@@ -4707,7 +4707,7 @@ paths:
         name: qty
         required: false
         schema:
-          example: 1
+          example: "1"
           type: string
         style: form
       - description: Override price for PWYW products
@@ -4716,7 +4716,7 @@ paths:
         name: customPrice
         required: false
         schema:
-          example: 15
+          example: "15"
           type: string
         style: form
       - explode: true
@@ -18525,6 +18525,7 @@ components:
           type: string
       required:
       - liveToken
+      type: object
     DashboardStatsDto:
       properties:
         revenue:
@@ -18548,6 +18549,7 @@ components:
       - ordersCount
       - refundsCount
       - revenue
+      type: object
     ProductMessageResponseDto:
       example:
         message: Product archived successfully
@@ -18558,6 +18560,7 @@ components:
           type: string
       required:
       - message
+      type: object
     UpdateInstanceDto:
       properties:
         instanceName:
@@ -18568,6 +18571,7 @@ components:
           description: The updated IP address of the client device
           example: 192.168.1.1
           type: string
+      type: object
     ProductSubDto:
       example:
         name: name
@@ -18579,12 +18583,13 @@ components:
         name:
           type: string
         digitalLink:
-          type: string
           nullable: true
+          type: string
       required:
       - digitalLink
       - id
       - name
+      type: object
     LicenseSubDto:
       example:
         product:
@@ -18605,14 +18610,14 @@ components:
         status:
           type: string
         activationLimit:
+          nullable: true
           type: number
-          nullable: true
         activationMessage:
-          type: string
           nullable: true
+          type: string
         expiresAt:
-          type: string
           nullable: true
+          type: string
         product:
           $ref: '#/components/schemas/ProductSubDto'
       required:
@@ -18622,6 +18627,7 @@ components:
       - id
       - key
       - status
+      type: object
     CheckoutSessionDetailsDto:
       example:
         product: "{}"
@@ -18682,6 +18688,7 @@ components:
           - $ref: '#/components/schemas/Product'
           description: The details of the product being purchased
           nullable: true
+          type: object
         entitlementGrants:
           description: List of entitlement grants (e.g. GitHub repo invites) associated
             with this checkout.
@@ -18694,6 +18701,7 @@ components:
       - price
       - status
       - storeName
+      type: object
     SupportedCurrenciesResponseDto:
       example:
         label: US Dollar
@@ -18710,6 +18718,7 @@ components:
       required:
       - label
       - value
+      type: object
     PricePreviewResponseDto:
       example:
         convertedPrice: 250000
@@ -18738,6 +18747,7 @@ components:
       - convertedPrice
       - originalCurrency
       - originalPrice
+      type: object
     CreateCheckoutDto:
       example:
         customPrice: 15
@@ -18792,6 +18802,7 @@ components:
           type: string
       required:
       - productId
+      type: object
     CheckoutResponseDto:
       example:
         checkout_url: http://localhost:3000/checkout/test/prod_XXXXXXXXXXX?checkout_id=019e56ba-9832-72ae-XXXXXXXXXX
@@ -18814,6 +18825,7 @@ components:
       - checkout_url
       - id
       - session_id
+      type: object
     CreateCollectionCheckoutDto:
       example:
         aff: partner_abc
@@ -18844,6 +18856,7 @@ components:
           type: object
       required:
       - collectionId
+      type: object
     CreateSetupCheckoutDto:
       example:
         companyId: biz_xxxxxxxxxxxxxx
@@ -18875,6 +18888,7 @@ components:
           type: string
       required:
       - companyId
+      type: object
     CollectionProductRefDto:
       example:
         quantity: 1
@@ -18891,6 +18905,7 @@ components:
       required:
       - id
       - quantity
+      type: object
     CollectionResponseDto:
       example:
         createdAt: 2025-01-01T12:00:00Z
@@ -18899,7 +18914,7 @@ components:
         name: Summer Bundle
         businessId: biz_4r5t6y7u8i9o
         description: Everything you need for summer.
-        id: col_123
+        id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
         status: ACTIVE
         updatedAt: 2025-01-01T12:00:00Z
         products:
@@ -18910,7 +18925,6 @@ components:
       properties:
         id:
           description: The collection ID
-          example: col_123
           format: uuid
           type: string
         name:
@@ -18920,13 +18934,13 @@ components:
         description:
           description: A brief description of the collection
           example: Everything you need for summer.
-          type: string
           nullable: true
+          type: string
         imageUrl:
           description: URL of the collection image
           example: https://example.com/image.png
-          type: string
           nullable: true
+          type: string
         status:
           description: Status of the collection
           enum:
@@ -18966,6 +18980,7 @@ components:
       - name
       - status
       - updatedAt
+      type: object
     CollectionProductDto:
       example:
         instructions: Log in to your Solifyn developer dashboard and enter your license
@@ -18997,16 +19012,16 @@ components:
         hasDigitalDelivery: false
         githubPermission: pull
         hasLicenseKey: true
-        createdAt: 2026-05-18T12:00:00.000Z
+        createdAt: 2026-05-18T12:00:00Z
         githubRepo: solifyn/premium-app
         isFree: false
         price: 99
         imageUrl: https://assets.solifyn.com/images/products/saas-enterprise.png
         currency: USD
-        id: prod_9z8x7c6v5b4n
+        id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
         payWhatYouWant: false
         stock: 5
-        updatedAt: 2026-05-18T12:00:00.000Z
+        updatedAt: 2026-05-18T12:00:00Z
         quantity: 1
         billingPeriod: 0
         hasGithubAccess: false
@@ -19025,7 +19040,6 @@ components:
       properties:
         id:
           description: The unique identifier (ID) of the product.
-          example: prod_9z8x7c6v5b4n
           format: uuid
           type: string
         name:
@@ -19044,8 +19058,8 @@ components:
           description: A comprehensive rich text description of the product.
           example: "Unlock premium API integration, custom webhooks, dedicated server\
             \ bandwidth, and priority 24/7 business-critical support tiers."
-          type: string
           nullable: true
+          type: string
         status:
           description: "The lifecycle status of the product (e.g. ACTIVE, ARCHIVED)."
           example: ACTIVE
@@ -19053,8 +19067,8 @@ components:
         imageUrl:
           description: URL of the product cover image.
           example: https://assets.solifyn.com/images/products/saas-enterprise.png
-          type: string
           nullable: true
+          type: string
         taxCategory:
           description: The tax classification for the product.
           enum:
@@ -19075,8 +19089,8 @@ components:
         discount:
           description: Discount value as a percentage or fixed amount.
           example: 0
-          type: number
           nullable: true
+          type: number
         hasLicenseKey:
           description: Indicates if the product issues a cryptographically secure
             software license key upon checkout completion.
@@ -19093,8 +19107,8 @@ components:
         githubRepo:
           description: "GitHub repository to grant access to (format: owner/repo)."
           example: solifyn/premium-app
-          type: string
           nullable: true
+          type: string
         githubPermission:
           description: GitHub collaborator permission level.
           enum:
@@ -19104,8 +19118,8 @@ components:
           - maintain
           - admin
           example: pull
-          type: string
           nullable: true
+          type: string
         isTaxInclusive:
           description: Whether the product price already includes applicable sales
             taxes.
@@ -19114,25 +19128,25 @@ components:
         billingPeriod:
           description: The subscription billing cycle interval in days (for subscription
             products).
-          type: integer
           nullable: true
+          type: integer
           example: null
         trialPeriodDays:
           description: Trial duration in days for subscription products.
-          type: integer
           nullable: true
+          type: integer
           example: null
         expirationDays:
           description: Automatic expiration period in days for the subscription entitlement.
-          type: integer
           nullable: true
+          type: integer
           example: null
         statementDescriptor:
           description: Custom text displayed on customer credit card statements for
             purchases of this product.
           example: SOLIFYN*SAAS
-          type: string
           nullable: true
+          type: string
         payWhatYouWant:
           description: Indicates if customers are allowed to enter a custom pricing
             amount at checkout.
@@ -19147,6 +19161,7 @@ components:
             tier: enterprise
             department: engineering
           nullable: true
+          type: object
         customFields:
           description: Custom form field questions to ask the customer during checkout.
           example:
@@ -19164,12 +19179,12 @@ components:
             placeholder: e.g. Acme Corp (Optional)
           items:
             type: object
-          type: array
           nullable: true
+          type: array
         stock:
           description: "Available stock quantity, or null for unlimited inventory."
-          type: integer
           nullable: true
+          type: integer
           example: null
         activationLimit:
           description: Maximum number of simultaneous active instances/devices allowed
@@ -19187,12 +19202,12 @@ components:
           type: boolean
         createdAt:
           description: Timestamp indicating exactly when the product was created.
-          example: 2026-05-18T12:00:00.000Z
+          example: 2026-05-18T12:00:00Z
           format: date-time
           type: string
         updatedAt:
           description: Timestamp indicating when the product was last modified.
-          example: 2026-05-18T12:00:00.000Z
+          example: 2026-05-18T12:00:00Z
           format: date-time
           type: string
         isPermanentlyDeleted:
@@ -19202,29 +19217,29 @@ components:
         brandId:
           description: Optional brand identifier.
           example: brd_4e29285b8sdf34ff51e07d4
-          type: string
           nullable: true
+          type: string
         digitalLink:
           description: Secure link for digital delivery.
-          type: string
           nullable: true
+          type: string
           example: null
         instructions:
           description: Special instructions provided upon purchase.
           example: Log in to your Solifyn developer dashboard and enter your license
             key to activate the premium SaaS resources.
-          type: string
           nullable: true
+          type: string
         activationMessage:
           description: Custom message displayed when a license key is activated.
           example: Activation successful. Welcome to the Solifyn Enterprise Plan!
-          type: string
           nullable: true
+          type: string
         expiryHours:
           description: Number of hours until the license key expires.
           example: 8760
-          type: integer
           nullable: true
+          type: integer
         businessId:
           description: The unique identifier of the business owning this product.
           example: biz_4r5t6y7u8i9o
@@ -19270,6 +19285,7 @@ components:
       - taxCategory
       - trialPeriodDays
       - updatedAt
+      type: object
     CollectionDetailResponseDto:
       example:
         createdAt: 2025-01-01T12:00:00Z
@@ -19278,7 +19294,7 @@ components:
         name: Summer Bundle
         businessId: biz_4r5t6y7u8i9o
         description: Everything you need for summer.
-        id: col_123
+        id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
         status: ACTIVE
         updatedAt: 2025-01-01T12:00:00Z
         products:
@@ -19311,16 +19327,16 @@ components:
           hasDigitalDelivery: false
           githubPermission: pull
           hasLicenseKey: true
-          createdAt: 2026-05-18T12:00:00.000Z
+          createdAt: 2026-05-18T12:00:00Z
           githubRepo: solifyn/premium-app
           isFree: false
           price: 99
           imageUrl: https://assets.solifyn.com/images/products/saas-enterprise.png
           currency: USD
-          id: prod_9z8x7c6v5b4n
+          id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
           payWhatYouWant: false
           stock: 5
-          updatedAt: 2026-05-18T12:00:00.000Z
+          updatedAt: 2026-05-18T12:00:00Z
           quantity: 1
           billingPeriod: 0
           hasGithubAccess: false
@@ -19365,16 +19381,16 @@ components:
           hasDigitalDelivery: false
           githubPermission: pull
           hasLicenseKey: true
-          createdAt: 2026-05-18T12:00:00.000Z
+          createdAt: 2026-05-18T12:00:00Z
           githubRepo: solifyn/premium-app
           isFree: false
           price: 99
           imageUrl: https://assets.solifyn.com/images/products/saas-enterprise.png
           currency: USD
-          id: prod_9z8x7c6v5b4n
+          id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
           payWhatYouWant: false
           stock: 5
-          updatedAt: 2026-05-18T12:00:00.000Z
+          updatedAt: 2026-05-18T12:00:00Z
           quantity: 1
           billingPeriod: 0
           hasGithubAccess: false
@@ -19393,7 +19409,6 @@ components:
       properties:
         id:
           description: The collection ID
-          example: col_123
           format: uuid
           type: string
         name:
@@ -19403,13 +19418,13 @@ components:
         description:
           description: A brief description of the collection
           example: Everything you need for summer.
-          type: string
           nullable: true
+          type: string
         imageUrl:
           description: URL of the collection image
           example: https://example.com/image.png
-          type: string
           nullable: true
+          type: string
         status:
           description: Status of the collection
           enum:
@@ -19449,6 +19464,7 @@ components:
       - name
       - status
       - updatedAt
+      type: object
     CollectionProductEntry:
       example:
         quantity: 1
@@ -19468,6 +19484,7 @@ components:
       required:
       - id
       - quantity
+      type: object
     CreateCollectionDto:
       example:
         imageUrl: https://images.unsplash.com/photo-123
@@ -19510,6 +19527,7 @@ components:
       required:
       - name
       - products
+      type: object
     UpdateCollectionDto:
       example:
         imageUrl: https://images.unsplash.com/photo-123
@@ -19530,6 +19548,7 @@ components:
           description: The display cover image URL for this collection
           example: https://images.unsplash.com/photo-123
           type: string
+      type: object
     CollectionUpdatedResponseDto:
       example:
         message: Collection updated successfully
@@ -19540,6 +19559,7 @@ components:
           type: string
       required:
       - message
+      type: object
     CollectionArchivedResponseDto:
       example:
         message: Collection archived successfully
@@ -19550,6 +19570,7 @@ components:
           type: string
       required:
       - message
+      type: object
     CollectionUnarchivedResponseDto:
       example:
         message: Collection unarchived successfully
@@ -19560,6 +19581,7 @@ components:
           type: string
       required:
       - message
+      type: object
     AddCollectionProductsDto:
       example:
         products:
@@ -19575,6 +19597,7 @@ components:
           type: array
       required:
       - products
+      type: object
     UpdateCollectionProductDto:
       example:
         quantity: 2
@@ -19586,6 +19609,7 @@ components:
           type: number
       required:
       - quantity
+      type: object
     CollectionProductUpdatedResponseDto:
       example:
         message: Product updated successfully
@@ -19596,6 +19620,7 @@ components:
           type: string
       required:
       - message
+      type: object
     CollectionProductDeletedResponseDto:
       example:
         message: Product deleted successfully
@@ -19606,6 +19631,7 @@ components:
           type: string
       required:
       - message
+      type: object
     OperationalWebhookEndpointResponseDto:
       example:
         uid: monitoring-prod-endpoint
@@ -19671,6 +19697,7 @@ components:
       - throttleRate
       - updatedAt
       - url
+      type: object
     OperationalWebhookEndpointListResponseDto:
       example:
         iterator: iterator-token-abc
@@ -19720,6 +19747,7 @@ components:
       required:
       - data
       - done
+      type: object
     OperationalWebhookEndpointInDto:
       example:
         uid: monitoring-prod-endpoint
@@ -19778,6 +19806,7 @@ components:
           type: string
       required:
       - url
+      type: object
     OperationalWebhookEndpointUpdateDto:
       example:
         uid: monitoring-updated-endpoint
@@ -19829,6 +19858,7 @@ components:
           type: string
       required:
       - url
+      type: object
     OperationalWebhookEndpointHeadersResponseDto:
       example:
         headers:
@@ -19854,6 +19884,7 @@ components:
       required:
       - headers
       - sensitive
+      type: object
     OperationalWebhookEndpointHeadersInDto:
       example:
         headers:
@@ -19868,6 +19899,7 @@ components:
           type: object
       required:
       - headers
+      type: object
     OperationalWebhookEndpointSecretResponseDto:
       example:
         key: whsec_C2FVsBQIhrscChlQIMV+b5sSYspob7oD
@@ -19877,6 +19909,7 @@ components:
           type: string
       required:
       - key
+      type: object
     OperationalWebhookEndpointSecretInDto:
       example:
         key: whsec_C2FVsBQIhrscChlQIMV+b5sSYspob7oD
@@ -19887,6 +19920,7 @@ components:
             \ is generated."
           example: whsec_C2FVsBQIhrscChlQIMV+b5sSYspob7oD
           type: string
+      type: object
     CreateNotificationEmailDto:
       properties: {}
       type: object
@@ -19921,47 +19955,43 @@ components:
       - fullName
       - id
       - name
+      type: object
     EntitlementGrantResponseDto:
       example:
         oauthUrl: https://github.com/login/oauth/authorize...
         metadata: "{}"
-        productId: prod_123456
-        businessId: biz_123456
+        productId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        businessId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
         type: GITHUB
         githubPermission: pull
         githubUsername: octocat
         createdAt: createdAt
         githubRepo: solifyn/premium-app
-        paymentId: pay_123456
-        customerId: cust_123456
-        id: grant_123456
+        paymentId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        customerId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
         status: PENDING
         errorDetails: Permission denied
         updatedAt: updatedAt
       properties:
         id:
           description: The unique entitlement grant ID.
-          example: grant_123456
           format: uuid
           type: string
         businessId:
           description: The business ID context.
-          example: biz_123456
           format: uuid
           type: string
         customerId:
           description: The customer ID.
-          example: cust_123456
           format: uuid
           type: string
         paymentId:
           description: Associated payment transaction ID.
-          example: pay_123456
           format: uuid
           type: string
         productId:
           description: The purchased product ID.
-          example: prod_123456
           format: uuid
           type: string
         type:
@@ -20011,6 +20041,7 @@ components:
       - status
       - type
       - updatedAt
+      type: object
     RevokeSeatDto:
       example:
         quantity: 1
@@ -20027,13 +20058,14 @@ components:
       required:
       - productId
       - quantity
+      type: object
     MeterResponseDto:
       description: "Represents a usage meter configured for event-based billing, including\
         \ the tracked event name, aggregation strategy, optional filters, and archive\
         \ status."
       example:
         archived: false
-        createdAt: 2026-05-23T10:00:00.000Z
+        createdAt: 2026-05-23T10:00:00Z
         aggregationType: COUNT
         unit: requests
         businessId: biz_4r5t6y7u8i9o
@@ -20045,7 +20077,7 @@ components:
         filters:
           event_type: premium
           region: asia
-        updatedAt: 2026-05-23T10:00:00.000Z
+        updatedAt: 2026-05-23T10:00:00Z
       properties:
         id:
           description: The unique meter ID.
@@ -20062,8 +20094,8 @@ components:
         description:
           description: Meter description.
           example: Counts successful API requests for usage-based billing.
-          type: object
           nullable: true
+          type: object
         eventName:
           description: The event name tracked by this meter.
           example: api.request
@@ -20080,32 +20112,33 @@ components:
         aggregationKey:
           description: Metadata key used for aggregation.
           example: tokens
-          type: object
           nullable: true
+          type: object
         unit:
           description: Measurement unit label.
           example: requests
-          type: object
           nullable: true
+          type: object
         filters:
-          additionalProperties: {}
+          additionalProperties: true
           description: Optional filter definition for advanced matching.
           example:
             event_type: premium
             region: asia
           nullable: true
+          type: object
         archived:
           description: Whether the meter is archived.
           example: false
           type: boolean
         createdAt:
           description: Creation timestamp.
-          example: 2026-05-23T10:00:00.000Z
+          example: 2026-05-23T10:00:00Z
           format: date-time
           type: string
         updatedAt:
           description: Last update timestamp.
-          example: 2026-05-23T10:00:00.000Z
+          example: 2026-05-23T10:00:00Z
           format: date-time
           type: string
       required:
@@ -20117,6 +20150,7 @@ components:
       - id
       - name
       - updatedAt
+      type: object
     MeterUsageEventDto:
       example:
         metadata:
@@ -20124,10 +20158,10 @@ components:
           region: asia-southeast-1
         meterId: mtr_8Z1aB2cD3eF4gH5iJ6kL7m
         customerId: cus_8n7m6l5k4j3h2g1f0e9d8c
-        processedAt: 2026-05-23T10:00:01.000Z
+        processedAt: 2026-05-23T10:00:01Z
         id: evt_9Y3kP4qR7tU1vW2xZ5aB6c
         value: 1
-        timestamp: 2026-05-23T10:00:00.000Z
+        timestamp: 2026-05-23T10:00:00Z
       properties:
         id:
           description: The unique usage event ID.
@@ -20146,20 +20180,21 @@ components:
           example: 1
           type: number
         metadata:
-          additionalProperties: {}
+          additionalProperties: true
           description: Optional event metadata.
           example:
             plan: enterprise
             region: asia-southeast-1
           nullable: true
+          type: object
         timestamp:
           description: Timestamp when the usage event occurred.
-          example: 2026-05-23T10:00:00.000Z
+          example: 2026-05-23T10:00:00Z
           format: date-time
           type: string
         processedAt:
           description: Timestamp when the usage event was processed.
-          example: 2026-05-23T10:00:01.000Z
+          example: 2026-05-23T10:00:01Z
           format: date-time
           type: string
       required:
@@ -20169,6 +20204,7 @@ components:
       - processedAt
       - timestamp
       - value
+      type: object
     MeterDetailResponseDto:
       description: Represents a usage meter with its most recent usage events and
         total usage event count.
@@ -20181,7 +20217,7 @@ components:
           event_type: premium
           region: asia
         archived: false
-        createdAt: 2026-05-23T10:00:00.000Z
+        createdAt: 2026-05-23T10:00:00Z
         unit: requests
         usageEvents:
         - metadata:
@@ -20189,24 +20225,24 @@ components:
             region: asia-southeast-1
           meterId: mtr_8Z1aB2cD3eF4gH5iJ6kL7m
           customerId: cus_8n7m6l5k4j3h2g1f0e9d8c
-          processedAt: 2026-05-23T10:00:01.000Z
+          processedAt: 2026-05-23T10:00:01Z
           id: evt_9Y3kP4qR7tU1vW2xZ5aB6c
           value: 1
-          timestamp: 2026-05-23T10:00:00.000Z
+          timestamp: 2026-05-23T10:00:00Z
         - metadata:
             plan: enterprise
             region: asia-southeast-1
           meterId: mtr_8Z1aB2cD3eF4gH5iJ6kL7m
           customerId: cus_8n7m6l5k4j3h2g1f0e9d8c
-          processedAt: 2026-05-23T10:00:01.000Z
+          processedAt: 2026-05-23T10:00:01Z
           id: evt_9Y3kP4qR7tU1vW2xZ5aB6c
           value: 1
-          timestamp: 2026-05-23T10:00:00.000Z
+          timestamp: 2026-05-23T10:00:00Z
         name: API Request Count
         eventName: api.request
         id: mtr_8Z1aB2cD3eF4gH5iJ6kL7m
         totalUsageEvents: 1284
-        updatedAt: 2026-05-23T10:00:00.000Z
+        updatedAt: 2026-05-23T10:00:00Z
       properties:
         id:
           description: The unique meter ID.
@@ -20223,8 +20259,8 @@ components:
         description:
           description: Meter description.
           example: Counts successful API requests for usage-based billing.
-          type: object
           nullable: true
+          type: object
         eventName:
           description: The event name tracked by this meter.
           example: api.request
@@ -20241,33 +20277,33 @@ components:
         aggregationKey:
           description: Metadata key used for aggregation.
           example: tokens
-          type: object
           nullable: true
+          type: object
         unit:
           description: Measurement unit label.
           example: requests
-          type: object
           nullable: true
+          type: object
         filters:
           additionalProperties: true
           description: Optional filter definition for advanced matching.
           example:
             event_type: premium
             region: asia
-          type: object
           nullable: true
+          type: object
         archived:
           description: Whether the meter is archived.
           example: false
           type: boolean
         createdAt:
           description: Creation timestamp.
-          example: 2026-05-23T10:00:00.000Z
+          example: 2026-05-23T10:00:00Z
           format: date-time
           type: string
         updatedAt:
           description: Last update timestamp.
-          example: 2026-05-23T10:00:00.000Z
+          example: 2026-05-23T10:00:00Z
           format: date-time
           type: string
         usageEvents:
@@ -20290,6 +20326,7 @@ components:
       - totalUsageEvents
       - updatedAt
       - usageEvents
+      type: object
     CreateMeterDto:
       example:
         aggregationType: COUNT
@@ -20333,11 +20370,12 @@ components:
           example: requests
           type: string
         filters:
-          additionalProperties: {}
+          additionalProperties: true
           description: Optional filter definition for advanced matching.
           example:
             event_type: premium
             region: asia
+          type: object
         enableFiltering:
           default: false
           description: Enable filtering on usage event ingestion.
@@ -20347,6 +20385,7 @@ components:
       - aggregationType
       - eventName
       - name
+      type: object
     UpdateMeterDto:
       example:
         aggregationType: COUNT
@@ -20390,15 +20429,17 @@ components:
           example: requests
           type: string
         filters:
-          additionalProperties: {}
+          additionalProperties: true
           description: Optional filter definition for advanced matching.
           example:
             event_type: premium
             region: asia
+          type: object
         enableFiltering:
           description: Enable filtering on usage event ingestion.
           example: false
           type: boolean
+      type: object
     MeterEventsResponseDto:
       description: Represents a paginated-like response containing recent usage events
         recorded for a meter.
@@ -20411,19 +20452,19 @@ components:
             region: asia-southeast-1
           meterId: mtr_8Z1aB2cD3eF4gH5iJ6kL7m
           customerId: cus_8n7m6l5k4j3h2g1f0e9d8c
-          processedAt: 2026-05-23T10:00:01.000Z
+          processedAt: 2026-05-23T10:00:01Z
           id: evt_9Y3kP4qR7tU1vW2xZ5aB6c
           value: 1
-          timestamp: 2026-05-23T10:00:00.000Z
+          timestamp: 2026-05-23T10:00:00Z
         - metadata:
             plan: enterprise
             region: asia-southeast-1
           meterId: mtr_8Z1aB2cD3eF4gH5iJ6kL7m
           customerId: cus_8n7m6l5k4j3h2g1f0e9d8c
-          processedAt: 2026-05-23T10:00:01.000Z
+          processedAt: 2026-05-23T10:00:01Z
           id: evt_9Y3kP4qR7tU1vW2xZ5aB6c
           value: 1
-          timestamp: 2026-05-23T10:00:00.000Z
+          timestamp: 2026-05-23T10:00:00Z
       properties:
         meterId:
           description: The unique meter ID.
@@ -20442,6 +20483,7 @@ components:
       - count
       - items
       - meterId
+      type: object
     MeterQuantitiesCostDto:
       example:
         cost: 19.5
@@ -20476,6 +20518,7 @@ components:
       - currency
       - productId
       - totalUsage
+      type: object
     MeterQuantitiesResponseDto:
       description: Represents aggregated usage quantities and calculated product costs
         for a meter within a selected date range.
@@ -20517,6 +20560,7 @@ components:
       - meterId
       - name
       - totalUsage
+      type: object
     MeterIngestEventDto:
       example:
         metadata:
@@ -20546,11 +20590,12 @@ components:
           example: 1
           type: number
         metadata:
-          additionalProperties: {}
+          additionalProperties: true
           description: Metadata attached to the usage event.
           example:
             plan: enterprise
             region: asia-southeast-1
+          type: object
         timestamp:
           description: Timestamp of the event in ISO 8601 format.
           example: 2026-05-23T10:00:00.000Z
@@ -20559,6 +20604,7 @@ components:
       - customer_id
       - event_id
       - event_name
+      type: object
     MeterIngestRequestDto:
       example:
         events:
@@ -20586,6 +20632,7 @@ components:
           type: array
       required:
       - events
+      type: object
     MeterIngestResponseDto:
       example:
         processed: 5
@@ -20614,28 +20661,30 @@ components:
       - errors
       - failed
       - processed
+      type: object
     DisputeEvidenceDto:
       properties:
         cancellation_policy:
           description: Cancellation policy attachment ID
           example: file_123
-          type: string
           nullable: true
+          type: string
         customer_communication:
           description: Customer communication attachment ID
           example: file_456
-          type: string
           nullable: true
+          type: string
         refund_policy:
           description: Refund policy attachment ID
           example: file_789
-          type: string
           nullable: true
+          type: string
         uncategorized:
           description: Uncategorized attachment ID
           example: file_000
-          type: string
           nullable: true
+          type: string
+      type: object
     DisputeListMetaDto:
       properties:
         total:
@@ -20659,6 +20708,7 @@ components:
       - page
       - total
       - totalPages
+      type: object
     DisputeAttachmentDto:
       properties:
         id:
@@ -20667,6 +20717,7 @@ components:
           type: string
       required:
       - id
+      type: object
     CheckoutLinkResponseDto:
       example:
         country: US
@@ -20682,66 +20733,65 @@ components:
         customerEmail: customer@example.com
         addressLine1: 123 Main St
         showDiscounts: true
-        id: chk_123
+        id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
         state: NY
         collectionId: col_123
         updatedAt: 2025-01-01T12:00:00Z
       properties:
         id:
           description: The checkout link ID
-          example: chk_123
           format: uuid
           type: string
         title:
           description: The title of the checkout link
           example: Winter Bundle Checkout
-          type: string
           nullable: true
+          type: string
         productId:
           description: The linked Product ID
           example: prod_123
-          type: string
           nullable: true
+          type: string
         collectionId:
           description: The linked Collection ID
           example: col_123
-          type: string
           nullable: true
+          type: string
         customerName:
           description: Pre-filled customer name
           example: John Doe
-          type: string
           nullable: true
+          type: string
         customerEmail:
           description: Pre-filled customer email
           example: customer@example.com
-          type: string
           nullable: true
+          type: string
         addressLine1:
           description: Pre-filled address line 1
           example: 123 Main St
-          type: string
           nullable: true
+          type: string
         city:
           description: Pre-filled city
           example: New York
-          type: string
           nullable: true
+          type: string
         state:
           description: Pre-filled state
           example: NY
-          type: string
           nullable: true
+          type: string
         postalCode:
           description: Pre-filled postal code
           example: "10001"
-          type: string
           nullable: true
+          type: string
         country:
           description: Pre-filled country
           example: US
-          type: string
           nullable: true
+          type: string
         quantity:
           description: Quantity to purchase
           example: 1
@@ -20749,13 +20799,13 @@ components:
         redirectUrl:
           description: URL to redirect to after successful payment
           example: https://example.com/success
-          type: string
           nullable: true
+          type: string
         cancelUrl:
           description: URL to redirect to if payment is cancelled
           example: https://example.com/cancel
-          type: string
           nullable: true
+          type: string
         showDiscounts:
           description: Whether to show discounts on the checkout page
           example: true
@@ -20776,6 +20826,7 @@ components:
       - quantity
       - showDiscounts
       - updatedAt
+      type: object
     CreateCheckoutLinkDto:
       example:
         country: US
@@ -20864,6 +20915,7 @@ components:
           type: boolean
       required:
       - productId
+      type: object
     UpdateCheckoutLinkDto:
       example:
         country: US
@@ -20950,6 +21002,7 @@ components:
           description: Whether to display discount input form fields on checkout screen
           example: true
           type: boolean
+      type: object
     CheckoutLinkMessageResponseDto:
       example:
         message: Checkout link deleted successfully
@@ -20960,6 +21013,7 @@ components:
           type: string
       required:
       - message
+      type: object
     CustomerResponseDto:
       example:
         createdAt: 2025-01-01T12:00:00Z
@@ -20982,8 +21036,8 @@ components:
         memberId:
           description: The Membership ID associated with this customer
           example: mem_123
-          type: string
           nullable: true
+          type: string
         email:
           description: The email address of the customer
           example: customer@example.com
@@ -20991,29 +21045,29 @@ components:
         name:
           description: The name of the customer
           example: John Doe
-          type: string
           nullable: true
+          type: string
         username:
           description: The username of the customer
           example: johndoe
-          type: string
           nullable: true
+          type: string
         phone:
           description: The phone number of the customer
           example: "+1234567890"
-          type: string
           nullable: true
+          type: string
         phone_number:
           description: The phone number of the customer
           example: "+1234567890"
-          type: string
           nullable: true
+          type: string
         metadata:
           description: Additional metadata associated with the customer
           example:
             key: value
-          type: object
           nullable: true
+          type: object
         createdAt:
           description: Timestamp when the customer was created
           example: 2025-01-01T12:00:00Z
@@ -21035,6 +21089,7 @@ components:
       - email
       - id
       - updatedAt
+      type: object
     CustomerListResponseDto:
       example:
         total_count: 1
@@ -21076,6 +21131,7 @@ components:
       required:
       - items
       - total_count
+      type: object
     CreateCustomerDto:
       example:
         metadata:
@@ -21113,6 +21169,7 @@ components:
       required:
       - email
       - name
+      type: object
     UpdateCustomerDto:
       example:
         metadata:
@@ -21141,6 +21198,7 @@ components:
           example:
             customKey: customValue
           type: object
+      type: object
     CustomerMessageResponseDto:
       example:
         message: Customer updated successfully
@@ -21151,6 +21209,7 @@ components:
           type: string
       required:
       - message
+      type: object
     CustomerSharedInviteResponseDto:
       example:
         expiresAt: 2025-01-02T12:00:00Z
@@ -21173,6 +21232,7 @@ components:
       required:
       - expiresAt
       - token
+      type: object
     SubscriptionMemberDto:
       properties:
         id:
@@ -21181,6 +21241,7 @@ components:
           type: string
       required:
       - id
+      type: object
     SubscriptionUserDto:
       properties:
         id:
@@ -21204,6 +21265,7 @@ components:
       - id
       - name
       - username
+      type: object
     SubscriptionCompanyDto:
       properties:
         id:
@@ -21217,6 +21279,7 @@ components:
       required:
       - id
       - title
+      type: object
     SubscriptionPlanDto:
       properties:
         id:
@@ -21229,6 +21292,7 @@ components:
           type: object
       required:
       - id
+      type: object
     SubscriptionProductDto:
       properties:
         id:
@@ -21246,6 +21310,7 @@ components:
       required:
       - id
       - title
+      type: object
     ApiKeyResponseDto:
       example:
         createdAt: 2026-05-30T14:11:29.071Z
@@ -21296,6 +21361,7 @@ components:
       - name
       - prefix
       - status
+      type: object
     CreateApiKeyDto:
       example:
         allowWrite: true
@@ -21312,6 +21378,7 @@ components:
           type: boolean
       required:
       - name
+      type: object
     AppPortalUrlResponseDto:
       example:
         url: https://app.svix.com/login#key=...
@@ -21321,6 +21388,7 @@ components:
           type: string
       required:
       - url
+      type: object
     WebhookEndpointResponseDto:
       example:
         createdAt: 2026-05-30T14:11:29.071Z
@@ -21378,6 +21446,7 @@ components:
       - maskedSecret
       - status
       - url
+      type: object
     CreateWebhookEndpointDto:
       example:
         description: Primary payment listener
@@ -21405,6 +21474,7 @@ components:
       required:
       - events
       - url
+      type: object
     UpdateWebhookEndpointDto:
       example:
         description: Updated payment listener
@@ -21439,6 +21509,7 @@ components:
           - INACTIVE
           example: ACTIVE
           type: string
+      type: object
     WebhookDeliveryResponseDto:
       example:
         createdAt: 2026-05-30T14:11:29.071Z
@@ -21490,6 +21561,7 @@ components:
       - id
       - payload
       - status
+      type: object
     CreateTicketDto:
       properties: {}
       type: object
@@ -21533,16 +21605,16 @@ components:
         hasDigitalDelivery: false
         githubPermission: pull
         hasLicenseKey: true
-        createdAt: 2026-05-18T12:00:00.000Z
+        createdAt: 2026-05-18T12:00:00Z
         githubRepo: solifyn/premium-app
         isFree: false
         price: 99
         imageUrl: https://assets.solifyn.com/images/products/saas-enterprise.png
         currency: USD
-        id: prod_9z8x7c6v5b4n
+        id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
         payWhatYouWant: false
         stock: 5
-        updatedAt: 2026-05-18T12:00:00.000Z
+        updatedAt: 2026-05-18T12:00:00Z
         billingPeriod: 0
         hasGithubAccess: false
         isPermanentlyDeleted: false
@@ -21560,7 +21632,6 @@ components:
       properties:
         id:
           description: The unique identifier (ID) of the product.
-          example: prod_9z8x7c6v5b4n
           format: uuid
           type: string
         name:
@@ -21579,8 +21650,8 @@ components:
           description: A comprehensive rich text description of the product.
           example: "Unlock premium API integration, custom webhooks, dedicated server\
             \ bandwidth, and priority 24/7 business-critical support tiers."
-          type: string
           nullable: true
+          type: string
         status:
           description: "The lifecycle status of the product (e.g. ACTIVE, ARCHIVED)."
           example: ACTIVE
@@ -21588,8 +21659,8 @@ components:
         imageUrl:
           description: URL of the product cover image.
           example: https://assets.solifyn.com/images/products/saas-enterprise.png
-          type: string
           nullable: true
+          type: string
         taxCategory:
           description: The tax classification for the product.
           enum:
@@ -21610,8 +21681,8 @@ components:
         discount:
           description: Discount value as a percentage or fixed amount.
           example: 0
-          type: number
           nullable: true
+          type: number
         hasLicenseKey:
           description: Indicates if the product issues a cryptographically secure
             software license key upon checkout completion.
@@ -21628,8 +21699,8 @@ components:
         githubRepo:
           description: "GitHub repository to grant access to (format: owner/repo)."
           example: solifyn/premium-app
-          type: string
           nullable: true
+          type: string
         githubPermission:
           description: GitHub collaborator permission level.
           enum:
@@ -21639,8 +21710,8 @@ components:
           - maintain
           - admin
           example: pull
-          type: string
           nullable: true
+          type: string
         isTaxInclusive:
           description: Whether the product price already includes applicable sales
             taxes.
@@ -21649,25 +21720,25 @@ components:
         billingPeriod:
           description: The subscription billing cycle interval in days (for subscription
             products).
-          type: integer
           nullable: true
+          type: integer
           example: null
         trialPeriodDays:
           description: Trial duration in days for subscription products.
-          type: integer
           nullable: true
+          type: integer
           example: null
         expirationDays:
           description: Automatic expiration period in days for the subscription entitlement.
-          type: integer
           nullable: true
+          type: integer
           example: null
         statementDescriptor:
           description: Custom text displayed on customer credit card statements for
             purchases of this product.
           example: SOLIFYN*SAAS
-          type: string
           nullable: true
+          type: string
         payWhatYouWant:
           description: Indicates if customers are allowed to enter a custom pricing
             amount at checkout.
@@ -21682,6 +21753,7 @@ components:
             tier: enterprise
             department: engineering
           nullable: true
+          type: object
         customFields:
           description: Custom form field questions to ask the customer during checkout.
           example:
@@ -21699,12 +21771,12 @@ components:
             placeholder: e.g. Acme Corp (Optional)
           items:
             type: object
-          type: array
           nullable: true
+          type: array
         stock:
           description: "Available stock quantity, or null for unlimited inventory."
-          type: integer
           nullable: true
+          type: integer
           example: null
         activationLimit:
           description: Maximum number of simultaneous active instances/devices allowed
@@ -21722,12 +21794,12 @@ components:
           type: boolean
         createdAt:
           description: Timestamp indicating exactly when the product was created.
-          example: 2026-05-18T12:00:00.000Z
+          example: 2026-05-18T12:00:00Z
           format: date-time
           type: string
         updatedAt:
           description: Timestamp indicating when the product was last modified.
-          example: 2026-05-18T12:00:00.000Z
+          example: 2026-05-18T12:00:00Z
           format: date-time
           type: string
         isPermanentlyDeleted:
@@ -21737,29 +21809,29 @@ components:
         brandId:
           description: Optional brand identifier.
           example: brd_4e29285b8sdf34ff51e07d4
-          type: string
           nullable: true
+          type: string
         digitalLink:
           description: Secure link for digital delivery.
-          type: string
           nullable: true
+          type: string
           example: null
         instructions:
           description: Special instructions provided upon purchase.
           example: Log in to your Solifyn developer dashboard and enter your license
             key to activate the premium SaaS resources.
-          type: string
           nullable: true
+          type: string
         activationMessage:
           description: Custom message displayed when a license key is activated.
           example: Activation successful. Welcome to the Solifyn Enterprise Plan!
-          type: string
           nullable: true
+          type: string
         expiryHours:
           description: Number of hours until the license key expires.
           example: 8760
-          type: integer
           nullable: true
+          type: integer
         businessId:
           description: The unique identifier of the business owning this product.
           example: biz_4r5t6y7u8i9o
@@ -21800,6 +21872,7 @@ components:
       - taxCategory
       - trialPeriodDays
       - updatedAt
+      type: object
     ProductCreate:
       example:
         metadata:
@@ -22008,18 +22081,17 @@ components:
           example: false
           type: boolean
         activationLimit:
-          default: null
           description: Maximum concurrent activated instances allowed per license
             key.
-          type: integer
           nullable: true
+          type: integer
           example: null
         brandId:
           description: "Brand id for the product, if not provided will default to\
             \ primary brand."
           example: brd_4e29285b8sdf34ff51e07d4
-          type: string
           nullable: true
+          type: string
         billingPeriod:
           description: Billing period in days (for Subscription products).
           example: 30
@@ -22047,6 +22119,7 @@ components:
           example:
             internal_id: "12345"
             campaign: summer_sale
+          type: object
         customFields:
           description: Form field configurations to gather during checkout.
           example:
@@ -22089,6 +22162,7 @@ components:
       - name
       - price
       - taxCategory
+      type: object
     ProductUpdate:
       example:
         metadata:
@@ -22299,15 +22373,15 @@ components:
         activationLimit:
           description: Maximum concurrent activated instances allowed per license
             key.
-          type: integer
           nullable: true
+          type: integer
           example: null
         brandId:
           description: "Brand id for the product, if not provided will default to\
             \ primary brand."
           example: brd_4e29285b8sdf34ff51e07d4
-          type: string
           nullable: true
+          type: string
         billingPeriod:
           description: Billing period in days (for Subscription products).
           example: 30
@@ -22335,6 +22409,7 @@ components:
           example:
             internal_id: "12345"
             campaign: summer_sale
+          type: object
         customFields:
           description: Form field configurations to gather during checkout.
           example:
@@ -22372,6 +22447,7 @@ components:
           items:
             $ref: '#/components/schemas/ProductCreate_addons_inner'
           type: array
+      type: object
     Discount:
       description: "Represents a discount code created under your business, containing\
         \ type, amount, usage limits, and expiration details."
@@ -22420,8 +22496,8 @@ components:
         usageLimit:
           description: Maximum number of times this discount code can be redeemed.
             Null represents unlimited usage.
-          type: integer
           nullable: true
+          type: integer
         timesUsed:
           description: The number of times this discount code has been successfully
             redeemed.
@@ -22430,8 +22506,8 @@ components:
           description: The expiration timestamp after which the discount code is no
             longer valid.
           format: date-time
-          type: string
           nullable: true
+          type: string
         status:
           description: The current status of the discount.
           enum:
@@ -22468,6 +22544,7 @@ components:
       - updated_at
       - usageLimit
       - usage_limit
+      type: object
     DiscountCreate:
       example:
         amount: 0.8008281904610115
@@ -22501,17 +22578,17 @@ components:
           type: number
         usage_limit:
           description: Maximum number of redemptions allowed.
-          type: integer
           nullable: true
+          type: integer
         expires_at:
           description: Expiration timestamp for the discount.
           format: date-time
-          type: string
           nullable: true
+          type: string
         subscription_cycles:
           description: Number of subscription cycles this discount applies to.
-          type: integer
           nullable: true
+          type: integer
         restricted_to:
           description: List of product IDs this discount is restricted to.
           items:
@@ -22527,6 +22604,7 @@ components:
       - amount
       - code
       - type
+      type: object
     DiscountUpdate:
       example:
         amount: 0.8008281904610115
@@ -22555,17 +22633,17 @@ components:
           type: number
         usage_limit:
           description: Maximum number of redemptions allowed.
-          type: integer
           nullable: true
+          type: integer
         expires_at:
           description: Expiration timestamp for the discount.
           format: date-time
-          type: string
           nullable: true
+          type: string
         subscription_cycles:
           description: Number of subscription cycles this discount applies to.
-          type: integer
           nullable: true
+          type: integer
         restricted_to:
           description: List of product IDs this discount is restricted to.
           items:
@@ -22577,6 +22655,7 @@ components:
         metadata:
           description: Custom metadata for the discount.
           type: object
+      type: object
     License:
       description: Represents a cryptographically secure software license key issued
         to a customer upon purchase or manual issuance.
@@ -22625,32 +22704,32 @@ components:
           description: The unique ID of the product this license key is associated
             with.
           example: prod_hyQQhhNzfEuvv
-          type: string
           nullable: true
+          type: string
         paymentId:
           description: The unique payment identifier that triggered the issuance of
             this license key.
           example: pay_3r2FgHXp9
-          type: string
           nullable: true
+          type: string
         customerId:
           description: The unique customer identifier (ID) who received this license
             key.
           example: cust_3r2FgHXp9
-          type: string
           nullable: true
+          type: string
         activationLimit:
           description: Maximum number of simultaneous active device instances allowed
             for this license. Null means unlimited.
           example: 3
-          type: number
           nullable: true
+          type: number
         activationMessage:
           description: Optional message displayed to the customer upon successful
             activation.
           example: Thank you! Your license is now active.
-          type: string
           nullable: true
+          type: string
         instancesCount:
           description: Running count of how many times this license key has been activated.
           example: 1
@@ -22658,18 +22737,18 @@ components:
         expiryHours:
           description: Relative expiry duration in hours from the time of issuance.
           example: 720
-          type: number
           nullable: true
+          type: number
         expiresAt:
           description: Absolute expiration timestamp. The license becomes invalid
             after this point.
           example: 2027-01-01T00:00:00.000Z
-          type: string
           nullable: true
+          type: string
         filters:
           description: Optional custom metadata filters associated with the license.
-          type: object
           nullable: true
+          type: object
           example: null
         archived:
           description: Indicates if the license key is archived.
@@ -22700,6 +22779,7 @@ components:
       - productId
       - status
       - updatedAt
+      type: object
     Instance:
       description: Represents an active device or software instance that has been
         activated against a license key.
@@ -22725,19 +22805,19 @@ components:
           description: The unique hardware hash or client-generated identifier of
             the activated device/machine.
           example: machine-ID-abc123
-          type: string
           nullable: true
+          type: string
         instanceName:
           description: "A human-readable display name for this instance, assigned\
             \ by the client application."
           example: MacBook Pro 16"
-          type: string
           nullable: true
+          type: string
         ipAddress:
           description: The IP address recorded at the time of activation.
           example: 203.0.113.42
-          type: string
           nullable: true
+          type: string
         activatedAt:
           description: Timestamp when this device instance was first activated.
           example: 2026-05-15T10:30:00.000Z
@@ -22746,8 +22826,8 @@ components:
           description: Timestamp of the most recent activation heartbeat or re-activation
             check from this device.
           example: 2026-05-18T08:00:00.000Z
-          type: string
           nullable: true
+          type: string
       required:
       - activatedAt
       - id
@@ -22756,6 +22836,7 @@ components:
       - ipAddress
       - lastSeenAt
       - licenseId
+      type: object
     LicenseValidationResponse:
       example:
         valid: true
@@ -22782,6 +22863,7 @@ components:
       - license
       - success
       - valid
+      type: object
     Addon:
       example:
         isSeatAddon: true
@@ -22801,13 +22883,13 @@ components:
         maxQuantity:
           description: Maximum quantity allowed (null if unlimited).
           example: 10
-          type: object
           nullable: true
+          type: object
         priceOverride:
           description: Price override (null if using base product price).
           example: 15
-          type: object
           nullable: true
+          type: object
         isSeatAddon:
           description: Flag indicating if this is a seat/license addon.
           example: true
@@ -22818,6 +22900,7 @@ components:
       - minQuantity
       - priceOverride
       - productId
+      type: object
     AddonCreate:
       example:
         isSeatAddon: true
@@ -22854,6 +22937,7 @@ components:
       - isSeatAddon
       - minQuantity
       - productId
+      type: object
     AddonUpdate:
       example:
         isSeatAddon: true
@@ -22879,6 +22963,7 @@ components:
             increment.
           example: true
           type: boolean
+      type: object
     Order:
       description: "Represents an order (payment) processed under your business, containing\
         \ customer, billing, product cart, and refund details."
@@ -23060,6 +23145,7 @@ components:
       - subtotal
       - tax_amount
       - total_amount
+      type: object
     OrderList:
       example:
         total_count: 120
@@ -23181,6 +23267,7 @@ components:
       required:
       - items
       - total_count
+      type: object
     OrderUpdate:
       example:
         billing:
@@ -23192,6 +23279,7 @@ components:
       properties:
         billing:
           $ref: '#/components/schemas/OrderBillingUpdate'
+      type: object
     OrderBillingUpdate:
       example:
         zipcode: "94105"
@@ -23215,6 +23303,7 @@ components:
         country:
           example: US
           type: string
+      type: object
     Invoice:
       description: Represents a generated invoice for an order.
       example:
@@ -23251,6 +23340,7 @@ components:
       - order_id
       - status
       - url
+      type: object
     OrderRefundCreate:
       example:
         isFullRefund: true
@@ -23291,6 +23381,7 @@ components:
       - amount
       - idempotencyKey
       - isFullRefund
+      type: object
     OrderCustomer:
       properties:
         customer_id:
@@ -23313,6 +23404,7 @@ components:
       - customer_id
       - email
       - name
+      type: object
     OrderBilling:
       properties:
         street:
@@ -23335,6 +23427,7 @@ components:
           description: Country code.
           example: US
           type: string
+      type: object
     OrderProductCart:
       example:
         quantity: 1
@@ -23368,6 +23461,7 @@ components:
       - name
       - price
       - quantity
+      type: object
     OrderDetail:
       properties:
         filesSnapshot:
@@ -23383,6 +23477,7 @@ components:
           description: Order resolution status.
           example: completed
           type: string
+      type: object
     OrderRefund:
       example:
         reason: requested_by_customer
@@ -23435,6 +23530,7 @@ components:
       - payment_id
       - refund_id
       - status
+      type: object
     Refund:
       example:
         reason: requested_by_customer
@@ -23443,9 +23539,9 @@ components:
         createdAt: 2025-01-01T12:00:00Z
         whopId: rf_xyz123
         provider: stripe
-        paymentId: pay_123
+        paymentId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
         currency: USD
-        id: ref_123
+        id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
         providerCreatedAt: 2025-01-01T12:00:00Z
         status: succeeded
         referenceValue: ARN123456789
@@ -23453,7 +23549,6 @@ components:
       properties:
         id:
           description: The refund ID
-          example: ref_123
           format: uuid
           type: string
         whopId:
@@ -23463,8 +23558,8 @@ components:
         idempotencyKey:
           description: Client-generated key to prevent duplicate refunds
           example: idemp_abc123
-          type: string
           nullable: true
+          type: string
         amount:
           description: Refunded amount
           example: 10.5
@@ -23485,29 +23580,28 @@ components:
         provider:
           description: The payment provider used
           example: stripe
-          type: string
           nullable: true
+          type: string
         reason:
           description: Reason for the refund
           example: requested_by_customer
-          type: string
           nullable: true
+          type: string
         referenceValue:
           description: Acquirer Reference Number (ARN) or tracking number
           example: ARN123456789
-          type: string
           nullable: true
+          type: string
         paymentId:
           description: The associated Payment ID
-          example: pay_123
           format: uuid
           type: string
         providerCreatedAt:
           description: Timestamp when the refund was processed by the provider
           example: 2025-01-01T12:00:00Z
           format: date-time
-          type: string
           nullable: true
+          type: string
         createdAt:
           description: Timestamp when the refund was created in our system
           example: 2025-01-01T12:00:00Z
@@ -23527,6 +23621,7 @@ components:
       - status
       - updatedAt
       - whopId
+      type: object
     Dispute:
       example:
         reason: Product not received
@@ -23574,8 +23669,8 @@ components:
         reason:
           description: The reason for the dispute
           example: Product not received
-          type: string
           nullable: true
+          type: string
         editable:
           description: Whether the evidence is still editable
           example: true
@@ -23584,8 +23679,8 @@ components:
           description: Timestamp by when evidence must be submitted
           example: 2025-01-01T12:00:00Z
           format: date-time
-          type: string
           nullable: true
+          type: string
         visaRdr:
           description: Whether Visa RDR was applied
           example: false
@@ -23593,43 +23688,44 @@ components:
         billingAddress:
           description: Customer billing address details
           example: "123 Main St, New York, NY"
-          type: string
           nullable: true
+          type: string
         customerName:
           description: Customer name
           example: John Doe
-          type: string
           nullable: true
+          type: string
         customerEmail:
           description: Customer email address
           example: customer@example.com
-          type: string
           nullable: true
+          type: string
         notes:
           description: Additional notes
           example: Customer requested a refund
-          type: string
           nullable: true
+          type: string
         productDescription:
           description: Product or service description
           example: Premium Subscription
-          type: string
           nullable: true
+          type: string
         serviceDate:
           description: Service or purchase date
           example: 2025-01-01
-          type: string
           nullable: true
+          type: string
         accessActivityLog:
           description: Log of access activity
           example: Logged in from IP 1.2.3.4
-          type: string
           nullable: true
+          type: string
         evidence:
           allOf:
           - $ref: '#/components/schemas/DisputeEvidenceDto'
           description: Evidence attachments associated with the dispute
           nullable: true
+          type: object
         paymentId:
           description: The associated payment ID
           example: pay_123
@@ -23660,6 +23756,7 @@ components:
       - updatedAt
       - visaRdr
       - whopId
+      type: object
     DisputeList:
       example:
         data:
@@ -23719,6 +23816,7 @@ components:
       required:
       - data
       - meta
+      type: object
     DisputeEvidenceUpdate:
       example:
         cancellation_policy_attachment: ""
@@ -23742,6 +23840,7 @@ components:
           allOf:
           - $ref: '#/components/schemas/DisputeAttachmentDto'
           description: Uncategorized supporting files or documents
+      type: object
     DisputeFileUpload:
       example:
         filename: evidence.png
@@ -23767,6 +23866,7 @@ components:
       required:
       - filename
       - id
+      type: object
     Brand:
       properties:
         id:
@@ -23780,23 +23880,23 @@ components:
         websiteUrl:
           description: The website URL associated with the brand
           example: https://acme.com
-          type: string
           nullable: true
+          type: string
         supportEmail:
           description: Support email address for customer service
           example: support@acme.com
-          type: string
           nullable: true
+          type: string
         description:
           description: Short description of the brand
           example: A leading provider of ACME tools.
-          type: string
           nullable: true
+          type: string
         logoUrl:
           description: Brand logo image URL
           example: https://acme.com/logo.png
-          type: string
           nullable: true
+          type: string
         isPrimary:
           description: Whether this is the primary brand for the merchant business
           example: true
@@ -23804,8 +23904,8 @@ components:
         statementDescriptor:
           description: Credit card statement descriptor
           example: ACME CORP INC
-          type: string
           nullable: true
+          type: string
         merchantId:
           description: The merchant ID owning the brand
           example: mer_123
@@ -23813,8 +23913,8 @@ components:
         businessId:
           description: The business ID linked to the brand
           example: biz_123
-          type: string
           nullable: true
+          type: string
         createdAt:
           description: Timestamp when the brand was created
           example: 2025-01-01T12:00:00Z
@@ -23832,6 +23932,7 @@ components:
       - merchantId
       - name
       - updatedAt
+      type: object
     BrandCreate:
       properties:
         name:
@@ -23842,31 +23943,32 @@ components:
         websiteUrl:
           description: The website URL associated with the brand
           example: https://acme.com
-          type: string
           nullable: true
+          type: string
         supportEmail:
           description: Support email address for customer service
           example: support@acme.com
-          type: string
           nullable: true
+          type: string
         description:
           description: Short description of the brand
           example: A leading provider of ACME tools.
-          type: string
           nullable: true
+          type: string
         logoUrl:
           description: Brand logo image URL
           example: https://acme.com/logo.png
-          type: string
           nullable: true
+          type: string
         statementDescriptor:
           description: Credit card statement descriptor (Max 22 chars)
           example: ACME CORP INC
           maxLength: 22
-          type: string
           nullable: true
+          type: string
       required:
       - name
+      type: object
     BrandUpdate:
       properties:
         name:
@@ -23877,29 +23979,30 @@ components:
         websiteUrl:
           description: The website URL associated with the brand
           example: https://acme.com
-          type: string
           nullable: true
+          type: string
         supportEmail:
           description: Support email address for customer service
           example: support@acme.com
-          type: string
           nullable: true
+          type: string
         description:
           description: Short description of the brand
           example: A leading provider of ACME tools.
-          type: string
           nullable: true
+          type: string
         logoUrl:
           description: Brand logo image URL
           example: https://acme.com/logo.png
-          type: string
           nullable: true
+          type: string
         statementDescriptor:
           description: Credit card statement descriptor (Max 22 chars)
           example: ACME CORP INC
           maxLength: 22
-          type: string
           nullable: true
+          type: string
+      type: object
     Subscription:
       description: "Represents a customer subscription membership resource, containing\
         \ current billing terms, plan, status, and metadata."
@@ -23909,11 +24012,11 @@ components:
         cancel_at_period_end: false
         cancel_option: "{}"
         canceled_at: "{}"
-        created_at: 2025-01-01T12:00:00.000Z
+        created_at: 2025-01-01T12:00:00Z
         promo_code: "{}"
         type: renewal
         checkout_configuration_id: ch_123
-        updated_at: 2025-01-01T12:00:00.000Z
+        updated_at: 2025-01-01T12:00:00Z
         price: 99
         member: ""
         customerId: cust_123
@@ -23927,7 +24030,7 @@ components:
         manage_url: https://example.com/billing/manage/mber_123
         cancellation_reason: "{}"
         license_key: "{}"
-        joined_at: 2025-01-01T12:00:00.000Z
+        joined_at: 2025-01-01T12:00:00Z
         renewal_period_end: "{}"
         user: ""
         status: active
@@ -23943,17 +24046,17 @@ components:
           type: string
         created_at:
           description: Timestamp when the subscription was created
-          example: 2025-01-01T12:00:00.000Z
+          example: 2025-01-01T12:00:00Z
           format: date-time
           type: string
         joined_at:
           description: Timestamp when the member joined
-          example: 2025-01-01T12:00:00.000Z
+          example: 2025-01-01T12:00:00Z
           format: date-time
           type: string
         updated_at:
           description: Timestamp when the subscription was last updated
-          example: 2025-01-01T12:00:00.000Z
+          example: 2025-01-01T12:00:00Z
           format: date-time
           type: string
         manage_url:
@@ -23971,14 +24074,14 @@ components:
         renewal_period_start:
           description: Start timestamp of the current renewal period
           format: date-time
-          type: object
           nullable: true
+          type: object
           example: null
         renewal_period_end:
           description: End timestamp of the current renewal period
           format: date-time
-          type: object
           nullable: true
+          type: object
           example: null
         cancel_at_period_end:
           description: Whether the subscription is set to cancel at the end of the
@@ -23987,19 +24090,19 @@ components:
           type: boolean
         cancel_option:
           description: The cancel option details
-          type: object
           nullable: true
+          type: object
           example: null
         cancellation_reason:
           description: The reason for cancellation
-          type: object
           nullable: true
+          type: object
           example: null
         canceled_at:
           description: Timestamp when the subscription was canceled
           format: date-time
-          type: object
           nullable: true
+          type: object
           example: null
         currency:
           description: The currency used for payments
@@ -24015,8 +24118,8 @@ components:
           description: The plan associated with this subscription
         promo_code:
           description: The promo code applied to the subscription
-          type: object
           nullable: true
+          type: object
           example: null
         product:
           allOf:
@@ -24024,8 +24127,8 @@ components:
           description: The product associated with the subscription
         license_key:
           description: The license key associated with this subscription
-          type: object
           nullable: true
+          type: object
           example: null
         metadata:
           description: Additional metadata for the subscription
@@ -24043,18 +24146,18 @@ components:
         price:
           description: The price/amount of the membership
           example: 99
-          type: object
           nullable: true
+          type: object
         type:
           description: The type of the membership plan
           example: renewal
-          type: object
           nullable: true
+          type: object
         customerId:
           description: The business customer ID
           example: cust_123
-          type: object
           nullable: true
+          type: object
       required:
       - cancel_at_period_end
       - cancel_option
@@ -24079,6 +24182,7 @@ components:
       - status
       - updated_at
       - user
+      type: object
     SubscriptionDetail:
       description: "Represents detailed information about a customer subscription\
         \ including active base product configuration, billing and payment history,\
@@ -24220,11 +24324,13 @@ components:
           - $ref: '#/components/schemas/SubscriptionDetailProduct'
           description: The core product information associated with this subscription
           nullable: true
+          type: object
       required:
       - payments
       - product
       - purchasedAddons
       - subscription
+      type: object
     SubscriptionSeatAdjustment:
       description: Represents the detailed cost and billing impact of adjusting subscription
         seat add-on quantities.
@@ -24276,6 +24382,7 @@ components:
       - quantityDelta
       - subscriptionId
       - success
+      type: object
     SubscriptionAction:
       example:
         void_payments: true
@@ -24329,6 +24436,7 @@ components:
           example: sub_action_idem_123
           maxLength: 100
           type: string
+      type: object
     ResolvedAddon:
       example:
         quantity: 3
@@ -24346,8 +24454,8 @@ components:
           type: string
         imageUrl:
           description: URL of the addon image
-          type: object
           nullable: true
+          type: object
           example: null
         quantity:
           description: The purchased quantity of the addon
@@ -24358,6 +24466,7 @@ components:
       - name
       - productId
       - quantity
+      type: object
     SubscriptionDetailProduct:
       properties:
         id:
@@ -24390,6 +24499,7 @@ components:
       - name
       - price
       - pricingType
+      type: object
     SubscriptionList:
       example:
         total_count: 1
@@ -24399,11 +24509,11 @@ components:
           cancel_at_period_end: false
           cancel_option: "{}"
           canceled_at: "{}"
-          created_at: 2025-01-01T12:00:00.000Z
+          created_at: 2025-01-01T12:00:00Z
           promo_code: "{}"
           type: renewal
           checkout_configuration_id: ch_123
-          updated_at: 2025-01-01T12:00:00.000Z
+          updated_at: 2025-01-01T12:00:00Z
           price: 99
           member: ""
           customerId: cust_123
@@ -24417,7 +24527,7 @@ components:
           manage_url: https://example.com/billing/manage/mber_123
           cancellation_reason: "{}"
           license_key: "{}"
-          joined_at: 2025-01-01T12:00:00.000Z
+          joined_at: 2025-01-01T12:00:00Z
           renewal_period_end: "{}"
           user: ""
           status: active
@@ -24426,11 +24536,11 @@ components:
           cancel_at_period_end: false
           cancel_option: "{}"
           canceled_at: "{}"
-          created_at: 2025-01-01T12:00:00.000Z
+          created_at: 2025-01-01T12:00:00Z
           promo_code: "{}"
           type: renewal
           checkout_configuration_id: ch_123
-          updated_at: 2025-01-01T12:00:00.000Z
+          updated_at: 2025-01-01T12:00:00Z
           price: 99
           member: ""
           customerId: cust_123
@@ -24444,7 +24554,7 @@ components:
           manage_url: https://example.com/billing/manage/mber_123
           cancellation_reason: "{}"
           license_key: "{}"
-          joined_at: 2025-01-01T12:00:00.000Z
+          joined_at: 2025-01-01T12:00:00Z
           renewal_period_end: "{}"
           user: ""
           status: active
@@ -24461,67 +24571,8 @@ components:
       required:
       - items
       - total_count
+      type: object
     WebhookPaymentPayload:
-      example:
-        retryable: true
-        billingReason: subscription_create
-        paymentEventType: paymentEventType
-        businessId: businessId
-        taxRefundedAmount: taxRefundedAmount
-        usdTotal: "100.00"
-        cardExpYear: 6
-        createdAt: 2000-01-23T04:56:07.000+00:00
-        nextPaymentAttempt: 2000-01-23T04:56:07.000+00:00
-        lastEventType: lastEventType
-        customerEmail: customerEmail
-        autoRefunded: true
-        lastPaymentAttempt: 2000-01-23T04:56:07.000+00:00
-        planId: planId
-        id: pay_019e60cb...
-        cardBrand: visa
-        updatedAt: 2000-01-23T04:56:07.000+00:00
-        refundedAt: 2000-01-23T04:56:07.000+00:00
-        substatus: incomplete
-        productRoute: productRoute
-        membershipStatus: membershipStatus
-        disputeAlertedAt: 2000-01-23T04:56:07.000+00:00
-        customerName: customerName
-        settlementExchangeRate: settlementExchangeRate
-        settlementCurrency: settlementCurrency
-        subtotal: "100.00"
-        paymentMethod: card
-        paidAt: 2000-01-23T04:56:07.000+00:00
-        taxAmount: taxAmount
-        refundedAmount: "0"
-        status: created
-        filesSnapshot:
-        - "{}"
-        - "{}"
-        membershipId: membershipId
-        customerId: customerId
-        customerUsername: customerUsername
-        currency: USD
-        refundable: true
-        amount: "100.00"
-        cardExpMonth: 0
-        taxBehavior: taxBehavior
-        productTitle: productTitle
-        feeAmount: "3.25"
-        licenseKey: licenseKey
-        discountCode: discountCode
-        amountAfterFees: "96.75"
-        settlementAmount: settlementAmount
-        billingAddress:
-          country: country
-          city: city
-          name: name
-          state: state
-          postal_code: postal_code
-          line2: line2
-          line1: line1
-        checkoutId: checkoutId
-        failureMessage: failureMessage
-        cardLast4: "4242"
       properties:
         id:
           description: Internal payment ID.
@@ -24532,81 +24583,81 @@ components:
           type: string
         substatus:
           example: incomplete
-          type: string
           nullable: true
+          type: string
         customerId:
-          type: string
           nullable: true
+          type: string
         customerEmail:
-          type: string
           nullable: true
+          type: string
         customerName:
-          type: string
           nullable: true
+          type: string
         customerUsername:
-          type: string
           nullable: true
+          type: string
         productTitle:
-          type: string
           nullable: true
+          type: string
         productRoute:
-          type: string
           nullable: true
+          type: string
         planId:
-          type: string
           nullable: true
+          type: string
         membershipId:
-          type: string
           nullable: true
+          type: string
         membershipStatus:
-          type: string
           nullable: true
+          type: string
         billingReason:
           example: subscription_create
-          type: string
           nullable: true
+          type: string
         amount:
           description: "Dollar value, 2 d.p."
           example: "100.00"
-          type: string
           nullable: true
+          type: string
         subtotal:
           example: "100.00"
-          type: string
           nullable: true
+          type: string
         usdTotal:
           example: "100.00"
-          type: string
           nullable: true
+          type: string
         feeAmount:
           example: "3.25"
-          type: string
           nullable: true
+          type: string
         amountAfterFees:
           example: "96.75"
-          type: string
           nullable: true
+          type: string
         taxAmount:
-          type: string
           nullable: true
+          type: string
         taxBehavior:
-          type: string
           nullable: true
+          type: string
         taxRefundedAmount:
-          type: string
           nullable: true
+          type: string
         refundedAmount:
           example: "0"
           type: string
         settlementAmount:
-          type: string
           nullable: true
+          type: string
         settlementCurrency:
-          type: string
           nullable: true
+          type: string
         settlementExchangeRate:
-          type: string
           nullable: true
+          type: string
         currency:
           example: USD
           type: string
@@ -24618,61 +24669,61 @@ components:
           type: boolean
         paymentMethod:
           example: card
-          type: string
           nullable: true
+          type: string
         cardBrand:
           example: visa
-          type: string
           nullable: true
+          type: string
         cardLast4:
           example: "4242"
+          nullable: true
           type: string
-          nullable: true
         cardExpMonth:
-          type: integer
           nullable: true
+          type: integer
         cardExpYear:
-          type: integer
           nullable: true
+          type: integer
         billingAddress:
           $ref: '#/components/schemas/WebhookPaymentPayload_billingAddress'
         licenseKey:
-          type: string
           nullable: true
+          type: string
         filesSnapshot:
           items:
             type: object
+          nullable: true
           type: array
-          nullable: true
         checkoutId:
-          type: string
           nullable: true
+          type: string
         discountCode:
-          type: string
           nullable: true
+          type: string
         failureMessage:
-          type: string
           nullable: true
+          type: string
         paidAt:
           format: date-time
-          type: string
           nullable: true
+          type: string
         refundedAt:
           format: date-time
-          type: string
           nullable: true
+          type: string
         disputeAlertedAt:
           format: date-time
-          type: string
           nullable: true
+          type: string
         lastPaymentAttempt:
           format: date-time
-          type: string
           nullable: true
+          type: string
         nextPaymentAttempt:
           format: date-time
-          type: string
           nullable: true
+          type: string
         createdAt:
           format: date-time
           type: string
@@ -24680,26 +24731,15 @@ components:
           format: date-time
           type: string
         paymentEventType:
-          type: string
           nullable: true
+          type: string
         lastEventType:
-          type: string
           nullable: true
+          type: string
         businessId:
           type: string
+      type: object
     WebhookRefundPayload:
-      example:
-        reason: requested_by_customer
-        createdAt: 2000-01-23T04:56:07.000+00:00
-        amount: "25.00"
-        provider: stripe
-        paymentId: pay_019e60cb...
-        currency: USD
-        id: ref_abc123
-        providerCreatedAt: 2000-01-23T04:56:07.000+00:00
-        status: succeeded
-        referenceValue: referenceValue
-        updatedAt: 2000-01-23T04:56:07.000+00:00
       properties:
         id:
           description: Internal refund ID.
@@ -24720,40 +24760,27 @@ components:
           type: string
         reason:
           example: requested_by_customer
-          type: string
           nullable: true
+          type: string
         referenceValue:
-          type: string
           nullable: true
+          type: string
         provider:
           example: stripe
-          type: string
           nullable: true
+          type: string
         providerCreatedAt:
           format: date-time
-          type: string
           nullable: true
+          type: string
         createdAt:
           format: date-time
           type: string
         updatedAt:
           format: date-time
           type: string
+      type: object
     WebhookDisputePayload:
-      example:
-        reason: fraudulent
-        amount: "100.00"
-        notes: notes
-        editable: true
-        customerName: customerName
-        createdAt: 2000-01-23T04:56:07.000+00:00
-        paymentId: pay_019e60cb...
-        customerEmail: customerEmail
-        currency: USD
-        needsResponseBy: 2000-01-23T04:56:07.000+00:00
-        id: dsp_abc123
-        status: needs_response
-        updatedAt: 2000-01-23T04:56:07.000+00:00
       properties:
         id:
           description: Internal dispute ID.
@@ -24774,45 +24801,31 @@ components:
           type: string
         reason:
           example: fraudulent
-          type: string
           nullable: true
+          type: string
         editable:
           type: boolean
         needsResponseBy:
           format: date-time
-          type: string
           nullable: true
+          type: string
         customerName:
-          type: string
           nullable: true
+          type: string
         customerEmail:
-          type: string
           nullable: true
+          type: string
         notes:
-          type: string
           nullable: true
+          type: string
         createdAt:
           format: date-time
           type: string
         updatedAt:
           format: date-time
           type: string
+      type: object
     WebhookSubscriptionPayload:
-      example:
-        amount: 0.8008281904610115
-        productId: productId
-        renewalPeriodStart: 2000-01-23T04:56:07.000+00:00
-        customerName: customerName
-        renewalPeriodEnd: 2000-01-23T04:56:07.000+00:00
-        productTitle: productTitle
-        createdAt: 2000-01-23T04:56:07.000+00:00
-        customerEmail: customerEmail
-        cancelAtPeriodEnd: true
-        customerId: customerId
-        currency: currency
-        id: id
-        status: status
-        updatedAt: 2000-01-23T04:56:07.000+00:00
       properties:
         id:
           description: The subscription ID.
@@ -24824,80 +24837,61 @@ components:
           type: boolean
         renewalPeriodStart:
           format: date-time
-          type: string
           nullable: true
+          type: string
         renewalPeriodEnd:
           format: date-time
-          type: string
           nullable: true
+          type: string
         currency:
           type: string
         amount:
           type: number
         customerId:
-          type: string
           nullable: true
+          type: string
         customerEmail:
-          type: string
           nullable: true
+          type: string
         customerName:
-          type: string
           nullable: true
+          type: string
         productId:
-          type: string
           nullable: true
+          type: string
         productTitle:
-          type: string
           nullable: true
+          type: string
         createdAt:
           format: date-time
-          type: string
           nullable: true
+          type: string
         updatedAt:
           format: date-time
-          type: string
           nullable: true
+          type: string
+      type: object
     WebhookEntitlementGrantPayload:
-      example:
-        oauthUrl: https://github.com/login/oauth/authorize...
-        productId: prod_123456
-        businessId: biz_123456
-        type: GITHUB
-        githubPermission: pull
-        githubUsername: octocat
-        createdAt: 2000-01-23T04:56:07.000+00:00
-        githubRepo: solifyn/premium-app
-        paymentId: pay_123456
-        customerId: cust_123456
-        id: grant_123456
-        status: PENDING
-        errorDetails: Permission denied
-        updatedAt: 2000-01-23T04:56:07.000+00:00
       properties:
         id:
           description: The unique entitlement grant ID.
-          example: grant_123456
           format: uuid
           type: string
         businessId:
           description: The business ID context.
-          example: biz_123456
           format: uuid
           type: string
         customerId:
           description: The customer ID.
-          example: cust_123456
           format: uuid
           type: string
         paymentId:
           description: Associated payment transaction ID.
-          example: pay_123456
           format: uuid
-          type: string
           nullable: true
+          type: string
         productId:
           description: The purchased product ID.
-          example: prod_123456
           format: uuid
           type: string
         type:
@@ -24907,18 +24901,18 @@ components:
         githubRepo:
           description: Target GitHub repository (owner/repo) if type is GITHUB.
           example: solifyn/premium-app
-          type: string
           nullable: true
+          type: string
         githubPermission:
           description: GitHub access permission level if type is GITHUB.
           example: pull
-          type: string
           nullable: true
+          type: string
         githubUsername:
           description: The connected customer GitHub username.
           example: octocat
-          type: string
           nullable: true
+          type: string
         status:
           description: "Delivery status of the collaborator invite (PENDING, DELIVERED,\
             \ FAILED, REVOKED)."
@@ -24927,39 +24921,23 @@ components:
         oauthUrl:
           description: OAuth URL to redirect the customer to.
           example: https://github.com/login/oauth/authorize...
-          type: string
           nullable: true
+          type: string
         errorDetails:
           description: Error message if invitation delivery failed.
           example: Permission denied
-          type: string
           nullable: true
+          type: string
         createdAt:
           format: date-time
           type: string
         updatedAt:
           format: date-time
           type: string
+      type: object
     WebhookLicensePayload:
       description: Represents a cryptographically secure software license key issued
         to a customer upon purchase or manual issuance.
-      example:
-        expiryHours: 720
-        productId: prod_hyQQhhNzfEuvv
-        businessId: biz_345TUESrCDPvrb
-        instancesCount: 1
-        filters: "{}"
-        activationLimit: 3
-        expiresAt: 2027-01-01T00:00:00.000Z
-        archived: false
-        createdAt: 2026-05-11T01:12:25.764Z
-        paymentId: pay_3r2FgHXp9
-        customerId: cust_3r2FgHXp9
-        id: lic_hyQQhhNzfEuvv
-        key: A184-99C2-8CBE
-        activationMessage: Thank you! Your license is now active.
-        status: ACTIVE
-        updatedAt: 2026-05-18T09:45:37.166Z
       properties:
         id:
           description: The unique prefix-based identifier of the license key.
@@ -24988,32 +24966,32 @@ components:
           description: The unique ID of the product this license key is associated
             with.
           example: prod_hyQQhhNzfEuvv
-          type: string
           nullable: true
+          type: string
         paymentId:
           description: The unique payment identifier that triggered the issuance of
             this license key.
           example: pay_3r2FgHXp9
-          type: string
           nullable: true
+          type: string
         customerId:
           description: The unique customer identifier (ID) who received this license
             key.
           example: cust_3r2FgHXp9
-          type: string
           nullable: true
+          type: string
         activationLimit:
           description: Maximum number of simultaneous active device instances allowed
             for this license. Null means unlimited.
           example: 3
-          type: number
           nullable: true
+          type: number
         activationMessage:
           description: Optional message displayed to the customer upon successful
             activation.
           example: Thank you! Your license is now active.
-          type: string
           nullable: true
+          type: string
         instancesCount:
           description: Running count of how many times this license key has been activated.
           example: 1
@@ -25021,18 +24999,18 @@ components:
         expiryHours:
           description: Relative expiry duration in hours from the time of issuance.
           example: 720
-          type: number
           nullable: true
+          type: number
         expiresAt:
           description: Absolute expiration timestamp. The license becomes invalid
             after this point.
           example: 2027-01-01T00:00:00.000Z
-          type: string
           nullable: true
+          type: string
         filters:
           description: Optional custom metadata filters associated with the license.
-          type: object
           nullable: true
+          type: object
           example: null
         archived:
           description: Indicates if the license key is archived.
@@ -25063,6 +25041,7 @@ components:
       - productId
       - status
       - updatedAt
+      type: object
     products_list_200_response_pagination:
       example:
         total_count: 5
@@ -25077,6 +25056,7 @@ components:
       required:
       - max_page
       - total_count
+      type: object
     products_list_200_response:
       example:
         pagination:
@@ -25112,16 +25092,16 @@ components:
           hasDigitalDelivery: false
           githubPermission: pull
           hasLicenseKey: true
-          createdAt: 2026-05-18T12:00:00.000Z
+          createdAt: 2026-05-18T12:00:00Z
           githubRepo: solifyn/premium-app
           isFree: false
           price: 99
           imageUrl: https://assets.solifyn.com/images/products/saas-enterprise.png
           currency: USD
-          id: prod_9z8x7c6v5b4n
+          id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
           payWhatYouWant: false
           stock: 5
-          updatedAt: 2026-05-18T12:00:00.000Z
+          updatedAt: 2026-05-18T12:00:00Z
           billingPeriod: 0
           hasGithubAccess: false
           isPermanentlyDeleted: false
@@ -25165,16 +25145,16 @@ components:
           hasDigitalDelivery: false
           githubPermission: pull
           hasLicenseKey: true
-          createdAt: 2026-05-18T12:00:00.000Z
+          createdAt: 2026-05-18T12:00:00Z
           githubRepo: solifyn/premium-app
           isFree: false
           price: 99
           imageUrl: https://assets.solifyn.com/images/products/saas-enterprise.png
           currency: USD
-          id: prod_9z8x7c6v5b4n
+          id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
           payWhatYouWant: false
           stock: 5
-          updatedAt: 2026-05-18T12:00:00.000Z
+          updatedAt: 2026-05-18T12:00:00Z
           billingPeriod: 0
           hasGithubAccess: false
           isPermanentlyDeleted: false
@@ -25199,6 +25179,7 @@ components:
       required:
       - items
       - pagination
+      type: object
     products_archive_200_response:
       example:
         message: Product archived successfully
@@ -25206,6 +25187,7 @@ components:
         message:
           example: Product archived successfully
           type: string
+      type: object
     products_unarchive_200_response:
       example:
         message: Product unarchived successfully
@@ -25213,6 +25195,7 @@ components:
         message:
           example: Product unarchived successfully
           type: string
+      type: object
     licenses_create_request:
       properties:
         productId:
@@ -25240,6 +25223,7 @@ components:
       required:
       - customerId
       - productId
+      type: object
     licenses_update_request:
       properties:
         status:
@@ -25252,6 +25236,7 @@ components:
         expiresAt:
           format: date-time
           type: string
+      type: object
     licenses_updateInstancePost_request:
       properties:
         instanceName:
@@ -25262,6 +25247,7 @@ components:
           description: A new IP address to record for this instance.
           example: 203.0.113.42
           type: string
+      type: object
     licenses_verify_request:
       properties:
         key:
@@ -25274,6 +25260,7 @@ components:
       required:
       - key
       - productId
+      type: object
     licenses_activate_request:
       properties:
         key:
@@ -25289,6 +25276,7 @@ components:
       - deviceIdentifier
       - key
       - name
+      type: object
     licenses_deactivate_request:
       properties:
         key:
@@ -25296,12 +25284,14 @@ components:
           type: string
       required:
       - key
+      type: object
     licenses_deactivate_200_response:
       example:
         success: true
       properties:
         success:
           type: boolean
+      type: object
     discounts_list_200_response_pagination:
       example:
         total: 2
@@ -25321,6 +25311,7 @@ components:
       - max_page
       - total
       - total_count
+      type: object
     discounts_list_200_response:
       example:
         total: 5
@@ -25374,6 +25365,7 @@ components:
       - pagination
       - total
       - total_count
+      type: object
     disputes_upload_evidence_file_request:
       properties:
         file:
@@ -25383,6 +25375,7 @@ components:
           type: string
       required:
       - file
+      type: object
     subscriptions_action_201_response:
       oneOf:
       - $ref: '#/components/schemas/Subscription'
@@ -25397,6 +25390,7 @@ components:
           type: string
         placeholder:
           type: string
+      type: object
     ProductCreate_addons_inner:
       example:
         isSeatAddon: true
@@ -25415,15 +25409,9 @@ components:
           type: number
         isSeatAddon:
           type: boolean
+      type: object
     WebhookPaymentPayload_billingAddress:
-      example:
-        country: country
-        city: city
-        name: name
-        state: state
-        postal_code: postal_code
-        line2: line2
-        line1: line1
+      nullable: true
       properties:
         name:
           type: string
@@ -25439,7 +25427,7 @@ components:
           type: string
         postal_code:
           type: string
-      nullable: true
+      type: object
   securitySchemes:
     ApiKeyAuth:
       bearerFormat: API Key

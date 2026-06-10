@@ -185,7 +185,7 @@ namespace Solifyn.Model
         /// The details of the product being purchased
         /// </summary>
         /// <value>The details of the product being purchased</value>
-        [DataMember(Name = "product", EmitDefaultValue = false)]
+        [DataMember(Name = "product", EmitDefaultValue = true)]
         public Product Product { get; set; }
 
         /// <summary>

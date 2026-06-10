@@ -45,7 +45,6 @@ docs/CustomerResponseDto.md
 docs/CustomerSharedInviteResponseDto.md
 docs/CustomersApi.md
 docs/DashboardStatsDto.md
-docs/DefaultApi.md
 docs/DeveloperApi.md
 docs/DigitalFileApi.md
 docs/Discount.md
@@ -169,7 +168,6 @@ src/Solifyn/Api/CheckoutApi.cs
 src/Solifyn/Api/CheckoutLinksApi.cs
 src/Solifyn/Api/CollectionsApi.cs
 src/Solifyn/Api/CustomersApi.cs
-src/Solifyn/Api/DefaultApi.cs
 src/Solifyn/Api/DeveloperApi.cs
 src/Solifyn/Api/DigitalFileApi.cs
 src/Solifyn/Api/DiscountsApi.cs

@@ -48,7 +48,7 @@ namespace Solifyn.Model
         /// <param name="productTitle">productTitle.</param>
         /// <param name="createdAt">createdAt.</param>
         /// <param name="updatedAt">updatedAt.</param>
-        public WebhookSubscriptionPayload(string id = default(string), string status = default(string), bool cancelAtPeriodEnd = default(bool), DateTime renewalPeriodStart = default(DateTime), DateTime renewalPeriodEnd = default(DateTime), string currency = default(string), decimal amount = default(decimal), string customerId = default(string), string customerEmail = default(string), string customerName = default(string), string productId = default(string), string productTitle = default(string), DateTime createdAt = default(DateTime), DateTime updatedAt = default(DateTime))
+        public WebhookSubscriptionPayload(string id = default(string), string status = default(string), bool cancelAtPeriodEnd = default(bool), DateTime? renewalPeriodStart = default(DateTime?), DateTime? renewalPeriodEnd = default(DateTime?), string currency = default(string), decimal amount = default(decimal), string customerId = default(string), string customerEmail = default(string), string customerName = default(string), string productId = default(string), string productTitle = default(string), DateTime? createdAt = default(DateTime?), DateTime? updatedAt = default(DateTime?))
         {
             this.Id = id;
             this.Status = status;
@@ -89,14 +89,14 @@ namespace Solifyn.Model
         /// <summary>
         /// Gets or Sets RenewalPeriodStart
         /// </summary>
-        [DataMember(Name = "renewalPeriodStart", EmitDefaultValue = false)]
-        public DateTime RenewalPeriodStart { get; set; }
+        [DataMember(Name = "renewalPeriodStart", EmitDefaultValue = true)]
+        public DateTime? RenewalPeriodStart { get; set; }
 
         /// <summary>
         /// Gets or Sets RenewalPeriodEnd
         /// </summary>
-        [DataMember(Name = "renewalPeriodEnd", EmitDefaultValue = false)]
-        public DateTime RenewalPeriodEnd { get; set; }
+        [DataMember(Name = "renewalPeriodEnd", EmitDefaultValue = true)]
+        public DateTime? RenewalPeriodEnd { get; set; }
 
         /// <summary>
         /// Gets or Sets Currency
@@ -113,44 +113,44 @@ namespace Solifyn.Model
         /// <summary>
         /// Gets or Sets CustomerId
         /// </summary>
-        [DataMember(Name = "customerId", EmitDefaultValue = false)]
+        [DataMember(Name = "customerId", EmitDefaultValue = true)]
         public string CustomerId { get; set; }
 
         /// <summary>
         /// Gets or Sets CustomerEmail
         /// </summary>
-        [DataMember(Name = "customerEmail", EmitDefaultValue = false)]
+        [DataMember(Name = "customerEmail", EmitDefaultValue = true)]
         public string CustomerEmail { get; set; }
 
         /// <summary>
         /// Gets or Sets CustomerName
         /// </summary>
-        [DataMember(Name = "customerName", EmitDefaultValue = false)]
+        [DataMember(Name = "customerName", EmitDefaultValue = true)]
         public string CustomerName { get; set; }
 
         /// <summary>
         /// Gets or Sets ProductId
         /// </summary>
-        [DataMember(Name = "productId", EmitDefaultValue = false)]
+        [DataMember(Name = "productId", EmitDefaultValue = true)]
         public string ProductId { get; set; }
 
         /// <summary>
         /// Gets or Sets ProductTitle
         /// </summary>
-        [DataMember(Name = "productTitle", EmitDefaultValue = false)]
+        [DataMember(Name = "productTitle", EmitDefaultValue = true)]
         public string ProductTitle { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedAt
         /// </summary>
-        [DataMember(Name = "createdAt", EmitDefaultValue = false)]
-        public DateTime CreatedAt { get; set; }
+        [DataMember(Name = "createdAt", EmitDefaultValue = true)]
+        public DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// Gets or Sets UpdatedAt
         /// </summary>
-        [DataMember(Name = "updatedAt", EmitDefaultValue = false)]
-        public DateTime UpdatedAt { get; set; }
+        [DataMember(Name = "updatedAt", EmitDefaultValue = true)]
+        public DateTime? UpdatedAt { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

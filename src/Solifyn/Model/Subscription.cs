@@ -210,7 +210,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Timestamp when the subscription was created</value>
         /*
-        <example>2025-01-01T12:00:00.000Z</example>
+        <example>2025-01-01T12:00Z</example>
         */
         [DataMember(Name = "created_at", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedAt { get; set; }
@@ -220,7 +220,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Timestamp when the member joined</value>
         /*
-        <example>2025-01-01T12:00:00.000Z</example>
+        <example>2025-01-01T12:00Z</example>
         */
         [DataMember(Name = "joined_at", IsRequired = true, EmitDefaultValue = true)]
         public DateTime JoinedAt { get; set; }
@@ -230,7 +230,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Timestamp when the subscription was last updated</value>
         /*
-        <example>2025-01-01T12:00:00.000Z</example>
+        <example>2025-01-01T12:00Z</example>
         */
         [DataMember(Name = "updated_at", IsRequired = true, EmitDefaultValue = true)]
         public DateTime UpdatedAt { get; set; }
@@ -386,7 +386,7 @@ namespace Solifyn.Model
         /*
         <example>99</example>
         */
-        [DataMember(Name = "price", EmitDefaultValue = false)]
+        [DataMember(Name = "price", EmitDefaultValue = true)]
         public Object Price { get; set; }
 
         /// <summary>
@@ -396,7 +396,7 @@ namespace Solifyn.Model
         /*
         <example>renewal</example>
         */
-        [DataMember(Name = "type", EmitDefaultValue = false)]
+        [DataMember(Name = "type", EmitDefaultValue = true)]
         public Object Type { get; set; }
 
         /// <summary>
@@ -406,7 +406,7 @@ namespace Solifyn.Model
         /*
         <example>cust_123</example>
         */
-        [DataMember(Name = "customerId", EmitDefaultValue = false)]
+        [DataMember(Name = "customerId", EmitDefaultValue = true)]
         public Object CustomerId { get; set; }
 
         /// <summary>

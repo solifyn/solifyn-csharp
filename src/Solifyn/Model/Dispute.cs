@@ -60,7 +60,7 @@ namespace Solifyn.Model
         /// <param name="businessId">The associated business ID (required).</param>
         /// <param name="createdAt">Timestamp when the dispute was created (required).</param>
         /// <param name="updatedAt">Timestamp when the dispute was last updated (required).</param>
-        public Dispute(string id = default(string), string whopId = default(string), decimal amount = default(decimal), string currency = default(string), string status = default(string), string reason = default(string), bool editable = default(bool), DateTime needsResponseBy = default(DateTime), bool visaRdr = default(bool), string billingAddress = default(string), string customerName = default(string), string customerEmail = default(string), string notes = default(string), string productDescription = default(string), string serviceDate = default(string), string accessActivityLog = default(string), DisputeEvidenceDto evidence = default(DisputeEvidenceDto), string paymentId = default(string), string businessId = default(string), DateTime createdAt = default(DateTime), DateTime updatedAt = default(DateTime))
+        public Dispute(string id = default(string), string whopId = default(string), decimal amount = default(decimal), string currency = default(string), string status = default(string), string reason = default(string), bool editable = default(bool), DateTime? needsResponseBy = default(DateTime?), bool visaRdr = default(bool), string billingAddress = default(string), string customerName = default(string), string customerEmail = default(string), string notes = default(string), string productDescription = default(string), string serviceDate = default(string), string accessActivityLog = default(string), DisputeEvidenceDto evidence = default(DisputeEvidenceDto), string paymentId = default(string), string businessId = default(string), DateTime createdAt = default(DateTime), DateTime updatedAt = default(DateTime))
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -172,7 +172,7 @@ namespace Solifyn.Model
         /*
         <example>Product not received</example>
         */
-        [DataMember(Name = "reason", EmitDefaultValue = false)]
+        [DataMember(Name = "reason", EmitDefaultValue = true)]
         public string Reason { get; set; }
 
         /// <summary>
@@ -190,10 +190,10 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Timestamp by when evidence must be submitted</value>
         /*
-        <example>2025-01-01T12:00:00Z</example>
+        <example>2025-01-01T12:00Z</example>
         */
-        [DataMember(Name = "needsResponseBy", EmitDefaultValue = false)]
-        public DateTime NeedsResponseBy { get; set; }
+        [DataMember(Name = "needsResponseBy", EmitDefaultValue = true)]
+        public DateTime? NeedsResponseBy { get; set; }
 
         /// <summary>
         /// Whether Visa RDR was applied
@@ -212,7 +212,7 @@ namespace Solifyn.Model
         /*
         <example>123 Main St, New York, NY</example>
         */
-        [DataMember(Name = "billingAddress", EmitDefaultValue = false)]
+        [DataMember(Name = "billingAddress", EmitDefaultValue = true)]
         public string BillingAddress { get; set; }
 
         /// <summary>
@@ -222,7 +222,7 @@ namespace Solifyn.Model
         /*
         <example>John Doe</example>
         */
-        [DataMember(Name = "customerName", EmitDefaultValue = false)]
+        [DataMember(Name = "customerName", EmitDefaultValue = true)]
         public string CustomerName { get; set; }
 
         /// <summary>
@@ -232,7 +232,7 @@ namespace Solifyn.Model
         /*
         <example>customer@example.com</example>
         */
-        [DataMember(Name = "customerEmail", EmitDefaultValue = false)]
+        [DataMember(Name = "customerEmail", EmitDefaultValue = true)]
         public string CustomerEmail { get; set; }
 
         /// <summary>
@@ -242,7 +242,7 @@ namespace Solifyn.Model
         /*
         <example>Customer requested a refund</example>
         */
-        [DataMember(Name = "notes", EmitDefaultValue = false)]
+        [DataMember(Name = "notes", EmitDefaultValue = true)]
         public string Notes { get; set; }
 
         /// <summary>
@@ -252,7 +252,7 @@ namespace Solifyn.Model
         /*
         <example>Premium Subscription</example>
         */
-        [DataMember(Name = "productDescription", EmitDefaultValue = false)]
+        [DataMember(Name = "productDescription", EmitDefaultValue = true)]
         public string ProductDescription { get; set; }
 
         /// <summary>
@@ -262,7 +262,7 @@ namespace Solifyn.Model
         /*
         <example>2025-01-01</example>
         */
-        [DataMember(Name = "serviceDate", EmitDefaultValue = false)]
+        [DataMember(Name = "serviceDate", EmitDefaultValue = true)]
         public string ServiceDate { get; set; }
 
         /// <summary>
@@ -272,14 +272,14 @@ namespace Solifyn.Model
         /*
         <example>Logged in from IP 1.2.3.4</example>
         */
-        [DataMember(Name = "accessActivityLog", EmitDefaultValue = false)]
+        [DataMember(Name = "accessActivityLog", EmitDefaultValue = true)]
         public string AccessActivityLog { get; set; }
 
         /// <summary>
         /// Evidence attachments associated with the dispute
         /// </summary>
         /// <value>Evidence attachments associated with the dispute</value>
-        [DataMember(Name = "evidence", EmitDefaultValue = false)]
+        [DataMember(Name = "evidence", EmitDefaultValue = true)]
         public DisputeEvidenceDto Evidence { get; set; }
 
         /// <summary>
@@ -307,7 +307,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Timestamp when the dispute was created</value>
         /*
-        <example>2025-01-01T12:00:00Z</example>
+        <example>2025-01-01T12:00Z</example>
         */
         [DataMember(Name = "createdAt", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedAt { get; set; }
@@ -317,7 +317,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Timestamp when the dispute was last updated</value>
         /*
-        <example>2025-01-01T12:00:00Z</example>
+        <example>2025-01-01T12:00Z</example>
         */
         [DataMember(Name = "updatedAt", IsRequired = true, EmitDefaultValue = true)]
         public DateTime UpdatedAt { get; set; }

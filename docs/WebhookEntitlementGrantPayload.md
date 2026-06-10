@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | **Guid** | The unique entitlement grant ID. | [optional] 
 **BusinessId** | **Guid** | The business ID context. | [optional] 
 **CustomerId** | **Guid** | The customer ID. | [optional] 
-**PaymentId** | **Guid** | Associated payment transaction ID. | [optional] 
+**PaymentId** | **Guid?** | Associated payment transaction ID. | [optional] 
 **ProductId** | **Guid** | The purchased product ID. | [optional] 
 **Type** | **string** | The type of entitlement (e.g. GITHUB). | [optional] 
 **GithubRepo** | **string** | Target GitHub repository (owner/repo) if type is GITHUB. | [optional] 

@@ -97,9 +97,6 @@ namespace Solifyn.Model
         /// The unique entitlement grant ID.
         /// </summary>
         /// <value>The unique entitlement grant ID.</value>
-        /*
-        <example>grant_123456</example>
-        */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
@@ -107,9 +104,6 @@ namespace Solifyn.Model
         /// The business ID context.
         /// </summary>
         /// <value>The business ID context.</value>
-        /*
-        <example>biz_123456</example>
-        */
         [DataMember(Name = "businessId", IsRequired = true, EmitDefaultValue = true)]
         public Guid BusinessId { get; set; }
 
@@ -117,9 +111,6 @@ namespace Solifyn.Model
         /// The customer ID.
         /// </summary>
         /// <value>The customer ID.</value>
-        /*
-        <example>cust_123456</example>
-        */
         [DataMember(Name = "customerId", IsRequired = true, EmitDefaultValue = true)]
         public Guid CustomerId { get; set; }
 
@@ -127,9 +118,6 @@ namespace Solifyn.Model
         /// Associated payment transaction ID.
         /// </summary>
         /// <value>Associated payment transaction ID.</value>
-        /*
-        <example>pay_123456</example>
-        */
         [DataMember(Name = "paymentId", EmitDefaultValue = false)]
         public Guid PaymentId { get; set; }
 
@@ -137,9 +125,6 @@ namespace Solifyn.Model
         /// The purchased product ID.
         /// </summary>
         /// <value>The purchased product ID.</value>
-        /*
-        <example>prod_123456</example>
-        */
         [DataMember(Name = "productId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProductId { get; set; }
 

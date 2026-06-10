@@ -70,7 +70,7 @@ namespace Solifyn.Model
         /// <param name="restrictedTo">List of product IDs this discount is restricted to..</param>
         /// <param name="preserveOnPlanChange">Whether to preserve the discount when subscription plan changes..</param>
         /// <param name="metadata">Custom metadata for the discount..</param>
-        public DiscountUpdate(string name = default(string), TypeEnum? type = default(TypeEnum?), decimal amount = default(decimal), int usageLimit = default(int), DateTime expiresAt = default(DateTime), int subscriptionCycles = default(int), List<string> restrictedTo = default(List<string>), bool preserveOnPlanChange = default(bool), Object metadata = default(Object))
+        public DiscountUpdate(string name = default(string), TypeEnum? type = default(TypeEnum?), decimal amount = default(decimal), int? usageLimit = default(int?), DateTime? expiresAt = default(DateTime?), int? subscriptionCycles = default(int?), List<string> restrictedTo = default(List<string>), bool preserveOnPlanChange = default(bool), Object metadata = default(Object))
         {
             this.Name = name;
             this.Type = type;
@@ -101,22 +101,22 @@ namespace Solifyn.Model
         /// Maximum number of redemptions allowed.
         /// </summary>
         /// <value>Maximum number of redemptions allowed.</value>
-        [DataMember(Name = "usage_limit", EmitDefaultValue = false)]
-        public int UsageLimit { get; set; }
+        [DataMember(Name = "usage_limit", EmitDefaultValue = true)]
+        public int? UsageLimit { get; set; }
 
         /// <summary>
         /// Expiration timestamp for the discount.
         /// </summary>
         /// <value>Expiration timestamp for the discount.</value>
-        [DataMember(Name = "expires_at", EmitDefaultValue = false)]
-        public DateTime ExpiresAt { get; set; }
+        [DataMember(Name = "expires_at", EmitDefaultValue = true)]
+        public DateTime? ExpiresAt { get; set; }
 
         /// <summary>
         /// Number of subscription cycles this discount applies to.
         /// </summary>
         /// <value>Number of subscription cycles this discount applies to.</value>
-        [DataMember(Name = "subscription_cycles", EmitDefaultValue = false)]
-        public int SubscriptionCycles { get; set; }
+        [DataMember(Name = "subscription_cycles", EmitDefaultValue = true)]
+        public int? SubscriptionCycles { get; set; }
 
         /// <summary>
         /// List of product IDs this discount is restricted to.

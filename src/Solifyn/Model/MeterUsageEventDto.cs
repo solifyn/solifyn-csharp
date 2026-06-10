@@ -119,7 +119,7 @@ namespace Solifyn.Model
         /*
         <example>{&quot;plan&quot;:&quot;enterprise&quot;,&quot;region&quot;:&quot;asia-southeast-1&quot;}</example>
         */
-        [DataMember(Name = "metadata", EmitDefaultValue = false)]
+        [DataMember(Name = "metadata", EmitDefaultValue = true)]
         public Dictionary<string, Object> Metadata { get; set; }
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Timestamp when the usage event occurred.</value>
         /*
-        <example>2026-05-23T10:00:00.000Z</example>
+        <example>2026-05-23T10:00Z</example>
         */
         [DataMember(Name = "timestamp", IsRequired = true, EmitDefaultValue = true)]
         public DateTime Timestamp { get; set; }
@@ -137,7 +137,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Timestamp when the usage event was processed.</value>
         /*
-        <example>2026-05-23T10:00:01.000Z</example>
+        <example>2026-05-23T10:00:01Z</example>
         */
         [DataMember(Name = "processedAt", IsRequired = true, EmitDefaultValue = true)]
         public DateTime ProcessedAt { get; set; }

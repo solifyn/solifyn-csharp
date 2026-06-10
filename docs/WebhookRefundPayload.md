@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **Reason** | **string** |  | [optional] 
 **ReferenceValue** | **string** |  | [optional] 
 **Provider** | **string** |  | [optional] 
-**ProviderCreatedAt** | **DateTime** |  | [optional] 
+**ProviderCreatedAt** | **DateTime?** |  | [optional] 
 **CreatedAt** | **DateTime** |  | [optional] 
 **UpdatedAt** | **DateTime** |  | [optional] 
 

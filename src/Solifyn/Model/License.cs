@@ -91,7 +91,7 @@ namespace Solifyn.Model
         /// <param name="archived">Indicates if the license key is archived. (required).</param>
         /// <param name="createdAt">Timestamp indicating exactly when the license key was issued. (required).</param>
         /// <param name="updatedAt">Timestamp indicating when the license key was last modified. (required).</param>
-        public License(string id = default(string), string key = default(string), StatusEnum status = default(StatusEnum), string businessId = default(string), string productId = default(string), string paymentId = default(string), string customerId = default(string), decimal activationLimit = default(decimal), string activationMessage = default(string), decimal instancesCount = default(decimal), decimal expiryHours = default(decimal), string expiresAt = default(string), Object filters = default(Object), bool archived = default(bool), string createdAt = default(string), string updatedAt = default(string))
+        public License(string id = default(string), string key = default(string), StatusEnum status = default(StatusEnum), string businessId = default(string), string productId = default(string), string paymentId = default(string), string customerId = default(string), decimal? activationLimit = default(decimal?), string activationMessage = default(string), decimal instancesCount = default(decimal), decimal? expiryHours = default(decimal?), string expiresAt = default(string), Object filters = default(Object), bool archived = default(bool), string createdAt = default(string), string updatedAt = default(string))
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -130,6 +130,11 @@ namespace Solifyn.Model
                 throw new ArgumentNullException("customerId is a required property for License and cannot be null");
             }
             this.CustomerId = customerId;
+            // to ensure "activationLimit" is required (not null)
+            if (activationLimit == null)
+            {
+                throw new ArgumentNullException("activationLimit is a required property for License and cannot be null");
+            }
             this.ActivationLimit = activationLimit;
             // to ensure "activationMessage" is required (not null)
             if (activationMessage == null)
@@ -138,6 +143,11 @@ namespace Solifyn.Model
             }
             this.ActivationMessage = activationMessage;
             this.InstancesCount = instancesCount;
+            // to ensure "expiryHours" is required (not null)
+            if (expiryHours == null)
+            {
+                throw new ArgumentNullException("expiryHours is a required property for License and cannot be null");
+            }
             this.ExpiryHours = expiryHours;
             // to ensure "expiresAt" is required (not null)
             if (expiresAt == null)
@@ -234,7 +244,7 @@ namespace Solifyn.Model
         <example>3</example>
         */
         [DataMember(Name = "activationLimit", IsRequired = true, EmitDefaultValue = true)]
-        public decimal ActivationLimit { get; set; }
+        public decimal? ActivationLimit { get; set; }
 
         /// <summary>
         /// Optional message displayed to the customer upon successful activation.
@@ -264,7 +274,7 @@ namespace Solifyn.Model
         <example>720</example>
         */
         [DataMember(Name = "expiryHours", IsRequired = true, EmitDefaultValue = true)]
-        public decimal ExpiryHours { get; set; }
+        public decimal? ExpiryHours { get; set; }
 
         /// <summary>
         /// Absolute expiration timestamp. The license becomes invalid after this point.

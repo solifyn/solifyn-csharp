@@ -107,9 +107,6 @@ namespace Solifyn.Model
         /// The collection ID
         /// </summary>
         /// <value>The collection ID</value>
-        /*
-        <example>col_123</example>
-        */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
@@ -130,7 +127,7 @@ namespace Solifyn.Model
         /*
         <example>Everything you need for summer.</example>
         */
-        [DataMember(Name = "description", EmitDefaultValue = false)]
+        [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
@@ -140,7 +137,7 @@ namespace Solifyn.Model
         /*
         <example>https://example.com/image.png</example>
         */
-        [DataMember(Name = "imageUrl", EmitDefaultValue = false)]
+        [DataMember(Name = "imageUrl", EmitDefaultValue = true)]
         public string ImageUrl { get; set; }
 
         /// <summary>
@@ -168,7 +165,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Timestamp when the collection was created</value>
         /*
-        <example>2025-01-01T12:00:00Z</example>
+        <example>2025-01-01T12:00Z</example>
         */
         [DataMember(Name = "createdAt", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedAt { get; set; }
@@ -178,7 +175,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Timestamp when the collection was last updated</value>
         /*
-        <example>2025-01-01T12:00:00Z</example>
+        <example>2025-01-01T12:00Z</example>
         */
         [DataMember(Name = "updatedAt", IsRequired = true, EmitDefaultValue = true)]
         public DateTime UpdatedAt { get; set; }

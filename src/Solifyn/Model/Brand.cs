@@ -109,7 +109,7 @@ namespace Solifyn.Model
         /*
         <example>https://acme.com</example>
         */
-        [DataMember(Name = "websiteUrl", EmitDefaultValue = false)]
+        [DataMember(Name = "websiteUrl", EmitDefaultValue = true)]
         public string WebsiteUrl { get; set; }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace Solifyn.Model
         /*
         <example>support@acme.com</example>
         */
-        [DataMember(Name = "supportEmail", EmitDefaultValue = false)]
+        [DataMember(Name = "supportEmail", EmitDefaultValue = true)]
         public string SupportEmail { get; set; }
 
         /// <summary>
@@ -129,7 +129,7 @@ namespace Solifyn.Model
         /*
         <example>A leading provider of ACME tools.</example>
         */
-        [DataMember(Name = "description", EmitDefaultValue = false)]
+        [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
@@ -139,7 +139,7 @@ namespace Solifyn.Model
         /*
         <example>https://acme.com/logo.png</example>
         */
-        [DataMember(Name = "logoUrl", EmitDefaultValue = false)]
+        [DataMember(Name = "logoUrl", EmitDefaultValue = true)]
         public string LogoUrl { get; set; }
 
         /// <summary>
@@ -159,7 +159,7 @@ namespace Solifyn.Model
         /*
         <example>ACME CORP INC</example>
         */
-        [DataMember(Name = "statementDescriptor", EmitDefaultValue = false)]
+        [DataMember(Name = "statementDescriptor", EmitDefaultValue = true)]
         public string StatementDescriptor { get; set; }
 
         /// <summary>
@@ -179,7 +179,7 @@ namespace Solifyn.Model
         /*
         <example>biz_123</example>
         */
-        [DataMember(Name = "businessId", EmitDefaultValue = false)]
+        [DataMember(Name = "businessId", EmitDefaultValue = true)]
         public string BusinessId { get; set; }
 
         /// <summary>
@@ -187,7 +187,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Timestamp when the brand was created</value>
         /*
-        <example>2025-01-01T12:00:00Z</example>
+        <example>2025-01-01T12:00Z</example>
         */
         [DataMember(Name = "createdAt", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedAt { get; set; }
@@ -197,7 +197,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Timestamp when the brand was last updated</value>
         /*
-        <example>2025-01-01T12:00:00Z</example>
+        <example>2025-01-01T12:00Z</example>
         */
         [DataMember(Name = "updatedAt", IsRequired = true, EmitDefaultValue = true)]
         public DateTime UpdatedAt { get; set; }

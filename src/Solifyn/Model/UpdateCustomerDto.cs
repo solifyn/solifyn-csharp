@@ -81,7 +81,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Custom key-value metadata associated with the customer</value>
         /*
-        <example>{customKey&#x3D;customValue}</example>
+        <example>{&quot;customKey&quot;:&quot;customValue&quot;}</example>
         */
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public Object Metadata { get; set; }

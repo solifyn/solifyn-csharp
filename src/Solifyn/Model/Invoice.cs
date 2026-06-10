@@ -118,7 +118,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Invoice creation date.</value>
         /*
-        <example>2026-05-22T08:00:00Z</example>
+        <example>2026-05-22T08:00Z</example>
         */
         [DataMember(Name = "created_at", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedAt { get; set; }
