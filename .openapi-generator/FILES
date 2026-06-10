@@ -156,6 +156,7 @@ docs/WebhookDeliveryResponseDto.md
 docs/WebhookDisputePayload.md
 docs/WebhookEndpointApi.md
 docs/WebhookEndpointResponseDto.md
+docs/WebhookEntitlementGrantPayload.md
 docs/WebhookLicensePayload.md
 docs/WebhookPaymentPayload.md
 docs/WebhookPaymentPayloadBillingAddress.md
@@ -332,6 +333,7 @@ src/Solifyn/Model/UpdateWebhookEndpointDto.cs
 src/Solifyn/Model/WebhookDeliveryResponseDto.cs
 src/Solifyn/Model/WebhookDisputePayload.cs
 src/Solifyn/Model/WebhookEndpointResponseDto.cs
+src/Solifyn/Model/WebhookEntitlementGrantPayload.cs
 src/Solifyn/Model/WebhookLicensePayload.cs
 src/Solifyn/Model/WebhookPaymentPayload.cs
 src/Solifyn/Model/WebhookPaymentPayloadBillingAddress.cs

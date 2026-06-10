@@ -7,6 +7,10 @@ All URIs are relative to *https://api.solifyn.com*
 | [**DisputeCreatedPost**](DefaultApi.md#disputecreatedpost) | **POST** /dispute.created | Dispute Created |
 | [**DisputeLostPost**](DefaultApi.md#disputelostpost) | **POST** /dispute.lost | Dispute Lost |
 | [**DisputeWonPost**](DefaultApi.md#disputewonpost) | **POST** /dispute.won | Dispute Won |
+| [**EntitlementGrantCreatedPost**](DefaultApi.md#entitlementgrantcreatedpost) | **POST** /entitlement_grant.created | Entitlement Grant Created |
+| [**EntitlementGrantDeliveredPost**](DefaultApi.md#entitlementgrantdeliveredpost) | **POST** /entitlement_grant.delivered | Entitlement Grant Delivered |
+| [**EntitlementGrantFailedPost**](DefaultApi.md#entitlementgrantfailedpost) | **POST** /entitlement_grant.failed | Entitlement Grant Failed |
+| [**EntitlementGrantRevokedPost**](DefaultApi.md#entitlementgrantrevokedpost) | **POST** /entitlement_grant.revoked | Entitlement Grant Revoked |
 | [**LicenseCreatedPost**](DefaultApi.md#licensecreatedpost) | **POST** /license.created | License Created |
 | [**LicenseRevokedPost**](DefaultApi.md#licenserevokedpost) | **POST** /license.revoked | License Revoked |
 | [**PaymentCreatedPost**](DefaultApi.md#paymentcreatedpost) | **POST** /payment.created | Payment Created |
@@ -266,6 +270,366 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **webhookDisputePayload** | [**WebhookDisputePayload**](WebhookDisputePayload.md) |  | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Webhook processed successfully. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="entitlementgrantcreatedpost"></a>
+# **EntitlementGrantCreatedPost**
+> void EntitlementGrantCreatedPost (WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = null)
+
+Entitlement Grant Created
+
+Occurs when a new entitlement grant is created (e.g., at checkout completion if the product has GitHub access). The collaborator invitation is pending.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Solifyn.Api;
+using Solifyn.Client;
+using Solifyn.Model;
+
+namespace Example
+{
+    public class EntitlementGrantCreatedPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.solifyn.com";
+            // Configure Bearer token for authorization: ApiKeyAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            var apiInstance = new DefaultApi(config);
+            var webhookEntitlementGrantPayload = new WebhookEntitlementGrantPayload(); // WebhookEntitlementGrantPayload |  (optional) 
+
+            try
+            {
+                // Entitlement Grant Created
+                apiInstance.EntitlementGrantCreatedPost(webhookEntitlementGrantPayload);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DefaultApi.EntitlementGrantCreatedPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the EntitlementGrantCreatedPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Entitlement Grant Created
+    apiInstance.EntitlementGrantCreatedPostWithHttpInfo(webhookEntitlementGrantPayload);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DefaultApi.EntitlementGrantCreatedPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **webhookEntitlementGrantPayload** | [**WebhookEntitlementGrantPayload**](WebhookEntitlementGrantPayload.md) |  | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Webhook processed successfully. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="entitlementgrantdeliveredpost"></a>
+# **EntitlementGrantDeliveredPost**
+> void EntitlementGrantDeliveredPost (WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = null)
+
+Entitlement Grant Delivered
+
+Occurs when the customer successfully connects their GitHub account and the collaborator invitation is successfully delivered.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Solifyn.Api;
+using Solifyn.Client;
+using Solifyn.Model;
+
+namespace Example
+{
+    public class EntitlementGrantDeliveredPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.solifyn.com";
+            // Configure Bearer token for authorization: ApiKeyAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            var apiInstance = new DefaultApi(config);
+            var webhookEntitlementGrantPayload = new WebhookEntitlementGrantPayload(); // WebhookEntitlementGrantPayload |  (optional) 
+
+            try
+            {
+                // Entitlement Grant Delivered
+                apiInstance.EntitlementGrantDeliveredPost(webhookEntitlementGrantPayload);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DefaultApi.EntitlementGrantDeliveredPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the EntitlementGrantDeliveredPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Entitlement Grant Delivered
+    apiInstance.EntitlementGrantDeliveredPostWithHttpInfo(webhookEntitlementGrantPayload);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DefaultApi.EntitlementGrantDeliveredPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **webhookEntitlementGrantPayload** | [**WebhookEntitlementGrantPayload**](WebhookEntitlementGrantPayload.md) |  | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Webhook processed successfully. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="entitlementgrantfailedpost"></a>
+# **EntitlementGrantFailedPost**
+> void EntitlementGrantFailedPost (WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = null)
+
+Entitlement Grant Failed
+
+Occurs when invitation delivery fails (e.g., if the user GitHub account is flagged or invitation limit is reached).
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Solifyn.Api;
+using Solifyn.Client;
+using Solifyn.Model;
+
+namespace Example
+{
+    public class EntitlementGrantFailedPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.solifyn.com";
+            // Configure Bearer token for authorization: ApiKeyAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            var apiInstance = new DefaultApi(config);
+            var webhookEntitlementGrantPayload = new WebhookEntitlementGrantPayload(); // WebhookEntitlementGrantPayload |  (optional) 
+
+            try
+            {
+                // Entitlement Grant Failed
+                apiInstance.EntitlementGrantFailedPost(webhookEntitlementGrantPayload);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DefaultApi.EntitlementGrantFailedPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the EntitlementGrantFailedPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Entitlement Grant Failed
+    apiInstance.EntitlementGrantFailedPostWithHttpInfo(webhookEntitlementGrantPayload);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DefaultApi.EntitlementGrantFailedPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **webhookEntitlementGrantPayload** | [**WebhookEntitlementGrantPayload**](WebhookEntitlementGrantPayload.md) |  | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Webhook processed successfully. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="entitlementgrantrevokedpost"></a>
+# **EntitlementGrantRevokedPost**
+> void EntitlementGrantRevokedPost (WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = null)
+
+Entitlement Grant Revoked
+
+Occurs when the customer access is removed from the repository (manually or automatically via subscription cancel/refund).
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Solifyn.Api;
+using Solifyn.Client;
+using Solifyn.Model;
+
+namespace Example
+{
+    public class EntitlementGrantRevokedPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.solifyn.com";
+            // Configure Bearer token for authorization: ApiKeyAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            var apiInstance = new DefaultApi(config);
+            var webhookEntitlementGrantPayload = new WebhookEntitlementGrantPayload(); // WebhookEntitlementGrantPayload |  (optional) 
+
+            try
+            {
+                // Entitlement Grant Revoked
+                apiInstance.EntitlementGrantRevokedPost(webhookEntitlementGrantPayload);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DefaultApi.EntitlementGrantRevokedPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the EntitlementGrantRevokedPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Entitlement Grant Revoked
+    apiInstance.EntitlementGrantRevokedPostWithHttpInfo(webhookEntitlementGrantPayload);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DefaultApi.EntitlementGrantRevokedPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **webhookEntitlementGrantPayload** | [**WebhookEntitlementGrantPayload**](WebhookEntitlementGrantPayload.md) |  | [optional]  |
 
 ### Return type
 

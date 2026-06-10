@@ -8275,6 +8275,26 @@ paths:
       tags:
       - Entitlement Grants
       x-codeSamples:
+      - lang: typescript
+        label: TypeScript SDK
+        source: |-
+          import { Solifyn } from 'solifyn';
+
+          const solifyn = new Solifyn({ apiKey: 'your_private_api_key_here' });
+
+          // List all repository entitlement grants
+          const grants = await solifyn.entitlementGrants.list();
+          console.log('Entitlement Grants:', grants);
+      - lang: javascript
+        label: JavaScript SDK
+        source: |-
+          const { Solifyn } = require('solifyn');
+
+          const solifyn = new Solifyn({ apiKey: 'your_private_api_key_here' });
+
+          // List all repository entitlement grants
+          const grants = await solifyn.entitlementGrants.list();
+          console.log('Entitlement Grants:', grants);
       - lang: python
         label: Python SDK
         source: |-
@@ -8453,6 +8473,26 @@ paths:
       tags:
       - Entitlement Grants
       x-codeSamples:
+      - lang: typescript
+        label: TypeScript SDK
+        source: |-
+          import { Solifyn } from 'solifyn';
+
+          const solifyn = new Solifyn({ apiKey: 'your_private_api_key_here' });
+
+          // Retrieve details of a specific grant
+          const grant = await solifyn.entitlementGrants.get('eg_019e56a1...');
+          console.log('Entitlement Grant:', grant);
+      - lang: javascript
+        label: JavaScript SDK
+        source: |-
+          const { Solifyn } = require('solifyn');
+
+          const solifyn = new Solifyn({ apiKey: 'your_private_api_key_here' });
+
+          // Retrieve details of a specific grant
+          const grant = await solifyn.entitlementGrants.get('eg_019e56a1...');
+          console.log('Entitlement Grant:', grant);
       - lang: python
         label: Python SDK
         source: |-
@@ -8639,6 +8679,26 @@ paths:
       tags:
       - Entitlement Grants
       x-codeSamples:
+      - lang: typescript
+        label: TypeScript SDK
+        source: |-
+          import { Solifyn } from 'solifyn';
+
+          const solifyn = new Solifyn({ apiKey: 'your_private_api_key_here' });
+
+          // Revoke access and collaborator invitation
+          const grant = await solifyn.entitlementGrants.revoke('eg_019e56a1...');
+          console.log('Revoked Grant:', grant);
+      - lang: javascript
+        label: JavaScript SDK
+        source: |-
+          const { Solifyn } = require('solifyn');
+
+          const solifyn = new Solifyn({ apiKey: 'your_private_api_key_here' });
+
+          // Revoke access and collaborator invitation
+          const grant = await solifyn.entitlementGrants.revoke('eg_019e56a1...');
+          console.log('Revoked Grant:', grant);
       - lang: python
         label: Python SDK
         source: |-
@@ -8825,6 +8885,26 @@ paths:
       tags:
       - Entitlement Grants
       x-codeSamples:
+      - lang: typescript
+        label: TypeScript SDK
+        source: |-
+          import { Solifyn } from 'solifyn';
+
+          const solifyn = new Solifyn({ apiKey: 'your_private_api_key_here' });
+
+          // Retry delivery / re-invite collaborator
+          const grant = await solifyn.entitlementGrants.retry('eg_019e56a1...');
+          console.log('Retried Grant:', grant);
+      - lang: javascript
+        label: JavaScript SDK
+        source: |-
+          const { Solifyn } = require('solifyn');
+
+          const solifyn = new Solifyn({ apiKey: 'your_private_api_key_here' });
+
+          // Retry delivery / re-invite collaborator
+          const grant = await solifyn.entitlementGrants.retry('eg_019e56a1...');
+          console.log('Retried Grant:', grant);
       - lang: python
         label: Python SDK
         source: |-
@@ -24775,6 +24855,89 @@ components:
           format: date-time
           type: string
           nullable: true
+    WebhookEntitlementGrantPayload:
+      example:
+        oauthUrl: https://github.com/login/oauth/authorize...
+        productId: prod_123456
+        businessId: biz_123456
+        type: GITHUB
+        githubPermission: pull
+        githubUsername: octocat
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        githubRepo: solifyn/premium-app
+        paymentId: pay_123456
+        customerId: cust_123456
+        id: grant_123456
+        status: PENDING
+        errorDetails: Permission denied
+        updatedAt: 2000-01-23T04:56:07.000+00:00
+      properties:
+        id:
+          description: The unique entitlement grant ID.
+          example: grant_123456
+          format: uuid
+          type: string
+        businessId:
+          description: The business ID context.
+          example: biz_123456
+          format: uuid
+          type: string
+        customerId:
+          description: The customer ID.
+          example: cust_123456
+          format: uuid
+          type: string
+        paymentId:
+          description: Associated payment transaction ID.
+          example: pay_123456
+          format: uuid
+          type: string
+          nullable: true
+        productId:
+          description: The purchased product ID.
+          example: prod_123456
+          format: uuid
+          type: string
+        type:
+          description: The type of entitlement (e.g. GITHUB).
+          example: GITHUB
+          type: string
+        githubRepo:
+          description: Target GitHub repository (owner/repo) if type is GITHUB.
+          example: solifyn/premium-app
+          type: string
+          nullable: true
+        githubPermission:
+          description: GitHub access permission level if type is GITHUB.
+          example: pull
+          type: string
+          nullable: true
+        githubUsername:
+          description: The connected customer GitHub username.
+          example: octocat
+          type: string
+          nullable: true
+        status:
+          description: "Delivery status of the collaborator invite (PENDING, DELIVERED,\
+            \ FAILED, REVOKED)."
+          example: PENDING
+          type: string
+        oauthUrl:
+          description: OAuth URL to redirect the customer to.
+          example: https://github.com/login/oauth/authorize...
+          type: string
+          nullable: true
+        errorDetails:
+          description: Error message if invitation delivery failed.
+          example: Permission denied
+          type: string
+          nullable: true
+        createdAt:
+          format: date-time
+          type: string
+        updatedAt:
+          format: date-time
+          type: string
     WebhookLicensePayload:
       description: Represents a cryptographically secure software license key issued
         to a customer upon purchase or manual issuance.
@@ -25484,6 +25647,59 @@ x-webhooks:
           application/json:
             schema:
               $ref: '#/components/schemas/WebhookLicensePayload'
+      responses:
+        "200":
+          description: Webhook processed successfully.
+  entitlement_grant.created:
+    post:
+      summary: Entitlement Grant Created
+      description: "Occurs when a new entitlement grant is created (e.g., at checkout\
+        \ completion if the product has GitHub access). The collaborator invitation\
+        \ is pending."
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WebhookEntitlementGrantPayload'
+      responses:
+        "200":
+          description: Webhook processed successfully.
+  entitlement_grant.delivered:
+    post:
+      summary: Entitlement Grant Delivered
+      description: Occurs when the customer successfully connects their GitHub account
+        and the collaborator invitation is successfully delivered.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WebhookEntitlementGrantPayload'
+      responses:
+        "200":
+          description: Webhook processed successfully.
+  entitlement_grant.failed:
+    post:
+      summary: Entitlement Grant Failed
+      description: "Occurs when invitation delivery fails (e.g., if the user GitHub\
+        \ account is flagged or invitation limit is reached)."
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WebhookEntitlementGrantPayload'
+      responses:
+        "200":
+          description: Webhook processed successfully.
+  entitlement_grant.revoked:
+    post:
+      summary: Entitlement Grant Revoked
+      description: Occurs when the customer access is removed from the repository
+        (manually or automatically via subscription cancel/refund).
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WebhookEntitlementGrantPayload'
       responses:
         "200":
           description: Webhook processed successfully.

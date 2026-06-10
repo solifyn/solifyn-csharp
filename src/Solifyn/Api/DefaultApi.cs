@@ -96,6 +96,98 @@ namespace Solifyn.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DisputeWonPostWithHttpInfo(WebhookDisputePayload webhookDisputePayload = default(WebhookDisputePayload), int operationIndex = 0);
         /// <summary>
+        /// Entitlement Grant Created
+        /// </summary>
+        /// <remarks>
+        /// Occurs when a new entitlement grant is created (e.g., at checkout completion if the product has GitHub access). The collaborator invitation is pending.
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookEntitlementGrantPayload"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        void EntitlementGrantCreatedPost(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = default(WebhookEntitlementGrantPayload), int operationIndex = 0);
+
+        /// <summary>
+        /// Entitlement Grant Created
+        /// </summary>
+        /// <remarks>
+        /// Occurs when a new entitlement grant is created (e.g., at checkout completion if the product has GitHub access). The collaborator invitation is pending.
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookEntitlementGrantPayload"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> EntitlementGrantCreatedPostWithHttpInfo(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = default(WebhookEntitlementGrantPayload), int operationIndex = 0);
+        /// <summary>
+        /// Entitlement Grant Delivered
+        /// </summary>
+        /// <remarks>
+        /// Occurs when the customer successfully connects their GitHub account and the collaborator invitation is successfully delivered.
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookEntitlementGrantPayload"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        void EntitlementGrantDeliveredPost(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = default(WebhookEntitlementGrantPayload), int operationIndex = 0);
+
+        /// <summary>
+        /// Entitlement Grant Delivered
+        /// </summary>
+        /// <remarks>
+        /// Occurs when the customer successfully connects their GitHub account and the collaborator invitation is successfully delivered.
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookEntitlementGrantPayload"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> EntitlementGrantDeliveredPostWithHttpInfo(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = default(WebhookEntitlementGrantPayload), int operationIndex = 0);
+        /// <summary>
+        /// Entitlement Grant Failed
+        /// </summary>
+        /// <remarks>
+        /// Occurs when invitation delivery fails (e.g., if the user GitHub account is flagged or invitation limit is reached).
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookEntitlementGrantPayload"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        void EntitlementGrantFailedPost(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = default(WebhookEntitlementGrantPayload), int operationIndex = 0);
+
+        /// <summary>
+        /// Entitlement Grant Failed
+        /// </summary>
+        /// <remarks>
+        /// Occurs when invitation delivery fails (e.g., if the user GitHub account is flagged or invitation limit is reached).
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookEntitlementGrantPayload"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> EntitlementGrantFailedPostWithHttpInfo(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = default(WebhookEntitlementGrantPayload), int operationIndex = 0);
+        /// <summary>
+        /// Entitlement Grant Revoked
+        /// </summary>
+        /// <remarks>
+        /// Occurs when the customer access is removed from the repository (manually or automatically via subscription cancel/refund).
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookEntitlementGrantPayload"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        void EntitlementGrantRevokedPost(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = default(WebhookEntitlementGrantPayload), int operationIndex = 0);
+
+        /// <summary>
+        /// Entitlement Grant Revoked
+        /// </summary>
+        /// <remarks>
+        /// Occurs when the customer access is removed from the repository (manually or automatically via subscription cancel/refund).
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookEntitlementGrantPayload"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> EntitlementGrantRevokedPostWithHttpInfo(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = default(WebhookEntitlementGrantPayload), int operationIndex = 0);
+        /// <summary>
         /// License Created
         /// </summary>
         /// <remarks>
@@ -409,6 +501,106 @@ namespace Solifyn.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DisputeWonPostWithHttpInfoAsync(WebhookDisputePayload webhookDisputePayload = default(WebhookDisputePayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// Entitlement Grant Created
+        /// </summary>
+        /// <remarks>
+        /// Occurs when a new entitlement grant is created (e.g., at checkout completion if the product has GitHub access). The collaborator invitation is pending.
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookEntitlementGrantPayload"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task EntitlementGrantCreatedPostAsync(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = default(WebhookEntitlementGrantPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Entitlement Grant Created
+        /// </summary>
+        /// <remarks>
+        /// Occurs when a new entitlement grant is created (e.g., at checkout completion if the product has GitHub access). The collaborator invitation is pending.
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookEntitlementGrantPayload"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> EntitlementGrantCreatedPostWithHttpInfoAsync(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = default(WebhookEntitlementGrantPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// Entitlement Grant Delivered
+        /// </summary>
+        /// <remarks>
+        /// Occurs when the customer successfully connects their GitHub account and the collaborator invitation is successfully delivered.
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookEntitlementGrantPayload"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task EntitlementGrantDeliveredPostAsync(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = default(WebhookEntitlementGrantPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Entitlement Grant Delivered
+        /// </summary>
+        /// <remarks>
+        /// Occurs when the customer successfully connects their GitHub account and the collaborator invitation is successfully delivered.
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookEntitlementGrantPayload"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> EntitlementGrantDeliveredPostWithHttpInfoAsync(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = default(WebhookEntitlementGrantPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// Entitlement Grant Failed
+        /// </summary>
+        /// <remarks>
+        /// Occurs when invitation delivery fails (e.g., if the user GitHub account is flagged or invitation limit is reached).
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookEntitlementGrantPayload"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task EntitlementGrantFailedPostAsync(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = default(WebhookEntitlementGrantPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Entitlement Grant Failed
+        /// </summary>
+        /// <remarks>
+        /// Occurs when invitation delivery fails (e.g., if the user GitHub account is flagged or invitation limit is reached).
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookEntitlementGrantPayload"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> EntitlementGrantFailedPostWithHttpInfoAsync(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = default(WebhookEntitlementGrantPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// Entitlement Grant Revoked
+        /// </summary>
+        /// <remarks>
+        /// Occurs when the customer access is removed from the repository (manually or automatically via subscription cancel/refund).
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookEntitlementGrantPayload"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task EntitlementGrantRevokedPostAsync(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = default(WebhookEntitlementGrantPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Entitlement Grant Revoked
+        /// </summary>
+        /// <remarks>
+        /// Occurs when the customer access is removed from the repository (manually or automatically via subscription cancel/refund).
+        /// </remarks>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookEntitlementGrantPayload"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> EntitlementGrantRevokedPostWithHttpInfoAsync(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = default(WebhookEntitlementGrantPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// License Created
         /// </summary>
@@ -1196,6 +1388,574 @@ namespace Solifyn.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DisputeWonPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Entitlement Grant Created Occurs when a new entitlement grant is created (e.g., at checkout completion if the product has GitHub access). The collaborator invitation is pending.
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookEntitlementGrantPayload"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public void EntitlementGrantCreatedPost(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = default(WebhookEntitlementGrantPayload), int operationIndex = 0)
+        {
+            EntitlementGrantCreatedPostWithHttpInfo(webhookEntitlementGrantPayload);
+        }
+
+        /// <summary>
+        /// Entitlement Grant Created Occurs when a new entitlement grant is created (e.g., at checkout completion if the product has GitHub access). The collaborator invitation is pending.
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookEntitlementGrantPayload"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Solifyn.Client.ApiResponse<Object> EntitlementGrantCreatedPostWithHttpInfo(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = default(WebhookEntitlementGrantPayload), int operationIndex = 0)
+        {
+            Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+            };
+
+            var localVarContentType = Solifyn.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Solifyn.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = webhookEntitlementGrantPayload;
+
+            localVarRequestOptions.Operation = "DefaultApi.EntitlementGrantCreatedPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKeyAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/entitlement_grant.created", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("EntitlementGrantCreatedPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Entitlement Grant Created Occurs when a new entitlement grant is created (e.g., at checkout completion if the product has GitHub access). The collaborator invitation is pending.
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookEntitlementGrantPayload"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task EntitlementGrantCreatedPostAsync(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = default(WebhookEntitlementGrantPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            await EntitlementGrantCreatedPostWithHttpInfoAsync(webhookEntitlementGrantPayload, operationIndex, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Entitlement Grant Created Occurs when a new entitlement grant is created (e.g., at checkout completion if the product has GitHub access). The collaborator invitation is pending.
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookEntitlementGrantPayload"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> EntitlementGrantCreatedPostWithHttpInfoAsync(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = default(WebhookEntitlementGrantPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+
+            Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+            };
+
+            var localVarContentType = Solifyn.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Solifyn.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = webhookEntitlementGrantPayload;
+
+            localVarRequestOptions.Operation = "DefaultApi.EntitlementGrantCreatedPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKeyAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/entitlement_grant.created", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("EntitlementGrantCreatedPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Entitlement Grant Delivered Occurs when the customer successfully connects their GitHub account and the collaborator invitation is successfully delivered.
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookEntitlementGrantPayload"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public void EntitlementGrantDeliveredPost(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = default(WebhookEntitlementGrantPayload), int operationIndex = 0)
+        {
+            EntitlementGrantDeliveredPostWithHttpInfo(webhookEntitlementGrantPayload);
+        }
+
+        /// <summary>
+        /// Entitlement Grant Delivered Occurs when the customer successfully connects their GitHub account and the collaborator invitation is successfully delivered.
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookEntitlementGrantPayload"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Solifyn.Client.ApiResponse<Object> EntitlementGrantDeliveredPostWithHttpInfo(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = default(WebhookEntitlementGrantPayload), int operationIndex = 0)
+        {
+            Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+            };
+
+            var localVarContentType = Solifyn.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Solifyn.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = webhookEntitlementGrantPayload;
+
+            localVarRequestOptions.Operation = "DefaultApi.EntitlementGrantDeliveredPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKeyAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/entitlement_grant.delivered", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("EntitlementGrantDeliveredPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Entitlement Grant Delivered Occurs when the customer successfully connects their GitHub account and the collaborator invitation is successfully delivered.
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookEntitlementGrantPayload"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task EntitlementGrantDeliveredPostAsync(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = default(WebhookEntitlementGrantPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            await EntitlementGrantDeliveredPostWithHttpInfoAsync(webhookEntitlementGrantPayload, operationIndex, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Entitlement Grant Delivered Occurs when the customer successfully connects their GitHub account and the collaborator invitation is successfully delivered.
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookEntitlementGrantPayload"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> EntitlementGrantDeliveredPostWithHttpInfoAsync(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = default(WebhookEntitlementGrantPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+
+            Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+            };
+
+            var localVarContentType = Solifyn.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Solifyn.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = webhookEntitlementGrantPayload;
+
+            localVarRequestOptions.Operation = "DefaultApi.EntitlementGrantDeliveredPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKeyAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/entitlement_grant.delivered", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("EntitlementGrantDeliveredPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Entitlement Grant Failed Occurs when invitation delivery fails (e.g., if the user GitHub account is flagged or invitation limit is reached).
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookEntitlementGrantPayload"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public void EntitlementGrantFailedPost(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = default(WebhookEntitlementGrantPayload), int operationIndex = 0)
+        {
+            EntitlementGrantFailedPostWithHttpInfo(webhookEntitlementGrantPayload);
+        }
+
+        /// <summary>
+        /// Entitlement Grant Failed Occurs when invitation delivery fails (e.g., if the user GitHub account is flagged or invitation limit is reached).
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookEntitlementGrantPayload"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Solifyn.Client.ApiResponse<Object> EntitlementGrantFailedPostWithHttpInfo(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = default(WebhookEntitlementGrantPayload), int operationIndex = 0)
+        {
+            Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+            };
+
+            var localVarContentType = Solifyn.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Solifyn.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = webhookEntitlementGrantPayload;
+
+            localVarRequestOptions.Operation = "DefaultApi.EntitlementGrantFailedPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKeyAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/entitlement_grant.failed", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("EntitlementGrantFailedPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Entitlement Grant Failed Occurs when invitation delivery fails (e.g., if the user GitHub account is flagged or invitation limit is reached).
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookEntitlementGrantPayload"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task EntitlementGrantFailedPostAsync(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = default(WebhookEntitlementGrantPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            await EntitlementGrantFailedPostWithHttpInfoAsync(webhookEntitlementGrantPayload, operationIndex, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Entitlement Grant Failed Occurs when invitation delivery fails (e.g., if the user GitHub account is flagged or invitation limit is reached).
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookEntitlementGrantPayload"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> EntitlementGrantFailedPostWithHttpInfoAsync(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = default(WebhookEntitlementGrantPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+
+            Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+            };
+
+            var localVarContentType = Solifyn.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Solifyn.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = webhookEntitlementGrantPayload;
+
+            localVarRequestOptions.Operation = "DefaultApi.EntitlementGrantFailedPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKeyAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/entitlement_grant.failed", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("EntitlementGrantFailedPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Entitlement Grant Revoked Occurs when the customer access is removed from the repository (manually or automatically via subscription cancel/refund).
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookEntitlementGrantPayload"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public void EntitlementGrantRevokedPost(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = default(WebhookEntitlementGrantPayload), int operationIndex = 0)
+        {
+            EntitlementGrantRevokedPostWithHttpInfo(webhookEntitlementGrantPayload);
+        }
+
+        /// <summary>
+        /// Entitlement Grant Revoked Occurs when the customer access is removed from the repository (manually or automatically via subscription cancel/refund).
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookEntitlementGrantPayload"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Solifyn.Client.ApiResponse<Object> EntitlementGrantRevokedPostWithHttpInfo(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = default(WebhookEntitlementGrantPayload), int operationIndex = 0)
+        {
+            Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+            };
+
+            var localVarContentType = Solifyn.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Solifyn.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = webhookEntitlementGrantPayload;
+
+            localVarRequestOptions.Operation = "DefaultApi.EntitlementGrantRevokedPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKeyAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/entitlement_grant.revoked", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("EntitlementGrantRevokedPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Entitlement Grant Revoked Occurs when the customer access is removed from the repository (manually or automatically via subscription cancel/refund).
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookEntitlementGrantPayload"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task EntitlementGrantRevokedPostAsync(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = default(WebhookEntitlementGrantPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            await EntitlementGrantRevokedPostWithHttpInfoAsync(webhookEntitlementGrantPayload, operationIndex, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Entitlement Grant Revoked Occurs when the customer access is removed from the repository (manually or automatically via subscription cancel/refund).
+        /// </summary>
+        /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookEntitlementGrantPayload"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<Object>> EntitlementGrantRevokedPostWithHttpInfoAsync(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = default(WebhookEntitlementGrantPayload), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+
+            Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+            };
+
+            var localVarContentType = Solifyn.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Solifyn.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = webhookEntitlementGrantPayload;
+
+            localVarRequestOptions.Operation = "DefaultApi.EntitlementGrantRevokedPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (ApiKeyAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/entitlement_grant.revoked", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("EntitlementGrantRevokedPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

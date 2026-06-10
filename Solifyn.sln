@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solifyn", "src\Solifyn\Solifyn.csproj", "{8CAA074D-CB3C-4E7E-87FF-CF849DF1387F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solifyn", "src\Solifyn\Solifyn.csproj", "{F1741480-BB94-494F-A069-A67F2DC45915}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,10 +10,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8CAA074D-CB3C-4E7E-87FF-CF849DF1387F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8CAA074D-CB3C-4E7E-87FF-CF849DF1387F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8CAA074D-CB3C-4E7E-87FF-CF849DF1387F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8CAA074D-CB3C-4E7E-87FF-CF849DF1387F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1741480-BB94-494F-A069-A67F2DC45915}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1741480-BB94-494F-A069-A67F2DC45915}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1741480-BB94-494F-A069-A67F2DC45915}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1741480-BB94-494F-A069-A67F2DC45915}.Release|Any CPU.Build.0 = Release|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Release|Any CPU.ActiveCfg = Release|Any CPU
