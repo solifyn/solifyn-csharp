@@ -8274,6 +8274,159 @@ paths:
       summary: List Entitlement Grants
       tags:
       - Entitlement Grants
+      x-codeSamples:
+      - lang: python
+        label: Python SDK
+        source: |-
+          import solifyn
+          from solifyn.rest import ApiException
+
+          configuration = solifyn.Configuration(
+              host = "https://api.solifyn.com"
+          )
+          configuration.access_token = "your_private_api_key_here"
+
+          with solifyn.ApiClient(configuration) as api_client:
+              api_instance = solifyn.EntitlementGrantsApi(api_client)
+
+              try:
+                  response = api_instance.entitlement_grants_list()
+                  print("Response received:", response)
+              except ApiException as e:
+                  print("Exception when calling EntitlementGrantsApi->entitlement_grants_list: %s\n" % e)
+      - lang: php
+        label: PHP SDK
+        source: |-
+          require_once(__DIR__ . '/vendor/autoload.php');
+
+          use Solifyn\Configuration;
+          use Solifyn\Api\EntitlementGrantsApi;
+          use GuzzleHttp\Client;
+
+          $config = Configuration::getDefaultConfiguration()
+              ->setAccessToken('your_private_api_key_here');
+          $apiInstance = new EntitlementGrantsApi(
+              new Client(),
+              $config
+          );
+
+          try {
+              $result = $apiInstance->entitlementGrantsList();
+              print_r($result);
+          } catch (Exception $e) {
+              echo 'Exception when calling EntitlementGrantsApi->entitlementGrantsList: ', $e->getMessage(), PHP_EOL;
+          }
+      - lang: go
+        label: Go SDK
+        source: |-
+          import (
+              "context"
+              "fmt"
+              "os"
+              solifyn "github.com/solifyn/solifyn-go"
+          )
+
+          configuration := solifyn.NewConfiguration()
+          apiClient := solifyn.NewAPIClient(configuration)
+          auth := context.WithValue(context.Background(), solifyn.ContextAccessToken, "your_private_api_key_here")
+
+          resp, r, err := apiClient.EntitlementGrantsAPI.EntitlementGrantsList(auth).Execute()
+          if err != nil {
+              fmt.Fprintf(os.Stderr, "Error when calling `EntitlementGrantsAPI.EntitlementGrantsList`: %v\n", err)
+              fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+              return
+          }
+          fmt.Printf("Response: %v\n", resp)
+      - lang: java
+        label: Java SDK
+        source: |-
+          import com.solifyn.ApiClient;
+          import com.solifyn.ApiException;
+          import com.solifyn.Configuration;
+          import com.solifyn.auth.HttpBearerAuth;
+          import com.solifyn.api.EntitlementGrantsApi;
+          import com.solifyn.model.*;
+          import java.math.BigDecimal;
+          import java.util.Arrays;
+          import java.util.HashMap;
+          import java.util.List;
+          import java.util.Map;
+
+          ApiClient defaultClient = Configuration.getDefaultApiClient();
+          defaultClient.setBasePath("https://api.solifyn.com");
+
+          HttpBearerAuth ApiKeyAuth = (HttpBearerAuth) defaultClient.getAuthentication("ApiKeyAuth");
+          ApiKeyAuth.setBearerToken("your_private_api_key_here");
+
+          EntitlementGrantsApi apiInstance = new EntitlementGrantsApi(defaultClient);
+
+          try {
+              List<EntitlementGrantResponseDto> result = apiInstance.entitlementGrantsList();
+              System.out.println(result);
+          } catch (ApiException e) {
+              System.err.println("Exception when calling EntitlementGrantsApi#entitlementGrantsList");
+              e.printStackTrace();
+          }
+      - lang: ruby
+        label: Ruby SDK
+        source: |-
+          require 'solifyn'
+
+          Solifyn.configure do |config|
+            config.access_token = 'your_private_api_key_here'
+            config.host = 'localhost:8000'
+          end
+
+          api_instance = Solifyn::EntitlementGrantsApi.new
+
+          begin
+            result = api_instance.entitlement_grants_list()
+            p result
+          rescue Solifyn::ApiError => e
+            puts "Exception when calling EntitlementGrantsApi->entitlement_grants_list: #{e}"
+          end
+      - lang: csharp
+        label: C# SDK
+        source: |-
+          using Solifyn.Api;
+          using Solifyn.Client;
+          using Solifyn.Model;
+          using System;
+          using System.Collections.Generic;
+
+          var config = new Configuration();
+          config.BasePath = "https://api.solifyn.com";
+          config.AccessToken = "your_private_api_key_here";
+
+          var entitlementGrantsApi = new EntitlementGrantsApi(config);
+
+          try {
+              var result = entitlementGrantsApi.EntitlementGrantsList();
+              Console.WriteLine(result);
+          }
+          catch (ApiException e) {
+              Console.WriteLine("Exception when calling EntitlementGrantsApi.EntitlementGrantsList: " + e.Message);
+          }
+      - lang: kotlin
+        label: Kotlin SDK
+        source: |-
+          import com.solifyn.infrastructure.ApiClient
+          import com.solifyn.api.EntitlementGrantsApi
+          import com.solifyn.model.*
+          import com.solifyn.infrastructure.ClientException
+          import com.solifyn.infrastructure.ServerException
+
+          ApiClient.accessToken = "your_private_api_key_here"
+          val apiInstance = EntitlementGrantsApi()
+
+          try {
+              val result = apiInstance.entitlementGrantsList()
+              println(result)
+          } catch (e: ClientException) {
+              println("Client error: ${e.message}")
+          } catch (e: ServerException) {
+              println("Server error: ${e.message}")
+          }
   /v1/entitlement-grants/{id}:
     get:
       description: Retrieve details of a specific entitlement grant.
@@ -8299,6 +8452,166 @@ paths:
       summary: Retrieve Entitlement Grant
       tags:
       - Entitlement Grants
+      x-codeSamples:
+      - lang: python
+        label: Python SDK
+        source: |-
+          import solifyn
+          from solifyn.rest import ApiException
+
+          configuration = solifyn.Configuration(
+              host = "https://api.solifyn.com"
+          )
+          configuration.access_token = "your_private_api_key_here"
+
+          with solifyn.ApiClient(configuration) as api_client:
+              api_instance = solifyn.EntitlementGrantsApi(api_client)
+              id = "eg_019e56a1..."
+
+              try:
+                  response = api_instance.entitlement_grants_get(id)
+                  print("Response received:", response)
+              except ApiException as e:
+                  print("Exception when calling EntitlementGrantsApi->entitlement_grants_get: %s\n" % e)
+      - lang: php
+        label: PHP SDK
+        source: |-
+          require_once(__DIR__ . '/vendor/autoload.php');
+
+          use Solifyn\Configuration;
+          use Solifyn\Api\EntitlementGrantsApi;
+          use GuzzleHttp\Client;
+
+          $config = Configuration::getDefaultConfiguration()
+              ->setAccessToken('your_private_api_key_here');
+          $apiInstance = new EntitlementGrantsApi(
+              new Client(),
+              $config
+          );
+          $id = 'eg_019e56a1...';
+
+          try {
+              $result = $apiInstance->entitlementGrantsGet($id);
+              print_r($result);
+          } catch (Exception $e) {
+              echo 'Exception when calling EntitlementGrantsApi->entitlementGrantsGet: ', $e->getMessage(), PHP_EOL;
+          }
+      - lang: go
+        label: Go SDK
+        source: |-
+          import (
+              "context"
+              "fmt"
+              "os"
+              solifyn "github.com/solifyn/solifyn-go"
+          )
+
+          configuration := solifyn.NewConfiguration()
+          apiClient := solifyn.NewAPIClient(configuration)
+          auth := context.WithValue(context.Background(), solifyn.ContextAccessToken, "your_private_api_key_here")
+          id := "eg_019e56a1..."
+
+          resp, r, err := apiClient.EntitlementGrantsAPI.EntitlementGrantsGet(auth, id).Execute()
+          if err != nil {
+              fmt.Fprintf(os.Stderr, "Error when calling `EntitlementGrantsAPI.EntitlementGrantsGet`: %v\n", err)
+              fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+              return
+          }
+          fmt.Printf("Response: %v\n", resp)
+      - lang: java
+        label: Java SDK
+        source: |-
+          import com.solifyn.ApiClient;
+          import com.solifyn.ApiException;
+          import com.solifyn.Configuration;
+          import com.solifyn.auth.HttpBearerAuth;
+          import com.solifyn.api.EntitlementGrantsApi;
+          import com.solifyn.model.*;
+          import java.math.BigDecimal;
+          import java.util.Arrays;
+          import java.util.HashMap;
+          import java.util.List;
+          import java.util.Map;
+
+          ApiClient defaultClient = Configuration.getDefaultApiClient();
+          defaultClient.setBasePath("https://api.solifyn.com");
+
+          HttpBearerAuth ApiKeyAuth = (HttpBearerAuth) defaultClient.getAuthentication("ApiKeyAuth");
+          ApiKeyAuth.setBearerToken("your_private_api_key_here");
+
+          EntitlementGrantsApi apiInstance = new EntitlementGrantsApi(defaultClient);
+          String id = "eg_019e56a1...";
+
+          try {
+              EntitlementGrantResponseDto result = apiInstance.entitlementGrantsGet(id);
+              System.out.println(result);
+          } catch (ApiException e) {
+              System.err.println("Exception when calling EntitlementGrantsApi#entitlementGrantsGet");
+              e.printStackTrace();
+          }
+      - lang: ruby
+        label: Ruby SDK
+        source: |-
+          require 'solifyn'
+
+          Solifyn.configure do |config|
+            config.access_token = 'your_private_api_key_here'
+            config.host = 'localhost:8000'
+          end
+
+          api_instance = Solifyn::EntitlementGrantsApi.new
+          id = 'eg_019e56a1...'
+
+          begin
+            result = api_instance.entitlement_grants_get(id)
+            p result
+          rescue Solifyn::ApiError => e
+            puts "Exception when calling EntitlementGrantsApi->entitlement_grants_get: #{e}"
+          end
+      - lang: csharp
+        label: C# SDK
+        source: |-
+          using Solifyn.Api;
+          using Solifyn.Client;
+          using Solifyn.Model;
+          using System;
+          using System.Collections.Generic;
+
+          var config = new Configuration();
+          config.BasePath = "https://api.solifyn.com";
+          config.AccessToken = "your_private_api_key_here";
+
+          var entitlementGrantsApi = new EntitlementGrantsApi(config);
+          var id = "eg_019e56a1...";
+
+          try {
+              var result = entitlementGrantsApi.EntitlementGrantsGet(id);
+              Console.WriteLine(result);
+          }
+          catch (ApiException e) {
+              Console.WriteLine("Exception when calling EntitlementGrantsApi.EntitlementGrantsGet: " + e.Message);
+          }
+      - lang: kotlin
+        label: Kotlin SDK
+        source: |-
+          import com.solifyn.infrastructure.ApiClient
+          import com.solifyn.api.EntitlementGrantsApi
+          import com.solifyn.model.*
+          import com.solifyn.infrastructure.ClientException
+          import com.solifyn.infrastructure.ServerException
+
+          ApiClient.accessToken = "your_private_api_key_here"
+          val apiInstance = EntitlementGrantsApi()
+          val id = "eg_019e56a1..."
+
+          try {
+              val result = apiInstance.entitlementGrantsGet(id)
+              println(result)
+          } catch (e: ClientException) {
+              println("Client error: ${e.message}")
+          } catch (e: ServerException) {
+              println("Server error: ${e.message}")
+          }
   /v1/entitlement-grants/{id}/revoke:
     post:
       description: Manually remove the customer collaborator access from the repository
@@ -8325,6 +8638,166 @@ paths:
       summary: Manually Revoke Entitlement Grant
       tags:
       - Entitlement Grants
+      x-codeSamples:
+      - lang: python
+        label: Python SDK
+        source: |-
+          import solifyn
+          from solifyn.rest import ApiException
+
+          configuration = solifyn.Configuration(
+              host = "https://api.solifyn.com"
+          )
+          configuration.access_token = "your_private_api_key_here"
+
+          with solifyn.ApiClient(configuration) as api_client:
+              api_instance = solifyn.EntitlementGrantsApi(api_client)
+              id = "eg_019e56a1..."
+
+              try:
+                  response = api_instance.entitlement_grants_revoke(id)
+                  print("Response received:", response)
+              except ApiException as e:
+                  print("Exception when calling EntitlementGrantsApi->entitlement_grants_revoke: %s\n" % e)
+      - lang: php
+        label: PHP SDK
+        source: |-
+          require_once(__DIR__ . '/vendor/autoload.php');
+
+          use Solifyn\Configuration;
+          use Solifyn\Api\EntitlementGrantsApi;
+          use GuzzleHttp\Client;
+
+          $config = Configuration::getDefaultConfiguration()
+              ->setAccessToken('your_private_api_key_here');
+          $apiInstance = new EntitlementGrantsApi(
+              new Client(),
+              $config
+          );
+          $id = 'eg_019e56a1...';
+
+          try {
+              $result = $apiInstance->entitlementGrantsRevoke($id);
+              print_r($result);
+          } catch (Exception $e) {
+              echo 'Exception when calling EntitlementGrantsApi->entitlementGrantsRevoke: ', $e->getMessage(), PHP_EOL;
+          }
+      - lang: go
+        label: Go SDK
+        source: |-
+          import (
+              "context"
+              "fmt"
+              "os"
+              solifyn "github.com/solifyn/solifyn-go"
+          )
+
+          configuration := solifyn.NewConfiguration()
+          apiClient := solifyn.NewAPIClient(configuration)
+          auth := context.WithValue(context.Background(), solifyn.ContextAccessToken, "your_private_api_key_here")
+          id := "eg_019e56a1..."
+
+          resp, r, err := apiClient.EntitlementGrantsAPI.EntitlementGrantsRevoke(auth, id).Execute()
+          if err != nil {
+              fmt.Fprintf(os.Stderr, "Error when calling `EntitlementGrantsAPI.EntitlementGrantsRevoke`: %v\n", err)
+              fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+              return
+          }
+          fmt.Printf("Response: %v\n", resp)
+      - lang: java
+        label: Java SDK
+        source: |-
+          import com.solifyn.ApiClient;
+          import com.solifyn.ApiException;
+          import com.solifyn.Configuration;
+          import com.solifyn.auth.HttpBearerAuth;
+          import com.solifyn.api.EntitlementGrantsApi;
+          import com.solifyn.model.*;
+          import java.math.BigDecimal;
+          import java.util.Arrays;
+          import java.util.HashMap;
+          import java.util.List;
+          import java.util.Map;
+
+          ApiClient defaultClient = Configuration.getDefaultApiClient();
+          defaultClient.setBasePath("https://api.solifyn.com");
+
+          HttpBearerAuth ApiKeyAuth = (HttpBearerAuth) defaultClient.getAuthentication("ApiKeyAuth");
+          ApiKeyAuth.setBearerToken("your_private_api_key_here");
+
+          EntitlementGrantsApi apiInstance = new EntitlementGrantsApi(defaultClient);
+          String id = "eg_019e56a1...";
+
+          try {
+              EntitlementGrantResponseDto result = apiInstance.entitlementGrantsRevoke(id);
+              System.out.println(result);
+          } catch (ApiException e) {
+              System.err.println("Exception when calling EntitlementGrantsApi#entitlementGrantsRevoke");
+              e.printStackTrace();
+          }
+      - lang: ruby
+        label: Ruby SDK
+        source: |-
+          require 'solifyn'
+
+          Solifyn.configure do |config|
+            config.access_token = 'your_private_api_key_here'
+            config.host = 'localhost:8000'
+          end
+
+          api_instance = Solifyn::EntitlementGrantsApi.new
+          id = 'eg_019e56a1...'
+
+          begin
+            result = api_instance.entitlement_grants_revoke(id)
+            p result
+          rescue Solifyn::ApiError => e
+            puts "Exception when calling EntitlementGrantsApi->entitlement_grants_revoke: #{e}"
+          end
+      - lang: csharp
+        label: C# SDK
+        source: |-
+          using Solifyn.Api;
+          using Solifyn.Client;
+          using Solifyn.Model;
+          using System;
+          using System.Collections.Generic;
+
+          var config = new Configuration();
+          config.BasePath = "https://api.solifyn.com";
+          config.AccessToken = "your_private_api_key_here";
+
+          var entitlementGrantsApi = new EntitlementGrantsApi(config);
+          var id = "eg_019e56a1...";
+
+          try {
+              var result = entitlementGrantsApi.EntitlementGrantsRevoke(id);
+              Console.WriteLine(result);
+          }
+          catch (ApiException e) {
+              Console.WriteLine("Exception when calling EntitlementGrantsApi.EntitlementGrantsRevoke: " + e.Message);
+          }
+      - lang: kotlin
+        label: Kotlin SDK
+        source: |-
+          import com.solifyn.infrastructure.ApiClient
+          import com.solifyn.api.EntitlementGrantsApi
+          import com.solifyn.model.*
+          import com.solifyn.infrastructure.ClientException
+          import com.solifyn.infrastructure.ServerException
+
+          ApiClient.accessToken = "your_private_api_key_here"
+          val apiInstance = EntitlementGrantsApi()
+          val id = "eg_019e56a1..."
+
+          try {
+              val result = apiInstance.entitlementGrantsRevoke(id)
+              println(result)
+          } catch (e: ClientException) {
+              println("Client error: ${e.message}")
+          } catch (e: ServerException) {
+              println("Server error: ${e.message}")
+          }
   /v1/entitlement-grants/{id}/retry:
     post:
       description: "Attempts to re-invite the collaborator if GitHub username is already\
@@ -8351,6 +8824,166 @@ paths:
       summary: Retry Entitlement Grant Delivery
       tags:
       - Entitlement Grants
+      x-codeSamples:
+      - lang: python
+        label: Python SDK
+        source: |-
+          import solifyn
+          from solifyn.rest import ApiException
+
+          configuration = solifyn.Configuration(
+              host = "https://api.solifyn.com"
+          )
+          configuration.access_token = "your_private_api_key_here"
+
+          with solifyn.ApiClient(configuration) as api_client:
+              api_instance = solifyn.EntitlementGrantsApi(api_client)
+              id = "eg_019e56a1..."
+
+              try:
+                  response = api_instance.entitlement_grants_retry(id)
+                  print("Response received:", response)
+              except ApiException as e:
+                  print("Exception when calling EntitlementGrantsApi->entitlement_grants_retry: %s\n" % e)
+      - lang: php
+        label: PHP SDK
+        source: |-
+          require_once(__DIR__ . '/vendor/autoload.php');
+
+          use Solifyn\Configuration;
+          use Solifyn\Api\EntitlementGrantsApi;
+          use GuzzleHttp\Client;
+
+          $config = Configuration::getDefaultConfiguration()
+              ->setAccessToken('your_private_api_key_here');
+          $apiInstance = new EntitlementGrantsApi(
+              new Client(),
+              $config
+          );
+          $id = 'eg_019e56a1...';
+
+          try {
+              $result = $apiInstance->entitlementGrantsRetry($id);
+              print_r($result);
+          } catch (Exception $e) {
+              echo 'Exception when calling EntitlementGrantsApi->entitlementGrantsRetry: ', $e->getMessage(), PHP_EOL;
+          }
+      - lang: go
+        label: Go SDK
+        source: |-
+          import (
+              "context"
+              "fmt"
+              "os"
+              solifyn "github.com/solifyn/solifyn-go"
+          )
+
+          configuration := solifyn.NewConfiguration()
+          apiClient := solifyn.NewAPIClient(configuration)
+          auth := context.WithValue(context.Background(), solifyn.ContextAccessToken, "your_private_api_key_here")
+          id := "eg_019e56a1..."
+
+          resp, r, err := apiClient.EntitlementGrantsAPI.EntitlementGrantsRetry(auth, id).Execute()
+          if err != nil {
+              fmt.Fprintf(os.Stderr, "Error when calling `EntitlementGrantsAPI.EntitlementGrantsRetry`: %v\n", err)
+              fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+              return
+          }
+          fmt.Printf("Response: %v\n", resp)
+      - lang: java
+        label: Java SDK
+        source: |-
+          import com.solifyn.ApiClient;
+          import com.solifyn.ApiException;
+          import com.solifyn.Configuration;
+          import com.solifyn.auth.HttpBearerAuth;
+          import com.solifyn.api.EntitlementGrantsApi;
+          import com.solifyn.model.*;
+          import java.math.BigDecimal;
+          import java.util.Arrays;
+          import java.util.HashMap;
+          import java.util.List;
+          import java.util.Map;
+
+          ApiClient defaultClient = Configuration.getDefaultApiClient();
+          defaultClient.setBasePath("https://api.solifyn.com");
+
+          HttpBearerAuth ApiKeyAuth = (HttpBearerAuth) defaultClient.getAuthentication("ApiKeyAuth");
+          ApiKeyAuth.setBearerToken("your_private_api_key_here");
+
+          EntitlementGrantsApi apiInstance = new EntitlementGrantsApi(defaultClient);
+          String id = "eg_019e56a1...";
+
+          try {
+              EntitlementGrantResponseDto result = apiInstance.entitlementGrantsRetry(id);
+              System.out.println(result);
+          } catch (ApiException e) {
+              System.err.println("Exception when calling EntitlementGrantsApi#entitlementGrantsRetry");
+              e.printStackTrace();
+          }
+      - lang: ruby
+        label: Ruby SDK
+        source: |-
+          require 'solifyn'
+
+          Solifyn.configure do |config|
+            config.access_token = 'your_private_api_key_here'
+            config.host = 'localhost:8000'
+          end
+
+          api_instance = Solifyn::EntitlementGrantsApi.new
+          id = 'eg_019e56a1...'
+
+          begin
+            result = api_instance.entitlement_grants_retry(id)
+            p result
+          rescue Solifyn::ApiError => e
+            puts "Exception when calling EntitlementGrantsApi->entitlement_grants_retry: #{e}"
+          end
+      - lang: csharp
+        label: C# SDK
+        source: |-
+          using Solifyn.Api;
+          using Solifyn.Client;
+          using Solifyn.Model;
+          using System;
+          using System.Collections.Generic;
+
+          var config = new Configuration();
+          config.BasePath = "https://api.solifyn.com";
+          config.AccessToken = "your_private_api_key_here";
+
+          var entitlementGrantsApi = new EntitlementGrantsApi(config);
+          var id = "eg_019e56a1...";
+
+          try {
+              var result = entitlementGrantsApi.EntitlementGrantsRetry(id);
+              Console.WriteLine(result);
+          }
+          catch (ApiException e) {
+              Console.WriteLine("Exception when calling EntitlementGrantsApi.EntitlementGrantsRetry: " + e.Message);
+          }
+      - lang: kotlin
+        label: Kotlin SDK
+        source: |-
+          import com.solifyn.infrastructure.ApiClient
+          import com.solifyn.api.EntitlementGrantsApi
+          import com.solifyn.model.*
+          import com.solifyn.infrastructure.ClientException
+          import com.solifyn.infrastructure.ServerException
+
+          ApiClient.accessToken = "your_private_api_key_here"
+          val apiInstance = EntitlementGrantsApi()
+          val id = "eg_019e56a1..."
+
+          try {
+              val result = apiInstance.entitlementGrantsRetry(id)
+              println(result)
+          } catch (e: ClientException) {
+              println("Client error: ${e.message}")
+          } catch (e: ServerException) {
+              println("Server error: ${e.message}")
+          }
   /v1/orders:
     get:
       description: List and query orders/payments belonging to your active business.
