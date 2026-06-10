@@ -484,7 +484,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Custom developer metadata key-value pairs associated with the product.</value>
         /*
-        <example>{tier&#x3D;enterprise, department&#x3D;engineering}</example>
+        <example>{&quot;tier&quot;:&quot;enterprise&quot;,&quot;department&quot;:&quot;engineering&quot;}</example>
         */
         [DataMember(Name = "metadata", IsRequired = true, EmitDefaultValue = true)]
         public Dictionary<string, string> Metadata { get; set; }
@@ -494,7 +494,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Custom form field questions to ask the customer during checkout.</value>
         /*
-        <example>[{id&#x3D;57aa2241-eae4-43dc-b9ae-36069b84b2da, name&#x3D;Discord Username, order&#x3D;0, required&#x3D;true, field_type&#x3D;text, placeholder&#x3D;e.g. your_discord#1234}, {id&#x3D;c86da32a-a967-457c-815b-c3440294d70b, name&#x3D;Company Name, order&#x3D;1, required&#x3D;false, field_type&#x3D;text, placeholder&#x3D;e.g. Acme Corp (Optional)}]</example>
+        <example>[{&quot;id&quot;:&quot;57aa2241-eae4-43dc-b9ae-36069b84b2da&quot;,&quot;name&quot;:&quot;Discord Username&quot;,&quot;order&quot;:0,&quot;required&quot;:true,&quot;field_type&quot;:&quot;text&quot;,&quot;placeholder&quot;:&quot;e.g. your_discord#1234&quot;},{&quot;id&quot;:&quot;c86da32a-a967-457c-815b-c3440294d70b&quot;,&quot;name&quot;:&quot;Company Name&quot;,&quot;order&quot;:1,&quot;required&quot;:false,&quot;field_type&quot;:&quot;text&quot;,&quot;placeholder&quot;:&quot;e.g. Acme Corp (Optional)&quot;}]</example>
         */
         [DataMember(Name = "customFields", IsRequired = true, EmitDefaultValue = true)]
         public List<Object> CustomFields { get; set; }

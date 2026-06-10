@@ -115,7 +115,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Metadata attached to the usage event.</value>
         /*
-        <example>{plan&#x3D;enterprise, region&#x3D;asia-southeast-1}</example>
+        <example>{&quot;plan&quot;:&quot;enterprise&quot;,&quot;region&quot;:&quot;asia-southeast-1&quot;}</example>
         */
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public Dictionary<string, Object> Metadata { get; set; }

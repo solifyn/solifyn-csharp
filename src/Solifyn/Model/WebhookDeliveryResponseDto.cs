@@ -117,7 +117,7 @@ namespace Solifyn.Model
         /// Gets or Sets Payload
         /// </summary>
         /*
-        <example>{type&#x3D;payment.succeeded, data&#x3D;{}}</example>
+        <example>{&quot;type&quot;:&quot;payment.succeeded&quot;,&quot;data&quot;:{}}</example>
         */
         [DataMember(Name = "payload", IsRequired = true, EmitDefaultValue = true)]
         public Object Payload { get; set; }

@@ -354,7 +354,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Additional metadata for the subscription</value>
         /*
-        <example>{is_usage_based&#x3D;false}</example>
+        <example>{&quot;is_usage_based&quot;:&quot;false&quot;}</example>
         */
         [DataMember(Name = "metadata", IsRequired = true, EmitDefaultValue = true)]
         public Object Metadata { get; set; }

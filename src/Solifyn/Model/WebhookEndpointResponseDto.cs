@@ -122,7 +122,7 @@ namespace Solifyn.Model
         /// Gets or Sets Events
         /// </summary>
         /*
-        <example>[payment.created, payment.succeeded]</example>
+        <example>[&quot;payment.created&quot;,&quot;payment.succeeded&quot;]</example>
         */
         [DataMember(Name = "events", IsRequired = true, EmitDefaultValue = true)]
         public List<string> Events { get; set; }

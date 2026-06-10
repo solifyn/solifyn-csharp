@@ -652,7 +652,7 @@ namespace Solifyn.Model
         /// <param name="githubRepo">GitHub repository to grant access to (format: owner/repo)..</param>
         /// <param name="githubPermission">GitHub collaborator permission level..</param>
         /// <param name="isTaxInclusive">Whether tax is included in the base price. (default to false).</param>
-        /// <param name="activationLimit">Maximum concurrent activated instances allowed per license key..</param>
+        /// <param name="activationLimit">Maximum concurrent activated instances allowed per license key. (default to null).</param>
         /// <param name="brandId">Brand id for the product, if not provided will default to primary brand..</param>
         /// <param name="billingPeriod">Billing period in days (for Subscription products)..</param>
         /// <param name="trialPeriodDays">Trial duration in days..</param>
@@ -665,7 +665,7 @@ namespace Solifyn.Model
         /// <param name="isListed">Whether the product is publicly visible. (default to true).</param>
         /// <param name="isFree">Whether the product is free of charge. (default to false).</param>
         /// <param name="addons">Product addons configurations..</param>
-        public ProductCreate(string name = default(string), string description = default(string), decimal price = default(decimal), CurrencyEnum currency = CurrencyEnum.USD, string imageUrl = default(string), TaxCategoryEnum taxCategory = default(TaxCategoryEnum), decimal discount = default(decimal), bool hasLicenseKey = false, bool hasDigitalDelivery = false, bool hasGithubAccess = false, string githubRepo = default(string), GithubPermissionEnum? githubPermission = default(GithubPermissionEnum?), bool isTaxInclusive = false, int activationLimit = default(int), string brandId = default(string), int billingPeriod = default(int), int trialPeriodDays = default(int), int expirationDays = default(int), string statementDescriptor = default(string), bool payWhatYouWant = false, Dictionary<string, string> metadata = default(Dictionary<string, string>), List<ProductCreateCustomFieldsInner> customFields = default(List<ProductCreateCustomFieldsInner>), int stock = default(int), bool isListed = true, bool isFree = false, List<ProductCreateAddonsInner> addons = default(List<ProductCreateAddonsInner>))
+        public ProductCreate(string name = default(string), string description = default(string), decimal price = default(decimal), CurrencyEnum currency = CurrencyEnum.USD, string imageUrl = default(string), TaxCategoryEnum taxCategory = default(TaxCategoryEnum), decimal discount = default(decimal), bool hasLicenseKey = false, bool hasDigitalDelivery = false, bool hasGithubAccess = false, string githubRepo = default(string), GithubPermissionEnum? githubPermission = default(GithubPermissionEnum?), bool isTaxInclusive = false, int activationLimit = null, string brandId = default(string), int billingPeriod = default(int), int trialPeriodDays = default(int), int expirationDays = default(int), string statementDescriptor = default(string), bool payWhatYouWant = false, Dictionary<string, string> metadata = default(Dictionary<string, string>), List<ProductCreateCustomFieldsInner> customFields = default(List<ProductCreateCustomFieldsInner>), int stock = default(int), bool isListed = true, bool isFree = false, List<ProductCreateAddonsInner> addons = default(List<ProductCreateAddonsInner>))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -869,7 +869,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Developer key-value metadata pairs.</value>
         /*
-        <example>{internal_id&#x3D;12345, campaign&#x3D;summer_sale}</example>
+        <example>{&quot;internal_id&quot;:&quot;12345&quot;,&quot;campaign&quot;:&quot;summer_sale&quot;}</example>
         */
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public Dictionary<string, string> Metadata { get; set; }
@@ -879,7 +879,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Form field configurations to gather during checkout.</value>
         /*
-        <example>[{id&#x3D;57aa2241-eae4-43dc-b9ae-36069b84b2da, name&#x3D;Discord Username, order&#x3D;0, required&#x3D;true, field_type&#x3D;text, placeholder&#x3D;e.g. your_discord#1234}, {id&#x3D;c86da32a-a967-457c-815b-c3440294d70b, name&#x3D;Company Name, order&#x3D;1, required&#x3D;false, field_type&#x3D;text, placeholder&#x3D;e.g. Acme Corp (Optional)}]</example>
+        <example>[{&quot;id&quot;:&quot;57aa2241-eae4-43dc-b9ae-36069b84b2da&quot;,&quot;name&quot;:&quot;Discord Username&quot;,&quot;order&quot;:0,&quot;required&quot;:true,&quot;field_type&quot;:&quot;text&quot;,&quot;placeholder&quot;:&quot;e.g. your_discord#1234&quot;},{&quot;id&quot;:&quot;c86da32a-a967-457c-815b-c3440294d70b&quot;,&quot;name&quot;:&quot;Company Name&quot;,&quot;order&quot;:1,&quot;required&quot;:false,&quot;field_type&quot;:&quot;text&quot;,&quot;placeholder&quot;:&quot;e.g. Acme Corp (Optional)&quot;}]</example>
         */
         [DataMember(Name = "customFields", EmitDefaultValue = false)]
         public List<ProductCreateCustomFieldsInner> CustomFields { get; set; }

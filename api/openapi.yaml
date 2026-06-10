@@ -20088,12 +20088,11 @@ components:
           type: object
           nullable: true
         filters:
-          additionalProperties: true
+          additionalProperties: {}
           description: Optional filter definition for advanced matching.
           example:
             event_type: premium
             region: asia
-          type: object
           nullable: true
         archived:
           description: Whether the meter is archived.
@@ -20147,12 +20146,11 @@ components:
           example: 1
           type: number
         metadata:
-          additionalProperties: true
+          additionalProperties: {}
           description: Optional event metadata.
           example:
             plan: enterprise
             region: asia-southeast-1
-          type: object
           nullable: true
         timestamp:
           description: Timestamp when the usage event occurred.
@@ -20335,12 +20333,11 @@ components:
           example: requests
           type: string
         filters:
-          additionalProperties: true
+          additionalProperties: {}
           description: Optional filter definition for advanced matching.
           example:
             event_type: premium
             region: asia
-          type: object
         enableFiltering:
           default: false
           description: Enable filtering on usage event ingestion.
@@ -20393,12 +20390,11 @@ components:
           example: requests
           type: string
         filters:
-          additionalProperties: true
+          additionalProperties: {}
           description: Optional filter definition for advanced matching.
           example:
             event_type: premium
             region: asia
-          type: object
         enableFiltering:
           description: Enable filtering on usage event ingestion.
           example: false
@@ -20550,12 +20546,11 @@ components:
           example: 1
           type: number
         metadata:
-          additionalProperties: true
+          additionalProperties: {}
           description: Metadata attached to the usage event.
           example:
             plan: enterprise
             region: asia-southeast-1
-          type: object
         timestamp:
           description: Timestamp of the event in ISO 8601 format.
           example: 2026-05-23T10:00:00.000Z
@@ -21036,6 +21031,7 @@ components:
       required:
       - businessId
       - createdAt
+      - created_at
       - email
       - id
       - updatedAt
@@ -22012,6 +22008,7 @@ components:
           example: false
           type: boolean
         activationLimit:
+          default: null
           description: Maximum concurrent activated instances allowed per license
             key.
           type: integer
@@ -22458,14 +22455,19 @@ components:
       - businessId
       - code
       - createdAt
+      - created_at
       - discount_id
       - expiresAt
+      - expires_at
       - id
       - status
       - timesUsed
+      - times_used
       - type
       - updatedAt
+      - updated_at
       - usageLimit
+      - usage_limit
     DiscountCreate:
       example:
         amount: 0.8008281904610115

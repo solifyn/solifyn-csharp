@@ -163,6 +163,8 @@ docs/WebhookPaymentPayloadBillingAddress.md
 docs/WebhookRefundPayload.md
 docs/WebhookSubscriptionPayload.md
 git_push.sh
+src/Solifyn.Test/Model/WebhookEntitlementGrantPayloadTests.cs
+src/Solifyn.Test/Solifyn.Test.csproj
 src/Solifyn/Api/BalanceApi.cs
 src/Solifyn/Api/CheckoutApi.cs
 src/Solifyn/Api/CheckoutLinksApi.cs

@@ -62,7 +62,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Key-value headers sent with the webhook.</value>
         /*
-        <example>{X-Example&#x3D;123, X-Foobar&#x3D;Bar}</example>
+        <example>{&quot;X-Example&quot;:&quot;123&quot;,&quot;X-Foobar&quot;:&quot;Bar&quot;}</example>
         */
         [DataMember(Name = "headers", IsRequired = true, EmitDefaultValue = true)]
         public Object Headers { get; set; }
@@ -72,7 +72,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>List of sensitive header keys (e.g. Authorization) that are masked.</value>
         /*
-        <example>[Authorization]</example>
+        <example>[&quot;Authorization&quot;]</example>
         */
         [DataMember(Name = "sensitive", IsRequired = true, EmitDefaultValue = true)]
         public List<string> Sensitive { get; set; }

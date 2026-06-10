@@ -97,7 +97,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>The operational event types this endpoint will receive.</value>
         /*
-        <example>[message.attempt.failing, message.attempt.exhausted, endpoint.disabled]</example>
+        <example>[&quot;message.attempt.failing&quot;,&quot;message.attempt.exhausted&quot;,&quot;endpoint.disabled&quot;]</example>
         */
         [DataMember(Name = "filterTypes", EmitDefaultValue = false)]
         public List<string> FilterTypes { get; set; }
@@ -107,7 +107,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Metadata key-value pairs associated with the endpoint.</value>
         /*
-        <example>{environment&#x3D;staging}</example>
+        <example>{&quot;environment&quot;:&quot;staging&quot;}</example>
         */
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public Object Metadata { get; set; }

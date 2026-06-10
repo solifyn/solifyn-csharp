@@ -155,7 +155,7 @@ namespace Solifyn.Model
         /// </summary>
         /// <value>Additional metadata associated with the customer</value>
         /*
-        <example>{key&#x3D;value}</example>
+        <example>{&quot;key&quot;:&quot;value&quot;}</example>
         */
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public Object Metadata { get; set; }
