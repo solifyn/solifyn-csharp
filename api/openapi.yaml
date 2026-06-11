@@ -23815,6 +23815,7 @@ components:
         price: 99
         imageUrl: https://assets.solifyn.com/images/products/saas-enterprise.png
         currency: USD
+        framerTemplateId: fmt_8Z1aB2cD3eF4gH5iJ6kL7m
         payWhatYouWant: false
         stock: 100
         billingPeriod: 30
@@ -23827,6 +23828,7 @@ components:
         isListed: true
         hasDiscordAccess: false
         discordRoleId: "876543210987654321"
+        hasFramerAccess: false
         brandId: brd_4e29285b8sdf34ff51e07d4
         name: Enterprise SaaS Plan
         isTaxInclusive: false
@@ -23991,6 +23993,15 @@ components:
         discordRoleId:
           description: Discord Role ID to assign to the user.
           example: "876543210987654321"
+          type: string
+        hasFramerAccess:
+          default: false
+          description: Whether the purchase includes Framer Template access.
+          example: false
+          type: boolean
+        framerTemplateId:
+          description: Framer Template ID to grant access to.
+          example: fmt_8Z1aB2cD3eF4gH5iJ6kL7m
           type: string
         isTaxInclusive:
           default: false
@@ -24127,6 +24138,7 @@ components:
         price: 99
         imageUrl: https://assets.solifyn.com/images/products/saas-enterprise.png
         currency: USD
+        framerTemplateId: fmt_8Z1aB2cD3eF4gH5iJ6kL7m
         payWhatYouWant: false
         stock: 100
         billingPeriod: 30
@@ -24139,6 +24151,7 @@ components:
         isListed: true
         hasDiscordAccess: false
         discordRoleId: "876543210987654321"
+        hasFramerAccess: false
         brandId: brd_4e29285b8sdf34ff51e07d4
         name: Enterprise SaaS Plan
         isTaxInclusive: false
@@ -24303,6 +24316,15 @@ components:
         discordRoleId:
           description: Discord Role ID to assign to the user.
           example: "876543210987654321"
+          type: string
+        hasFramerAccess:
+          default: false
+          description: Whether the purchase includes Framer Template access.
+          example: false
+          type: boolean
+        framerTemplateId:
+          description: Framer Template ID to grant access to.
+          example: fmt_8Z1aB2cD3eF4gH5iJ6kL7m
           type: string
         isTaxInclusive:
           default: false

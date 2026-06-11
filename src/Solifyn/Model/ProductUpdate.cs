@@ -649,6 +649,8 @@ namespace Solifyn.Model
         /// <param name="hasDiscordAccess">Whether the purchase includes Discord server role access. (default to false).</param>
         /// <param name="discordGuildId">Discord Guild (Server) ID to grant access to..</param>
         /// <param name="discordRoleId">Discord Role ID to assign to the user..</param>
+        /// <param name="hasFramerAccess">Whether the purchase includes Framer Template access. (default to false).</param>
+        /// <param name="framerTemplateId">Framer Template ID to grant access to..</param>
         /// <param name="isTaxInclusive">Whether tax is included in the base price. (default to false).</param>
         /// <param name="activationLimit">Maximum concurrent activated instances allowed per license key..</param>
         /// <param name="brandId">Brand id for the product, if not provided will default to primary brand..</param>
@@ -664,7 +666,7 @@ namespace Solifyn.Model
         /// <param name="isFree">Whether the product is free of charge. (default to false).</param>
         /// <param name="addons">Product addons configurations..</param>
         /// <param name="entitlementIds">Array of independent entitlement IDs to link to this product..</param>
-        public ProductUpdate(string name = default(string), string description = default(string), decimal price = default(decimal), CurrencyEnum? currency = CurrencyEnum.USD, string imageUrl = default(string), TaxCategoryEnum? taxCategory = default(TaxCategoryEnum?), decimal discount = default(decimal), bool hasLicenseKey = false, bool hasDigitalDelivery = false, bool hasGithubAccess = false, string githubRepo = default(string), GithubPermissionEnum? githubPermission = default(GithubPermissionEnum?), bool hasDiscordAccess = false, string discordGuildId = default(string), string discordRoleId = default(string), bool isTaxInclusive = false, int activationLimit = default(int), string brandId = default(string), int billingPeriod = default(int), int trialPeriodDays = default(int), int expirationDays = default(int), string statementDescriptor = default(string), bool payWhatYouWant = false, Dictionary<string, string> metadata = default(Dictionary<string, string>), List<ProductCreateCustomFieldsInner> customFields = default(List<ProductCreateCustomFieldsInner>), int stock = default(int), bool isListed = true, bool isFree = false, List<ProductCreateAddonsInner> addons = default(List<ProductCreateAddonsInner>), List<string> entitlementIds = default(List<string>))
+        public ProductUpdate(string name = default(string), string description = default(string), decimal price = default(decimal), CurrencyEnum? currency = CurrencyEnum.USD, string imageUrl = default(string), TaxCategoryEnum? taxCategory = default(TaxCategoryEnum?), decimal discount = default(decimal), bool hasLicenseKey = false, bool hasDigitalDelivery = false, bool hasGithubAccess = false, string githubRepo = default(string), GithubPermissionEnum? githubPermission = default(GithubPermissionEnum?), bool hasDiscordAccess = false, string discordGuildId = default(string), string discordRoleId = default(string), bool hasFramerAccess = false, string framerTemplateId = default(string), bool isTaxInclusive = false, int activationLimit = default(int), string brandId = default(string), int billingPeriod = default(int), int trialPeriodDays = default(int), int expirationDays = default(int), string statementDescriptor = default(string), bool payWhatYouWant = false, Dictionary<string, string> metadata = default(Dictionary<string, string>), List<ProductCreateCustomFieldsInner> customFields = default(List<ProductCreateCustomFieldsInner>), int stock = default(int), bool isListed = true, bool isFree = false, List<ProductCreateAddonsInner> addons = default(List<ProductCreateAddonsInner>), List<string> entitlementIds = default(List<string>))
         {
             this.Name = name;
             this.Description = description;
@@ -681,6 +683,8 @@ namespace Solifyn.Model
             this.HasDiscordAccess = hasDiscordAccess;
             this.DiscordGuildId = discordGuildId;
             this.DiscordRoleId = discordRoleId;
+            this.HasFramerAccess = hasFramerAccess;
+            this.FramerTemplateId = framerTemplateId;
             this.IsTaxInclusive = isTaxInclusive;
             this.ActivationLimit = activationLimit;
             this.BrandId = brandId;
@@ -817,6 +821,26 @@ namespace Solifyn.Model
         */
         [DataMember(Name = "discordRoleId", EmitDefaultValue = false)]
         public string DiscordRoleId { get; set; }
+
+        /// <summary>
+        /// Whether the purchase includes Framer Template access.
+        /// </summary>
+        /// <value>Whether the purchase includes Framer Template access.</value>
+        /*
+        <example>false</example>
+        */
+        [DataMember(Name = "hasFramerAccess", EmitDefaultValue = true)]
+        public bool HasFramerAccess { get; set; }
+
+        /// <summary>
+        /// Framer Template ID to grant access to.
+        /// </summary>
+        /// <value>Framer Template ID to grant access to.</value>
+        /*
+        <example>fmt_8Z1aB2cD3eF4gH5iJ6kL7m</example>
+        */
+        [DataMember(Name = "framerTemplateId", EmitDefaultValue = false)]
+        public string FramerTemplateId { get; set; }
 
         /// <summary>
         /// Whether tax is included in the base price.
@@ -979,6 +1003,8 @@ namespace Solifyn.Model
             sb.Append("  HasDiscordAccess: ").Append(HasDiscordAccess).Append("\n");
             sb.Append("  DiscordGuildId: ").Append(DiscordGuildId).Append("\n");
             sb.Append("  DiscordRoleId: ").Append(DiscordRoleId).Append("\n");
+            sb.Append("  HasFramerAccess: ").Append(HasFramerAccess).Append("\n");
+            sb.Append("  FramerTemplateId: ").Append(FramerTemplateId).Append("\n");
             sb.Append("  IsTaxInclusive: ").Append(IsTaxInclusive).Append("\n");
             sb.Append("  ActivationLimit: ").Append(ActivationLimit).Append("\n");
             sb.Append("  BrandId: ").Append(BrandId).Append("\n");
