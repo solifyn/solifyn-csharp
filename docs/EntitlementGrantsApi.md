@@ -105,7 +105,7 @@ catch (ApiException e)
 
 <a id="entitlementgrantslist"></a>
 # **EntitlementGrantsList**
-> List&lt;EntitlementGrantResponseDto&gt; EntitlementGrantsList (string status = null)
+> List&lt;EntitlementGrantResponseDto&gt; EntitlementGrantsList (string status = null, string entitlementId = null, string productId = null)
 
 List Entitlement Grants
 
@@ -132,11 +132,13 @@ namespace Example
 
             var apiInstance = new EntitlementGrantsApi(config);
             var status = "status_example";  // string | Filter by status (PENDING, DELIVERED, FAILED, REVOKED) (optional) 
+            var entitlementId = "entitlementId_example";  // string | Filter by entitlement config ID (optional) 
+            var productId = "productId_example";  // string | Filter by product ID (optional) 
 
             try
             {
                 // List Entitlement Grants
-                List<EntitlementGrantResponseDto> result = apiInstance.EntitlementGrantsList(status);
+                List<EntitlementGrantResponseDto> result = apiInstance.EntitlementGrantsList(status, entitlementId, productId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -157,7 +159,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List Entitlement Grants
-    ApiResponse<List<EntitlementGrantResponseDto>> response = apiInstance.EntitlementGrantsListWithHttpInfo(status);
+    ApiResponse<List<EntitlementGrantResponseDto>> response = apiInstance.EntitlementGrantsListWithHttpInfo(status, entitlementId, productId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -175,6 +177,8 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **status** | **string** | Filter by status (PENDING, DELIVERED, FAILED, REVOKED) | [optional]  |
+| **entitlementId** | **string** | Filter by entitlement config ID | [optional]  |
+| **productId** | **string** | Filter by product ID | [optional]  |
 
 ### Return type
 

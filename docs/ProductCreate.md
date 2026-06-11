@@ -33,6 +33,7 @@ Name | Type | Description | Notes
 **IsListed** | **bool** | Whether the product is publicly visible. | [optional] [default to true]
 **IsFree** | **bool** | Whether the product is free of charge. | [optional] [default to false]
 **Addons** | [**List&lt;ProductCreateAddonsInner&gt;**](ProductCreateAddonsInner.md) | Product addons configurations. | [optional] 
+**EntitlementIds** | **List&lt;string&gt;** | Array of independent entitlement IDs to link to this product. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -52,13 +52,15 @@ namespace Solifyn.Model
         /// <param name="discordRoleId">Target Discord Role ID if type is DISCORD..</param>
         /// <param name="discordUsername">The connected customer Discord username..</param>
         /// <param name="discordUserId">The connected customer Discord user ID..</param>
+        /// <param name="framerTemplateId">The Framer template ID if type is FRAMER..</param>
+        /// <param name="framerRemixLink">The single-use remix link generated for the customer if type is FRAMER..</param>
         /// <param name="status">Delivery status of the collaborator invite (PENDING, DELIVERED, FAILED, REVOKED). (required).</param>
         /// <param name="oauthUrl">OAuth URL to redirect the customer to..</param>
         /// <param name="errorDetails">Error message if invitation delivery failed..</param>
         /// <param name="metadata">Platform-specific metadata..</param>
         /// <param name="createdAt">Creation timestamp. (required).</param>
         /// <param name="updatedAt">Modification timestamp. (required).</param>
-        public EntitlementGrantResponseDto(Guid id = default(Guid), Guid businessId = default(Guid), Guid customerId = default(Guid), Guid paymentId = default(Guid), Guid productId = default(Guid), string type = default(string), string githubRepo = default(string), string githubPermission = default(string), string githubUsername = default(string), string discordGuildId = default(string), string discordRoleId = default(string), string discordUsername = default(string), string discordUserId = default(string), string status = default(string), string oauthUrl = default(string), string errorDetails = default(string), Object metadata = default(Object), string createdAt = default(string), string updatedAt = default(string))
+        public EntitlementGrantResponseDto(Guid id = default(Guid), Guid businessId = default(Guid), Guid customerId = default(Guid), Guid paymentId = default(Guid), Guid productId = default(Guid), string type = default(string), string githubRepo = default(string), string githubPermission = default(string), string githubUsername = default(string), string discordGuildId = default(string), string discordRoleId = default(string), string discordUsername = default(string), string discordUserId = default(string), Guid framerTemplateId = default(Guid), string framerRemixLink = default(string), string status = default(string), string oauthUrl = default(string), string errorDetails = default(string), Object metadata = default(Object), string createdAt = default(string), string updatedAt = default(string))
         {
             this.Id = id;
             this.BusinessId = businessId;
@@ -96,6 +98,8 @@ namespace Solifyn.Model
             this.DiscordRoleId = discordRoleId;
             this.DiscordUsername = discordUsername;
             this.DiscordUserId = discordUserId;
+            this.FramerTemplateId = framerTemplateId;
+            this.FramerRemixLink = framerRemixLink;
             this.OauthUrl = oauthUrl;
             this.ErrorDetails = errorDetails;
             this.Metadata = metadata;
@@ -232,6 +236,26 @@ namespace Solifyn.Model
         public string DiscordUserId { get; set; }
 
         /// <summary>
+        /// The Framer template ID if type is FRAMER.
+        /// </summary>
+        /// <value>The Framer template ID if type is FRAMER.</value>
+        /*
+        <example>tmpl_123456</example>
+        */
+        [DataMember(Name = "framerTemplateId", EmitDefaultValue = false)]
+        public Guid FramerTemplateId { get; set; }
+
+        /// <summary>
+        /// The single-use remix link generated for the customer if type is FRAMER.
+        /// </summary>
+        /// <value>The single-use remix link generated for the customer if type is FRAMER.</value>
+        /*
+        <example>https://api.solifyn.com/v1/framer/remix/grant_123456</example>
+        */
+        [DataMember(Name = "framerRemixLink", EmitDefaultValue = false)]
+        public string FramerRemixLink { get; set; }
+
+        /// <summary>
         /// Delivery status of the collaborator invite (PENDING, DELIVERED, FAILED, REVOKED).
         /// </summary>
         /// <value>Delivery status of the collaborator invite (PENDING, DELIVERED, FAILED, REVOKED).</value>
@@ -303,6 +327,8 @@ namespace Solifyn.Model
             sb.Append("  DiscordRoleId: ").Append(DiscordRoleId).Append("\n");
             sb.Append("  DiscordUsername: ").Append(DiscordUsername).Append("\n");
             sb.Append("  DiscordUserId: ").Append(DiscordUserId).Append("\n");
+            sb.Append("  FramerTemplateId: ").Append(FramerTemplateId).Append("\n");
+            sb.Append("  FramerRemixLink: ").Append(FramerRemixLink).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  OauthUrl: ").Append(OauthUrl).Append("\n");
             sb.Append("  ErrorDetails: ").Append(ErrorDetails).Append("\n");

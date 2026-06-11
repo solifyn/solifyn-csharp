@@ -36,6 +36,8 @@ docs/CreateCheckoutLinkDto.md
 docs/CreateCollectionCheckoutDto.md
 docs/CreateCollectionDto.md
 docs/CreateCustomerDto.md
+docs/CreateEntitlementDto.md
+docs/CreateFramerTemplateDto.md
 docs/CreateMeterDto.md
 docs/CreateSetupCheckoutDto.md
 docs/CreateWebhookEndpointDto.md
@@ -64,8 +66,12 @@ docs/DisputeFileUpload.md
 docs/DisputeList.md
 docs/DisputeListMetaDto.md
 docs/DisputesApi.md
+docs/EntitlementDetailResponseDto.md
 docs/EntitlementGrantResponseDto.md
 docs/EntitlementGrantsApi.md
+docs/EntitlementsApi.md
+docs/FramerIntegrationApi.md
+docs/FramerTemplateResponseDto.md
 docs/GitHubIntegrationApi.md
 docs/GithubReposResponseDto.md
 docs/Instance.md
@@ -83,6 +89,7 @@ docs/LicensesDeactivateRequest.md
 docs/LicensesUpdateInstancePostRequest.md
 docs/LicensesUpdateRequest.md
 docs/LicensesVerifyRequest.md
+docs/LinkedProductDto.md
 docs/MeterDetailResponseDto.md
 docs/MeterEventsResponseDto.md
 docs/MeterIngestEventDto.md
@@ -150,6 +157,8 @@ docs/UpdateCheckoutLinkDto.md
 docs/UpdateCollectionDto.md
 docs/UpdateCollectionProductDto.md
 docs/UpdateCustomerDto.md
+docs/UpdateEntitlementDto.md
+docs/UpdateFramerTemplateDto.md
 docs/UpdateInstanceDto.md
 docs/UpdateMeterDto.md
 docs/UpdateWebhookEndpointDto.md
@@ -178,6 +187,8 @@ src/Solifyn/Api/DiscordIntegrationApi.cs
 src/Solifyn/Api/DiscountsApi.cs
 src/Solifyn/Api/DisputesApi.cs
 src/Solifyn/Api/EntitlementGrantsApi.cs
+src/Solifyn/Api/EntitlementsApi.cs
+src/Solifyn/Api/FramerIntegrationApi.cs
 src/Solifyn/Api/GitHubIntegrationApi.cs
 src/Solifyn/Api/LicenseApi.cs
 src/Solifyn/Api/LicenseKeysApi.cs
@@ -237,6 +248,8 @@ src/Solifyn/Model/CreateCheckoutLinkDto.cs
 src/Solifyn/Model/CreateCollectionCheckoutDto.cs
 src/Solifyn/Model/CreateCollectionDto.cs
 src/Solifyn/Model/CreateCustomerDto.cs
+src/Solifyn/Model/CreateEntitlementDto.cs
+src/Solifyn/Model/CreateFramerTemplateDto.cs
 src/Solifyn/Model/CreateMeterDto.cs
 src/Solifyn/Model/CreateSetupCheckoutDto.cs
 src/Solifyn/Model/CreateWebhookEndpointDto.cs
@@ -258,7 +271,9 @@ src/Solifyn/Model/DisputeEvidenceUpdate.cs
 src/Solifyn/Model/DisputeFileUpload.cs
 src/Solifyn/Model/DisputeList.cs
 src/Solifyn/Model/DisputeListMetaDto.cs
+src/Solifyn/Model/EntitlementDetailResponseDto.cs
 src/Solifyn/Model/EntitlementGrantResponseDto.cs
+src/Solifyn/Model/FramerTemplateResponseDto.cs
 src/Solifyn/Model/GithubReposResponseDto.cs
 src/Solifyn/Model/Instance.cs
 src/Solifyn/Model/Invoice.cs
@@ -272,6 +287,7 @@ src/Solifyn/Model/LicensesDeactivateRequest.cs
 src/Solifyn/Model/LicensesUpdateInstancePostRequest.cs
 src/Solifyn/Model/LicensesUpdateRequest.cs
 src/Solifyn/Model/LicensesVerifyRequest.cs
+src/Solifyn/Model/LinkedProductDto.cs
 src/Solifyn/Model/MeterDetailResponseDto.cs
 src/Solifyn/Model/MeterEventsResponseDto.cs
 src/Solifyn/Model/MeterIngestEventDto.cs
@@ -332,6 +348,8 @@ src/Solifyn/Model/UpdateCheckoutLinkDto.cs
 src/Solifyn/Model/UpdateCollectionDto.cs
 src/Solifyn/Model/UpdateCollectionProductDto.cs
 src/Solifyn/Model/UpdateCustomerDto.cs
+src/Solifyn/Model/UpdateEntitlementDto.cs
+src/Solifyn/Model/UpdateFramerTemplateDto.cs
 src/Solifyn/Model/UpdateInstanceDto.cs
 src/Solifyn/Model/UpdateMeterDto.cs
 src/Solifyn/Model/UpdateWebhookEndpointDto.cs

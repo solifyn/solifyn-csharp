@@ -57,9 +57,11 @@ namespace Solifyn.Api
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="status">Filter by status (PENDING, DELIVERED, FAILED, REVOKED) (optional)</param>
+        /// <param name="entitlementId">Filter by entitlement config ID (optional)</param>
+        /// <param name="productId">Filter by product ID (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;EntitlementGrantResponseDto&gt;</returns>
-        List<EntitlementGrantResponseDto> EntitlementGrantsList(string status = default(string), int operationIndex = 0);
+        List<EntitlementGrantResponseDto> EntitlementGrantsList(string status = default(string), string entitlementId = default(string), string productId = default(string), int operationIndex = 0);
 
         /// <summary>
         /// List Entitlement Grants
@@ -69,9 +71,11 @@ namespace Solifyn.Api
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="status">Filter by status (PENDING, DELIVERED, FAILED, REVOKED) (optional)</param>
+        /// <param name="entitlementId">Filter by entitlement config ID (optional)</param>
+        /// <param name="productId">Filter by product ID (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;EntitlementGrantResponseDto&gt;</returns>
-        ApiResponse<List<EntitlementGrantResponseDto>> EntitlementGrantsListWithHttpInfo(string status = default(string), int operationIndex = 0);
+        ApiResponse<List<EntitlementGrantResponseDto>> EntitlementGrantsListWithHttpInfo(string status = default(string), string entitlementId = default(string), string productId = default(string), int operationIndex = 0);
         /// <summary>
         /// Retry Entitlement Grant Delivery
         /// </summary>
@@ -160,10 +164,12 @@ namespace Solifyn.Api
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="status">Filter by status (PENDING, DELIVERED, FAILED, REVOKED) (optional)</param>
+        /// <param name="entitlementId">Filter by entitlement config ID (optional)</param>
+        /// <param name="productId">Filter by product ID (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;EntitlementGrantResponseDto&gt;</returns>
-        System.Threading.Tasks.Task<List<EntitlementGrantResponseDto>> EntitlementGrantsListAsync(string status = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<EntitlementGrantResponseDto>> EntitlementGrantsListAsync(string status = default(string), string entitlementId = default(string), string productId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// List Entitlement Grants
@@ -173,10 +179,12 @@ namespace Solifyn.Api
         /// </remarks>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="status">Filter by status (PENDING, DELIVERED, FAILED, REVOKED) (optional)</param>
+        /// <param name="entitlementId">Filter by entitlement config ID (optional)</param>
+        /// <param name="productId">Filter by product ID (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;EntitlementGrantResponseDto&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<EntitlementGrantResponseDto>>> EntitlementGrantsListWithHttpInfoAsync(string status = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<EntitlementGrantResponseDto>>> EntitlementGrantsListWithHttpInfoAsync(string status = default(string), string entitlementId = default(string), string productId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Retry Entitlement Grant Delivery
         /// </summary>
@@ -508,11 +516,13 @@ namespace Solifyn.Api
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="status">Filter by status (PENDING, DELIVERED, FAILED, REVOKED) (optional)</param>
+        /// <param name="entitlementId">Filter by entitlement config ID (optional)</param>
+        /// <param name="productId">Filter by product ID (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;EntitlementGrantResponseDto&gt;</returns>
-        public List<EntitlementGrantResponseDto> EntitlementGrantsList(string status = default(string), int operationIndex = 0)
+        public List<EntitlementGrantResponseDto> EntitlementGrantsList(string status = default(string), string entitlementId = default(string), string productId = default(string), int operationIndex = 0)
         {
-            Solifyn.Client.ApiResponse<List<EntitlementGrantResponseDto>> localVarResponse = EntitlementGrantsListWithHttpInfo(status);
+            Solifyn.Client.ApiResponse<List<EntitlementGrantResponseDto>> localVarResponse = EntitlementGrantsListWithHttpInfo(status, entitlementId, productId);
             return localVarResponse.Data;
         }
 
@@ -521,9 +531,11 @@ namespace Solifyn.Api
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="status">Filter by status (PENDING, DELIVERED, FAILED, REVOKED) (optional)</param>
+        /// <param name="entitlementId">Filter by entitlement config ID (optional)</param>
+        /// <param name="productId">Filter by product ID (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;EntitlementGrantResponseDto&gt;</returns>
-        public Solifyn.Client.ApiResponse<List<EntitlementGrantResponseDto>> EntitlementGrantsListWithHttpInfo(string status = default(string), int operationIndex = 0)
+        public Solifyn.Client.ApiResponse<List<EntitlementGrantResponseDto>> EntitlementGrantsListWithHttpInfo(string status = default(string), string entitlementId = default(string), string productId = default(string), int operationIndex = 0)
         {
             Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
 
@@ -550,6 +562,14 @@ namespace Solifyn.Api
             if (status != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Solifyn.Client.ClientUtils.ParameterToMultiMap("", "status", status));
+            }
+            if (entitlementId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Solifyn.Client.ClientUtils.ParameterToMultiMap("", "entitlementId", entitlementId));
+            }
+            if (productId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Solifyn.Client.ClientUtils.ParameterToMultiMap("", "productId", productId));
             }
 
             localVarRequestOptions.Operation = "EntitlementGrantsApi.EntitlementGrantsList";
@@ -581,12 +601,14 @@ namespace Solifyn.Api
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="status">Filter by status (PENDING, DELIVERED, FAILED, REVOKED) (optional)</param>
+        /// <param name="entitlementId">Filter by entitlement config ID (optional)</param>
+        /// <param name="productId">Filter by product ID (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;EntitlementGrantResponseDto&gt;</returns>
-        public async System.Threading.Tasks.Task<List<EntitlementGrantResponseDto>> EntitlementGrantsListAsync(string status = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<EntitlementGrantResponseDto>> EntitlementGrantsListAsync(string status = default(string), string entitlementId = default(string), string productId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Solifyn.Client.ApiResponse<List<EntitlementGrantResponseDto>> localVarResponse = await EntitlementGrantsListWithHttpInfoAsync(status, operationIndex, cancellationToken).ConfigureAwait(false);
+            Solifyn.Client.ApiResponse<List<EntitlementGrantResponseDto>> localVarResponse = await EntitlementGrantsListWithHttpInfoAsync(status, entitlementId, productId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -595,10 +617,12 @@ namespace Solifyn.Api
         /// </summary>
         /// <exception cref="Solifyn.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="status">Filter by status (PENDING, DELIVERED, FAILED, REVOKED) (optional)</param>
+        /// <param name="entitlementId">Filter by entitlement config ID (optional)</param>
+        /// <param name="productId">Filter by product ID (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;EntitlementGrantResponseDto&gt;)</returns>
-        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<List<EntitlementGrantResponseDto>>> EntitlementGrantsListWithHttpInfoAsync(string status = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Solifyn.Client.ApiResponse<List<EntitlementGrantResponseDto>>> EntitlementGrantsListWithHttpInfoAsync(string status = default(string), string entitlementId = default(string), string productId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Solifyn.Client.RequestOptions localVarRequestOptions = new Solifyn.Client.RequestOptions();
@@ -626,6 +650,14 @@ namespace Solifyn.Api
             if (status != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Solifyn.Client.ClientUtils.ParameterToMultiMap("", "status", status));
+            }
+            if (entitlementId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Solifyn.Client.ClientUtils.ParameterToMultiMap("", "entitlementId", entitlementId));
+            }
+            if (productId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Solifyn.Client.ClientUtils.ParameterToMultiMap("", "productId", productId));
             }
 
             localVarRequestOptions.Operation = "EntitlementGrantsApi.EntitlementGrantsList";

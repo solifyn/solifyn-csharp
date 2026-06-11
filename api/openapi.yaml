@@ -8260,6 +8260,22 @@ paths:
         schema:
           type: string
         style: form
+      - description: Filter by entitlement config ID
+        explode: true
+        in: query
+        name: entitlementId
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Filter by product ID
+        explode: true
+        in: query
+        name: productId
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         "200":
           content:
@@ -18902,6 +18918,1080 @@ paths:
           } catch (e: ServerException) {
               println("Server error: ${e.message}")
           }
+  /v1/framer/templates:
+    get:
+      description: Retrieves all registered Framer templates for the active business.
+      operationId: framer:listTemplates
+      parameters: []
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/FramerTemplateResponseDto'
+                type: array
+          description: List of Framer templates.
+      security:
+      - ApiKeyAuth: []
+      summary: List Framer Templates
+      tags:
+      - Framer Integration
+      x-codeSamples:
+      - lang: python
+        label: Python SDK
+        source: |-
+          import solifyn
+          from solifyn.rest import ApiException
+
+          configuration = solifyn.Configuration(
+              host = "https://api.solifyn.com"
+          )
+          configuration.access_token = "your_private_api_key_here"
+
+          with solifyn.ApiClient(configuration) as api_client:
+              api_instance = solifyn.FramerIntegrationApi(api_client)
+
+              try:
+                  response = api_instance.framer_controller_list()
+                  print("Response received:", response)
+              except ApiException as e:
+                  print("Exception when calling FramerIntegrationApi->framer_controller_list: %s\n" % e)
+      - lang: php
+        label: PHP SDK
+        source: |-
+          require_once(__DIR__ . '/vendor/autoload.php');
+
+          use Solifyn\Configuration;
+          use Solifyn\Api\FramerIntegrationApi;
+          use GuzzleHttp\Client;
+
+          $config = Configuration::getDefaultConfiguration()
+              ->setAccessToken('your_private_api_key_here');
+          $apiInstance = new FramerIntegrationApi(
+              new Client(),
+              $config
+          );
+
+          try {
+              $result = $apiInstance->framerControllerList();
+              print_r($result);
+          } catch (Exception $e) {
+              echo 'Exception when calling FramerIntegrationApi->framerControllerList: ', $e->getMessage(), PHP_EOL;
+          }
+      - lang: go
+        label: Go SDK
+        source: |-
+          import (
+              "context"
+              "fmt"
+              "os"
+              solifyn "github.com/solifyn/solifyn-go"
+          )
+
+          configuration := solifyn.NewConfiguration()
+          apiClient := solifyn.NewAPIClient(configuration)
+          auth := context.WithValue(context.Background(), solifyn.ContextAccessToken, "your_private_api_key_here")
+
+          resp, r, err := apiClient.FramerIntegrationAPI.FramerControllerList(auth).Execute()
+          if err != nil {
+              fmt.Fprintf(os.Stderr, "Error when calling `FramerIntegrationAPI.FramerControllerList`: %v\n", err)
+              fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+              return
+          }
+          fmt.Printf("Response: %v\n", resp)
+      - lang: java
+        label: Java SDK
+        source: |-
+          import com.solifyn.ApiClient;
+          import com.solifyn.ApiException;
+          import com.solifyn.Configuration;
+          import com.solifyn.auth.HttpBearerAuth;
+          import com.solifyn.api.FramerIntegrationApi;
+          import com.solifyn.model.*;
+          import java.math.BigDecimal;
+          import java.util.Arrays;
+          import java.util.HashMap;
+          import java.util.List;
+          import java.util.Map;
+
+          ApiClient defaultClient = Configuration.getDefaultApiClient();
+          defaultClient.setBasePath("https://api.solifyn.com");
+
+          HttpBearerAuth ApiKeyAuth = (HttpBearerAuth) defaultClient.getAuthentication("ApiKeyAuth");
+          ApiKeyAuth.setBearerToken("your_private_api_key_here");
+
+          FramerIntegrationApi apiInstance = new FramerIntegrationApi(defaultClient);
+
+          try {
+              List<FramerTemplateResponseDto> result = apiInstance.framerControllerList();
+              System.out.println(result);
+          } catch (ApiException e) {
+              System.err.println("Exception when calling FramerIntegrationApi#framerControllerList");
+              e.printStackTrace();
+          }
+      - lang: ruby
+        label: Ruby SDK
+        source: |-
+          require 'solifyn'
+
+          Solifyn.configure do |config|
+            config.access_token = 'your_private_api_key_here'
+            config.host = 'localhost:8000'
+          end
+
+          api_instance = Solifyn::FramerIntegrationApi.new
+
+          begin
+            result = api_instance.framer_controller_list()
+            p result
+          rescue Solifyn::ApiError => e
+            puts "Exception when calling FramerIntegrationApi->framer_controller_list: #{e}"
+          end
+      - lang: csharp
+        label: C# SDK
+        source: |-
+          using Solifyn.Api;
+          using Solifyn.Client;
+          using Solifyn.Model;
+          using System;
+          using System.Collections.Generic;
+
+          var config = new Configuration();
+          config.BasePath = "https://api.solifyn.com";
+          config.AccessToken = "your_private_api_key_here";
+
+          var framerIntegrationApi = new FramerIntegrationApi(config);
+
+          try {
+              var result = framerIntegrationApi.FramerControllerList();
+              Console.WriteLine(result);
+          }
+          catch (ApiException e) {
+              Console.WriteLine("Exception when calling FramerIntegrationApi.FramerControllerList: " + e.Message);
+          }
+      - lang: kotlin
+        label: Kotlin SDK
+        source: |-
+          import com.solifyn.infrastructure.ApiClient
+          import com.solifyn.api.FramerIntegrationApi
+          import com.solifyn.model.*
+          import com.solifyn.infrastructure.ClientException
+          import com.solifyn.infrastructure.ServerException
+
+          ApiClient.accessToken = "your_private_api_key_here"
+          val apiInstance = FramerIntegrationApi()
+
+          try {
+              val result = apiInstance.framerControllerList()
+              println(result)
+          } catch (e: ClientException) {
+              println("Client error: ${e.message}")
+          } catch (e: ServerException) {
+              println("Server error: ${e.message}")
+          }
+    post:
+      description: Registers a new Framer template with its public remix link for
+        the active business.
+      operationId: framer:createTemplate
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateFramerTemplateDto'
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FramerTemplateResponseDto'
+          description: Template created successfully.
+      security:
+      - ApiKeyAuth: []
+      summary: Create Framer Template
+      tags:
+      - Framer Integration
+      x-codeSamples:
+      - lang: python
+        label: Python SDK
+        source: |-
+          import solifyn
+          from solifyn.rest import ApiException
+
+          configuration = solifyn.Configuration(
+              host = "https://api.solifyn.com"
+          )
+          configuration.access_token = "your_private_api_key_here"
+
+          with solifyn.ApiClient(configuration) as api_client:
+              api_instance = solifyn.FramerIntegrationApi(api_client)
+              create_framer_template_dto = solifyn.CreateFramerTemplateDto(
+                  name="Portfolio Template",
+                  remix_link="https://framer.com/projects/portfolio-abc",
+                  description="Premium dark-mode portfolio design.",
+              )
+
+              try:
+                  response = api_instance.framer_controller_create(create_framer_template_dto)
+                  print("Response received:", response)
+              except ApiException as e:
+                  print("Exception when calling FramerIntegrationApi->framer_controller_create: %s\n" % e)
+      - lang: php
+        label: PHP SDK
+        source: |-
+          require_once(__DIR__ . '/vendor/autoload.php');
+
+          use Solifyn\Configuration;
+          use Solifyn\Api\FramerIntegrationApi;
+          use GuzzleHttp\Client;
+          use Solifyn\Model\CreateFramerTemplateDto;
+
+          $config = Configuration::getDefaultConfiguration()
+              ->setAccessToken('your_private_api_key_here');
+          $apiInstance = new FramerIntegrationApi(
+              new Client(),
+              $config
+          );
+          $create_framer_template_dto = new CreateFramerTemplateDto();
+          $create_framer_template_dto->setName('Portfolio Template');
+          $create_framer_template_dto->setRemixLink('https://framer.com/projects/portfolio-abc');
+          $create_framer_template_dto->setDescription('Premium dark-mode portfolio design.');
+
+          try {
+              $result = $apiInstance->framerControllerCreate($create_framer_template_dto);
+              print_r($result);
+          } catch (Exception $e) {
+              echo 'Exception when calling FramerIntegrationApi->framerControllerCreate: ', $e->getMessage(), PHP_EOL;
+          }
+      - lang: go
+        label: Go SDK
+        source: |-
+          import (
+              "context"
+              "fmt"
+              "os"
+              solifyn "github.com/solifyn/solifyn-go"
+          )
+
+          configuration := solifyn.NewConfiguration()
+          apiClient := solifyn.NewAPIClient(configuration)
+          auth := context.WithValue(context.Background(), solifyn.ContextAccessToken, "your_private_api_key_here")
+          createFramerTemplateDto := *solifyn.NewCreateFramerTemplateDto()
+          createFramerTemplateDto.SetName("Portfolio Template")
+          createFramerTemplateDto.SetRemixLink("https://framer.com/projects/portfolio-abc")
+          createFramerTemplateDto.SetDescription("Premium dark-mode portfolio design.")
+
+          resp, r, err := apiClient.FramerIntegrationAPI.FramerControllerCreate(auth).CreateFramerTemplateDto(createFramerTemplateDto).Execute()
+          if err != nil {
+              fmt.Fprintf(os.Stderr, "Error when calling `FramerIntegrationAPI.FramerControllerCreate`: %v\n", err)
+              fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+              return
+          }
+          fmt.Printf("Response: %v\n", resp)
+      - lang: java
+        label: Java SDK
+        source: |-
+          import com.solifyn.ApiClient;
+          import com.solifyn.ApiException;
+          import com.solifyn.Configuration;
+          import com.solifyn.auth.HttpBearerAuth;
+          import com.solifyn.api.FramerIntegrationApi;
+          import com.solifyn.model.*;
+          import java.math.BigDecimal;
+          import java.util.Arrays;
+          import java.util.HashMap;
+          import java.util.List;
+          import java.util.Map;
+
+          ApiClient defaultClient = Configuration.getDefaultApiClient();
+          defaultClient.setBasePath("https://api.solifyn.com");
+
+          HttpBearerAuth ApiKeyAuth = (HttpBearerAuth) defaultClient.getAuthentication("ApiKeyAuth");
+          ApiKeyAuth.setBearerToken("your_private_api_key_here");
+
+          FramerIntegrationApi apiInstance = new FramerIntegrationApi(defaultClient);
+          CreateFramerTemplateDto createFramerTemplateDto = new CreateFramerTemplateDto()
+              .name("Portfolio Template")
+              .remixLink("https://framer.com/projects/portfolio-abc")
+              .description("Premium dark-mode portfolio design.");
+
+          try {
+              FramerTemplateResponseDto result = apiInstance.framerControllerCreate(createFramerTemplateDto);
+              System.out.println(result);
+          } catch (ApiException e) {
+              System.err.println("Exception when calling FramerIntegrationApi#framerControllerCreate");
+              e.printStackTrace();
+          }
+      - lang: ruby
+        label: Ruby SDK
+        source: |-
+          require 'solifyn'
+
+          Solifyn.configure do |config|
+            config.access_token = 'your_private_api_key_here'
+            config.host = 'localhost:8000'
+          end
+
+          api_instance = Solifyn::FramerIntegrationApi.new
+          create_framer_template_dto = Solifyn::CreateFramerTemplateDto.new({
+            name: 'Portfolio Template',
+            remix_link: 'https://framer.com/projects/portfolio-abc',
+            description: 'Premium dark-mode portfolio design.',
+          })
+
+          begin
+            result = api_instance.framer_controller_create(create_framer_template_dto)
+            p result
+          rescue Solifyn::ApiError => e
+            puts "Exception when calling FramerIntegrationApi->framer_controller_create: #{e}"
+          end
+      - lang: csharp
+        label: C# SDK
+        source: |-
+          using Solifyn.Api;
+          using Solifyn.Client;
+          using Solifyn.Model;
+          using System;
+          using System.Collections.Generic;
+
+          var config = new Configuration();
+          config.BasePath = "https://api.solifyn.com";
+          config.AccessToken = "your_private_api_key_here";
+
+          var framerIntegrationApi = new FramerIntegrationApi(config);
+          var createFramerTemplateDto = new CreateFramerTemplateDto {
+              Name = "Portfolio Template",
+              RemixLink = "https://framer.com/projects/portfolio-abc",
+              Description = "Premium dark-mode portfolio design.",
+          };
+
+          try {
+              var result = framerIntegrationApi.FramerControllerCreate(createFramerTemplateDto);
+              Console.WriteLine(result);
+          }
+          catch (ApiException e) {
+              Console.WriteLine("Exception when calling FramerIntegrationApi.FramerControllerCreate: " + e.Message);
+          }
+      - lang: kotlin
+        label: Kotlin SDK
+        source: |-
+          import com.solifyn.infrastructure.ApiClient
+          import com.solifyn.api.FramerIntegrationApi
+          import com.solifyn.model.*
+          import com.solifyn.infrastructure.ClientException
+          import com.solifyn.infrastructure.ServerException
+
+          ApiClient.accessToken = "your_private_api_key_here"
+          val apiInstance = FramerIntegrationApi()
+          val createFramerTemplateDto = CreateFramerTemplateDto(
+              name = "Portfolio Template",
+              remixLink = "https://framer.com/projects/portfolio-abc",
+              description = "Premium dark-mode portfolio design.",
+          )
+
+          try {
+              val result = apiInstance.framerControllerCreate(createFramerTemplateDto)
+              println(result)
+          } catch (e: ClientException) {
+              println("Client error: ${e.message}")
+          } catch (e: ServerException) {
+              println("Server error: ${e.message}")
+          }
+  /v1/framer/templates/{id}:
+    delete:
+      description: Deletes a registered Framer template for the active business.
+      operationId: framer:deleteTemplate
+      parameters:
+      - description: The Framer template ID
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: Template deleted successfully.
+      security:
+      - ApiKeyAuth: []
+      summary: Delete Framer Template
+      tags:
+      - Framer Integration
+      x-codeSamples:
+      - lang: python
+        label: Python SDK
+        source: |-
+          import solifyn
+          from solifyn.rest import ApiException
+
+          configuration = solifyn.Configuration(
+              host = "https://api.solifyn.com"
+          )
+          configuration.access_token = "your_private_api_key_here"
+
+          with solifyn.ApiClient(configuration) as api_client:
+              api_instance = solifyn.FramerIntegrationApi(api_client)
+              id = "tmpl_019e56a1..."
+
+              try:
+                  api_instance.framer_controller_delete(id)
+                  print("Request executed successfully")
+              except ApiException as e:
+                  print("Exception when calling FramerIntegrationApi->framer_controller_delete: %s\n" % e)
+      - lang: php
+        label: PHP SDK
+        source: |-
+          require_once(__DIR__ . '/vendor/autoload.php');
+
+          use Solifyn\Configuration;
+          use Solifyn\Api\FramerIntegrationApi;
+          use GuzzleHttp\Client;
+
+          $config = Configuration::getDefaultConfiguration()
+              ->setAccessToken('your_private_api_key_here');
+          $apiInstance = new FramerIntegrationApi(
+              new Client(),
+              $config
+          );
+          $id = 'tmpl_019e56a1...';
+
+          try {
+              $apiInstance->framerControllerDelete($id);
+              echo "Executed successfully\n";
+          } catch (Exception $e) {
+              echo 'Exception when calling FramerIntegrationApi->framerControllerDelete: ', $e->getMessage(), PHP_EOL;
+          }
+      - lang: go
+        label: Go SDK
+        source: |-
+          import (
+              "context"
+              "fmt"
+              "os"
+              solifyn "github.com/solifyn/solifyn-go"
+          )
+
+          configuration := solifyn.NewConfiguration()
+          apiClient := solifyn.NewAPIClient(configuration)
+          auth := context.WithValue(context.Background(), solifyn.ContextAccessToken, "your_private_api_key_here")
+          id := "tmpl_019e56a1..."
+
+          _, r, err := apiClient.FramerIntegrationAPI.FramerControllerDelete(auth, id).Execute()
+          if err != nil {
+              fmt.Fprintf(os.Stderr, "Error when calling `FramerIntegrationAPI.FramerControllerDelete`: %v\n", err)
+              fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+              return
+          }
+          _ = r
+          fmt.Println("Request executed successfully")
+      - lang: java
+        label: Java SDK
+        source: |-
+          import com.solifyn.ApiClient;
+          import com.solifyn.ApiException;
+          import com.solifyn.Configuration;
+          import com.solifyn.auth.HttpBearerAuth;
+          import com.solifyn.api.FramerIntegrationApi;
+          import com.solifyn.model.*;
+          import java.math.BigDecimal;
+          import java.util.Arrays;
+          import java.util.HashMap;
+          import java.util.List;
+          import java.util.Map;
+
+          ApiClient defaultClient = Configuration.getDefaultApiClient();
+          defaultClient.setBasePath("https://api.solifyn.com");
+
+          HttpBearerAuth ApiKeyAuth = (HttpBearerAuth) defaultClient.getAuthentication("ApiKeyAuth");
+          ApiKeyAuth.setBearerToken("your_private_api_key_here");
+
+          FramerIntegrationApi apiInstance = new FramerIntegrationApi(defaultClient);
+          String id = "tmpl_019e56a1...";
+
+          try {
+              apiInstance.framerControllerDelete(id);
+              System.out.println("Request executed successfully");
+          } catch (ApiException e) {
+              System.err.println("Exception when calling FramerIntegrationApi#framerControllerDelete");
+              e.printStackTrace();
+          }
+      - lang: ruby
+        label: Ruby SDK
+        source: |-
+          require 'solifyn'
+
+          Solifyn.configure do |config|
+            config.access_token = 'your_private_api_key_here'
+            config.host = 'localhost:8000'
+          end
+
+          api_instance = Solifyn::FramerIntegrationApi.new
+          id = 'tmpl_019e56a1...'
+
+          begin
+            api_instance.framer_controller_delete(id)
+            puts "Request executed successfully"
+          rescue Solifyn::ApiError => e
+            puts "Exception when calling FramerIntegrationApi->framer_controller_delete: #{e}"
+          end
+      - lang: csharp
+        label: C# SDK
+        source: |-
+          using Solifyn.Api;
+          using Solifyn.Client;
+          using Solifyn.Model;
+          using System;
+          using System.Collections.Generic;
+
+          var config = new Configuration();
+          config.BasePath = "https://api.solifyn.com";
+          config.AccessToken = "your_private_api_key_here";
+
+          var framerIntegrationApi = new FramerIntegrationApi(config);
+          var id = "tmpl_019e56a1...";
+
+          try {
+              framerIntegrationApi.FramerControllerDelete(id);
+              Console.WriteLine("Executed successfully");
+          }
+          catch (ApiException e) {
+              Console.WriteLine("Exception when calling FramerIntegrationApi.FramerControllerDelete: " + e.Message);
+          }
+      - lang: kotlin
+        label: Kotlin SDK
+        source: |-
+          import com.solifyn.infrastructure.ApiClient
+          import com.solifyn.api.FramerIntegrationApi
+          import com.solifyn.model.*
+          import com.solifyn.infrastructure.ClientException
+          import com.solifyn.infrastructure.ServerException
+
+          ApiClient.accessToken = "your_private_api_key_here"
+          val apiInstance = FramerIntegrationApi()
+          val id = "tmpl_019e56a1..."
+
+          try {
+              apiInstance.framerControllerDelete(id)
+              println("Executed successfully")
+          } catch (e: ClientException) {
+              println("Client error: ${e.message}")
+          } catch (e: ServerException) {
+              println("Server error: ${e.message}")
+          }
+    get:
+      description: Retrieves details of a specific registered Framer template.
+      operationId: framer:getTemplate
+      parameters:
+      - description: The Framer template ID
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FramerTemplateResponseDto'
+          description: Details of the Framer template.
+      security:
+      - ApiKeyAuth: []
+      summary: Retrieve Framer Template
+      tags:
+      - Framer Integration
+      x-codeSamples:
+      - lang: python
+        label: Python SDK
+        source: |-
+          import solifyn
+          from solifyn.rest import ApiException
+
+          configuration = solifyn.Configuration(
+              host = "https://api.solifyn.com"
+          )
+          configuration.access_token = "your_private_api_key_here"
+
+          with solifyn.ApiClient(configuration) as api_client:
+              api_instance = solifyn.FramerIntegrationApi(api_client)
+              id = "tmpl_019e56a1..."
+
+              try:
+                  response = api_instance.framer_controller_get(id)
+                  print("Response received:", response)
+              except ApiException as e:
+                  print("Exception when calling FramerIntegrationApi->framer_controller_get: %s\n" % e)
+      - lang: php
+        label: PHP SDK
+        source: |-
+          require_once(__DIR__ . '/vendor/autoload.php');
+
+          use Solifyn\Configuration;
+          use Solifyn\Api\FramerIntegrationApi;
+          use GuzzleHttp\Client;
+
+          $config = Configuration::getDefaultConfiguration()
+              ->setAccessToken('your_private_api_key_here');
+          $apiInstance = new FramerIntegrationApi(
+              new Client(),
+              $config
+          );
+          $id = 'tmpl_019e56a1...';
+
+          try {
+              $result = $apiInstance->framerControllerGet($id);
+              print_r($result);
+          } catch (Exception $e) {
+              echo 'Exception when calling FramerIntegrationApi->framerControllerGet: ', $e->getMessage(), PHP_EOL;
+          }
+      - lang: go
+        label: Go SDK
+        source: |-
+          import (
+              "context"
+              "fmt"
+              "os"
+              solifyn "github.com/solifyn/solifyn-go"
+          )
+
+          configuration := solifyn.NewConfiguration()
+          apiClient := solifyn.NewAPIClient(configuration)
+          auth := context.WithValue(context.Background(), solifyn.ContextAccessToken, "your_private_api_key_here")
+          id := "tmpl_019e56a1..."
+
+          resp, r, err := apiClient.FramerIntegrationAPI.FramerControllerGet(auth, id).Execute()
+          if err != nil {
+              fmt.Fprintf(os.Stderr, "Error when calling `FramerIntegrationAPI.FramerControllerGet`: %v\n", err)
+              fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+              return
+          }
+          fmt.Printf("Response: %v\n", resp)
+      - lang: java
+        label: Java SDK
+        source: |-
+          import com.solifyn.ApiClient;
+          import com.solifyn.ApiException;
+          import com.solifyn.Configuration;
+          import com.solifyn.auth.HttpBearerAuth;
+          import com.solifyn.api.FramerIntegrationApi;
+          import com.solifyn.model.*;
+          import java.math.BigDecimal;
+          import java.util.Arrays;
+          import java.util.HashMap;
+          import java.util.List;
+          import java.util.Map;
+
+          ApiClient defaultClient = Configuration.getDefaultApiClient();
+          defaultClient.setBasePath("https://api.solifyn.com");
+
+          HttpBearerAuth ApiKeyAuth = (HttpBearerAuth) defaultClient.getAuthentication("ApiKeyAuth");
+          ApiKeyAuth.setBearerToken("your_private_api_key_here");
+
+          FramerIntegrationApi apiInstance = new FramerIntegrationApi(defaultClient);
+          String id = "tmpl_019e56a1...";
+
+          try {
+              FramerTemplateResponseDto result = apiInstance.framerControllerGet(id);
+              System.out.println(result);
+          } catch (ApiException e) {
+              System.err.println("Exception when calling FramerIntegrationApi#framerControllerGet");
+              e.printStackTrace();
+          }
+      - lang: ruby
+        label: Ruby SDK
+        source: |-
+          require 'solifyn'
+
+          Solifyn.configure do |config|
+            config.access_token = 'your_private_api_key_here'
+            config.host = 'localhost:8000'
+          end
+
+          api_instance = Solifyn::FramerIntegrationApi.new
+          id = 'tmpl_019e56a1...'
+
+          begin
+            result = api_instance.framer_controller_get(id)
+            p result
+          rescue Solifyn::ApiError => e
+            puts "Exception when calling FramerIntegrationApi->framer_controller_get: #{e}"
+          end
+      - lang: csharp
+        label: C# SDK
+        source: |-
+          using Solifyn.Api;
+          using Solifyn.Client;
+          using Solifyn.Model;
+          using System;
+          using System.Collections.Generic;
+
+          var config = new Configuration();
+          config.BasePath = "https://api.solifyn.com";
+          config.AccessToken = "your_private_api_key_here";
+
+          var framerIntegrationApi = new FramerIntegrationApi(config);
+          var id = "tmpl_019e56a1...";
+
+          try {
+              var result = framerIntegrationApi.FramerControllerGet(id);
+              Console.WriteLine(result);
+          }
+          catch (ApiException e) {
+              Console.WriteLine("Exception when calling FramerIntegrationApi.FramerControllerGet: " + e.Message);
+          }
+      - lang: kotlin
+        label: Kotlin SDK
+        source: |-
+          import com.solifyn.infrastructure.ApiClient
+          import com.solifyn.api.FramerIntegrationApi
+          import com.solifyn.model.*
+          import com.solifyn.infrastructure.ClientException
+          import com.solifyn.infrastructure.ServerException
+
+          ApiClient.accessToken = "your_private_api_key_here"
+          val apiInstance = FramerIntegrationApi()
+          val id = "tmpl_019e56a1..."
+
+          try {
+              val result = apiInstance.framerControllerGet(id)
+              println(result)
+          } catch (e: ClientException) {
+              println("Client error: ${e.message}")
+          } catch (e: ServerException) {
+              println("Server error: ${e.message}")
+          }
+    put:
+      description: Updates a registered Framer template for the active business.
+      operationId: framer:updateTemplate
+      parameters:
+      - description: The Framer template ID
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateFramerTemplateDto'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FramerTemplateResponseDto'
+          description: Template updated successfully.
+      security:
+      - ApiKeyAuth: []
+      summary: Update Framer Template
+      tags:
+      - Framer Integration
+      x-codeSamples:
+      - lang: python
+        label: Python SDK
+        source: |-
+          import solifyn
+          from solifyn.rest import ApiException
+
+          configuration = solifyn.Configuration(
+              host = "https://api.solifyn.com"
+          )
+          configuration.access_token = "your_private_api_key_here"
+
+          with solifyn.ApiClient(configuration) as api_client:
+              api_instance = solifyn.FramerIntegrationApi(api_client)
+              id = "tmpl_019e56a1..."
+              update_framer_template_dto = solifyn.UpdateFramerTemplateDto(
+                  name="Portfolio Template V2",
+              )
+
+              try:
+                  response = api_instance.framer_controller_update(id, update_framer_template_dto)
+                  print("Response received:", response)
+              except ApiException as e:
+                  print("Exception when calling FramerIntegrationApi->framer_controller_update: %s\n" % e)
+      - lang: php
+        label: PHP SDK
+        source: |-
+          require_once(__DIR__ . '/vendor/autoload.php');
+
+          use Solifyn\Configuration;
+          use Solifyn\Api\FramerIntegrationApi;
+          use GuzzleHttp\Client;
+          use Solifyn\Model\UpdateFramerTemplateDto;
+
+          $config = Configuration::getDefaultConfiguration()
+              ->setAccessToken('your_private_api_key_here');
+          $apiInstance = new FramerIntegrationApi(
+              new Client(),
+              $config
+          );
+          $id = 'tmpl_019e56a1...';
+          $update_framer_template_dto = new UpdateFramerTemplateDto();
+          $update_framer_template_dto->setName('Portfolio Template V2');
+
+          try {
+              $result = $apiInstance->framerControllerUpdate($id, $update_framer_template_dto);
+              print_r($result);
+          } catch (Exception $e) {
+              echo 'Exception when calling FramerIntegrationApi->framerControllerUpdate: ', $e->getMessage(), PHP_EOL;
+          }
+      - lang: go
+        label: Go SDK
+        source: |-
+          import (
+              "context"
+              "fmt"
+              "os"
+              solifyn "github.com/solifyn/solifyn-go"
+          )
+
+          configuration := solifyn.NewConfiguration()
+          apiClient := solifyn.NewAPIClient(configuration)
+          auth := context.WithValue(context.Background(), solifyn.ContextAccessToken, "your_private_api_key_here")
+          id := "tmpl_019e56a1..."
+          updateFramerTemplateDto := *solifyn.NewUpdateFramerTemplateDto()
+          updateFramerTemplateDto.SetName("Portfolio Template V2")
+
+          resp, r, err := apiClient.FramerIntegrationAPI.FramerControllerUpdate(auth, id).UpdateFramerTemplateDto(updateFramerTemplateDto).Execute()
+          if err != nil {
+              fmt.Fprintf(os.Stderr, "Error when calling `FramerIntegrationAPI.FramerControllerUpdate`: %v\n", err)
+              fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+              return
+          }
+          fmt.Printf("Response: %v\n", resp)
+      - lang: java
+        label: Java SDK
+        source: |-
+          import com.solifyn.ApiClient;
+          import com.solifyn.ApiException;
+          import com.solifyn.Configuration;
+          import com.solifyn.auth.HttpBearerAuth;
+          import com.solifyn.api.FramerIntegrationApi;
+          import com.solifyn.model.*;
+          import java.math.BigDecimal;
+          import java.util.Arrays;
+          import java.util.HashMap;
+          import java.util.List;
+          import java.util.Map;
+
+          ApiClient defaultClient = Configuration.getDefaultApiClient();
+          defaultClient.setBasePath("https://api.solifyn.com");
+
+          HttpBearerAuth ApiKeyAuth = (HttpBearerAuth) defaultClient.getAuthentication("ApiKeyAuth");
+          ApiKeyAuth.setBearerToken("your_private_api_key_here");
+
+          FramerIntegrationApi apiInstance = new FramerIntegrationApi(defaultClient);
+          String id = "tmpl_019e56a1...";
+          UpdateFramerTemplateDto updateFramerTemplateDto = new UpdateFramerTemplateDto()
+              .name("Portfolio Template V2");
+
+          try {
+              FramerTemplateResponseDto result = apiInstance.framerControllerUpdate(id, updateFramerTemplateDto);
+              System.out.println(result);
+          } catch (ApiException e) {
+              System.err.println("Exception when calling FramerIntegrationApi#framerControllerUpdate");
+              e.printStackTrace();
+          }
+      - lang: ruby
+        label: Ruby SDK
+        source: |-
+          require 'solifyn'
+
+          Solifyn.configure do |config|
+            config.access_token = 'your_private_api_key_here'
+            config.host = 'localhost:8000'
+          end
+
+          api_instance = Solifyn::FramerIntegrationApi.new
+          id = 'tmpl_019e56a1...'
+          update_framer_template_dto = Solifyn::UpdateFramerTemplateDto.new({
+            name: 'Portfolio Template V2',
+          })
+
+          begin
+            result = api_instance.framer_controller_update(id, update_framer_template_dto)
+            p result
+          rescue Solifyn::ApiError => e
+            puts "Exception when calling FramerIntegrationApi->framer_controller_update: #{e}"
+          end
+      - lang: csharp
+        label: C# SDK
+        source: |-
+          using Solifyn.Api;
+          using Solifyn.Client;
+          using Solifyn.Model;
+          using System;
+          using System.Collections.Generic;
+
+          var config = new Configuration();
+          config.BasePath = "https://api.solifyn.com";
+          config.AccessToken = "your_private_api_key_here";
+
+          var framerIntegrationApi = new FramerIntegrationApi(config);
+          var id = "tmpl_019e56a1...";
+          var updateFramerTemplateDto = new UpdateFramerTemplateDto {
+              Name = "Portfolio Template V2",
+          };
+
+          try {
+              var result = framerIntegrationApi.FramerControllerUpdate(id, updateFramerTemplateDto);
+              Console.WriteLine(result);
+          }
+          catch (ApiException e) {
+              Console.WriteLine("Exception when calling FramerIntegrationApi.FramerControllerUpdate: " + e.Message);
+          }
+      - lang: kotlin
+        label: Kotlin SDK
+        source: |-
+          import com.solifyn.infrastructure.ApiClient
+          import com.solifyn.api.FramerIntegrationApi
+          import com.solifyn.model.*
+          import com.solifyn.infrastructure.ClientException
+          import com.solifyn.infrastructure.ServerException
+
+          ApiClient.accessToken = "your_private_api_key_here"
+          val apiInstance = FramerIntegrationApi()
+          val id = "tmpl_019e56a1..."
+          val updateFramerTemplateDto = UpdateFramerTemplateDto(
+              name = "Portfolio Template V2",
+          )
+
+          try {
+              val result = apiInstance.framerControllerUpdate(id, updateFramerTemplateDto)
+              println(result)
+          } catch (e: ClientException) {
+              println("Client error: ${e.message}")
+          } catch (e: ServerException) {
+              println("Server error: ${e.message}")
+          }
+  /v1/entitlements:
+    get:
+      description: List all independent entitlements for the active business.
+      operationId: entitlements:list
+      parameters: []
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/EntitlementDetailResponseDto'
+                type: array
+          description: Entitlements retrieved successfully.
+      security: []
+      summary: List Entitlements
+      tags:
+      - Entitlements
+    post:
+      description: Create a new independent access entitlement.
+      operationId: entitlements:create
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateEntitlementDto'
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntitlementDetailResponseDto'
+          description: Entitlement created successfully.
+      security: []
+      summary: Create Entitlement
+      tags:
+      - Entitlements
+  /v1/entitlements/{id}:
+    delete:
+      description: Delete an independent entitlement and unlink all mapped products.
+      operationId: entitlements:delete
+      parameters:
+      - description: The unique entitlement ID.
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          example: ent_8Z1aB2cD3eF4gH5iJ6kL7m
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntitlementDetailResponseDto'
+          description: Entitlement deleted successfully.
+      security: []
+      summary: Delete Entitlement
+      tags:
+      - Entitlements
+    get:
+      description: Retrieve a specific entitlement definition by ID.
+      operationId: entitlements:get
+      parameters:
+      - description: The unique entitlement ID.
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          example: ent_8Z1aB2cD3eF4gH5iJ6kL7m
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntitlementDetailResponseDto'
+          description: Entitlement retrieved successfully.
+      security: []
+      summary: Retrieve Entitlement
+      tags:
+      - Entitlements
+    patch:
+      description: Update details of an existing independent entitlement.
+      operationId: entitlements:update
+      parameters:
+      - description: The unique entitlement ID.
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          example: ent_8Z1aB2cD3eF4gH5iJ6kL7m
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateEntitlementDto'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntitlementDetailResponseDto'
+          description: Entitlement updated successfully.
+      security: []
+      summary: Update Entitlement
+      tags:
+      - Entitlements
 components:
   schemas:
     SyncLoginDto:
@@ -20339,6 +21429,7 @@ components:
         oauthUrl: https://github.com/login/oauth/authorize...
         metadata: "{}"
         discordGuildId: "123456789012345678"
+        framerRemixLink: https://api.solifyn.com/v1/framer/remix/grant_123456
         productId: prod_123456
         businessId: biz_123456
         type: GITHUB
@@ -20350,6 +21441,7 @@ components:
         paymentId: pay_123456
         discordRoleId: "876543210987654321"
         customerId: cust_123456
+        framerTemplateId: tmpl_123456
         id: grant_123456
         discordUsername: discorduser#1234
         status: PENDING
@@ -20412,6 +21504,16 @@ components:
         discordUserId:
           description: The connected customer Discord user ID.
           example: "112233445566778899"
+          type: string
+        framerTemplateId:
+          description: The Framer template ID if type is FRAMER.
+          example: tmpl_123456
+          format: uuid
+          type: string
+        framerRemixLink:
+          description: The single-use remix link generated for the customer if type
+            is FRAMER.
+          example: https://api.solifyn.com/v1/framer/remix/grant_123456
           type: string
         status:
           description: "Delivery status of the collaborator invite (PENDING, DELIVERED,\
@@ -21964,6 +23066,390 @@ components:
     UpdateTicketDto:
       properties: {}
       type: object
+    CreateFramerTemplateDto:
+      example:
+        remixLink: https://framer.com/projects/xyz
+        name: Portfolio Template
+        description: Premium dark-mode portfolio.
+      properties:
+        name:
+          description: The name of the Framer template.
+          example: Portfolio Template
+          type: string
+        remixLink:
+          description: The public Framer remix link.
+          example: https://framer.com/projects/xyz
+          type: string
+        description:
+          description: A brief description of the template.
+          example: Premium dark-mode portfolio.
+          type: string
+      required:
+      - name
+      - remixLink
+    FramerTemplateResponseDto:
+      example:
+        remixLink: https://framer.com/projects/xyz
+        createdAt: createdAt
+        businessId: biz_123456
+        name: Portfolio Template
+        description: Premium dark-mode portfolio.
+        id: tmpl_123456
+        updatedAt: updatedAt
+      properties:
+        id:
+          description: The unique Framer template ID.
+          example: tmpl_123456
+          format: uuid
+          type: string
+        businessId:
+          description: The business ID owning the template.
+          example: biz_123456
+          format: uuid
+          type: string
+        name:
+          description: The name of the Framer template.
+          example: Portfolio Template
+          type: string
+        remixLink:
+          description: The public Framer remix link.
+          example: https://framer.com/projects/xyz
+          type: string
+        description:
+          description: A brief description of the template.
+          example: Premium dark-mode portfolio.
+          type: string
+        createdAt:
+          description: Creation timestamp.
+          type: string
+        updatedAt:
+          description: Modification timestamp.
+          type: string
+      required:
+      - businessId
+      - createdAt
+      - id
+      - name
+      - remixLink
+      - updatedAt
+    UpdateFramerTemplateDto:
+      example:
+        remixLink: https://framer.com/projects/xyz
+        name: Portfolio Template
+        description: Premium dark-mode portfolio.
+      properties:
+        name:
+          description: The name of the Framer template.
+          example: Portfolio Template
+          type: string
+        remixLink:
+          description: The public Framer remix link.
+          example: https://framer.com/projects/xyz
+          type: string
+        description:
+          description: A brief description of the template.
+          example: Premium dark-mode portfolio.
+          type: string
+    LinkedProductDto:
+      example:
+        name: Premium Developer Plan
+        id: prod_12345
+      properties:
+        id:
+          description: The unique product ID
+          example: prod_12345
+          type: string
+        name:
+          description: The product name
+          example: Premium Developer Plan
+          type: string
+      required:
+      - id
+      - name
+    EntitlementDetailResponseDto:
+      example:
+        instructions: Clone the repository and run npm install.
+        discordGuildId: "123456789012345678"
+        expiryHours: 720
+        grantsCount: 42
+        businessId: bus_12345
+        type: GITHUB
+        activationLimit: 3
+        githubPermission: pull
+        products:
+        - name: Premium Developer Plan
+          id: prod_12345
+        - name: Premium Developer Plan
+          id: prod_12345
+        createdAt: 2026-06-10T12:00:00.000Z
+        licenseKey: whsec_license_key_123
+        githubRepo: solifyn/premium-repo
+        discordRoleId: "876543210987654321"
+        name: Premium GitHub Access
+        framerTemplateId: framer_tmpl_123
+        digitalLink: https://downloads.solifyn.com/file.zip
+        id: ent_8Z1aB2cD3eF4gH5iJ6kL7m
+        activationMessage: Thank you for activating your software license!
+        status: ACTIVE
+        updatedAt: 2026-06-10T12:00:00.000Z
+      properties:
+        id:
+          description: The unique entitlement ID
+          example: ent_8Z1aB2cD3eF4gH5iJ6kL7m
+          type: string
+        businessId:
+          description: The owning business ID
+          example: bus_12345
+          type: string
+        name:
+          description: The name of the entitlement
+          example: Premium GitHub Access
+          type: string
+        type:
+          description: The type of access to grant
+          example: GITHUB
+          type: string
+        status:
+          description: Status of the entitlement
+          example: ACTIVE
+          type: string
+        createdAt:
+          description: When the entitlement was created
+          example: 2026-06-10T12:00:00.000Z
+          format: date-time
+          type: string
+        updatedAt:
+          description: When the entitlement was last updated
+          example: 2026-06-10T12:00:00.000Z
+          format: date-time
+          type: string
+        githubRepo:
+          description: "The GitHub repository (e.g., owner/repo)"
+          example: solifyn/premium-repo
+          type: string
+          nullable: true
+        githubPermission:
+          description: The GitHub repository permission level
+          example: pull
+          type: string
+          nullable: true
+        discordGuildId:
+          description: The Discord Guild/Server ID
+          example: "123456789012345678"
+          type: string
+          nullable: true
+        discordRoleId:
+          description: The Discord Role ID to assign
+          example: "876543210987654321"
+          type: string
+          nullable: true
+        framerTemplateId:
+          description: The associated Framer Template ID
+          example: framer_tmpl_123
+          type: string
+          nullable: true
+        licenseKey:
+          description: The static License Key (if not dynamically generated)
+          example: whsec_license_key_123
+          type: string
+          nullable: true
+        activationLimit:
+          description: The maximum activation limit for licenses
+          example: 3
+          type: number
+          nullable: true
+        activationMessage:
+          description: A message shown to the user upon license activation
+          example: Thank you for activating your software license!
+          type: string
+          nullable: true
+        expiryHours:
+          description: The number of hours until the entitlement expires
+          example: 720
+          type: number
+          nullable: true
+        digitalLink:
+          description: The digital download URL or redirect link
+          example: https://downloads.solifyn.com/file.zip
+          type: string
+          nullable: true
+        instructions:
+          description: Custom setup instructions for the user
+          example: Clone the repository and run npm install.
+          type: string
+          nullable: true
+        grantsCount:
+          description: Number of active customer grants issued from this entitlement
+          example: 42
+          type: number
+        products:
+          description: Products that are currently linked to this entitlement
+          items:
+            $ref: '#/components/schemas/LinkedProductDto'
+          type: array
+      required:
+      - businessId
+      - createdAt
+      - grantsCount
+      - id
+      - name
+      - products
+      - status
+      - type
+      - updatedAt
+    CreateEntitlementDto:
+      example:
+        instructions: Clone the repository and run npm install.
+        discordGuildId: "123456789012345678"
+        expiryHours: 720
+        type: GITHUB
+        activationLimit: 3
+        githubPermission: pull
+        licenseKey: whsec_license_key_123
+        githubRepo: solifyn/premium-repo
+        discordRoleId: "876543210987654321"
+        name: Premium GitHub Access
+        framerTemplateId: framer_tmpl_123
+        digitalLink: https://downloads.solifyn.com/file.zip
+        activationMessage: Thank you for activating your software license!
+      properties:
+        name:
+          description: The user-friendly name of the entitlement
+          example: Premium GitHub Access
+          type: string
+        type:
+          description: The type of access to grant
+          enum:
+          - GITHUB
+          - DISCORD
+          - FRAMER
+          - LICENSE
+          - DIGITAL
+          example: GITHUB
+          type: string
+        githubRepo:
+          description: "The GitHub repository (e.g., owner/repo)"
+          example: solifyn/premium-repo
+          type: string
+        githubPermission:
+          default: pull
+          description: The GitHub repository permission level
+          example: pull
+          type: string
+        discordGuildId:
+          description: The Discord Guild/Server ID
+          example: "123456789012345678"
+          type: string
+        discordRoleId:
+          description: The Discord Role ID to assign
+          example: "876543210987654321"
+          type: string
+        framerTemplateId:
+          description: The associated Framer Template ID
+          example: framer_tmpl_123
+          type: string
+        licenseKey:
+          description: The static License Key (if not dynamically generated)
+          example: whsec_license_key_123
+          type: string
+        activationLimit:
+          description: The maximum activation limit for licenses
+          example: 3
+          type: number
+        activationMessage:
+          description: A message shown to the user upon license activation
+          example: Thank you for activating your software license!
+          type: string
+        expiryHours:
+          description: The number of hours until the entitlement expires
+          example: 720
+          type: number
+        digitalLink:
+          description: The digital download URL or redirect link
+          example: https://downloads.solifyn.com/file.zip
+          type: string
+        instructions:
+          description: Custom setup instructions for the user
+          example: Clone the repository and run npm install.
+          type: string
+      required:
+      - name
+      - type
+    UpdateEntitlementDto:
+      example:
+        instructions: Clone the repository and run npm install.
+        discordGuildId: "123456789012345678"
+        expiryHours: 720
+        type: GITHUB
+        activationLimit: 3
+        githubPermission: pull
+        licenseKey: whsec_license_key_123
+        githubRepo: solifyn/premium-repo
+        discordRoleId: "876543210987654321"
+        name: Premium GitHub Access
+        framerTemplateId: framer_tmpl_123
+        digitalLink: https://downloads.solifyn.com/file.zip
+        activationMessage: Thank you for activating your software license!
+      properties:
+        name:
+          description: The user-friendly name of the entitlement
+          example: Premium GitHub Access
+          type: string
+        type:
+          description: The type of access to grant
+          enum:
+          - GITHUB
+          - DISCORD
+          - FRAMER
+          - LICENSE
+          - DIGITAL
+          example: GITHUB
+          type: string
+        githubRepo:
+          description: "The GitHub repository (e.g., owner/repo)"
+          example: solifyn/premium-repo
+          type: string
+        githubPermission:
+          default: pull
+          description: The GitHub repository permission level
+          example: pull
+          type: string
+        discordGuildId:
+          description: The Discord Guild/Server ID
+          example: "123456789012345678"
+          type: string
+        discordRoleId:
+          description: The Discord Role ID to assign
+          example: "876543210987654321"
+          type: string
+        framerTemplateId:
+          description: The associated Framer Template ID
+          example: framer_tmpl_123
+          type: string
+        licenseKey:
+          description: The static License Key (if not dynamically generated)
+          example: whsec_license_key_123
+          type: string
+        activationLimit:
+          description: The maximum activation limit for licenses
+          example: 3
+          type: number
+        activationMessage:
+          description: A message shown to the user upon license activation
+          example: Thank you for activating your software license!
+          type: string
+        expiryHours:
+          description: The number of hours until the entitlement expires
+          example: 720
+          type: number
+        digitalLink:
+          description: The digital download URL or redirect link
+          example: https://downloads.solifyn.com/file.zip
+          type: string
+        instructions:
+          description: Custom setup instructions for the user
+          example: Clone the repository and run npm install.
+          type: string
     Product:
       description: "Represents a product item created under your business, containing\
         \ core pricing, status, license behavior, subscription settings, and metadata\
@@ -22335,6 +23821,9 @@ components:
         hasGithubAccess: false
         activationLimit: 0
         taxCategory: saas
+        entitlementIds:
+        - entitlementIds
+        - entitlementIds
         isListed: true
         hasDiscordAccess: false
         discordRoleId: "876543210987654321"
@@ -22583,6 +24072,11 @@ components:
           description: Product addons configurations.
           items:
             $ref: '#/components/schemas/ProductCreate_addons_inner'
+          type: array
+        entitlementIds:
+          description: Array of independent entitlement IDs to link to this product.
+          items:
+            type: string
           type: array
       required:
       - currency
@@ -22639,6 +24133,9 @@ components:
         hasGithubAccess: false
         activationLimit: 0
         taxCategory: saas
+        entitlementIds:
+        - entitlementIds
+        - entitlementIds
         isListed: true
         hasDiscordAccess: false
         discordRoleId: "876543210987654321"
@@ -22887,6 +24384,11 @@ components:
           description: Product addons configurations.
           items:
             $ref: '#/components/schemas/ProductCreate_addons_inner'
+          type: array
+        entitlementIds:
+          description: Array of independent entitlement IDs to link to this product.
+          items:
+            type: string
           type: array
     Discount:
       description: "Represents a discount code created under your business, containing\

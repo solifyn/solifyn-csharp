@@ -663,7 +663,8 @@ namespace Solifyn.Model
         /// <param name="isListed">Whether the product is publicly visible. (default to true).</param>
         /// <param name="isFree">Whether the product is free of charge. (default to false).</param>
         /// <param name="addons">Product addons configurations..</param>
-        public ProductUpdate(string name = default(string), string description = default(string), decimal price = default(decimal), CurrencyEnum? currency = CurrencyEnum.USD, string imageUrl = default(string), TaxCategoryEnum? taxCategory = default(TaxCategoryEnum?), decimal discount = default(decimal), bool hasLicenseKey = false, bool hasDigitalDelivery = false, bool hasGithubAccess = false, string githubRepo = default(string), GithubPermissionEnum? githubPermission = default(GithubPermissionEnum?), bool hasDiscordAccess = false, string discordGuildId = default(string), string discordRoleId = default(string), bool isTaxInclusive = false, int activationLimit = default(int), string brandId = default(string), int billingPeriod = default(int), int trialPeriodDays = default(int), int expirationDays = default(int), string statementDescriptor = default(string), bool payWhatYouWant = false, Dictionary<string, string> metadata = default(Dictionary<string, string>), List<ProductCreateCustomFieldsInner> customFields = default(List<ProductCreateCustomFieldsInner>), int stock = default(int), bool isListed = true, bool isFree = false, List<ProductCreateAddonsInner> addons = default(List<ProductCreateAddonsInner>))
+        /// <param name="entitlementIds">Array of independent entitlement IDs to link to this product..</param>
+        public ProductUpdate(string name = default(string), string description = default(string), decimal price = default(decimal), CurrencyEnum? currency = CurrencyEnum.USD, string imageUrl = default(string), TaxCategoryEnum? taxCategory = default(TaxCategoryEnum?), decimal discount = default(decimal), bool hasLicenseKey = false, bool hasDigitalDelivery = false, bool hasGithubAccess = false, string githubRepo = default(string), GithubPermissionEnum? githubPermission = default(GithubPermissionEnum?), bool hasDiscordAccess = false, string discordGuildId = default(string), string discordRoleId = default(string), bool isTaxInclusive = false, int activationLimit = default(int), string brandId = default(string), int billingPeriod = default(int), int trialPeriodDays = default(int), int expirationDays = default(int), string statementDescriptor = default(string), bool payWhatYouWant = false, Dictionary<string, string> metadata = default(Dictionary<string, string>), List<ProductCreateCustomFieldsInner> customFields = default(List<ProductCreateCustomFieldsInner>), int stock = default(int), bool isListed = true, bool isFree = false, List<ProductCreateAddonsInner> addons = default(List<ProductCreateAddonsInner>), List<string> entitlementIds = default(List<string>))
         {
             this.Name = name;
             this.Description = description;
@@ -694,6 +695,7 @@ namespace Solifyn.Model
             this.IsListed = isListed;
             this.IsFree = isFree;
             this.Addons = addons;
+            this.EntitlementIds = entitlementIds;
         }
 
         /// <summary>
@@ -948,6 +950,13 @@ namespace Solifyn.Model
         public List<ProductCreateAddonsInner> Addons { get; set; }
 
         /// <summary>
+        /// Array of independent entitlement IDs to link to this product.
+        /// </summary>
+        /// <value>Array of independent entitlement IDs to link to this product.</value>
+        [DataMember(Name = "entitlementIds", EmitDefaultValue = false)]
+        public List<string> EntitlementIds { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -984,6 +993,7 @@ namespace Solifyn.Model
             sb.Append("  IsListed: ").Append(IsListed).Append("\n");
             sb.Append("  IsFree: ").Append(IsFree).Append("\n");
             sb.Append("  Addons: ").Append(Addons).Append("\n");
+            sb.Append("  EntitlementIds: ").Append(EntitlementIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
